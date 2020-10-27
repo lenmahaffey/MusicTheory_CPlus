@@ -8,13 +8,13 @@
 */
 
 #include <iostream>
-#include "ChromaticScale.h"
-#include "Weight.h"
-#include "Step.h"
-#include "Note.h"
-#include "Object.h"
-#include "Scale.h"
-#include "scales/MajorScale.h"
+#include "src/ChromaticScale.h"
+#include "src/Weight.h"
+#include "src/Step.h"
+#include "src/Note.h"
+#include "src/Object.h"
+#include "src/Scale.h"
+#include "src/scales/MajorScale.h"
 
 using namespace std;
 

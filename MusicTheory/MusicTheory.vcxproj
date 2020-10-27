@@ -139,33 +139,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ChromaticScale.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Note.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Scale.cpp" />
-    <ClCompile Include="scales\HarmonicMinorScale.cpp" />
-    <ClCompile Include="scales\MajorScale.cpp" />
-    <ClCompile Include="scales\MelodicMinorScale.cpp" />
-    <ClCompile Include="scales\NaturalMinorScale.cpp" />
-    <ClCompile Include="scales\PentatonicMajorScale.cpp" />
-    <ClCompile Include="scales\PentatonicMinorScale.cpp" />
-    <ClCompile Include="Step.cpp" />
-    <ClCompile Include="Weight.cpp" />
+    <ClCompile Include="src\ChromaticScale.cpp" />
+    <ClCompile Include="src\Note.cpp" />
+    <ClCompile Include="src\Object.cpp" />
+    <ClCompile Include="src\Scale.cpp" />
+    <ClCompile Include="src\scales\HarmonicMinorScale.cpp" />
+    <ClCompile Include="src\scales\MajorScale.cpp" />
+    <ClCompile Include="src\scales\MelodicMinorScale.cpp" />
+    <ClCompile Include="src\scales\NaturalMinorScale.cpp" />
+    <ClCompile Include="src\scales\PentatonicMajorScale.cpp" />
+    <ClCompile Include="src\scales\PentatonicMinorScale.cpp" />
+    <ClCompile Include="src\Step.cpp" />
+    <ClCompile Include="src\Weight.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChromaticScale.h" />
-    <ClInclude Include="Note.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Scale.h" />
-    <ClInclude Include="scales\HarmonicMinorScale.h" />
-    <ClInclude Include="scales\MajorScale.h" />
-    <ClInclude Include="scales\MelodicMinorScale.h" />
-    <ClInclude Include="scales\NaturalMinorScale.h" />
-    <ClInclude Include="scales\PentatonicMajorScale.h" />
-    <ClInclude Include="scales\PentatonicMinorScale.h" />
-    <ClInclude Include="Step.h" />
-    <ClInclude Include="Weight.h" />
+    <ClInclude Include="src\ChromaticScale.h" />
+    <ClInclude Include="src\Note.h" />
+    <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\Scale.h" />
+    <ClInclude Include="src\scales\HarmonicMinorScale.h" />
+    <ClInclude Include="src\scales\MajorScale.h" />
+    <ClInclude Include="src\scales\MelodicMinorScale.h" />
+    <ClInclude Include="src\scales\NaturalMinorScale.h" />
+    <ClInclude Include="src\scales\PentatonicMajorScale.h" />
+    <ClInclude Include="src\scales\PentatonicMinorScale.h" />
+    <ClInclude Include="src\Step.h" />
+    <ClInclude Include="src\Weight.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
