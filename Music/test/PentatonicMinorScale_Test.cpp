@@ -1,8 +1,7 @@
 #pragma once
-#include "pch.h"
+#include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../MusicTheory/Music.h"
-#include "../MusicTheory/PentatonicMinorScale.cpp"
+#include "../src/scales/PentatonicMinorScale.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -18,14 +17,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expectedString = "A C D E G";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::A);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 
 		}
@@ -34,14 +30,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "B D E FsGf A";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::B);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 
 		}
@@ -50,14 +43,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "C DsEf F G AsBf";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::C);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -65,14 +55,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "D F G A C";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::D);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -80,14 +67,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "E G A B D";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::E);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -95,14 +79,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "F GsAf AsBf C DsEf";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::F);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -110,14 +91,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "G AsBf C D F";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::G);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -125,14 +103,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "AsBf CsDf DsEf F GsAf";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::AsBf);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -140,14 +115,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "CsDf E FsGf GsAf B";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::CsDf);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -155,14 +127,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "DsEf FsGf GsAf AsBf CsDf";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::DsEf);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -170,14 +139,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "FsGf A B CsDf E";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::FsGf);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -185,14 +151,11 @@ namespace Music_Testing
 		{
 			//Arrange
 			string expected = "GsAf B CsDf DsEf FsGf";
-			int expectedArraySize = 5;
 
 			//Act
 			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::GsAf);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(expectedArraySize, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 	};

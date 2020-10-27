@@ -1,8 +1,7 @@
 #pragma once
-#include "pch.h"
+#include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../MusicTheory/Music.h"
-#include "../MusicTheory/Note.cpp"
+#include "../src/Note.h"
 #include <iostream>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

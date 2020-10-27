@@ -1,8 +1,7 @@
 #pragma once
-#include "pch.h"
+#include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../MusicTheory/Music.h"
-#include "../MusicTheory/Scale.cpp"
+#include "../src/Scale.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -16,15 +15,15 @@ namespace Music_Testing
 
 		TEST_METHOD(Scale_Constructor_Test)
 		{
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 
 			string expectedFromEnum = "A";
@@ -56,25 +55,23 @@ namespace Music_Testing
 		TEST_METHOD(AMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expectedString = "A B CsDf D E FsGf GsAf";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::A, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 
 		}
@@ -82,151 +79,138 @@ namespace Music_Testing
 		TEST_METHOD(BMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "B CsDf DsEf E FsGf GsAf AsBf";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::B, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
-
 		}
 
 		TEST_METHOD(CMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "C D E F G A B";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::C, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(DMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "D E FsGf G A B CsDf";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::D, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(EMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "E FsGf GsAf A B CsDf DsEf";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::E, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(FMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "F G A AsBf C D E";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::F, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(GMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "G A B C D E FsGf";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::G, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
@@ -235,123 +219,112 @@ namespace Music_Testing
 			//Arrange
 			Music::NoteWeight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "AsBf C D DsEf F G A";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::AsBf, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(CsDfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "CsDf DsEf F FsGf GsAf AsBf C";
-			int expectedArraySize = 7;
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::CsDf, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(DsEfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "DsEf F G GsAf AsBf C D";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::DsEf, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(FsGfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "FsGf GsAf AsBf B CsDf DsEf F";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::FsGf, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 
 		TEST_METHOD(GsAfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Weight pattern[7] =
 			{
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Half,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole,
-				Music::NoteWeight::Whole
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Half,
+				Music::Weight::Whole,
+				Music::Weight::Whole,
+				Music::Weight::Whole
 			};
 			string expected = "GsAf AsBf C CsDf DsEf F G";
-			int expectedArraySize = 7;
+
 
 			//Act
 			Scale scaleToTest = Scale(ChromaticScale::GsAf, pattern, true);
-			int scaleArraySize = sizeof(scaleToTest.scale) / sizeof(scaleToTest.scale[0]);
 
 			//Assert
-			Assert::AreEqual(7, scaleArraySize);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 	};

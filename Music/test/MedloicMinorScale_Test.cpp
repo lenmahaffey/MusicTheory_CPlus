@@ -1,7 +1,7 @@
 #pragma once
-#include "pch.h"
+#include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../MusicTheory/MelodicMinorScale.cpp"
+#include "../src/scales/MelodicMinorScale.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -18,10 +18,8 @@ namespace Music_Testing
 			//Arrange
 			string expectedString = "A B C D E FsGf GsAf";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::A);
-
 
 			//Assert
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
@@ -32,10 +30,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "B CsDf D E FsGf GsAf AsBf";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::B);
-
 
 			//Assert
 
@@ -47,10 +43,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "C D DsEf F G A B";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::C);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -63,10 +57,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "D E F G A B CsDf";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::D);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -77,10 +69,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "E FsGf G A B CsDf DsEf";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::E);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -91,10 +81,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "F G GsAf AsBf C D E";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::F);
-
 
 			//Assert
 
@@ -106,10 +94,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "G A AsBf C D E FsGf";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::G);
-
 
 			//Assert
 
@@ -123,10 +109,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "AsBf C CsDf DsEf F G A";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::AsBf);
-
 
 			//Assert
 
@@ -138,10 +122,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "CsDf DsEf E FsGf GsAf AsBf C";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::CsDf);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -152,10 +134,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "DsEf F FsGf GsAf AsBf C D";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::DsEf);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -168,10 +148,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "FsGf GsAf A B CsDf DsEf F";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::FsGf);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -182,10 +160,8 @@ namespace Music_Testing
 			//Arrange
 			string expected = "GsAf AsBf B CsDf DsEf F G";
 
-
 			//Act
 			MelodicMinorScale scaleToTest = MelodicMinorScale(ChromaticScale::GsAf);
-
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
