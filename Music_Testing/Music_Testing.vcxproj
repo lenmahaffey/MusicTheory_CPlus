@@ -156,17 +156,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\MusicTheory\test\HarmonicMinorScale_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\HarmonicMinorSclae_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\MajorScale_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\MedloicMinorScale.cpp" />
-    <ClCompile Include="..\MusicTheory\test\MedloicMinorScale_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\MinorScale_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\NaturalMinor_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\Note_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\PentatonicMajorScale_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\PentatonicMinorScale_Test.cpp" />
-    <ClCompile Include="..\MusicTheory\test\Scale_Test.cpp" />
+    <ClCompile Include="..\Music\test\HarmonicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\HarmonicMinorSclae_Test.cpp" />
+    <ClCompile Include="..\Music\test\MajorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\MedloicMinorScale.cpp" />
+    <ClCompile Include="..\Music\test\MedloicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\MinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\NaturalMinor_Test.cpp" />
+    <ClCompile Include="..\Music\test\Note_Test.cpp" />
+    <ClCompile Include="..\Music\test\PentatonicMajorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\PentatonicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\Scale_Test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -175,7 +175,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\MusicTheory\test\Scale_Test.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
