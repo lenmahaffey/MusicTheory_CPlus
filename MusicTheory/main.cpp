@@ -8,12 +8,6 @@
 */
 
 #include <iostream>
-#include "src/ChromaticScale.h"
-#include "src/Weight.h"
-#include "src/Step.h"
-#include "src/Note.h"
-#include "src/Object.h"
-#include "src/Scale.h"
 #include "src/scales/MajorScale.h"
 
 using namespace std;
