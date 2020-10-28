@@ -30,6 +30,5 @@ namespace Music {
 		static std::string GetPositionAsString(Music::ChromaticScalePosition note);
 		static std::string GetWeightAsString(Music::Weight weight);
 		static std::string GetStepAsString(Music::Step step);
-		static Music::Weight GetWeight(Music::ChromaticScalePosition note);
 	};
 }

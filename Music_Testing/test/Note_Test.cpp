@@ -10,111 +10,271 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
 using namespace Music;
 
-namespace Music_Testing
+namespace Note_Testing
 {
-	TEST_CLASS(Note_Test)
+	TEST_CLASS(Constructor_Enum_Test)
 	{
-	public:
-		TEST_METHOD(NoteConstructor_Test)
+		TEST_METHOD(A_ConstructorFromEnum_Test)
 		{
-			// Arrange
-			string expectedFromEnum = "A";
-			string expectedFromInt = "C";
-			string expectedFromChar = "F";
-
-			// Act
-			Note fromEnum = Note(ChromaticScale::A);
-			Note fromInt = Note(3);
-			Note fromChar = Note('F');
-
-			// Assert
-			Assert::AreEqual(expectedFromEnum, fromEnum.getTextName());
-			Assert::AreEqual(expectedFromInt, fromInt.getTextName());
-			Assert::AreEqual(expectedFromChar, fromChar.getTextName());
+			ChromaticScalePosition expected = ChromaticScalePosition::A;
+			Note A = Note(ChromaticScalePosition::A);
+			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
 		}
-		TEST_METHOD(GetName_Test)
+		TEST_METHOD(AsBf_ConstructorFromEnum_Test)
 		{
-			Note A = Note(ChromaticScale::A);
-			Note AsBf = Note(ChromaticScale::AsBf);
-			Note B = Note(ChromaticScale::B);
-			Note C = Note(ChromaticScale::C);
-			Note CsDf = Note(ChromaticScale::CsDf);
-			Note D = Note(ChromaticScale::D);
-			Note DsEf = Note(ChromaticScale::DsEf);
-			Note E = Note(ChromaticScale::E);
-			Note F = Note(ChromaticScale::F);
-			Note FsGf = Note(ChromaticScale::FsGf);
-			Note G = Note(ChromaticScale::G);
-			Note GsAf = Note(ChromaticScale::GsAf);
-
-			Assert::AreEqual((int)ChromaticScale::A, (int)A.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::AsBf, (int)AsBf.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::B, (int)B.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::C, (int)C.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::CsDf, (int)CsDf.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::D, (int)D.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::DsEf, (int)DsEf.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::E, (int)E.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::F, (int)F.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::FsGf, (int)FsGf.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::G, (int)G.getChromaticScalePosition());
-			Assert::AreEqual((int)ChromaticScale::GsAf, (int)GsAf.getChromaticScalePosition());
+			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
+			Note AsBf = Note(ChromaticScalePosition::AsBf);
+			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
 		}
-		TEST_METHOD(GetTextName_Test)
+		TEST_METHOD(B_ConstructorFromEnum_Test)
 		{
-			Note A = Note(ChromaticScale::A);
-			Note AsBf = Note(ChromaticScale::AsBf);
-			Note B = Note(ChromaticScale::B);
-			Note C = Note(ChromaticScale::C);
-			Note CsDf = Note(ChromaticScale::CsDf);
-			Note D = Note(ChromaticScale::D);
-			Note DsEf = Note(ChromaticScale::DsEf);
-			Note E = Note(ChromaticScale::E);
-			Note F = Note(ChromaticScale::F);
-			Note FsGf = Note(ChromaticScale::FsGf);
-			Note G = Note(ChromaticScale::G);
-			Note GsAf = Note(ChromaticScale::GsAf);
-
-			Assert::AreEqual((string)"A", A.getTextName());
-			Assert::AreEqual((string)"AsBf", AsBf.getTextName());
-			Assert::AreEqual((string)"B", B.getTextName());
-			Assert::AreEqual((string)"C", C.getTextName());
-			Assert::AreEqual((string)"CsDf", CsDf.getTextName());
-			Assert::AreEqual((string)"D", D.getTextName());
-			Assert::AreEqual((string)"DsEf", DsEf.getTextName());
-			Assert::AreEqual((string)"E", E.getTextName());
-			Assert::AreEqual((string)"F", F.getTextName());
-			Assert::AreEqual((string)"FsGf", FsGf.getTextName());
-			Assert::AreEqual((string)"G", G.getTextName());
-			Assert::AreEqual((string)"GsAf", GsAf.getTextName());
+			ChromaticScalePosition expected = ChromaticScalePosition::B;
+			Note B = Note(ChromaticScalePosition::B);
+			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
 		}
-		TEST_METHOD(GetWeight_Test)
+		TEST_METHOD(C_ConstructorFromEnum_Test)
 		{
-			Note A = Note(ChromaticScale::A);
-			Note AsBf = Note(ChromaticScale::AsBf);
-			Note B = Note(ChromaticScale::B);
-			Note C = Note(ChromaticScale::C);
-			Note CsDf = Note(ChromaticScale::CsDf);
-			Note D = Note(ChromaticScale::D);
-			Note DsEf = Note(ChromaticScale::DsEf);
-			Note E = Note(ChromaticScale::E);
-			Note F = Note(ChromaticScale::F);
-			Note FsGf = Note(ChromaticScale::FsGf);
-			Note G = Note(ChromaticScale::G);
-			Note GsAf = Note(ChromaticScale::GsAf);
-
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(A.getChromaticScalePosition()));
-			Assert::AreEqual(1, (int)Music::Object::GetWeight(AsBf.getChromaticScalePosition()));
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(B.getChromaticScalePosition()));
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(C.getChromaticScalePosition()));
-			Assert::AreEqual(1, (int)Music::Object::GetWeight(CsDf.getChromaticScalePosition()));
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(D.getChromaticScalePosition()));
-			Assert::AreEqual(1, (int)Music::Object::GetWeight(DsEf.getChromaticScalePosition()));
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(E.getChromaticScalePosition()));
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(F.getChromaticScalePosition()));
-			Assert::AreEqual(1, (int)Music::Object::GetWeight(FsGf.getChromaticScalePosition()));
-			Assert::AreEqual(2, (int)Music::Object::GetWeight(G.getChromaticScalePosition()));
-			Assert::AreEqual(1, (int)Music::Object::GetWeight(GsAf.getChromaticScalePosition()));
+			ChromaticScalePosition expected = ChromaticScalePosition::C;
+			Note C = Note(ChromaticScalePosition::C);
+			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+		}
+		TEST_METHOD(CsDf_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
+			Note CsDf = Note(ChromaticScalePosition::CsDf);
+			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+		}
+		TEST_METHOD(D_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::D;
+			Note D = Note(ChromaticScalePosition::D);
+			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+		}
+		TEST_METHOD(DsEf_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
+			Note DsEf = Note(ChromaticScalePosition::DsEf);
+			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+		}
+		TEST_METHOD(E_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::E;
+			Note E = Note(ChromaticScalePosition::E);
+			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+		}
+		TEST_METHOD(F_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::F;
+			Note F = Note(ChromaticScalePosition::F);
+			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+		}
+		TEST_METHOD(FsGf_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
+			Note FsGf = Note(ChromaticScalePosition::FsGf);
+			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+		}
+		TEST_METHOD(G_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::G;
+			Note G = Note(ChromaticScalePosition::G);
+			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+		}
+		TEST_METHOD(GsAf_ConstructorFromEnum_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
+			Note GsAf = Note(ChromaticScalePosition::GsAf);
+			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+		}
+	};
+	TEST_CLASS(Constructor_String_Test)
+	{
+		TEST_METHOD(A_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::A;
+			Note A = Note("A");
+			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
+		}
+		TEST_METHOD(AsBf_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
+			Note AsBf = Note("AsBf");
+			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
+		}
+		TEST_METHOD(B_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::B;
+			Note B = Note("B");
+			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
+		}
+		TEST_METHOD(C_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::C;
+			Note C = Note("C");
+			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+		}
+		TEST_METHOD(CsDf_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
+			Note CsDf = Note("CsDf");
+			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+		}
+		TEST_METHOD(D_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::D;
+			Note D = Note("D");
+			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+		}
+		TEST_METHOD(DsEf_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
+			Note DsEf = Note("DsEf");
+			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+		}
+		TEST_METHOD(E_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::E;
+			Note E = Note("E");
+			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+		}
+		TEST_METHOD(F_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::F;
+			Note F = Note("F");
+			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+		}
+		TEST_METHOD(FsGf_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
+			Note FsGf = Note("FsGf");
+			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+		}
+		TEST_METHOD(G_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::G;
+			Note G = Note("G");
+			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+		}
+		TEST_METHOD(GsAf_ConstructorFromString_Test)
+		{
+			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
+			Note GsAf = Note("GsAf");
+			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+		}
+	};
+	TEST_CLASS(getWeight_Test)
+	{
+		TEST_METHOD(A_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note A = Note(ChromaticScalePosition::A);
+			Assert::AreEqual((int)expected, (int)A.GetWeight());
+		}
+		TEST_METHOD(AsBf_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Half;
+			Note AsBf = Note(ChromaticScalePosition::AsBf);
+		}
+		TEST_METHOD(B_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note B = Note(ChromaticScalePosition::B);
+		}
+		TEST_METHOD(C_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note C = Note(ChromaticScalePosition::C);
+		}
+		TEST_METHOD(CsDf_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Half;
+			Note CsDf = Note(ChromaticScalePosition::CsDf);
+		}
+		TEST_METHOD(D_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note D = Note(ChromaticScalePosition::D);
+		}
+		TEST_METHOD(DsEf_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Half;
+			Note DsEf = Note(ChromaticScalePosition::DsEf);
+		}
+		TEST_METHOD(E_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note E = Note(ChromaticScalePosition::E);
+		}
+		TEST_METHOD(F_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note F = Note(ChromaticScalePosition::F);
+		}
+		TEST_METHOD(FsGf_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Half;
+			Note FsGf = Note(ChromaticScalePosition::FsGf);
+		}
+		TEST_METHOD(G_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Whole;
+			Note G = Note(ChromaticScalePosition::G);
+		}
+		TEST_METHOD(GsAf_getWeight_Test)
+		{
+			Music::Weight expected = Music::Weight::Half;
+			Note GsAf = Note(ChromaticScalePosition::GsAf);
+		}
+	};
+	TEST_CLASS(getWeightAsString_Test)
+	{
+		TEST_METHOD(A_getWeightAsString_Test)
+		{
+			Note A = Note(ChromaticScalePosition::A);
+		}
+		TEST_METHOD(AsBf_getWeightAsString_Test)
+		{
+			Note AsBf = Note(ChromaticScalePosition::AsBf);
+		}
+		TEST_METHOD(B_getWeightAsString_Test)
+		{
+			Note B = Note(ChromaticScalePosition::B);
+		}
+		TEST_METHOD(C_getWeightAsString_Test)
+		{
+			Note C = Note(ChromaticScalePosition::C);
+		}
+		TEST_METHOD(AsDf_getWeightAsString_Test)
+		{
+			Note CsDf = Note(ChromaticScalePosition::CsDf);
+		}
+		TEST_METHOD(D_getWeightAsString_Test)
+		{
+			Note D = Note(ChromaticScalePosition::D);
+		}
+		TEST_METHOD(DsEf_getWeightAsString_Test)
+		{
+			Note DsEf = Note(ChromaticScalePosition::DsEf);
+		}
+		TEST_METHOD(E_getWeightAsString_Test)
+		{
+			Note E = Note(ChromaticScalePosition::E);
+		}
+		TEST_METHOD(F_getWeightAsString_Test)
+		{
+			Note F = Note(ChromaticScalePosition::F);
+		}
+		TEST_METHOD(FsGf_getWeightAsString_Test)
+		{
+			Note FsGf = Note(ChromaticScalePosition::FsGf);
+		}
+		TEST_METHOD(G_getWeightAsString_Test)
+		{
+			Note G = Note(ChromaticScalePosition::G);
+		}
+		TEST_METHOD(GsAf_getWeightAsString_Test)
+		{
+			Note GsAf = Note(ChromaticScalePosition::GsAf);
 		}
 	};
 }
