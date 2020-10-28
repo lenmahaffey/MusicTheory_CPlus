@@ -9,8 +9,10 @@ namespace Music {
 	public:
 		Music::Note() = default;
 		Music::Note(Music::ChromaticScalePosition note);
-		//Music::Note(int note);
 		Music::Note(std::string note);
+
+	private:
+		Music::Weight weight;
 	};
 }
 

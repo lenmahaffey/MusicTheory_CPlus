@@ -1,10 +1,6 @@
 #pragma once
 #include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../../Music/src/ChromaticScale.cpp"
-#include "../../Music/src/Step.cpp"
-#include "../../Music/src/Weight.cpp"
-#include "../../Music//src/Object.cpp"
 #include "../../Music/src/Note.cpp"
 
 

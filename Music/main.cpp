@@ -26,7 +26,7 @@ int main()
 		Music::Step::Whole,
 	};
 
-	Note A = Note(ChromaticScalePosition::A);
+	//Note A = Note(ChromaticScalePosition::A);
 	//Music::Scale n = Music::Scale(Music::ChromaticScale::A, pattern, true);
 	//Music::MajorScale newMajorScale = Music::MajorScale(Music::ChromaticScale::A);
 	//Music::PentatonicMinorScale newScale = Music::PentatonicMinorScale(Music::ChromaticScale::E);
@@ -37,9 +37,9 @@ int main()
 	//Note As = A.goHalfStep();
 	//cout << As.getTextName() << B.getTextName() << endl;
 
-	//Object AsBf = Object('AsBf');
+	Object C = Object(3);
 	//char newChar = 'ASFD';
-	//cout << newChar;
+	cout << C.getNameAsString();
 	return 0;
 }
 

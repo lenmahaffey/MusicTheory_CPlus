@@ -5,6 +5,7 @@ namespace Music
 {
 	enum class ChromaticScalePosition
 	{
+		NONE = 0,
 		A,
 		AsBf,
 		B,

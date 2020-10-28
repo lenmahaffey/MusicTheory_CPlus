@@ -143,12 +143,10 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="src\Note.cpp" />
     <ClCompile Include="src\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ChromaticScale.h" />
-    <ClInclude Include="src\Note.h" />
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Step.h" />
     <ClInclude Include="src\Weight.h" />
