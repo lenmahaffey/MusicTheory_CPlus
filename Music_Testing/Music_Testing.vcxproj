@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1E7A603E-F52D-4BDA-8218-1ABF6BA7A9D6}</ProjectGuid>
+    <ProjectGuid>{754F2164-FF38-4AA2-A6EA-17200AD4E3A7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MusicTesting</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -89,7 +89,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -156,23 +156,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Music\test\HarmonicMinorScale_Test.cpp" />
-    <ClCompile Include="..\Music\test\MajorScale_Test.cpp" />
-    <ClCompile Include="..\Music\test\MedloicMinorScale_Test.cpp" />
-    <ClCompile Include="..\Music\test\NaturalMinor_Test.cpp" />
-    <ClCompile Include="..\Music\test\Note_Test.cpp" />
-    <ClCompile Include="..\Music\test\PentatonicMajorScale_Test.cpp" />
-    <ClCompile Include="..\Music\test\PentatonicMinorScale_Test.cpp" />
-    <ClCompile Include="..\Music\test\Scale_Test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="test\HarmonicMinorScale_Test.cpp" />
+    <ClCompile Include="test\MajorScale_Test.cpp" />
+    <ClCompile Include="test\MedloicMinorScale_Test.cpp" />
+    <ClCompile Include="test\NaturalMinor_Test.cpp" />
+    <ClCompile Include="test\Note_Test.cpp" />
+    <ClCompile Include="test\PentatonicMajorScale_Test.cpp" />
+    <ClCompile Include="test\PentatonicMinorScale_Test.cpp" />
+    <ClCompile Include="test\Scale_Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Music\Music.vcxproj">
+      <Project>{8a68c8f5-c87b-4993-974b-66d48709e399}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

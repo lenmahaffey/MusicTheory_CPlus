@@ -1,7 +1,7 @@
 #pragma once
-#include "../../Music_Testing/pch.h"
+#include "../../Music_Testing/pch.cpp"
 #include "CppUnitTest.h"
-#include "../src/scales/MelodicMinorScale.h"
+#include "../../Music/src/scales/MelodicMinorScale.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;

@@ -1,7 +1,7 @@
 #pragma once
 #include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../src/Scale.h"
+#include "../../Music/src/Scale.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -15,37 +15,26 @@ namespace Music_Testing
 
 		TEST_METHOD(Scale_Constructor_Test)
 		{
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
-
-			string expectedFromEnum = "A";
-			string expectedFromInt = "C";
-			string expectedFromChar = "F";
 
 			string expectedFromEnumWithPattern = "A";
 			string expectedFromIntWithPattern = "C";
 			string expectedFromCharWithPattern = "F";
 
 
-			Scale fromEnum = Scale(ChromaticScale::A, true);
-			Scale fromInt = Scale(3, true);
-			Scale fromChar = Scale('F', true);
-
 			Scale fromEnumWithPattern = Scale(ChromaticScale::A, pattern, true);
 			Scale fromIntWithPattern = Scale(3, pattern, true);
 			Scale fromCharWithPattern = Scale('F', pattern, true);
 
-			Assert::AreEqual(expectedFromEnum, fromEnum.getTextName());
-			Assert::AreEqual(expectedFromInt, fromInt.getTextName());
-			Assert::AreEqual(expectedFromChar, fromChar.getTextName());
 
 			Assert::AreEqual(expectedFromEnumWithPattern, fromEnumWithPattern.getTextName());
 			Assert::AreEqual(expectedFromIntWithPattern, fromIntWithPattern.getTextName());
@@ -55,15 +44,15 @@ namespace Music_Testing
 		TEST_METHOD(AMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expectedString = "A B CsDf D E FsGf GsAf";
 
@@ -79,15 +68,15 @@ namespace Music_Testing
 		TEST_METHOD(BMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "B CsDf DsEf E FsGf GsAf AsBf";
 
@@ -102,15 +91,15 @@ namespace Music_Testing
 		TEST_METHOD(CMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "C D E F G A B";
 
@@ -125,15 +114,15 @@ namespace Music_Testing
 		TEST_METHOD(DMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "D E FsGf G A B CsDf";
 
@@ -148,15 +137,15 @@ namespace Music_Testing
 		TEST_METHOD(EMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "E FsGf GsAf A B CsDf DsEf";
 
@@ -171,15 +160,15 @@ namespace Music_Testing
 		TEST_METHOD(FMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "F G A AsBf C D E";
 
@@ -194,15 +183,15 @@ namespace Music_Testing
 		TEST_METHOD(GMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "G A B C D E FsGf";
 
@@ -217,15 +206,15 @@ namespace Music_Testing
 		TEST_METHOD(AsBfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::NoteWeight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "AsBf C D DsEf F G A";
 
@@ -240,15 +229,15 @@ namespace Music_Testing
 		TEST_METHOD(CsDfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "CsDf DsEf F FsGf GsAf AsBf C";
 
@@ -262,15 +251,15 @@ namespace Music_Testing
 		TEST_METHOD(DsEfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "DsEf F G GsAf AsBf C D";
 
@@ -285,15 +274,15 @@ namespace Music_Testing
 		TEST_METHOD(FsGfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "FsGf GsAf AsBf B CsDf DsEf F";
 
@@ -308,15 +297,15 @@ namespace Music_Testing
 		TEST_METHOD(GsAfMajor_getScaleAsString_Test)
 		{
 			//Arrange
-			Music::Weight pattern[7] =
+			Music::Step pattern[7] =
 			{
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Half,
-				Music::Weight::Whole,
-				Music::Weight::Whole,
-				Music::Weight::Whole
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
 			};
 			string expected = "GsAf AsBf C CsDf DsEf F G";
 

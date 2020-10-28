@@ -12,11 +12,6 @@ namespace Music {
 		Music::Note(int note);
 		Music::Note(char note);
 		Music::Note(std::string note);
-
-		Music::Weight getWeight();
-
-	private:
-		Music::Weight weight;
 	};
 }
 

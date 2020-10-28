@@ -10,7 +10,4 @@ namespace Music
 		Half,
 		Whole
 	};
-
-	Music::Weight GetWeight(Music::ChromaticScale note);
-	std::string GetWeightAsString(Music::Weight weight);
 }

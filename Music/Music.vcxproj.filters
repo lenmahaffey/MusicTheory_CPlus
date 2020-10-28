@@ -19,9 +19,6 @@
     <Filter Include="Header Files\Scales">
       <UniqueIdentifier>{e61ac4e1-0536-4038-b827-44dd184d2c76}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Enums">
-      <UniqueIdentifier>{db5439c3-7a1f-4587-9ba6-2b0b025f9948}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Scales">
       <UniqueIdentifier>{3e7a37a7-2d51-474a-a9aa-ee5894af8fe2}</UniqueIdentifier>
     </Filter>
@@ -36,8 +33,8 @@
     <ClCompile Include="src\Scale.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ChromaticScale.cpp">
-      <Filter>Source Files\Enums</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\scales\HarmonicMinorScale.cpp">
       <Filter>Source Files\Scales</Filter>
@@ -51,16 +48,10 @@
     <ClCompile Include="src\scales\NaturalMinorScale.cpp">
       <Filter>Source Files\Scales</Filter>
     </ClCompile>
-    <ClCompile Include="src\Weight.cpp">
-      <Filter>Source Files\Enums</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Step.cpp">
-      <Filter>Source Files\Enums</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
+    <ClCompile Include="src\scales\PentatonicMajorScale.cpp">
       <Filter>Source Files\Scales</Filter>
     </ClCompile>
-    <ClCompile Include="src\scales\PentatonicMajorScale.cpp">
+    <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
       <Filter>Source Files\Scales</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,13 +74,13 @@
     <ClInclude Include="src\Step.h">
       <Filter>Header Files\Enums</Filter>
     </ClInclude>
-    <ClInclude Include="src\scales\HarmonicMinorScale.h">
-      <Filter>Header Files\Scales</Filter>
-    </ClInclude>
     <ClInclude Include="src\scales\MajorScale.h">
       <Filter>Header Files\Scales</Filter>
     </ClInclude>
     <ClInclude Include="src\scales\MelodicMinorScale.h">
+      <Filter>Header Files\Scales</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scales\HarmonicMinorScale.h">
       <Filter>Header Files\Scales</Filter>
     </ClInclude>
     <ClInclude Include="src\scales\NaturalMinorScale.h">

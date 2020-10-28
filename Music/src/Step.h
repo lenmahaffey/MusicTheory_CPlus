@@ -11,7 +11,5 @@ namespace Music
 		WholeandAHalf,
 		Double
 	};
-
-	static std::string GetStepAsString(Music::Step step);
 }
 

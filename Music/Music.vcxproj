@@ -139,7 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\ChromaticScale.cpp" />
+    <ClCompile Include="main.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\Note.cpp" />
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Scale.cpp" />
@@ -149,8 +152,6 @@
     <ClCompile Include="src\scales\NaturalMinorScale.cpp" />
     <ClCompile Include="src\scales\PentatonicMajorScale.cpp" />
     <ClCompile Include="src\scales\PentatonicMinorScale.cpp" />
-    <ClCompile Include="src\Step.cpp" />
-    <ClCompile Include="src\Weight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ChromaticScale.h" />

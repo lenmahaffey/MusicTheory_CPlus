@@ -9,11 +9,11 @@ Music::NaturalMinorScale::NaturalMinorScale(Music::ChromaticScale note) :
 Music::NaturalMinorScale::NaturalMinorScale(int note) :
 	Music::Scale(note, scalePattern, isMajor)
 {
-	Music::NaturalMinorScale::setScale((Music::ChromaticScale) note);
+	Music::NaturalMinorScale::setScale(Music::Object::GetFromChromaticScale(note));
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(char note) :
 	Music::Scale(note, scalePattern, isMajor)
 {
-	Music::NaturalMinorScale::setScale(Music::GetNoteFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::Object::GetFromChromaticScale(note));
 }
