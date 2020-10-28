@@ -2,8 +2,8 @@
 #include "Object.h"
 
 Music::Object::Object() :
-	chromaticScalePosition(),
-	textName()
+	chromaticScalePosition(Music::ChromaticScalePosition::NONE),
+	textName(Music::Object::GetPositionAsString(Music::ChromaticScalePosition::NONE))
 {
 }
 Music::Object::Object(Music::ChromaticScalePosition note) :

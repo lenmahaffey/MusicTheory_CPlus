@@ -37,7 +37,7 @@ int main()
 	//Note As = A.goHalfStep();
 	//cout << As.getTextName() << B.getTextName() << endl;
 
-	Object C = Object(3);
+	Object C = Object(0);
 	//char newChar = 'ASFD';
 	cout << C.getNameAsString();
 	return 0;

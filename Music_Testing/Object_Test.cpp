@@ -14,7 +14,13 @@ namespace Object_Test
 {
 	TEST_CLASS(Constructor_Enum_Test)
 	{
-	public:
+		TEST_METHOD(NONE_ConstructorWithEnum_Test)
+		{
+			Object NONE = Object(ChromaticScalePosition::NONE);
+			ChromaticScalePosition expected = ChromaticScalePosition::NONE;
+			Assert::AreEqual((int)expected, (int)NONE.getChromaticScalePosition());
+
+		}
 		TEST_METHOD(A_ConstructorWithEnum_Test)
 		{
 			Object A = Object(ChromaticScalePosition::A);
@@ -184,6 +190,12 @@ namespace Object_Test
 	};
 	TEST_CLASS(Constructor_String_Test)
 	{
+		TEST_METHOD(NONE_ConstructorWithInt_Test)
+		{
+			Object NONE = Object("NONE");
+			ChromaticScalePosition expected = ChromaticScalePosition::NONE;
+			Assert::AreEqual((int)expected, (int)NONE.getChromaticScalePosition());
+		}
 		TEST_METHOD(A_ConstructorWithInt_Test)
 		{
 			Object A = Object("A");
@@ -259,6 +271,14 @@ namespace Object_Test
 	};
 	TEST_CLASS(getNameAsString_Test)
 	{
+		TEST_METHOD(NONE_getNameAsString_Test)
+		{
+			Object NONE = Object(ChromaticScalePosition::NONE);
+			string expected = "NONE";
+			Assert::AreEqual(expected, NONE.getNameAsString());
+
+		}
+
 		TEST_METHOD(A_getNameAsString_Test)
 		{
 			Object A = Object(ChromaticScalePosition::A);
@@ -701,6 +721,14 @@ namespace Object_Test
 	};
 	TEST_CLASS(getPositionAsString_Test)
 	{
+		TEST_METHOD(NONE_getPositionAsString_Test)
+		{
+			Object NONE = Object(ChromaticScalePosition::NONE);
+			string expected = "NONE";
+			Assert::AreEqual(expected, NONE.getNameAsString());
+
+		}
+
 		TEST_METHOD(A_getPositionAsString_Test)
 		{
 			Object A = Object(ChromaticScalePosition::A);
