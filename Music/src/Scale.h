@@ -9,7 +9,7 @@ namespace Music{
 	{
 	public:
 		Music::Scale() = default;
-		Music::Scale(Music::ChromaticScale note, const Music::Step (&pattern)[7], const bool isMajor);
+		Music::Scale(Music::ChromaticScalePosition note, const Music::Step (&pattern)[7], const bool isMajor);
 		Music::Scale(int note, const Music::Step(&pattern)[7], const bool isMajor);
 		Music::Scale(char note, const Music::Step(&pattern)[7], const bool isMajor);
 
@@ -22,7 +22,7 @@ namespace Music{
 		const int scalePatternLength;
 		const bool isMajor;
 
-		void setScale(Music::ChromaticScale);
+		void setScale(Music::ChromaticScalePosition);
 
 	};
 }

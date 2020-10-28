@@ -3,7 +3,6 @@
 #include "ChromaticScale.h"
 #include "Step.h"
 #include "Weight.h"
-//#include "Music.h"
 
 namespace Music {
 
@@ -11,28 +10,26 @@ namespace Music {
 	{
 	public:
 		Music::Object();
-		Music::Object(Music::ChromaticScale note);
-		Music::Object(char note);
+		Music::Object(Music::ChromaticScalePosition note);
 		Music::Object(std::string note);
+		Music::Object(int note);
 
-		Music::ChromaticScale getChromaticScalePosition();
-		std::string getTextName();
+		Music::ChromaticScalePosition getChromaticScalePosition();
+		std::string getNameAsString();
 
-		Music::ChromaticScale goFullStep(Music::ChromaticScale note);
-		Music::ChromaticScale goHalfStep(Music::ChromaticScale note);
-		Music::ChromaticScale goStepAndAHalf(Music::ChromaticScale note);
-
-		static Music::ChromaticScale GetFromChromaticScale(char note);
-		static Music::ChromaticScale GetFromChromaticScale(std::string note);
-		static Music::ChromaticScale GetFromChromaticScale(int note);
-		static std::string GetNameAsString(Music::ChromaticScale note);
-		static std::string GetWeightAsString(Music::Weight weight);
-		static std::string GetStepAsString(Music::Step step);
-		static Music::Weight GetWeight(Music::ChromaticScale note);
+		Music::ChromaticScalePosition goFullStep();
+		Music::ChromaticScalePosition goHalfStep();
+		Music::ChromaticScalePosition goStepAndAHalf();
 
 	protected:
-		Music::ChromaticScale chromaticScalePosition;
+		Music::ChromaticScalePosition chromaticScalePosition;
 		std::string textName;
-		Music::Weight weight;
+
+		static Music::ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
+		static Music::ChromaticScalePosition GetPositionFromChromaticScale(int note);
+		static std::string GetPositionAsString(Music::ChromaticScalePosition note);
+		static std::string GetWeightAsString(Music::Weight weight);
+		static std::string GetStepAsString(Music::Step step);
+		static Music::Weight GetWeight(Music::ChromaticScalePosition note);
 	};
 }

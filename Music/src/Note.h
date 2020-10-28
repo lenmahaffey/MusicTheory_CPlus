@@ -8,9 +8,8 @@ namespace Music {
 	{
 	public:
 		Music::Note() = default;
-		Music::Note(Music::ChromaticScale note);
-		Music::Note(int note);
-		Music::Note(char note);
+		Music::Note(Music::ChromaticScalePosition note);
+		//Music::Note(int note);
 		Music::Note(std::string note);
 	};
 }

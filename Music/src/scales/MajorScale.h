@@ -7,7 +7,7 @@ namespace Music {
     {
 	public:
 		Music::MajorScale() = default;
-		Music::MajorScale(Music::ChromaticScale note);
+		Music::MajorScale(Music::ChromaticScalePosition note);
 		Music::MajorScale(int note);
 		Music::MajorScale(char note);
 

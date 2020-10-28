@@ -11,6 +11,7 @@
 #include <iostream>
 
 using namespace std;
+using namespace Music;
 
 int main()
 {
@@ -25,11 +26,20 @@ int main()
 		Music::Step::Whole,
 	};
 
+	Note A = Note(ChromaticScalePosition::A);
 	//Music::Scale n = Music::Scale(Music::ChromaticScale::A, pattern, true);
-
 	//Music::MajorScale newMajorScale = Music::MajorScale(Music::ChromaticScale::A);
-	Music::PentatonicMinorScale newScale = Music::PentatonicMinorScale(Music::ChromaticScale::E);
-	cout << newScale.getScaleAsString() << endl;
+	//Music::PentatonicMinorScale newScale = Music::PentatonicMinorScale(Music::ChromaticScale::E);
+	//cout << newScale.getScaleAsString() << endl;
+	//cout << (int)A.getChromaticScalePosition() << endl;
+	//cout << A.getTextName() << endl;
+	//Note B = A.goFullStep();
+	//Note As = A.goHalfStep();
+	//cout << As.getTextName() << B.getTextName() << endl;
+
+	//Object AsBf = Object('AsBf');
+	//char newChar = 'ASFD';
+	//cout << newChar;
 	return 0;
 }
 

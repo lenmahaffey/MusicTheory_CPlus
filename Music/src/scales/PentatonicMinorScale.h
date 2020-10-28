@@ -5,7 +5,7 @@ namespace Music {
 	{
 	public:
 		Music::PentatonicMinorScale() = default;
-		Music::PentatonicMinorScale(Music::ChromaticScale note);
+		Music::PentatonicMinorScale(Music::ChromaticScalePosition note);
 		Music::PentatonicMinorScale(int noteIndex);
 		Music::PentatonicMinorScale(char note);
 

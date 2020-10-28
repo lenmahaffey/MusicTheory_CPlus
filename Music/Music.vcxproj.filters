@@ -30,29 +30,8 @@
     <ClCompile Include="src\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scale.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\HarmonicMinorScale.cpp">
-      <Filter>Source Files\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\MajorScale.cpp">
-      <Filter>Source Files\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\MelodicMinorScale.cpp">
-      <Filter>Source Files\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\NaturalMinorScale.cpp">
-      <Filter>Source Files\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\PentatonicMajorScale.cpp">
-      <Filter>Source Files\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
-      <Filter>Source Files\Scales</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,9 +39,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scale.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ChromaticScale.h">
@@ -73,24 +49,6 @@
     </ClInclude>
     <ClInclude Include="src\Step.h">
       <Filter>Header Files\Enums</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\MajorScale.h">
-      <Filter>Header Files\Scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\MelodicMinorScale.h">
-      <Filter>Header Files\Scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\HarmonicMinorScale.h">
-      <Filter>Header Files\Scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\NaturalMinorScale.h">
-      <Filter>Header Files\Scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\PentatonicMajorScale.h">
-      <Filter>Header Files\Scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\PentatonicMinorScale.h">
-      <Filter>Header Files\Scales</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
