@@ -31,7 +31,7 @@ std::string Music::Object::getNameAsString()
 	return Music::Object::textName;
 }
 
-Music::ChromaticScalePosition Music::Object::goFullStep()
+Music::ChromaticScalePosition Music::Object::accendFullStep()
 {
 	int index = (int)Music::Object::chromaticScalePosition;
 	double haveSteped = 0;
@@ -47,7 +47,7 @@ Music::ChromaticScalePosition Music::Object::goFullStep()
 
 	return currentNote;
 }
-Music::ChromaticScalePosition Music::Object::goHalfStep()
+Music::ChromaticScalePosition Music::Object::accendHalfStep()
 {
 	int index = (int)Music::Object::chromaticScalePosition;
 	float haveSteped = 0.0;
@@ -63,7 +63,7 @@ Music::ChromaticScalePosition Music::Object::goHalfStep()
 	} while (haveSteped != .5);
 	return currentNote;
 }
-Music::ChromaticScalePosition Music::Object::goStepAndAHalf()
+Music::ChromaticScalePosition Music::Object::accendStepAndAHalf()
 {
 	int index = (int)Music::Object::chromaticScalePosition;
 	float haveSteped = 0.0;

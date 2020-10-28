@@ -17,13 +17,13 @@ namespace Music {
 		Music::ChromaticScalePosition getChromaticScalePosition();
 		std::string getNameAsString();
 
-		Music::ChromaticScalePosition goFullStep();
-		Music::ChromaticScalePosition goHalfStep();
-		Music::ChromaticScalePosition goStepAndAHalf();
+		Music::ChromaticScalePosition accendFullStep();
+		Music::ChromaticScalePosition accendHalfStep();
+		Music::ChromaticScalePosition accendStepAndAHalf();
 
 	protected:
-		Music::ChromaticScalePosition chromaticScalePosition;
-		std::string textName;
+		const Music::ChromaticScalePosition chromaticScalePosition;
+		const std::string textName;
 
 		static Music::ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
 		static Music::ChromaticScalePosition GetPositionFromChromaticScale(int note);

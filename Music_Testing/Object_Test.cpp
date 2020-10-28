@@ -341,9 +341,9 @@ namespace Object_Test
 			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
 
 			//Act
-			A = A.goHalfStep();
+			Object halfStepUpFromA = A.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromA.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(AsBf_goHalfStep_Test)
@@ -351,9 +351,9 @@ namespace Object_Test
 			Object AsBf = Object(ChromaticScalePosition::AsBf);
 			ChromaticScalePosition expected = ChromaticScalePosition::B;
 
-			AsBf = AsBf.goHalfStep();
+			Object halfStepUpFromAsBf = AsBf.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromAsBf.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(B_goHalfStep_Test)
@@ -361,27 +361,27 @@ namespace Object_Test
 			Object B = Object(ChromaticScalePosition::B);
 			ChromaticScalePosition expected = ChromaticScalePosition::C;
 
-			B = B.goHalfStep();
+			Object halfStepUpFromB = B.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromB.getChromaticScalePosition());
 		}
 		TEST_METHOD(C_goHalfStep_Test)
 		{
 			Object C = Object(ChromaticScalePosition::C);
 			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
 
-			C = C.goHalfStep();
+			Object halfStepUpFromC = C.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromC.getChromaticScalePosition());
 		}
 		TEST_METHOD(CsDf_goHalfStep_Test)
 		{
 			Object CsDf = Object(ChromaticScalePosition::CsDf);
 			ChromaticScalePosition expected = ChromaticScalePosition::D;
 
-			CsDf = CsDf.goHalfStep();
+			Object halfStepUpFromCsDf = CsDf.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromCsDf.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(D_goHalfStep_Test)
@@ -389,9 +389,9 @@ namespace Object_Test
 			Object D = Object(ChromaticScalePosition::D);
 			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
 
-			D = D.goHalfStep();
+			Object halfStepUpFromD = D.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromD.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(DsEf_goHalfStep_Test)
@@ -399,18 +399,18 @@ namespace Object_Test
 			Object DsEf = Object(ChromaticScalePosition::DsEf);
 			ChromaticScalePosition expected = ChromaticScalePosition::E;
 
-			DsEf = DsEf.goHalfStep();
+			Object halfStepUpFromDsEf = DsEf.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromDsEf.getChromaticScalePosition());
 		}
 		TEST_METHOD(E_goHalfStep_Test)
 		{
 			Object E = Object(ChromaticScalePosition::E);
 			ChromaticScalePosition expected = ChromaticScalePosition::F;
 
-			E = E.goHalfStep();
+			Object halfStepUpFromE = E.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromE.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(F_goHalfStep_Test)
@@ -418,9 +418,9 @@ namespace Object_Test
 			Object F = Object(ChromaticScalePosition::F);
 			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
 
-			F = F.goHalfStep();
+			Object halfStepUpFromF = F.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromF.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(FsGf_ConstructorWithEnum_Test)
@@ -428,18 +428,18 @@ namespace Object_Test
 			Object FsGf = Object(ChromaticScalePosition::FsGf);
 			ChromaticScalePosition expected = ChromaticScalePosition::G;
 
-			FsGf = FsGf.goHalfStep();
+			Object halfStepUpFromFsGf = FsGf.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromFsGf.getChromaticScalePosition());
 		}
 		TEST_METHOD(G_goHalfStep_Test)
 		{
 			Object G = Object(ChromaticScalePosition::G);
 			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
 
-			G = G.goHalfStep();
+			Object halfStepUpFromG = G.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromG.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(GsAf_goHalfStep_Test)
@@ -447,9 +447,9 @@ namespace Object_Test
 			Object GsAf = Object(ChromaticScalePosition::GsAf);
 			ChromaticScalePosition expected = ChromaticScalePosition::A;
 
-			GsAf = GsAf.goHalfStep();
+			Object halfStepUpFromGsAf = GsAf.accendHalfStep();
 
-			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)halfStepUpFromGsAf.getChromaticScalePosition());
 		}
 	};
 	TEST_CLASS(goFullStep_Test)
@@ -461,9 +461,9 @@ namespace Object_Test
 			ChromaticScalePosition expected = ChromaticScalePosition::B;
 
 			//Act
-			A = A.goFullStep();
+			Object fullStepUpFromA = A.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromA.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(AsBf_goFullStep_Test)
@@ -471,9 +471,9 @@ namespace Object_Test
 			Object AsBf = Object(ChromaticScalePosition::AsBf);
 			ChromaticScalePosition expected = ChromaticScalePosition::C;
 
-			AsBf = AsBf.goFullStep();
+			Object fullStepUpFromAsBf = AsBf.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromAsBf.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(B_goFullStep_Test)
@@ -481,27 +481,27 @@ namespace Object_Test
 			Object B = Object(ChromaticScalePosition::B);
 			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
 
-			B = B.goFullStep();
+			Object fullStepUpFromB = B.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromB.getChromaticScalePosition());
 		}
 		TEST_METHOD(C_goFullStep_Test)
 		{
 			Object C = Object(ChromaticScalePosition::C);
 			ChromaticScalePosition expected = ChromaticScalePosition::D;
 
-			C = C.goFullStep();
+			Object fullStepUpFromC = C.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromC.getChromaticScalePosition());
 		}
 		TEST_METHOD(CsDf_goFullStep_Test)
 		{
 			Object CsDf = Object(ChromaticScalePosition::CsDf);
 			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
 
-			CsDf = CsDf.goFullStep();
+			Object fullStepUpFromCsDf = CsDf.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromCsDf.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(D_goFullStep_Test)
@@ -509,9 +509,9 @@ namespace Object_Test
 			Object D = Object(ChromaticScalePosition::D);
 			ChromaticScalePosition expected = ChromaticScalePosition::E;
 
-			D = D.goFullStep();
+			Object fullStepUpFromD = D.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromD.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(DsEf_goFullStep_Test)
@@ -519,18 +519,18 @@ namespace Object_Test
 			Object DsEf = Object(ChromaticScalePosition::DsEf);
 			ChromaticScalePosition expected = ChromaticScalePosition::F;
 
-			DsEf = DsEf.goFullStep();
+			Object fullStepUpFromDsEf = DsEf.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromDsEf.getChromaticScalePosition());
 		}
 		TEST_METHOD(E_goFullStep_Test)
 		{
 			Object E = Object(ChromaticScalePosition::E);
 			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
 
-			E = E.goFullStep();
+			Object fullStepUpFromE = E.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromE.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(F_goFullStep_Test)
@@ -538,9 +538,9 @@ namespace Object_Test
 			Object F = Object(ChromaticScalePosition::F);
 			ChromaticScalePosition expected = ChromaticScalePosition::G;
 
-			F = F.goFullStep();
+			Object fullStepUpFromF = F.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromF.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(FsGf_goFullStep_Test)
@@ -548,18 +548,18 @@ namespace Object_Test
 			Object FsGf = Object(ChromaticScalePosition::FsGf);
 			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
 
-			FsGf = FsGf.goFullStep();
+			Object fullStepUpFromFsGf = FsGf.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromFsGf.getChromaticScalePosition());
 		}
 		TEST_METHOD(G_goFullStep_Test)
 		{
 			Object G = Object(ChromaticScalePosition::G);
 			ChromaticScalePosition expected = ChromaticScalePosition::A;
 
-			G = G.goFullStep();
+			Object fullStepUpFromG = G.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromG.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(GsAf_goFullStep_Test)
@@ -567,9 +567,9 @@ namespace Object_Test
 			Object GsAf = Object(ChromaticScalePosition::GsAf);
 			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
 
-			GsAf = GsAf.goFullStep();
+			Object fullStepUpFromGsAf = GsAf.accendFullStep();
 
-			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)fullStepUpFromGsAf.getChromaticScalePosition());
 		}
 	};
 	TEST_CLASS(goStepAndAHalf_Test)
@@ -581,9 +581,9 @@ namespace Object_Test
 			ChromaticScalePosition expected = ChromaticScalePosition::C;
 
 			//Act
-			A = A.goStepAndAHalf();
+			Object stepAndAHalfUpFromA = A.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromA.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(AsBf_goStepAndAHalf_Test)
@@ -591,9 +591,9 @@ namespace Object_Test
 			Object AsBf = Object(ChromaticScalePosition::AsBf);
 			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
 
-			AsBf = AsBf.goStepAndAHalf();
+			Object stepAndAHalfUpFromAsBf = AsBf.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromAsBf.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(B_goStepAndAHalf_Test)
@@ -601,27 +601,27 @@ namespace Object_Test
 			Object B = Object(ChromaticScalePosition::B);
 			ChromaticScalePosition expected = ChromaticScalePosition::D;
 
-			B = B.goStepAndAHalf();
+			Object stepAndAHalfUpFromB = B.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromB.getChromaticScalePosition());
 		}
 		TEST_METHOD(C_goStepAndAHalf_Test)
 		{
 			Object C = Object(ChromaticScalePosition::C);
 			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
 
-			C = C.goStepAndAHalf();
+			Object stepAndAHalfUpFromC = C.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromC.getChromaticScalePosition());
 		}
 		TEST_METHOD(CsDf_goStepAndAHalf_Test)
 		{
 			Object CsDf = Object(ChromaticScalePosition::CsDf);
 			ChromaticScalePosition expected = ChromaticScalePosition::E;
 
-			CsDf = CsDf.goStepAndAHalf();
+			Object stepAndAHalfUpFromCsDf = CsDf.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromCsDf.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(D_goStepAndAHalf_Test)
@@ -629,9 +629,9 @@ namespace Object_Test
 			Object D = Object(ChromaticScalePosition::D);
 			ChromaticScalePosition expected = ChromaticScalePosition::F;
 
-			D = D.goStepAndAHalf();
+			Object stepAndAHalfUpFromD = D.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromD.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(DsEf_goStepAndAHalf_Test)
@@ -639,18 +639,18 @@ namespace Object_Test
 			Object DsEf = Object(ChromaticScalePosition::DsEf);
 			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
 
-			DsEf = DsEf.goStepAndAHalf();
+			Object stepAndAHalfUpFromDsEf = DsEf.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromDsEf.getChromaticScalePosition());
 		}
 		TEST_METHOD(E_goStepAndAHalf_Test)
 		{
 			Object E = Object(ChromaticScalePosition::E);
 			ChromaticScalePosition expected = ChromaticScalePosition::G;
 
-			E = E.goStepAndAHalf();
+			Object stepAndAHalfUpFromE = E.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromE.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(F_goStepAndAHalf_Test)
@@ -658,9 +658,9 @@ namespace Object_Test
 			Object F = Object(ChromaticScalePosition::F);
 			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
 
-			F = F.goStepAndAHalf();
+			Object stepAndAHalfUpFromF = F.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromF.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(FsGf_goStepAndAHalf_Test)
@@ -668,18 +668,18 @@ namespace Object_Test
 			Object FsGf = Object(ChromaticScalePosition::FsGf);
 			ChromaticScalePosition expected = ChromaticScalePosition::A;
 
-			FsGf = FsGf.goStepAndAHalf();
+			Object stepAndAHalfUpFromFsGf = FsGf.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromFsGf.getChromaticScalePosition());
 		}
 		TEST_METHOD(G_goStepAndAHalf_Test)
 		{
 			Object G = Object(ChromaticScalePosition::G);
 			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
 
-			G = G.goStepAndAHalf();
+			Object stepAndAHalfUpFromG = G.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromG.getChromaticScalePosition());
 
 		}
 		TEST_METHOD(GsAf_goStepAndAHalf_Test)
@@ -687,9 +687,9 @@ namespace Object_Test
 			Object GsAf = Object(ChromaticScalePosition::GsAf);
 			ChromaticScalePosition expected = ChromaticScalePosition::B;
 
-			GsAf = GsAf.goStepAndAHalf();
+			Object stepAndAHalfUpFromGsAf = GsAf.accendStepAndAHalf();
 
-			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromGsAf.getChromaticScalePosition());
 		}
 	};
 	TEST_CLASS(getPositionAsString_Test)
