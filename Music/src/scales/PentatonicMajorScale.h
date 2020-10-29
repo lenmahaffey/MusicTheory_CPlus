@@ -5,7 +5,7 @@ namespace Music {
 	{
 	public:
 		Music::PentatonicMajorScale() = default;
-		Music::PentatonicMajorScale(Music::ChromaticScale note);
+		Music::PentatonicMajorScale(Music::ChromaticScalePosition note);
 		Music::PentatonicMajorScale(int noteIndex);
 		Music::PentatonicMajorScale(char note);
 
@@ -17,9 +17,7 @@ namespace Music {
 			Music::Step::Whole,
 			Music::Step::Whole,
 			Music::Step::WholeandAHalf,
-			Music::Step::Whole,
-			Music::Step::NONE,
-			Music::Step::NONE
+			Music::Step::Whole
 		};
 	};
 }

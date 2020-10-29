@@ -7,38 +7,599 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
 using namespace Music;
 
-namespace Music_Testing
+namespace Scale_Test
 {
-	TEST_CLASS(Scale_Test)
+	TEST_CLASS(ConstructorWithPosition_Test)
 	{
-		TEST_METHOD(Scale_Constructor_Test)
+		TEST_METHOD(A_ConstructorWithPosition_Test)
 		{
 			Music::Step pattern[7] =
 			{
-				Music::Step::Whole,
-				Music::Step::Whole,
-				Music::Step::Whole,
-				Music::Step::Half,
-				Music::Step::Whole,
-				Music::Step::Whole,
-				Music::Step::Whole
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
 			};
+			Scale A = Scale(ChromaticScalePosition::A, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::A;
+			Assert::AreEqual((int)expected, (int)A.getPosition());
 
-			string expectedFromEnumWithPattern = "A";
-			string expectedFromIntWithPattern = "C";
-			string expectedFromCharWithPattern = "F";
-
-
-			Scale fromEnumWithPattern = Scale(ChromaticScale::A, pattern, true);
-			Scale fromIntWithPattern = Scale(3, pattern, true);
+			/*Scale fromIntWithPattern = Scale(4, pattern, true);
 			Scale fromCharWithPattern = Scale('F', pattern, true);
-
-
-			Assert::AreEqual(expectedFromEnumWithPattern, fromEnumWithPattern.getTextName());
-			Assert::AreEqual(expectedFromIntWithPattern, fromIntWithPattern.getTextName());
-			Assert::AreEqual(expectedFromCharWithPattern, fromCharWithPattern.getTextName());
+			Assert::AreEqual(expectedFromIntWithPattern, fromIntWithPattern.getNameAsString());
+			Assert::AreEqual(expectedFromCharWithPattern, fromCharWithPattern.getNameAsString());*/
 		}
-
+		TEST_METHOD(AsBf_ConstructorFromPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale AsBf = Scale(ChromaticScalePosition::AsBf, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::AsBf;
+			Assert::AreEqual((int)expected, (int)AsBf.getPosition());
+		}
+		TEST_METHOD(B_ConstructorFromPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale B = Scale(ChromaticScalePosition::B, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::B;
+			Assert::AreEqual((int)expected, (int)B.getPosition());
+		}
+		TEST_METHOD(C_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale C = Scale(ChromaticScalePosition::C, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::C;
+			Assert::AreEqual((int)expected, (int)C.getPosition());
+		}
+		TEST_METHOD(CsDf_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale CsDf = Scale(ChromaticScalePosition::CsDf, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::CsDf;
+			Assert::AreEqual((int)expected, (int)CsDf.getPosition());
+		}
+		TEST_METHOD(D_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale D = Scale(ChromaticScalePosition::D, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::D;
+			Assert::AreEqual((int)expected, (int)D.getPosition());
+		}
+		TEST_METHOD(DsEf_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale DsEf = Scale(ChromaticScalePosition::DsEf, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::DsEf;
+			Assert::AreEqual((int)expected, (int)DsEf.getPosition());
+		}
+		TEST_METHOD(E_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale E = Scale(ChromaticScalePosition::E, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::E;
+			Assert::AreEqual((int)expected, (int)E.getPosition());
+		}
+		TEST_METHOD(F_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale F = Scale(ChromaticScalePosition::F, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::F;
+			Assert::AreEqual((int)expected, (int)F.getPosition());
+		}
+		TEST_METHOD(FsGf_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale FsGf = Scale(ChromaticScalePosition::FsGf, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::FsGf;
+			Assert::AreEqual((int)expected, (int)FsGf.getPosition());
+		}
+		TEST_METHOD(G_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale G = Scale(ChromaticScalePosition::G, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::G;
+			Assert::AreEqual((int)expected, (int)G.getPosition());
+		}
+		TEST_METHOD(GsAf_ConstructorWithPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale GsAf = Scale(ChromaticScalePosition::GsAf, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::GsAf;
+			Assert::AreEqual((int)expected, (int)GsAf.getPosition());
+		}
+	};
+	TEST_CLASS(ConstructorWithInt_Test)
+	{
+		TEST_METHOD(A_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale A = Scale(1, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::A;
+			Assert::AreEqual((int)expected, (int)A.getPosition());
+		}
+		TEST_METHOD(AsBf_ConstructorFromPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale AsBf = Scale(2, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::AsBf;
+			Assert::AreEqual((int)expected, (int)AsBf.getPosition());
+		}
+		TEST_METHOD(B_ConstructorFromPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale B = Scale(3, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::B;
+			Assert::AreEqual((int)expected, (int)B.getPosition());
+		}
+		TEST_METHOD(C_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale C = Scale(4, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::C;
+			Assert::AreEqual((int)expected, (int)C.getPosition());
+		}
+		TEST_METHOD(CsDf_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale CsDf = Scale(5, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::CsDf;
+			Assert::AreEqual((int)expected, (int)CsDf.getPosition());
+		}
+		TEST_METHOD(D_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale D = Scale(6, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::D;
+			Assert::AreEqual((int)expected, (int)D.getPosition());
+		}
+		TEST_METHOD(DsEf_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale DsEf = Scale(7, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::DsEf;
+			Assert::AreEqual((int)expected, (int)DsEf.getPosition());
+		}
+		TEST_METHOD(E_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale E = Scale(8, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::E;
+			Assert::AreEqual((int)expected, (int)E.getPosition());
+		}
+		TEST_METHOD(F_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale F = Scale(9, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::F;
+			Assert::AreEqual((int)expected, (int)F.getPosition());
+		}
+		TEST_METHOD(FsGf_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale FsGf = Scale(10, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::FsGf;
+			Assert::AreEqual((int)expected, (int)FsGf.getPosition());
+		}
+		TEST_METHOD(G_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale G = Scale(11, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::G;
+			Assert::AreEqual((int)expected, (int)G.getPosition());
+		}
+		TEST_METHOD(GsAf_ConstructorWithInt_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale GsAf = Scale(12, pattern, true);
+			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::GsAf;
+			Assert::AreEqual((int)expected, (int)GsAf.getPosition());
+		}
+	};
+	TEST_CLASS(ConstructorWithString_Test)
+	{
+		TEST_METHOD(A_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale A = Scale(ChromaticScalePosition::A, pattern, true);
+			std::string expected = "A";
+			Assert::AreEqual(expected, A.getNameAsString());
+		}
+		TEST_METHOD(AsBf_ConstructorFromPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale AsBf = Scale(ChromaticScalePosition::AsBf, pattern, true);
+			std::string expected = "AsBf";
+			Assert::AreEqual(expected, AsBf.getNameAsString());
+		}
+		TEST_METHOD(B_ConstructorFromPosition_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale B = Scale(ChromaticScalePosition::B, pattern, true);
+			std::string expected = "B";
+			Assert::AreEqual(expected, B.getNameAsString());
+		}
+		TEST_METHOD(C_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale C = Scale(ChromaticScalePosition::C, pattern, true);
+			std::string expected = "C";
+			Assert::AreEqual(expected, C.getNameAsString());
+		}
+		TEST_METHOD(CsDf_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale CsDf = Scale(ChromaticScalePosition::CsDf, pattern, true);
+			std::string expected = "CsDf";
+			Assert::AreEqual(expected, CsDf.getNameAsString());
+		}
+		TEST_METHOD(D_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale D = Scale(ChromaticScalePosition::D, pattern, true);
+			std::string expected = "D";
+			Assert::AreEqual(expected, D.getNameAsString());
+		}
+		TEST_METHOD(DsEf_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale DsEf = Scale(ChromaticScalePosition::DsEf, pattern, true);
+			std::string expected = "DsEf";
+			Assert::AreEqual(expected, DsEf.getNameAsString());
+		}
+		TEST_METHOD(E_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale E = Scale(ChromaticScalePosition::E, pattern, true);
+			std::string expected = "E";
+			Assert::AreEqual(expected, E.getNameAsString());
+		}
+		TEST_METHOD(F_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale F = Scale(ChromaticScalePosition::F, pattern, true);
+			std::string expected = "F";
+			Assert::AreEqual(expected, F.getNameAsString());
+		}
+		TEST_METHOD(FsGf_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale FsGf = Scale(ChromaticScalePosition::FsGf, pattern, true);
+			std::string expected = "FsGf";
+			Assert::AreEqual(expected, FsGf.getNameAsString());
+		}
+		TEST_METHOD(G_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale G = Scale(ChromaticScalePosition::G, pattern, true);
+			std::string expected = "G";
+			Assert::AreEqual(expected, G.getNameAsString());
+		}
+		TEST_METHOD(GsAf_ConstructorWithString_Test)
+		{
+			Music::Step pattern[7] =
+			{
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE
+			};
+			Scale GsAf = Scale(ChromaticScalePosition::GsAf, pattern, true);
+			std::string expected = "GsAf";
+			Assert::AreEqual(expected, GsAf.getNameAsString());
+		}
+	};
+	TEST_CLASS(getScaleAsString_Test){
 		TEST_METHOD(AMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -56,13 +617,12 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::A, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::A, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 
 		}
-
 		TEST_METHOD(BMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -80,12 +640,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::B, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::B, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(CMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -103,12 +662,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::C, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::C, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(DMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -126,12 +684,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::D, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::D, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(EMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -149,12 +706,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::E, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::E, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(FMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -172,12 +728,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::F, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::F, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(GMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -195,12 +750,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::G, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::G, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(AsBfMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -218,12 +772,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::AsBf, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::AsBf, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(CsDfMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -240,12 +793,11 @@ namespace Music_Testing
 			string expected = "CsDf DsEf F FsGf GsAf AsBf C";
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::CsDf, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::CsDf, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(DsEfMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -263,12 +815,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::DsEf, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::DsEf, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(FsGfMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -286,12 +837,11 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::FsGf, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::FsGf, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
-
 		TEST_METHOD(GsAfMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -309,7 +859,7 @@ namespace Music_Testing
 
 
 			//Act
-			Scale scaleToTest = Scale(ChromaticScale::GsAf, pattern, true);
+			Scale scaleToTest = Scale(ChromaticScalePosition::GsAf, pattern, true);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());

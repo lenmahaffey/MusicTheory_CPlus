@@ -11,24 +11,6 @@ namespace Music_Testing
 {
 	TEST_CLASS(MajorScale_Test)
 	{
-	public:
-
-		TEST_METHOD(Scale_Constructor_Test)
-		{
-			string expectedFromEnum = "A";
-			string expectedFromInt = "C";
-			string expectedFromChar = "F";
-
-			MajorScale fromEnum = MajorScale(ChromaticScale::A);
-			MajorScale fromInt = MajorScale(3);
-			MajorScale fromChar = MajorScale('F');
-
-			Assert::AreEqual(expectedFromEnum, fromEnum.getTextName());
-			Assert::AreEqual(expectedFromInt, fromInt.getTextName());
-			Assert::AreEqual(expectedFromChar, fromChar.getTextName());
-
-		}
-
 		TEST_METHOD(AMajor_getScaleAsString_Test)
 		{
 			//Arrange
@@ -36,7 +18,7 @@ namespace Music_Testing
 
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::A);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::A);
 
 
 			//Assert
@@ -51,7 +33,7 @@ namespace Music_Testing
 			string expected = "B CsDf DsEf E FsGf GsAf AsBf";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::B);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::B);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -64,7 +46,7 @@ namespace Music_Testing
 			string expected = "C D E F G A B";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::C);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::C);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -76,7 +58,7 @@ namespace Music_Testing
 			string expected = "D E FsGf G A B CsDf";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::D);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::D);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -88,7 +70,7 @@ namespace Music_Testing
 			string expected = "E FsGf GsAf A B CsDf DsEf";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::E);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::E);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -100,7 +82,7 @@ namespace Music_Testing
 			string expected = "F G A AsBf C D E";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::F);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::F);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -112,7 +94,7 @@ namespace Music_Testing
 			string expected = "G A B C D E FsGf";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::G);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::G);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -124,7 +106,7 @@ namespace Music_Testing
 			string expected = "AsBf C D DsEf F G A";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::AsBf);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::AsBf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -136,7 +118,7 @@ namespace Music_Testing
 			string expected = "CsDf DsEf F FsGf GsAf AsBf C";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::CsDf);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::CsDf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -148,7 +130,7 @@ namespace Music_Testing
 			string expected = "DsEf F G GsAf AsBf C D";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::DsEf);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::DsEf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -160,7 +142,7 @@ namespace Music_Testing
 			string expected = "FsGf GsAf AsBf B CsDf DsEf F";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::FsGf);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::FsGf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -172,7 +154,7 @@ namespace Music_Testing
 			string expected = "GsAf AsBf C CsDf DsEf F G";
 
 			//Act
-			MajorScale scaleToTest = MajorScale(ChromaticScale::GsAf);
+			MajorScale scaleToTest = MajorScale(ChromaticScalePosition::GsAf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());

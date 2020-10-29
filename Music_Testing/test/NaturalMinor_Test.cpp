@@ -19,7 +19,7 @@ namespace Music_Testing
 			string expectedString = "A B C D E F G";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::A);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::A);
 
 			//Assert
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
@@ -31,7 +31,7 @@ namespace Music_Testing
 			string expected = "B CsDf D E FsGf G A";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::B);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::B);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -44,7 +44,7 @@ namespace Music_Testing
 			string expected = "C D DsEf F G GsAf AsBf";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::C);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::C);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -57,7 +57,7 @@ namespace Music_Testing
 
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::D);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::D);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -69,7 +69,7 @@ namespace Music_Testing
 			string expected = "E FsGf G A B C D";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::E);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::E);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -81,7 +81,7 @@ namespace Music_Testing
 			string expected = "F G GsAf AsBf C CsDf DsEf";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::F);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::F);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -93,7 +93,7 @@ namespace Music_Testing
 			string expected = "G A AsBf C D DsEf F";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::G);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::G);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -106,7 +106,7 @@ namespace Music_Testing
 
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::AsBf);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::AsBf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -118,7 +118,7 @@ namespace Music_Testing
 			string expected = "CsDf DsEf E FsGf GsAf A B";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::CsDf);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::CsDf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -130,7 +130,7 @@ namespace Music_Testing
 			string expected = "DsEf F FsGf GsAf AsBf B CsDf";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::DsEf);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::DsEf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -142,7 +142,7 @@ namespace Music_Testing
 			string expected = "FsGf GsAf A B CsDf D E";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::FsGf);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::FsGf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -154,7 +154,7 @@ namespace Music_Testing
 			string expected = "GsAf AsBf B CsDf DsEf E FsGf";
 
 			//Act
-			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScale::GsAf);
+			NaturalMinorScale scaleToTest = NaturalMinorScale(ChromaticScalePosition::GsAf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());

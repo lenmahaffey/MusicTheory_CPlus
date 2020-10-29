@@ -7,7 +7,7 @@ namespace Music {
     {
 	public:
 		Music::NaturalMinorScale() = default;
-		Music::NaturalMinorScale(Music::ChromaticScale note);
+		Music::NaturalMinorScale(Music::ChromaticScalePosition note);
 		Music::NaturalMinorScale(int noteIndex);
 		Music::NaturalMinorScale(char note);
 

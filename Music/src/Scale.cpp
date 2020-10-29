@@ -5,7 +5,7 @@
 Music::Scale::Scale(Music::ChromaticScalePosition note, Music::Step (&pattern)[7], bool isMajor) :
 	Music::Object(note),
 	pattern{pattern},
-	scale{ Music::Note(Music::ChromaticScalePosition::NONE)},
+	scale(),
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
 {
@@ -15,12 +15,24 @@ Music::Scale::Scale(Music::ChromaticScalePosition note, Music::Step (&pattern)[7
 Music::Scale::Scale(int note, Music::Step(&pattern)[7], bool isMajor) :
 	Object(note),
 	pattern{ pattern },
+	scale(),
+	isMajor(isMajor),
+	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+{
+		Music::Scale::setScale(Music::Scale::getPosition());
+}
+
+Music::Scale::Scale(std::string note, Music::Step(&pattern)[7], bool isMajor) :
+	Object(note),
+	pattern{ pattern },
 	scale{ Music::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
-	{
-		Music::Scale::setScale(Music::Scale::getPosition());
-	}
+{
+	Music::Scale::setScale(Music::Scale::getPosition());
+}
+
+
 
 //Accessors
 
@@ -42,7 +54,7 @@ std::string Music::Scale::getScaleAsString()
 	std::string s;
 	for (Music::Note note : Music::Scale::scale)
 	{
-		if (note.getNameAsString() != "") {
+		if (note.getNameAsString() != "NONE") {
 			s += note.getNameAsString();
 			s += " ";
 		}

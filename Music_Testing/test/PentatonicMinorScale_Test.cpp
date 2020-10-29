@@ -19,7 +19,7 @@ namespace Music_Testing
 			string expectedString = "A C D E G";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::A);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::A);
 
 			//Assert
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
@@ -32,7 +32,7 @@ namespace Music_Testing
 			string expected = "B D E FsGf A";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::B);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::B);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -45,7 +45,7 @@ namespace Music_Testing
 			string expected = "C DsEf F G AsBf";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::C);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::C);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -57,7 +57,7 @@ namespace Music_Testing
 			string expected = "D F G A C";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::D);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::D);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -69,7 +69,7 @@ namespace Music_Testing
 			string expected = "E G A B D";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::E);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::E);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -81,7 +81,7 @@ namespace Music_Testing
 			string expected = "F GsAf AsBf C DsEf";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::F);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::F);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -93,7 +93,7 @@ namespace Music_Testing
 			string expected = "G AsBf C D F";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::G);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::G);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -105,7 +105,7 @@ namespace Music_Testing
 			string expected = "AsBf CsDf DsEf F GsAf";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::AsBf);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::AsBf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -117,7 +117,7 @@ namespace Music_Testing
 			string expected = "CsDf E FsGf GsAf B";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::CsDf);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::CsDf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -129,7 +129,7 @@ namespace Music_Testing
 			string expected = "DsEf FsGf GsAf AsBf CsDf";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::DsEf);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::DsEf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -141,7 +141,7 @@ namespace Music_Testing
 			string expected = "FsGf A B CsDf E";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::FsGf);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::FsGf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -153,7 +153,7 @@ namespace Music_Testing
 			string expected = "GsAf B CsDf DsEf FsGf";
 
 			//Act
-			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScale::GsAf);
+			PentatonicMinorScale scaleToTest = PentatonicMinorScale(ChromaticScalePosition::GsAf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());

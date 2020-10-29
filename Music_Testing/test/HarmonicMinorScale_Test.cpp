@@ -8,19 +8,17 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
 using namespace Music;
 
-namespace Music_Testing
+namespace Scale_Test
 {
 	TEST_CLASS(HarmonicMinorScale_Test)
 	{
-	public:
-
 		TEST_METHOD(AHarmonicMinor_getScaleAsString_Test)
 		{
 			//Arrange
 			string expectedString = "A B C D E F GsAf";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::A);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::A);
 
 			//Assert
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
@@ -32,7 +30,7 @@ namespace Music_Testing
 			string expected = "B CsDf D E FsGf G AsBf";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::B);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::B);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -44,7 +42,7 @@ namespace Music_Testing
 			string expected = "C D DsEf F G GsAf B";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::C);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::C);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -56,7 +54,7 @@ namespace Music_Testing
 			string expected = "D E F G A AsBf CsDf";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::D);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::D);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -68,7 +66,7 @@ namespace Music_Testing
 			string expected = "E FsGf G A B C DsEf";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::E);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::E);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -80,7 +78,7 @@ namespace Music_Testing
 			string expected = "F G GsAf AsBf C CsDf E";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::F);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::F);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -92,7 +90,7 @@ namespace Music_Testing
 			string expected = "G A AsBf C D DsEf FsGf";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::G);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::G);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -104,7 +102,7 @@ namespace Music_Testing
 			string expected = "AsBf C CsDf DsEf F FsGf A";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::AsBf);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::AsBf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -116,7 +114,7 @@ namespace Music_Testing
 			string expected = "CsDf DsEf E FsGf GsAf A C";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::CsDf);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::CsDf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -128,7 +126,7 @@ namespace Music_Testing
 			string expected = "DsEf F FsGf GsAf AsBf B D";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::DsEf);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::DsEf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -140,7 +138,7 @@ namespace Music_Testing
 			string expected = "FsGf GsAf A B CsDf D F";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::FsGf);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::FsGf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
@@ -152,7 +150,7 @@ namespace Music_Testing
 			string expected = "GsAf AsBf B CsDf DsEf E G";
 
 			//Act
-			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScale::GsAf);
+			HarmonicMinorScale scaleToTest = HarmonicMinorScale(ChromaticScalePosition::GsAf);
 
 			//Assert
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());

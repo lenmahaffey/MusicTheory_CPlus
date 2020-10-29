@@ -17,9 +17,7 @@ namespace Music {
 			Music::Step::WholeandAHalf,
 			Music::Step::Whole,
 			Music::Step::Whole,
-			Music::Step::WholeandAHalf,
-			Music::Step::NONE,
-			Music::Step::NONE
+			Music::Step::WholeandAHalf
 		};
 	};
 }

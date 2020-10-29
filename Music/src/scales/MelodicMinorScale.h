@@ -7,7 +7,7 @@ namespace Music {
 	{
 	public:
 		Music::MelodicMinorScale() = default;
-		Music::MelodicMinorScale(Music::ChromaticScale note);
+		Music::MelodicMinorScale(Music::ChromaticScalePosition note);
 		Music::MelodicMinorScale(int noteIndex);
 		Music::MelodicMinorScale(char note);
 
