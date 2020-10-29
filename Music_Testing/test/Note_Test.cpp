@@ -18,73 +18,73 @@ namespace Note_Testing
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::A;
 			Note A = Note(ChromaticScalePosition::A);
-			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)A.getPosition());
 		}
 		TEST_METHOD(AsBf_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
 			Note AsBf = Note(ChromaticScalePosition::AsBf);
-			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)AsBf.getPosition());
 		}
 		TEST_METHOD(B_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::B;
 			Note B = Note(ChromaticScalePosition::B);
-			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)B.getPosition());
 		}
 		TEST_METHOD(C_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::C;
 			Note C = Note(ChromaticScalePosition::C);
-			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)C.getPosition());
 		}
 		TEST_METHOD(CsDf_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
 			Note CsDf = Note(ChromaticScalePosition::CsDf);
-			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)CsDf.getPosition());
 		}
 		TEST_METHOD(D_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::D;
 			Note D = Note(ChromaticScalePosition::D);
-			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)D.getPosition());
 		}
 		TEST_METHOD(DsEf_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
 			Note DsEf = Note(ChromaticScalePosition::DsEf);
-			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)DsEf.getPosition());
 		}
 		TEST_METHOD(E_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::E;
 			Note E = Note(ChromaticScalePosition::E);
-			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)E.getPosition());
 		}
 		TEST_METHOD(F_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::F;
 			Note F = Note(ChromaticScalePosition::F);
-			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)F.getPosition());
 		}
 		TEST_METHOD(FsGf_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
 			Note FsGf = Note(ChromaticScalePosition::FsGf);
-			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)FsGf.getPosition());
 		}
 		TEST_METHOD(G_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::G;
 			Note G = Note(ChromaticScalePosition::G);
-			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)G.getPosition());
 		}
 		TEST_METHOD(GsAf_ConstructorFromEnum_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
 			Note GsAf = Note(ChromaticScalePosition::GsAf);
-			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)GsAf.getPosition());
 		}
 	};
 	TEST_CLASS(Constructor_String_Test)
@@ -93,73 +93,73 @@ namespace Note_Testing
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::A;
 			Note A = Note("A");
-			Assert::AreEqual((int)expected, (int)A.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)A.getPosition());
 		}
 		TEST_METHOD(AsBf_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
 			Note AsBf = Note("AsBf");
-			Assert::AreEqual((int)expected, (int)AsBf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)AsBf.getPosition());
 		}
 		TEST_METHOD(B_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::B;
 			Note B = Note("B");
-			Assert::AreEqual((int)expected, (int)B.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)B.getPosition());
 		}
 		TEST_METHOD(C_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::C;
 			Note C = Note("C");
-			Assert::AreEqual((int)expected, (int)C.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)C.getPosition());
 		}
 		TEST_METHOD(CsDf_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
 			Note CsDf = Note("CsDf");
-			Assert::AreEqual((int)expected, (int)CsDf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)CsDf.getPosition());
 		}
 		TEST_METHOD(D_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::D;
 			Note D = Note("D");
-			Assert::AreEqual((int)expected, (int)D.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)D.getPosition());
 		}
 		TEST_METHOD(DsEf_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
 			Note DsEf = Note("DsEf");
-			Assert::AreEqual((int)expected, (int)DsEf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)DsEf.getPosition());
 		}
 		TEST_METHOD(E_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::E;
 			Note E = Note("E");
-			Assert::AreEqual((int)expected, (int)E.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)E.getPosition());
 		}
 		TEST_METHOD(F_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::F;
 			Note F = Note("F");
-			Assert::AreEqual((int)expected, (int)F.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)F.getPosition());
 		}
 		TEST_METHOD(FsGf_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
 			Note FsGf = Note("FsGf");
-			Assert::AreEqual((int)expected, (int)FsGf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)FsGf.getPosition());
 		}
 		TEST_METHOD(G_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::G;
 			Note G = Note("G");
-			Assert::AreEqual((int)expected, (int)G.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)G.getPosition());
 		}
 		TEST_METHOD(GsAf_ConstructorFromString_Test)
 		{
 			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
 			Note GsAf = Note("GsAf");
-			Assert::AreEqual((int)expected, (int)GsAf.getChromaticScalePosition());
+			Assert::AreEqual((int)expected, (int)GsAf.getPosition());
 		}
 	};
 	TEST_CLASS(getWeight_Test)

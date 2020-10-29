@@ -9,18 +9,17 @@ namespace Music{
 	{
 	public:
 		Music::Scale() = default;
-		Music::Scale(Music::ChromaticScalePosition note, const Music::Step (&pattern)[7], const bool isMajor);
-		Music::Scale(int note, const Music::Step(&pattern)[7], const bool isMajor);
-		Music::Scale(char note, const Music::Step(&pattern)[7], const bool isMajor);
+		Music::Scale(Music::ChromaticScalePosition note, Music::Step (&pattern)[7], bool isMajor);
+		Music::Scale(int note, Music::Step(&pattern)[7], bool isMajor);
 
 		std::string getScaleAsString();
 		std::string isMajorOrMinor();
 
 	protected:
-		const Music::Step(&pattern)[7];
+		Music::Step(&pattern)[7];
 		Music::Note scale[7];
-		const int scalePatternLength;
-		const bool isMajor;
+		int scalePatternLength;
+		bool isMajor;
 
 		void setScale(Music::ChromaticScalePosition);
 

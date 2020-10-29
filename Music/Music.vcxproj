@@ -145,11 +145,13 @@
     </ClCompile>
     <ClCompile Include="src\Note.cpp" />
     <ClCompile Include="src\Object.cpp" />
+    <ClCompile Include="src\Scale.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ChromaticScale.h" />
     <ClInclude Include="src\Note.h" />
     <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\Scale.h" />
     <ClInclude Include="src\Step.h" />
     <ClInclude Include="src\Weight.h" />
   </ItemGroup>

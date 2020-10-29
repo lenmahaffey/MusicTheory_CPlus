@@ -2,29 +2,29 @@
 #include "Object.h"
 
 Music::Object::Object() :
-	chromaticScalePosition(Music::ChromaticScalePosition::NONE),
+	position(Music::ChromaticScalePosition::NONE),
 	textName(Music::Object::GetPositionAsString(Music::ChromaticScalePosition::NONE))
 {
 }
 Music::Object::Object(Music::ChromaticScalePosition note) :
-	chromaticScalePosition(note),
+	position(note),
 	textName(Music::Object::GetPositionAsString(note))
 {
 }
 Music::Object::Object(std::string note) :
-	chromaticScalePosition(Music::Object::GetPositionFromChromaticScale(note)),
-	textName(GetPositionAsString(Music::Object::chromaticScalePosition))
+	position(Music::Object::GetPositionFromChromaticScale(note)),
+	textName(GetPositionAsString(Music::Object::position))
 {
 }
 Music::Object::Object(int note) :
-	chromaticScalePosition(Music::Object::GetPositionFromChromaticScale(note)),
+	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::GetPositionFromChromaticScale(note)))
 {
 }
 
-Music::ChromaticScalePosition Music::Object::getChromaticScalePosition()
+Music::ChromaticScalePosition Music::Object::getPosition()
 {
-	return Music::Object::chromaticScalePosition;
+	return Music::Object::position;
 }
 std::string Music::Object::getNameAsString()
 {
@@ -33,9 +33,9 @@ std::string Music::Object::getNameAsString()
 
 Music::ChromaticScalePosition Music::Object::accendHalfStep()
 {
-	int index = (int)Music::Object::chromaticScalePosition;
+	int index = (int)Music::Object::position;
 	int haveSteped = 0;
-	Music::ChromaticScalePosition currentNote = Music::Object::chromaticScalePosition;
+	Music::ChromaticScalePosition currentNote = Music::Object::position;
 	do
 	{
 		index++;
@@ -49,9 +49,9 @@ Music::ChromaticScalePosition Music::Object::accendHalfStep()
 
 Music::ChromaticScalePosition Music::Object::accendFullStep()
 {
-	int index = (int)Music::Object::chromaticScalePosition;
+	int index = (int)Music::Object::position;
 	int haveSteped = 0;
-	Music::ChromaticScalePosition currentNote = Music::Object::chromaticScalePosition;
+	Music::ChromaticScalePosition currentNote = Music::Object::position;
 	do
 	{
 		index++;
@@ -66,9 +66,9 @@ Music::ChromaticScalePosition Music::Object::accendFullStep()
 
 Music::ChromaticScalePosition Music::Object::accendStepAndAHalf()
 {
-	int index = (int)Music::Object::chromaticScalePosition;
+	int index = (int)Music::Object::position;
 	int haveSteped = 0;
-	Music::ChromaticScalePosition currentNote = Music::Object::chromaticScalePosition;
+	Music::ChromaticScalePosition currentNote = Music::Object::position;
 	do
 	{
 		index++;
@@ -109,8 +109,9 @@ Music::ChromaticScalePosition Music::Object::GetPositionFromChromaticScale(std::
 		return Music::ChromaticScalePosition::G;
 	else if (noteAsString == "GsAf")
 		return Music::ChromaticScalePosition::GsAf;
-	//else
+	else
 		//**TODO** implement exception handler
+		return Music::ChromaticScalePosition::NONE;
 }
 
 Music::ChromaticScalePosition Music::Object::GetPositionFromChromaticScale(int noteAsInt)
@@ -145,6 +146,41 @@ Music::ChromaticScalePosition Music::Object::GetPositionFromChromaticScale(int n
 	default:
 		//**TODO** implement exception handler
 		return Music::ChromaticScalePosition::NONE;
+	}
+}
+Music::Weight Music::Object::GetWeightForPosition(Music::ChromaticScalePosition position)
+{
+	switch (position)
+	{
+	case Music::ChromaticScalePosition::NONE:
+		return Music::Weight::NONE;
+	case Music::ChromaticScalePosition::A:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::AsBf:
+		return Music::Weight::Half;
+	case Music::ChromaticScalePosition::B:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::C:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::CsDf:
+		return Music::Weight::Half;
+	case Music::ChromaticScalePosition::D:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::DsEf:
+		return Music::Weight::Half;
+	case Music::ChromaticScalePosition::E:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::F:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::FsGf:
+		return Music::Weight::Half;
+	case Music::ChromaticScalePosition::G:
+		return Music::Weight::Whole;
+	case Music::ChromaticScalePosition::GsAf:
+		return Music::Weight::Half;
+	default:
+		//**TODO** implement exception handler?
+		return Music::Weight::NONE;
 	}
 }
 std::string Music::Object::GetPositionAsString(Music::ChromaticScalePosition note) {
@@ -214,3 +250,48 @@ std::string Music::Object::GetStepAsString(Music::Step step)
 		return "NONE";
 	}
 }
+//
+//bool Music::Object::operator ==(const Music::Object& o1) const
+//{
+//
+//}
+//
+//bool Music::Object::operator !=(const Music::Object& o1) const
+//{
+//
+//}
+//
+//Music::Object Music::Object::operator ++()
+//{
+//
+//}
+//
+//Music::Object Music::Object::operator --()
+//{
+//
+//}
+//Music::Object Music::Object::operator --(int)
+//{
+//
+//}
+//Music::Object Music::Object::operator ++(int)
+//{
+//
+//}
+//
+//bool Music::Object::operator <(const Music::Object& o1)
+//{
+//
+//}
+//bool Music::Object::operator <=(const Music::Object& o1)
+//{
+//
+//}
+//bool Music::Object::operator >(const Music::Object& o1)
+//{
+//
+//}
+//bool Music::Object::operator >=(const Music::Object& o1)
+//{
+//
+//}

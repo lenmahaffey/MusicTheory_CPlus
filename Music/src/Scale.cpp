@@ -2,37 +2,27 @@
 #include "Scale.h"
 
 // Constructors
-Music::Scale::Scale(Music::ChromaticScale note, const Music::Step (&pattern)[7], const bool isMajor) :
-	Object(note),
+Music::Scale::Scale(Music::ChromaticScalePosition note, Music::Step (&pattern)[7], bool isMajor) :
+	Music::Object(note),
 	pattern{pattern},
-	scale{Music::Note()},
+	scale{ Music::Note(Music::ChromaticScalePosition::NONE)},
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
 {
-	Music::Scale::setScale(Music::Scale::getChromaticScalePosition());
+	Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale(int note, const Music::Step(&pattern)[7], const bool isMajor) :
+Music::Scale::Scale(int note, Music::Step(&pattern)[7], bool isMajor) :
 	Object(note),
 	pattern{ pattern },
-	scale{ Music::Note() },
+	scale{ Music::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
 	{
-		Music::Scale::setScale(Music::Scale::getChromaticScalePosition());
+		Music::Scale::setScale(Music::Scale::getPosition());
 	}
 
-Music::Scale::Scale(char note, const Music::Step(&pattern)[7], const bool isMajor) :
-	Object(note),
-	pattern{ pattern },
-	scale{ Music::Note() },
-	isMajor(isMajor),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
-{
-	Music::Scale::setScale(Music::Scale::getChromaticScalePosition());
-}
-
-// Accessors
+//Accessors
 
 std::string Music::Scale::isMajorOrMinor()
 {
@@ -52,8 +42,8 @@ std::string Music::Scale::getScaleAsString()
 	std::string s;
 	for (Music::Note note : Music::Scale::scale)
 	{
-		if (note.getTextName() != "") {
-			s += note.getTextName();
+		if (note.getNameAsString() != "") {
+			s += note.getNameAsString();
 			s += " ";
 		}
 	}
@@ -61,11 +51,10 @@ std::string Music::Scale::getScaleAsString()
 	return s;
 }
 
-void Music::Scale::setScale(Music::ChromaticScale note)
+void Music::Scale::setScale(Music::ChromaticScalePosition note)
 {
-	Music::Scale::scale[0] = 0;
 	Music::Scale::scale[0] = Music::Note(note);
-	Music::ChromaticScale nextNote = Music::Note(note).getChromaticScalePosition();
+	Music::Note nextNote = note;
 	for (int i = 1; i < scalePatternLength; i++) {
 
 		if (Music::Scale::pattern[i] == Music::Step::NONE)
@@ -73,19 +62,19 @@ void Music::Scale::setScale(Music::ChromaticScale note)
 
 		else if (Music::Scale::pattern[i] == Music::Step::Whole)
 		{
-			nextNote = Music::Object::goFullStep(nextNote);
-			Music::Scale::scale[i] = Note(nextNote);
+			nextNote = nextNote.accendFullStep();;
+			Music::Scale::scale[i] = nextNote;
 		}
 
 		else if (Music::Scale::pattern[i] == Music::Step::Half)
 		{
-			nextNote = Music::Object::goHalfStep(nextNote);
+			nextNote = nextNote.accendHalfStep();
 			Music::Scale::scale[i] = Note(nextNote);
 		}
 
 		else if (Music::Scale::pattern[i] == Music::Step::WholeandAHalf)
 		{
-			nextNote = Music::Object::goStepAndAHalf(nextNote);
+			nextNote = nextNote.accendStepAndAHalf();
 			Music::Scale::scale[i] = Note(nextNote);
 		}
 	}

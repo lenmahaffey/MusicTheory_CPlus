@@ -11,8 +11,6 @@ namespace Music_Testing
 {
 	TEST_CLASS(Scale_Test)
 	{
-	public:
-
 		TEST_METHOD(Scale_Constructor_Test)
 		{
 			Music::Step pattern[7] =
