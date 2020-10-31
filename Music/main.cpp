@@ -42,6 +42,10 @@ int main()
 	Note A("A");
 	Note C("C");
 	//char newChar = 'ASFD';
+	cout << A.getNameAsString();
+	++A;
+	cout << A.getNameAsString();
+
 	if (A >= A) {
 		cout << "TRUE";
 	}
