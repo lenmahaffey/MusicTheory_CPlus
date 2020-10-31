@@ -10,7 +10,7 @@ namespace Music {
 	{
 	public:
 		Music::Object();
-		Music::Object(Music::ChromaticScalePosition note);
+		Music::Object(const Music::ChromaticScalePosition note);
 		Music::Object(std::string note);
 		Music::Object(int note);
 
@@ -20,6 +20,9 @@ namespace Music {
 		Music::ChromaticScalePosition accendFullStep();
 		Music::ChromaticScalePosition accendHalfStep();
 		Music::ChromaticScalePosition accendStepAndAHalf();
+
+		const Music::Object& operator=(const Music::Object& otherObject);
+
 		bool operator==(const Music::Object&) const;
 		bool operator !=(const Music::Object&) const;
 		Music::Object operator ++();
@@ -32,8 +35,9 @@ namespace Music {
 		bool operator >=(const Music::Object& o1);
 
 	protected:
-		Music::ChromaticScalePosition position;
-		std::string textName;
+
+		const Music::ChromaticScalePosition position;
+		const std::string textName;
 
 		static Music::ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
 		static Music::ChromaticScalePosition GetPositionFromChromaticScale(int note);

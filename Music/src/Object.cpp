@@ -6,17 +6,17 @@ Music::Object::Object() :
 	textName(Music::Object::GetPositionAsString(Music::ChromaticScalePosition::NONE))
 {
 }
-Music::Object::Object(Music::ChromaticScalePosition note) :
+Music::Object::Object(const Music::ChromaticScalePosition note) :
 	position(note),
 	textName(Music::Object::GetPositionAsString(note))
 {
 }
-Music::Object::Object(std::string note) :
+Music::Object::Object(const std::string note) :
 	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::position))
 {
 }
-Music::Object::Object(int note) :
+Music::Object::Object(const int note) :
 	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::GetPositionFromChromaticScale(note)))
 {
@@ -250,12 +250,27 @@ std::string Music::Object::GetStepAsString(Music::Step step)
 		return "NONE";
 	}
 }
-//
-//bool Music::Object::operator ==(const Music::Object& o1) const
-//{
-//
-//}
-//
+
+const Music::Object& Music::Object::operator=(const Music::Object& otherObject)
+{
+	if (this != &otherObject)
+	{
+		*this = otherObject;
+	}
+	return *this;
+}
+bool Music::Object::operator ==(const Music::Object& other) const
+{
+	if (position == other.position)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 //bool Music::Object::operator !=(const Music::Object& o1) const
 //{
 //

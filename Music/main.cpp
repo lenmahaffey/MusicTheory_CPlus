@@ -37,9 +37,19 @@ int main()
 	//Note As = A.goHalfStep();
 	//cout << As.getTextName() << B.getTextName() << endl;
 
-	Object C = Object(0);
+	//Object C = Object("C");
+	//Object A = Object("A");
+	Note A("C");
+	Note C("C");
 	//char newChar = 'ASFD';
-	cout << C.getNameAsString();
+	if (A == C) {
+		cout << "TRUE";
+	}
+	else
+	{
+		cout << "FALSE";
+	}
+	//cout << C.getNameAsString();
 	return 0;
 }
 

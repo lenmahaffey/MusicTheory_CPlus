@@ -8,20 +8,22 @@ namespace Music{
 	class Scale : public Music::Object
 	{
 	public:
-		Music::Scale() = default;
-		Music::Scale(Music::ChromaticScalePosition position, Music::Step (&pattern)[7], bool isMajor);
-		Music::Scale(int position, Music::Step(&pattern)[7], bool isMajor);
-		Music::Scale(std::string note, Music::Step(&pattern)[7], bool isMajor);
+		Music::Scale();
+		Music::Scale(const Music::ChromaticScalePosition position, const Music::Step (&pattern)[7], const bool isMajor);
+		Music::Scale(const int position, const Music::Step(&pattern)[7], const bool isMajor);
+		Music::Scale(const std::string note, const Music::Step(&pattern)[7], const bool isMajor);
 
 		std::string getScaleAsString();
 		std::string isMajorOrMinor();
 
-	protected:
-		Music::Step(&pattern)[7];
-		Music::Note scale[7];
-		int scalePatternLength;
-		bool isMajor;
+		const Music::Scale& operator=(const Music::Scale& otherObject);
 
+	protected:
+		const Music::Step(&pattern)[7];
+		const int scalePatternLength;
+		const bool isMajor;
+
+		Music::Note scale[7];
 		void setScale(Music::ChromaticScalePosition);
 
 	};
