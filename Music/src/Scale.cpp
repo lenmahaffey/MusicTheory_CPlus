@@ -1,8 +1,8 @@
 #pragma once
 #include "Scale.h"
 
-// Constructors
-Music::Scale::Scale(const Music::ChromaticScalePosition note, const Music::Step (&pattern)[7], const bool isMajor) :
+// ructors
+Music::Scale::Scale( Music::ChromaticScalePosition note,  Music::Step (&pattern)[7],  bool isMajor) :
 	Music::Object(note),
 	pattern{pattern},
 	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
@@ -12,7 +12,7 @@ Music::Scale::Scale(const Music::ChromaticScalePosition note, const Music::Step 
 	Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale(const int note, const Music::Step(&pattern)[7], const bool isMajor) :
+Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool isMajor) :
 	Object(note),
 	pattern{ pattern },
 	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
@@ -22,7 +22,7 @@ Music::Scale::Scale(const int note, const Music::Step(&pattern)[7], const bool i
 		Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale(const std::string note, const Music::Step(&pattern)[7], const bool isMajor) :
+Music::Scale::Scale( std::string note,  Music::Step(&pattern)[7],  bool isMajor) :
 	Object(note),
 	pattern{ pattern },
 	scale{ Music::Note(Music::ChromaticScalePosition::NONE) },
@@ -90,11 +90,11 @@ void Music::Scale::setScale(Music::ChromaticScalePosition note)
 	}
 }
 
-const Music::Scale& Music::Scale::operator=(const Music::Scale& otherScale)
-{
-	if (this != &otherScale)
-	{
-		*this = otherScale;
-	}
-	return *this;
-}
+// Music::Scale& Music::Scale::operator=( Music::Scale otherScale)
+//{
+//	if (this != &otherScale)
+//	{
+//		*this = otherScale;
+//	}
+//	return *this;
+//}

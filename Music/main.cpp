@@ -37,11 +37,13 @@ int main()
 	//Note As = A.goHalfStep();
 	//cout << As.getTextName() << B.getTextName() << endl;
 
-	//Object C = Object("C");
-	//Object A = Object("A");
+	Scale C("C", pattern, true);
+	/*Scale A("A", pattern, true);
+	Object C("C");
+	Object A("A");
 	Note A("A");
 	Note C("C");
-	//char newChar = 'ASFD';
+	char newChar = 'ASFD';
 	cout << A.getNameAsString();
 	++A;
 	cout << A.getNameAsString();
@@ -52,7 +54,7 @@ int main()
 	else
 	{
 		cout << "FALSE";
-	}
+	}*/
 	//cout << C.getNameAsString();
 	return 0;
 }

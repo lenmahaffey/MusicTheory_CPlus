@@ -8,14 +8,14 @@ namespace Music {
 	{
 	public:
 		Music::Note();
-		Music::Note(const Music::ChromaticScalePosition note);
-		Music::Note(const std::string note);
+		Music::Note( Music::ChromaticScalePosition note);
+		Music::Note( std::string note);
 
 		Music::Weight GetWeight();
-		const Music::Note& operator=(const Music::Note& otherObject);
+		//Music::Note& operator=( Music::Note otherObject);
 
 	protected:
-		const Music::Weight weight;
+		 Music::Weight weight;
 	};
 }
 

@@ -7,13 +7,13 @@ Music::Note::Note() :
 {
 }
 
-Music::Note::Note(const Music::ChromaticScalePosition note) :
+Music::Note::Note( Music::ChromaticScalePosition note) :
 	Music::Object(note),
 	weight(Music::Object::GetWeightForPosition(note))
 {
 }
 
-Music::Note::Note(const std::string note) :
+Music::Note::Note( std::string note) :
 	Music::Object(note),
 	weight(Music::Object::GetWeightForPosition(Music::Object::GetPositionFromChromaticScale(note)))
 {
@@ -24,11 +24,12 @@ Music::Weight Music::Note::GetWeight()
 {
 	return Music::Note::weight;
 }
-const Music::Note& Music::Note::operator=(const Music::Note& otherNote)
-{
-	if (this != &otherNote)
-	{
-		*this = otherNote;
-	}
-	return *this;
-}
+
+// Music::Note& Music::Note::operator=( Music::Note otherNote)
+//{
+//	if (this != &otherNote)
+//	{
+//		*this = otherNote;
+//	}
+//	return *this;
+//}

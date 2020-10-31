@@ -6,17 +6,17 @@ Music::Object::Object() :
 	textName(Music::Object::GetPositionAsString(Music::ChromaticScalePosition::NONE))
 {
 }
-Music::Object::Object(const Music::ChromaticScalePosition note) :
+Music::Object::Object( Music::ChromaticScalePosition note) :
 	position(note),
 	textName(Music::Object::GetPositionAsString(note))
 {
 }
-Music::Object::Object(const std::string note) :
+Music::Object::Object( std::string note) :
 	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::position))
 {
 }
-Music::Object::Object(const int note) :
+Music::Object::Object( int note) :
 	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::GetPositionFromChromaticScale(note)))
 {
@@ -251,27 +251,18 @@ std::string Music::Object::GetStepAsString(Music::Step step)
 	}
 }
 
-const Music::Object& Music::Object::operator=(const Music::Object& otherObject)
-{
-	if (this != &otherObject)
-	{
-		*this = otherObject;
-	}
-	return *this;
-}
-bool Music::Object::operator ==(const Music::Object& otherObject)
-{
-	return position == otherObject.position;
-}
-
-bool Music::Object::operator !=(const Music::Object& otherObject)
-{
-	return position != otherObject.position
-}
+// Music::Object& Music::Object::operator=( Music::Object otherObject)
+//{
+//	if (*this != otherObject)
+//	{
+//		*this = otherObject;
+//	}
+//	return *this;
+//}
 
 Music::Object Music::Object::operator ++()
 {
-	Music::Object newObject((int)position + 1);
+	Music::Object newObject = Music::Object((int)position + 1);
 	*this = newObject;
 	return newObject;
 }
@@ -289,19 +280,30 @@ Music::Object Music::Object::operator ++()
 //
 //}
 //
-bool Music::Object::operator <(const Music::Object& otherObject)
+
+bool Music::Object::operator ==( Music::Object& otherObject)
+{
+	return position == otherObject.position;
+}
+
+bool Music::Object::operator !=( Music::Object& otherObject)
+{
+	return position != otherObject.position;
+}
+
+bool Music::Object::operator <( Music::Object& otherObject)
 {
 	return (int)position < (int)otherObject.position;
 }
-bool Music::Object::operator <=(const Music::Object& otherObject)
+bool Music::Object::operator <=( Music::Object& otherObject)
 {
 	return (int)position <= (int)otherObject.position;
 }
-bool Music::Object::operator >(const Music::Object& otherObject)
+bool Music::Object::operator >( Music::Object& otherObject)
 {
 	return (int)position > (int)otherObject.position;
 }
-bool Music::Object::operator >=(const Music::Object& otherObject)
+bool Music::Object::operator >=( Music::Object& otherObject)
 {
 	return (int)position >= (int)otherObject.position;
 }
