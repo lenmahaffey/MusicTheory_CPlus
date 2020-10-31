@@ -23,16 +23,16 @@ namespace Music {
 
 		const Music::Object& operator=(const Music::Object& otherObject);
 
-		bool operator==(const Music::Object&) const;
-		bool operator !=(const Music::Object&) const;
+		bool operator==(const Music::Object&);
+		bool operator !=(const Music::Object&);
 		Music::Object operator ++();
 		Music::Object operator ++(int);
 		Music::Object operator --();
 		Music::Object operator --(int);
-		bool operator <(const Music::Object& o1);
-		bool operator <=(const Music::Object& o1);
-		bool operator >(const Music::Object& o1);
-		bool operator >=(const Music::Object& o1);
+		bool operator <(const Music::Object& otherObject);
+		bool operator <=(const Music::Object& otherObject);
+		bool operator >(const Music::Object& otherObject);
+		bool operator >=(const Music::Object& otherObject);
 
 	protected:
 

@@ -259,9 +259,9 @@ const Music::Object& Music::Object::operator=(const Music::Object& otherObject)
 	}
 	return *this;
 }
-bool Music::Object::operator ==(const Music::Object& other) const
+bool Music::Object::operator ==(const Music::Object& otherObject)
 {
-	if (position == other.position)
+	if (position == otherObject.position)
 	{
 		return true;
 	}
@@ -271,11 +271,18 @@ bool Music::Object::operator ==(const Music::Object& other) const
 	}
 }
 
-//bool Music::Object::operator !=(const Music::Object& o1) const
-//{
-//
-//}
-//
+bool Music::Object::operator !=(const Music::Object& otherObject)
+{
+	if (position != otherObject.position)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 //Music::Object Music::Object::operator ++()
 //{
 //
@@ -294,19 +301,47 @@ bool Music::Object::operator ==(const Music::Object& other) const
 //
 //}
 //
-//bool Music::Object::operator <(const Music::Object& o1)
-//{
-//
-//}
-//bool Music::Object::operator <=(const Music::Object& o1)
-//{
-//
-//}
-//bool Music::Object::operator >(const Music::Object& o1)
-//{
-//
-//}
-//bool Music::Object::operator >=(const Music::Object& o1)
-//{
-//
-//}
+bool Music::Object::operator <(const Music::Object& otherObject)
+{
+	if ((int)position < (int)otherObject.position)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool Music::Object::operator <=(const Music::Object& otherObject)
+{
+	if ((int)position <= (int)otherObject.position)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool Music::Object::operator >(const Music::Object& otherObject)
+{
+	if ((int)position > (int)otherObject.position)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool Music::Object::operator >=(const Music::Object& otherObject)
+{
+	if ((int)position >= (int)otherObject.position)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

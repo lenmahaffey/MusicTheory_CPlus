@@ -39,10 +39,10 @@ int main()
 
 	//Object C = Object("C");
 	//Object A = Object("A");
-	Note A("C");
+	Note A("A");
 	Note C("C");
 	//char newChar = 'ASFD';
-	if (A == C) {
+	if (A >= A) {
 		cout << "TRUE";
 	}
 	else
