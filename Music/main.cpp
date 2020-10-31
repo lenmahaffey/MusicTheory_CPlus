@@ -26,36 +26,6 @@ int main()
 		Music::Step::Whole,
 	};
 
-	//Note A = Note(ChromaticScalePosition::A);
-	//Music::Scale n = Music::Scale(Music::ChromaticScale::A, pattern, true);
-	//Music::MajorScale newMajorScale = Music::MajorScale(Music::ChromaticScale::A);
-	//Music::PentatonicMinorScale newScale = Music::PentatonicMinorScale(Music::ChromaticScale::E);
-	//cout << newScale.getScaleAsString() << endl;
-	//cout << (int)A.getChromaticScalePosition() << endl;
-	//cout << A.getTextName() << endl;
-	//Note B = A.goFullStep();
-	//Note As = A.goHalfStep();
-	//cout << As.getTextName() << B.getTextName() << endl;
-
-	Scale C("C", pattern, true);
-	/*Scale A("A", pattern, true);
-	Object C("C");
-	Object A("A");
-	Note A("A");
-	Note C("C");
-	char newChar = 'ASFD';
-	cout << A.getNameAsString();
-	++A;
-	cout << A.getNameAsString();
-
-	if (A >= A) {
-		cout << "TRUE";
-	}
-	else
-	{
-		cout << "FALSE";
-	}*/
-	//cout << C.getNameAsString();
 	return 0;
 }
 

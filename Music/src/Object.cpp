@@ -1,27 +1,29 @@
 #pragma once
 #include "Object.h"
 
+// Constructors
 Music::Object::Object() :
 	position(Music::ChromaticScalePosition::NONE),
 	textName(Music::Object::GetPositionAsString(Music::ChromaticScalePosition::NONE))
 {
 }
-Music::Object::Object( Music::ChromaticScalePosition note) :
+Music::Object::Object(Music::ChromaticScalePosition note) :
 	position(note),
 	textName(Music::Object::GetPositionAsString(note))
 {
 }
-Music::Object::Object( std::string note) :
+Music::Object::Object(std::string note) :
 	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::position))
 {
 }
-Music::Object::Object( int note) :
+Music::Object::Object(int note) :
 	position(Music::Object::GetPositionFromChromaticScale(note)),
 	textName(GetPositionAsString(Music::Object::GetPositionFromChromaticScale(note)))
 {
 }
 
+//Accessors
 Music::ChromaticScalePosition Music::Object::getPosition()
 {
 	return Music::Object::position;
@@ -31,6 +33,7 @@ std::string Music::Object::getNameAsString()
 	return Music::Object::textName;
 }
 
+//Class Methods
 Music::ChromaticScalePosition Music::Object::accendHalfStep()
 {
 	int index = (int)Music::Object::position;
@@ -46,7 +49,6 @@ Music::ChromaticScalePosition Music::Object::accendHalfStep()
 	} while (haveSteped != 1);
 	return currentNote;
 }
-
 Music::ChromaticScalePosition Music::Object::accendFullStep()
 {
 	int index = (int)Music::Object::position;
@@ -63,7 +65,6 @@ Music::ChromaticScalePosition Music::Object::accendFullStep()
 
 	return currentNote;
 }
-
 Music::ChromaticScalePosition Music::Object::accendStepAndAHalf()
 {
 	int index = (int)Music::Object::position;
@@ -81,6 +82,7 @@ Music::ChromaticScalePosition Music::Object::accendStepAndAHalf()
 	return currentNote;
 }
 
+//Static class functions
 Music::ChromaticScalePosition Music::Object::GetPositionFromChromaticScale(std::string noteAsString)
 {
 	if (noteAsString == "NONE")
@@ -113,7 +115,6 @@ Music::ChromaticScalePosition Music::Object::GetPositionFromChromaticScale(std::
 		//**TODO** implement exception handler
 		return Music::ChromaticScalePosition::NONE;
 }
-
 Music::ChromaticScalePosition Music::Object::GetPositionFromChromaticScale(int noteAsInt)
 {
 	switch (noteAsInt) {
@@ -251,59 +252,54 @@ std::string Music::Object::GetStepAsString(Music::Step step)
 	}
 }
 
-// Music::Object& Music::Object::operator=( Music::Object otherObject)
-//{
-//	if (*this != otherObject)
-//	{
-//		*this = otherObject;
-//	}
-//	return *this;
-//}
-
+//Operator Overloads
 Music::Object Music::Object::operator ++()
 {
 	Music::Object newObject = Music::Object((int)position + 1);
 	*this = newObject;
 	return newObject;
 }
-
-//Music::Object Music::Object::operator --()
-//{
-//
-//}
-//Music::Object Music::Object::operator --(int)
-//{
-//
-//}
-//Music::Object Music::Object::operator ++(int)
-//{
-//
-//}
-//
-
-bool Music::Object::operator ==( Music::Object& otherObject)
+Music::Object Music::Object::operator ++(int)
+{
+	Music::Object temp = *this;
+	Music::Object newObject = Music::Object((int)position + 1);
+	*this = newObject;
+	return temp;
+}
+Music::Object Music::Object::operator --()
+{
+	Music::Object newObject = Music::Object((int)position - 1);
+	*this = newObject;
+	return newObject;
+}
+Music::Object Music::Object::operator --(int)
+{
+	Music::Object temp = *this;
+	Music::Object newObject = Music::Object((int)position - 1);
+	*this = newObject;
+	return temp;
+}
+bool Music::Object::operator ==( Music::Object otherObject)
 {
 	return position == otherObject.position;
 }
-
-bool Music::Object::operator !=( Music::Object& otherObject)
+bool Music::Object::operator !=( Music::Object otherObject)
 {
 	return position != otherObject.position;
 }
-
-bool Music::Object::operator <( Music::Object& otherObject)
+bool Music::Object::operator <( Music::Object otherObject)
 {
 	return (int)position < (int)otherObject.position;
 }
-bool Music::Object::operator <=( Music::Object& otherObject)
+bool Music::Object::operator <=( Music::Object otherObject)
 {
 	return (int)position <= (int)otherObject.position;
 }
-bool Music::Object::operator >( Music::Object& otherObject)
+bool Music::Object::operator >( Music::Object otherObject)
 {
 	return (int)position > (int)otherObject.position;
 }
-bool Music::Object::operator >=( Music::Object& otherObject)
+bool Music::Object::operator >=( Music::Object otherObject)
 {
 	return (int)position >= (int)otherObject.position;
 }

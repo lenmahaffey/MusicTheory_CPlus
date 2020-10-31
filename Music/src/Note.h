@@ -7,14 +7,16 @@ namespace Music {
 
 	{
 	public:
+		//Constructors
 		Music::Note();
-		Music::Note( Music::ChromaticScalePosition note);
-		Music::Note( std::string note);
+		Music::Note(Music::ChromaticScalePosition note);
+		Music::Note(std::string note);
 
+		//Accessors
 		Music::Weight GetWeight();
-		//Music::Note& operator=( Music::Note otherObject);
 
 	protected:
+		//Properties
 		 Music::Weight weight;
 	};
 }

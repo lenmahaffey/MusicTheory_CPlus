@@ -9,36 +9,39 @@ namespace Music {
 	class Object
 	{
 	public:
+		//Constructors
 		Music::Object();
-		Music::Object( Music::ChromaticScalePosition note);
+		Music::Object(Music::ChromaticScalePosition note);
 		Music::Object(std::string note);
 		Music::Object(int note);
 
+		//Accessors
 		Music::ChromaticScalePosition getPosition();
 		std::string getNameAsString();
 
-		Music::ChromaticScalePosition accendFullStep();
+		//Methods
 		Music::ChromaticScalePosition accendHalfStep();
+		Music::ChromaticScalePosition accendFullStep();
 		Music::ChromaticScalePosition accendStepAndAHalf();
 
-		//Music::Object& operator=( Music::Object otherObject);
-
-		bool operator==( Music::Object&);
-		bool operator !=( Music::Object&);
+		//Operator overloads
 		Music::Object operator ++();
 		Music::Object operator ++(int);
 		Music::Object operator --();
 		Music::Object operator --(int);
-		bool operator <( Music::Object& otherObject);
-		bool operator <=( Music::Object& otherObject);
-		bool operator >( Music::Object& otherObject);
-		bool operator >=( Music::Object& otherObject);
+		bool operator ==(Music::Object);
+		bool operator !=(Music::Object);
+		bool operator <(Music::Object otherObject);
+		bool operator <=(Music::Object otherObject);
+		bool operator >(Music::Object otherObject);
+		bool operator >=(Music::Object otherObject);
 
 	protected:
+		//Properties
+		Music::ChromaticScalePosition position;
+		std::string textName;
 
-		 Music::ChromaticScalePosition position;
-		 std::string textName;
-
+		//Static class methods
 		static Music::ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
 		static Music::ChromaticScalePosition GetPositionFromChromaticScale(int note);
 		static Music::Weight GetWeightForPosition(Music::ChromaticScalePosition position);

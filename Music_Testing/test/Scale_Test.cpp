@@ -26,11 +26,6 @@ namespace Scale_Test
 			Scale A = Scale(ChromaticScalePosition::A, pattern, true);
 			Music::ChromaticScalePosition expected = Music::ChromaticScalePosition::A;
 			Assert::AreEqual((int)expected, (int)A.getPosition());
-
-			/*Scale fromIntWithPattern = Scale(4, pattern, true);
-			Scale fromCharWithPattern = Scale('F', pattern, true);
-			Assert::AreEqual(expectedFromIntWithPattern, fromIntWithPattern.getNameAsString());
-			Assert::AreEqual(expectedFromCharWithPattern, fromCharWithPattern.getNameAsString());*/
 		}
 		TEST_METHOD(AsBf_ConstructorFromPosition_Test)
 		{
@@ -602,7 +597,7 @@ namespace Scale_Test
 	TEST_CLASS(getScaleAsString_Test){
 		TEST_METHOD(AMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -616,16 +611,16 @@ namespace Scale_Test
 			string expectedString = "A B CsDf D E FsGf GsAf";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::A, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 
 		}
 		TEST_METHOD(BMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -639,15 +634,15 @@ namespace Scale_Test
 			string expected = "B CsDf DsEf E FsGf GsAf AsBf";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::B, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(CMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -661,15 +656,15 @@ namespace Scale_Test
 			string expected = "C D E F G A B";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::C, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -683,15 +678,15 @@ namespace Scale_Test
 			string expected = "D E FsGf G A B CsDf";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::D, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(EMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -705,15 +700,15 @@ namespace Scale_Test
 			string expected = "E FsGf GsAf A B CsDf DsEf";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::E, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(FMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -727,15 +722,15 @@ namespace Scale_Test
 			string expected = "F G A AsBf C D E";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::F, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(GMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -749,15 +744,15 @@ namespace Scale_Test
 			string expected = "G A B C D E FsGf";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::G, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(AsBfMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -771,15 +766,15 @@ namespace Scale_Test
 			string expected = "AsBf C D DsEf F G A";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::AsBf, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(CsDfMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -792,15 +787,15 @@ namespace Scale_Test
 			};
 			string expected = "CsDf DsEf F FsGf GsAf AsBf C";
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::CsDf, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DsEfMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -814,15 +809,15 @@ namespace Scale_Test
 			string expected = "DsEf F G GsAf AsBf C D";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::DsEf, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(FsGfMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -836,15 +831,15 @@ namespace Scale_Test
 			string expected = "FsGf GsAf AsBf B CsDf DsEf F";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::FsGf, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(GsAfMajor_getScaleAsString_Test)
 		{
-			//Arrange
+
 			Music::Step pattern[7] =
 			{
 				Music::Step::Whole,
@@ -858,11 +853,36 @@ namespace Scale_Test
 			string expected = "GsAf AsBf C CsDf DsEf F G";
 
 
-			//Act
+
 			Scale scaleToTest = Scale(ChromaticScalePosition::GsAf, pattern, true);
 
-			//Assert
+
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
+		}
+	};
+	TEST_CLASS(isMajorOrMinor_Test)
+	{
+		TEST_METHOD(isMajor_Test)
+		{
+
+			Music::Step pattern[7] =
+			{
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Half,
+				Music::Step::Whole,
+				Music::Step::Whole,
+				Music::Step::Whole
+			};
+			string expected = "Major";
+
+
+
+			Scale scaleToTest = Scale(ChromaticScalePosition::A, pattern, true);
+
+
+			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 	};
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "Scale.h"
 
-// ructors
+//Constructors
 Music::Scale::Scale( Music::ChromaticScalePosition note,  Music::Step (&pattern)[7],  bool isMajor) :
 	Music::Object(note),
 	pattern{pattern},
@@ -33,7 +33,6 @@ Music::Scale::Scale( std::string note,  Music::Step(&pattern)[7],  bool isMajor)
 }
 
 //Accessors
-
 std::string Music::Scale::isMajorOrMinor()
 {
 	if (Music::Scale::isMajor == true)
@@ -45,8 +44,6 @@ std::string Music::Scale::isMajorOrMinor()
 		return "Minor";
 	}
 }
-
-
 std::string Music::Scale::getScaleAsString()
 {
 	std::string s;
@@ -61,6 +58,7 @@ std::string Music::Scale::getScaleAsString()
 	return s;
 }
 
+//Methods
 void Music::Scale::setScale(Music::ChromaticScalePosition note)
 {
 	Music::Scale::scale[0] = Music::Note(note);
@@ -89,12 +87,3 @@ void Music::Scale::setScale(Music::ChromaticScalePosition note)
 		}
 	}
 }
-
-// Music::Scale& Music::Scale::operator=( Music::Scale otherScale)
-//{
-//	if (this != &otherScale)
-//	{
-//		*this = otherScale;
-//	}
-//	return *this;
-//}

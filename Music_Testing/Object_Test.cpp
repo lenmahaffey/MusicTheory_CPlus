@@ -363,11 +363,11 @@ namespace Object_Test
 	{
 		TEST_METHOD(A_goHalfStep_Test)
 		{
-			//Arrange
+			
 			Object A = Object(ChromaticScalePosition::A);
 			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
 
-			//Act
+			
 			Object halfStepUpFromA = A.accendHalfStep();
 
 			Assert::AreEqual((int)expected, (int)halfStepUpFromA.getPosition());
@@ -483,11 +483,11 @@ namespace Object_Test
 	{
 		TEST_METHOD(A_goFullStep_Test)
 		{
-			//Arrange
+			
 			Object A = Object(ChromaticScalePosition::A);
 			ChromaticScalePosition expected = ChromaticScalePosition::B;
 
-			//Act
+			
 			Object fullStepUpFromA = A.accendFullStep();
 
 			Assert::AreEqual((int)expected, (int)fullStepUpFromA.getPosition());
@@ -603,11 +603,11 @@ namespace Object_Test
 	{
 		TEST_METHOD(A_goStepAndAHalf_Test)
 		{
-			//Arrange
+			
 			Object A = Object(ChromaticScalePosition::A);
 			ChromaticScalePosition expected = ChromaticScalePosition::C;
 
-			//Act
+			
 			Object stepAndAHalfUpFromA = A.accendStepAndAHalf();
 
 			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromA.getPosition());
