@@ -13,7 +13,8 @@ namespace Music {
 		Music::Note(std::string note);
 
 		//Accessors
-		Music::Weight GetWeight();
+		Music::Weight getWeight();
+		std::string getWeightAsString();
 
 	protected:
 		//Properties

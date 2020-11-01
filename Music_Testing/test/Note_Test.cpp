@@ -168,7 +168,7 @@ namespace Note_Testing
 		{
 			Music::Weight expected = Music::Weight::Whole;
 			Note A = Note(ChromaticScalePosition::A);
-			Assert::AreEqual((int)expected, (int)A.GetWeight());
+			Assert::AreEqual((int)expected, (int)A.getWeight());
 		}
 		TEST_METHOD(AsBf_getWeight_Test)
 		{
@@ -231,50 +231,74 @@ namespace Note_Testing
 		TEST_METHOD(A_getWeightAsString_Test)
 		{
 			Note A = Note(ChromaticScalePosition::A);
+			string expected = "Whole";
+			Assert::AreEqual(expected, A.getWeightAsString());
 		}
 		TEST_METHOD(AsBf_getWeightAsString_Test)
 		{
 			Note AsBf = Note(ChromaticScalePosition::AsBf);
+			string expected = "Half";
+			Assert::AreEqual(expected, AsBf.getWeightAsString());
 		}
 		TEST_METHOD(B_getWeightAsString_Test)
 		{
 			Note B = Note(ChromaticScalePosition::B);
+			string expected = "Whole";
+			Assert::AreEqual(expected, B.getWeightAsString());
 		}
 		TEST_METHOD(C_getWeightAsString_Test)
 		{
 			Note C = Note(ChromaticScalePosition::C);
+			string expected = "Whole";
+			Assert::AreEqual(expected, C.getWeightAsString());
 		}
-		TEST_METHOD(AsDf_getWeightAsString_Test)
+		TEST_METHOD(CsDf_getWeightAsString_Test)
 		{
 			Note CsDf = Note(ChromaticScalePosition::CsDf);
+			string expected = "Half";
+			Assert::AreEqual(expected, CsDf.getWeightAsString());
 		}
 		TEST_METHOD(D_getWeightAsString_Test)
 		{
 			Note D = Note(ChromaticScalePosition::D);
+			string expected = "Whole";
+			Assert::AreEqual(expected, D.getWeightAsString());
 		}
 		TEST_METHOD(DsEf_getWeightAsString_Test)
 		{
 			Note DsEf = Note(ChromaticScalePosition::DsEf);
+			string expected = "Half";
+			Assert::AreEqual(expected, DsEf.getWeightAsString());
 		}
 		TEST_METHOD(E_getWeightAsString_Test)
 		{
 			Note E = Note(ChromaticScalePosition::E);
+			string expected = "Whole";
+			Assert::AreEqual(expected, E.getWeightAsString());
 		}
 		TEST_METHOD(F_getWeightAsString_Test)
 		{
 			Note F = Note(ChromaticScalePosition::F);
+			string expected = "Whole";
+			Assert::AreEqual(expected, F.getWeightAsString());
 		}
 		TEST_METHOD(FsGf_getWeightAsString_Test)
 		{
 			Note FsGf = Note(ChromaticScalePosition::FsGf);
+			string expected = "Half";
+			Assert::AreEqual(expected, FsGf.getWeightAsString());
 		}
 		TEST_METHOD(G_getWeightAsString_Test)
 		{
 			Note G = Note(ChromaticScalePosition::G);
+			string expected = "Whole";
+			Assert::AreEqual(expected, G.getWeightAsString());
 		}
 		TEST_METHOD(GsAf_getWeightAsString_Test)
 		{
 			Note GsAf = Note(ChromaticScalePosition::GsAf);
+			string expected = "Half";
+			Assert::AreEqual(expected, GsAf.getWeightAsString());
 		}
 	};
 }
