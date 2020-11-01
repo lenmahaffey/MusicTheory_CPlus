@@ -11,18 +11,8 @@ namespace Music {
 		Music::MelodicMinorScale(int noteIndex);
 		Music::MelodicMinorScale(char note);
 
-	private:
-		bool isMajor = false;
-		Music::Step pattern[7] =
-		{
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Whole,
-		};
+	protected:
+		Music::Step pattern[7];
 	};
 }
 

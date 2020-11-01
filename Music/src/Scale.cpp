@@ -2,6 +2,15 @@
 #include "Scale.h"
 
 //Constructors
+Music::Scale::Scale() :
+	Music::Object(Music::ChromaticScalePosition::NONE),
+	pattern{ pattern },
+	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
+	isMajor(true),
+	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+{
+}
+
 Music::Scale::Scale( Music::ChromaticScalePosition note,  Music::Step (&pattern)[7],  bool isMajor) :
 	Music::Object(note),
 	pattern{pattern},

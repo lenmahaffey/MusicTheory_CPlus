@@ -1,6 +1,8 @@
 #pragma once
 #include "../Scale.h"
+
 namespace Music {
+
 	class PentatonicMinorScale : public Music::Scale
 	{
 	public:
@@ -9,16 +11,8 @@ namespace Music {
 		Music::PentatonicMinorScale(int noteIndex);
 		Music::PentatonicMinorScale(char note);
 
-	private:
-		bool isMajor = false;
-		Music::Step pattern[7] =
-		{
-			Music::Step::Whole,
-			Music::Step::WholeandAHalf,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::WholeandAHalf
-		};
+	protected:
+		Music::Step pattern[7];
 	};
 }
 
