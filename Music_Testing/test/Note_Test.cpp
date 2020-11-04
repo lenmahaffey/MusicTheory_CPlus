@@ -1,16 +1,14 @@
 #pragma once
-#include "../../Music_Testing/pch.h"
+#include "../pch.h"
 #include "CppUnitTest.h"
 #include "../../Music/src/Note.cpp"
-
-
 #include <iostream>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
 using namespace Music;
 
-namespace Note_Testing
+namespace Note_Test
 {
 	TEST_CLASS(Constructor_Enum_Test)
 	{
@@ -300,5 +298,136 @@ namespace Note_Testing
 			string expected = "Half";
 			Assert::AreEqual(expected, GsAf.getWeightAsString());
 		}
+	};
+	TEST_CLASS(Operator_Test)
+	{
+		TEST_METHOD(preIncrement_Test)
+		{
+			Note B("B");
+			Note during;
+			Note expectedBefore = Note("B");
+			Note expectedDuring = Note("C");
+			Note expectedAfter = Note("C");
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)B.getPosition());
+			during = ++B;
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)B.getPosition());
+		}
+		TEST_METHOD(postIncrement_Test)
+		{
+			Note B("B");
+			Note during;
+			Note expectedBefore = Note("B");
+			Note expectedDuring = Note("B");
+			Note expectedAfter = Note("C");
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)B.getPosition());
+			during = B++;
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)B.getPosition());
+		}
+		TEST_METHOD(preDeincrement_Test)
+		{
+			Note C("C");
+			Note during;
+			Note expectedBefore = Note("C");
+			Note expectedDuring = Note("C");
+			Note expectedAfter = Note("B");
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)C.getPosition());
+			during = --C;
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)C.getPosition());
+		}
+		TEST_METHOD(postDeIncrement_Test)
+		{
+			Note C("C");
+			Note during;
+			Note expectedBefore = Note("C");
+			Note expectedDuring = Note("B");
+			Note expectedAfter = Note("B");
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)C.getPosition());
+			during = C--;
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)C.getPosition());
+		}
+		TEST_METHOD(isEqualOperator_Test)
+		{
+			Note A("A");
+			Note B1("B");
+			Note B2("B");
+			Note C("C");
+
+			Assert::IsFalse(A == B1);
+			Assert::IsTrue(B1 == B2);
+			Assert::IsTrue(B2 == B1);
+			Assert::IsTrue(A == A);
+			Assert::IsTrue(B1 == B2);
+			Assert::IsFalse(B2 == C);
+		}
+		TEST_METHOD(isNotEqualOperator_Test)
+		{
+			Note A("A");
+			Note B1("B");
+			Note B2("B");
+			Note C("C");
+
+			Assert::IsTrue(A != B1);
+			Assert::IsFalse(B1 != B2);
+			Assert::IsFalse(B2 != B1);
+			Assert::IsFalse(A != A);
+			Assert::IsFalse(B1 != B2);
+			Assert::IsTrue(B2 != C);
+		}
+		TEST_METHOD(isGreaterThan_Test)
+		{
+			Note A("A");
+			Note B("B");
+			Note C("C");
+
+			Assert::IsTrue(C > B);
+			Assert::IsTrue(B > A);
+			Assert::IsFalse(B > C);
+			Assert::IsFalse(A > B);
+		}
+		TEST_METHOD(isGreaterThanOrEqual_Test)
+		{
+			Note A("A");
+			Note B1("B");
+			Note B2("B");
+			Note C("C");
+
+			Assert::IsTrue(C >= B2);
+			Assert::IsTrue(B2 >= B1);
+			Assert::IsTrue(B1 >= A);
+			Assert::IsFalse(B2 >= C);
+			Assert::IsTrue(B1 >= B2);
+			Assert::IsFalse(A >= B1);
+		}
+		TEST_METHOD(isLessThan_Test)
+		{
+			Note A("A");
+			Note B("B");
+			Note C("C");
+
+			Assert::IsTrue(A < B);
+			Assert::IsFalse(C < B);
+		}
+		TEST_METHOD(isLessThanOrEqualTo_Test)
+		{
+			Note A("A");
+			Note B1("B");
+			Note B2("B");
+			Note C("C");
+
+			Assert::IsTrue(A <= B1);
+			Assert::IsTrue(B1 <= B2);
+			Assert::IsTrue(B2 <= C);
+			Assert::IsFalse(C <= B2);
+			Assert::IsTrue(B2 <= B1);
+			Assert::IsFalse(B1 <= A);
+		};
 	};
 }

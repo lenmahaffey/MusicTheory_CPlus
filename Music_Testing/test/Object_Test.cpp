@@ -1,9 +1,7 @@
 #pragma once
 #include "../pch.h"
 #include "CppUnitTest.h"
-#include "../../Music/src/Object.h"
 #include "../../Music/src/Object.cpp"
-
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -786,124 +784,135 @@ namespace Object_Test
 			Assert::AreEqual(expected, GsAf.getNameAsString());
 		}
 	};
-	TEST_CLASS(operatorOverload_Test)
+	TEST_CLASS(Operator_Test)
 	{
-		TEST_METHOD(preIncement_Test)
+		TEST_METHOD(preIncrement_Test)
 		{
-			Object A("A");
-			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::AsBf;
-			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::AsBf;
+			Object B("B");
+			Object during;
+			Object expectedBefore = Object("B");
+			Object expectedDuring = Object("C");
+			Object expectedAfter = Object("C");
 
-			Assert::AreEqual((int)Music::ChromaticScalePosition::A, (int)A.getPosition());
-			Object oldObject = ++A;
-			Assert::AreEqual((int)expectedPre, (int)A.getPosition());
-			Assert::AreEqual((int)expectedPost, (int)A.getPosition());
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)B.getPosition());
+			during = ++B;
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)B.getPosition());
 		}
-		TEST_METHOD(postIncement_Test)
+		TEST_METHOD(postIncrement_Test)
 		{
-			Object A("A");
-			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::A;
-			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::AsBf;
+			Object B("B");
+			Object during;
+			Object expectedBefore = Object("B");
+			Object expectedDuring = Object("B");
+			Object expectedAfter = Object("C");
 
-			Object oldObject = A++;
-			Assert::AreEqual((int)expectedPre, (int)oldObject.getPosition());
-			Assert::AreEqual((int)expectedPost, (int)A.getPosition());
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)B.getPosition());
+			during = B++;
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)B.getPosition());
 		}
-		TEST_METHOD(preDeincement_Test)
+		TEST_METHOD(preDeincrement_Test)
 		{
 			Object C("C");
-			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::B;
-			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::B;
+			Object during;
+			Object expectedBefore = Object("C");
+			Object expectedDuring = Object("C");
+			Object expectedAfter = Object("B");
 
-			Assert::AreEqual((int)Music::ChromaticScalePosition::C, (int)C.getPosition());
-			Object oldObject = --C;
-			Assert::AreEqual((int)expectedPre, (int)C.getPosition());
-			Assert::AreEqual((int)expectedPost, (int)C.getPosition());
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)C.getPosition());
+			during = --C;
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)C.getPosition());
 		}
-		TEST_METHOD(postDeincement_Test)
+		TEST_METHOD(postDeIncrement_Test)
 		{
-			Object A("C");
-			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::C;
-			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::B;
+			Object C("C");
+			Object during;
+			Object expectedBefore = Object("C");
+			Object expectedDuring = Object("B");
+			Object expectedAfter = Object("B");
 
-			Object oldObject = A--;
-			Assert::AreEqual((int)expectedPre, (int)oldObject.getPosition());
-			Assert::AreEqual((int)expectedPost, (int)A.getPosition());
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)C.getPosition());
+			during = C--;
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)C.getPosition());
 		}
-		TEST_METHOD(isEqual_Test)
+		TEST_METHOD(isEqualOperator_Test)
 		{
-			Object One("A");
-			Object Two("C");
-			Object Three("C");
-			Object Four("D");
+			Object A("A");
+			Object B1("B");
+			Object B2("B");
+			Object C("C");
 
-			Assert::IsTrue(Two == Three);
-			Assert::IsFalse(One == Three);
-			Assert::IsFalse(One == Four);
-			Assert::IsFalse(Four == Two);
+			Assert::IsFalse(A == B1);
+			Assert::IsTrue(B1 == B2);
+			Assert::IsTrue(B2 == B1);
+			Assert::IsTrue(A == A);
+			Assert::IsTrue(B1 == B2);
+			Assert::IsFalse(B2 == C);
 		}
-		TEST_METHOD(isNotEqual_Test)
+		TEST_METHOD(isNotEqualOperator_Test)
 		{
-			Object One("A");
-			Object Two("C");
-			Object Three("C");
-			Object Four("D");
+			Object A("A");
+			Object B1("B");
+			Object B2("B");
+			Object C("C");
 
-			Assert::IsTrue(One != Two);
-			Assert::IsTrue(Two != Four);
-			Assert::IsTrue(Four != One);
-			Assert::IsFalse(Two != Three);
+			Assert::IsTrue(A != B1);
+			Assert::IsFalse(B1 != B2);
+			Assert::IsFalse(B2 != B1);
+			Assert::IsFalse(A != A);
+			Assert::IsFalse(B1 != B2);
+			Assert::IsTrue(B2 != C);
 		}
-		TEST_METHOD(greaterThan_Test)
+		TEST_METHOD(isGreaterThan_Test)
 		{
-			Object One("A");
-			Object Two("C");
-			Object Three("C");
-			Object Four("D");
+			Object A("A");
+			Object B("B");
+			Object C("C");
 
-			Assert::IsTrue(One < Two);
-			Assert::IsTrue(Two < Four);
-			Assert::IsFalse(Four < One);
-			Assert::IsFalse(Two < Three);
+			Assert::IsTrue(C > B);
+			Assert::IsTrue(B > A);
+			Assert::IsFalse(B > C);
+			Assert::IsFalse(A > B);
 		}
-		TEST_METHOD(greaterThanOrEqualTo_Test)
+		TEST_METHOD(isGreaterThanOrEqual_Test)
 		{
-			Object One("A");
-			Object Two("C");
-			Object Three("C");
-			Object Four("D");
+			Object A("A");
+			Object B1("B");
+			Object B2("B");
+			Object C("C");
 
-			Assert::IsFalse(One >= Two);
-			Assert::IsFalse(Two >= Four);
-			Assert::IsTrue(Four >= One);
-			Assert::IsTrue(Two >= Three);
-			Assert::IsTrue(Two >= Three);
+			Assert::IsTrue(C >= B2);
+			Assert::IsTrue(B2 >= B1);
+			Assert::IsTrue(B1 >= A);
+			Assert::IsFalse(B2 >= C);
+			Assert::IsTrue(B1 >= B2);
+			Assert::IsFalse(A >= B1);
 		}
-		TEST_METHOD(lessThan_Test)
+		TEST_METHOD(isLessThan_Test)
 		{
-			Object One("A");
-			Object Two("C");
-			Object Three("C");
-			Object Four("D");
+			Object A("A");
+			Object B("B");
+			Object C("C");
 
-			Assert::IsTrue(One < Two);
-			Assert::IsTrue(Two < Four);
-			Assert::IsFalse(Four < One);
-			Assert::IsFalse(Two < Three);
-			Assert::IsFalse(Two < Three);
+			Assert::IsTrue(A < B);
+			Assert::IsFalse(C < B);
 		}
-		TEST_METHOD(lessThanOrEqualTo_Test)
+		TEST_METHOD(isLessThanOrEqualTo_Test)
 		{
-			Object One("A");
-			Object Two("C");
-			Object Three("C");
-			Object Four("D");
+			Object A("A");
+			Object B1("B");
+			Object B2("B");
+			Object C("C");
 
-			Assert::IsTrue(One <= Two);
-			Assert::IsTrue(Two <= Four);
-			Assert::IsFalse(Four <= One);
-			Assert::IsTrue(Two <= Three);
-			Assert::IsTrue(Two <= Three);
-		}
+			Assert::IsTrue(A <= B1);
+			Assert::IsTrue(B1 <= B2);
+			Assert::IsTrue(B2 <= C);
+			Assert::IsFalse(C <= B2);
+			Assert::IsTrue(B2 <= B1);
+			Assert::IsFalse(B1 <= A);
+		};
 	};
 };

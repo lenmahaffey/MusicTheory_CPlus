@@ -156,7 +156,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Object_Test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -168,6 +167,7 @@
     <ClCompile Include="test\MedloicMinorScale_Test.cpp" />
     <ClCompile Include="test\NaturalMinor_Test.cpp" />
     <ClCompile Include="test\Note_Test.cpp" />
+    <ClCompile Include="test\Object_Test.cpp" />
     <ClCompile Include="test\PentatonicMajorScale_Test.cpp" />
     <ClCompile Include="test\PentatonicMinorScale_Test.cpp" />
     <ClCompile Include="test\Scale_Test.cpp" />
