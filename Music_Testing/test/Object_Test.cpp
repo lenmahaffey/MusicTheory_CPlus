@@ -1,9 +1,8 @@
 #pragma once
-#include "pch.h"
+#include "../pch.h"
 #include "CppUnitTest.h"
-#include "../Music/src/Object.cpp"
-
-
+#include "../../Music/src/Object.h"
+#include "../../Music/src/Object.cpp"
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -787,94 +786,124 @@ namespace Object_Test
 			Assert::AreEqual(expected, GsAf.getNameAsString());
 		}
 	};
-	TEST_CLASS(Operator_Test)
+	TEST_CLASS(operatorOverload_Test)
 	{
-		TEST_METHOD(preIncrement_Test)
-		{
-			Object pre("B");
-			Object post;
-		}
-		TEST_METHOD(postIncrement_Test)
-		{
-			Object pre("B");
-			Object post;
-		}
-		TEST_METHOD(preDeincrement_Test)
-		{
-			Object pre("C");
-			Object post;
-		}
-		TEST_METHOD(postDeIncrement_Test)
-		{
-			Object pre("B");
-			Object post;
-		}
-		TEST_METHOD(isEqualOperator_Test)
+		TEST_METHOD(preIncement_Test)
 		{
 			Object A("A");
-			Object B1("B");
-			Object B2("B");
-			Object D("D");
+			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::AsBf;
+			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::AsBf;
 
-
+			Assert::AreEqual((int)Music::ChromaticScalePosition::A, (int)A.getPosition());
+			Object oldObject = ++A;
+			Assert::AreEqual((int)expectedPre, (int)A.getPosition());
+			Assert::AreEqual((int)expectedPost, (int)A.getPosition());
 		}
-		TEST_METHOD(isNotEqualOperator_Test)
+		TEST_METHOD(postIncement_Test)
 		{
 			Object A("A");
-			Object B1("B");
-			Object B2("B");
-			Object D("D");
+			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::A;
+			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::AsBf;
 
+			Object oldObject = A++;
+			Assert::AreEqual((int)expectedPre, (int)oldObject.getPosition());
+			Assert::AreEqual((int)expectedPost, (int)A.getPosition());
 		}
-		TEST_METHOD(isGreaterThan_Test)
+		TEST_METHOD(preDeincement_Test)
 		{
-			Object A("A");
-			Object B("B");
 			Object C("C");
+			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::B;
+			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::B;
 
-			Assert::IsTrue(C > B);
-			Assert::IsTrue(B > A);
-			Assert::IsFalse(B > C);
-			Assert::IsFalse(A > B);
+			Assert::AreEqual((int)Music::ChromaticScalePosition::C, (int)C.getPosition());
+			Object oldObject = --C;
+			Assert::AreEqual((int)expectedPre, (int)C.getPosition());
+			Assert::AreEqual((int)expectedPost, (int)C.getPosition());
 		}
-		TEST_METHOD(isGreaterThanOrEqual_Test)
+		TEST_METHOD(postDeincement_Test)
 		{
-			Object A("A");
-			Object B1("B");
-			Object B2("B");
-			Object C("C");
+			Object A("C");
+			Music::ChromaticScalePosition expectedPre = Music::ChromaticScalePosition::C;
+			Music::ChromaticScalePosition expectedPost = Music::ChromaticScalePosition::B;
 
-			Assert::IsTrue(C >= B2);
-			Assert::IsTrue(B2 >= B1);
-			Assert::IsTrue(B1 >= A);
-			Assert::IsFalse(B2 >= C);
-			Assert::IsTrue(B1 >= B2);
-			Assert::IsFalse(A >= B1);
-
-
+			Object oldObject = A--;
+			Assert::AreEqual((int)expectedPre, (int)oldObject.getPosition());
+			Assert::AreEqual((int)expectedPost, (int)A.getPosition());
 		}
-		TEST_METHOD(isLessThan_Test)
+		TEST_METHOD(isEqual_Test)
 		{
-			Object A("A");
-			Object B("B");
-			Object C("C");
+			Object One("A");
+			Object Two("C");
+			Object Three("C");
+			Object Four("D");
 
-			Assert::IsTrue(A < B);
-			Assert::IsFalse(C < B);
+			Assert::IsTrue(Two == Three);
+			Assert::IsFalse(One == Three);
+			Assert::IsFalse(One == Four);
+			Assert::IsFalse(Four == Two);
 		}
-		TEST_METHOD(isLessThanOrEqualTo_Test)
+		TEST_METHOD(isNotEqual_Test)
 		{
-			Object A("A");
-			Object B1("B");
-			Object B2("B");
-			Object C("C");
+			Object One("A");
+			Object Two("C");
+			Object Three("C");
+			Object Four("D");
 
-			Assert::IsTrue(A <= B1);
-			Assert::IsTrue(B1 <= B2);
-			Assert::IsTrue(B2 <= C);
-			Assert::IsFalse(C <= B2);
-			Assert::IsTrue(B2 <= B1);
-			Assert::IsFalse(B1 <= A);
-		};
+			Assert::IsTrue(One != Two);
+			Assert::IsTrue(Two != Four);
+			Assert::IsTrue(Four != One);
+			Assert::IsFalse(Two != Three);
+		}
+		TEST_METHOD(greaterThan_Test)
+		{
+			Object One("A");
+			Object Two("C");
+			Object Three("C");
+			Object Four("D");
+
+			Assert::IsTrue(One < Two);
+			Assert::IsTrue(Two < Four);
+			Assert::IsFalse(Four < One);
+			Assert::IsFalse(Two < Three);
+		}
+		TEST_METHOD(greaterThanOrEqualTo_Test)
+		{
+			Object One("A");
+			Object Two("C");
+			Object Three("C");
+			Object Four("D");
+
+			Assert::IsFalse(One >= Two);
+			Assert::IsFalse(Two >= Four);
+			Assert::IsTrue(Four >= One);
+			Assert::IsTrue(Two >= Three);
+			Assert::IsTrue(Two >= Three);
+		}
+		TEST_METHOD(lessThan_Test)
+		{
+			Object One("A");
+			Object Two("C");
+			Object Three("C");
+			Object Four("D");
+
+			Assert::IsTrue(One < Two);
+			Assert::IsTrue(Two < Four);
+			Assert::IsFalse(Four < One);
+			Assert::IsFalse(Two < Three);
+			Assert::IsFalse(Two < Three);
+		}
+		TEST_METHOD(lessThanOrEqualTo_Test)
+		{
+			Object One("A");
+			Object Two("C");
+			Object Three("C");
+			Object Four("D");
+
+			Assert::IsTrue(One <= Two);
+			Assert::IsTrue(Two <= Four);
+			Assert::IsFalse(Four <= One);
+			Assert::IsTrue(Two <= Three);
+			Assert::IsTrue(Two <= Three);
+		}
 	};
 };
