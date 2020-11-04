@@ -27,12 +27,12 @@ Music::Note::Note(int note) :
 }
 
 //Accessors
-Music::Weight Music::Note::getWeight()
+Music::Weight Music::Note::getWeight() const
 {
 	return Music::Note::weight;
 }
 
-std::string Music::Note::getWeightAsString()
+std::string Music::Note::getWeightAsString() const
 {
 	return Music::GetWeightAsString(Music::Note::weight);
 }

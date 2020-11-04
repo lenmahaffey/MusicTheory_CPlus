@@ -14,8 +14,8 @@ namespace Music {
 		Music::Note(int note);
 
 		//Accessors
-		Music::Weight getWeight();
-		std::string getWeightAsString();
+		Music::Weight getWeight() const;
+		std::string getWeightAsString() const;
 
 		Music::Note operator ++();
 		Music::Note operator ++(int);

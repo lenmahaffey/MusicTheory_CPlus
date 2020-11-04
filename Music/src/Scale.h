@@ -15,8 +15,8 @@ namespace Music{
 		Music::Scale(std::string note,  Music::Step(&pattern)[7],  bool isMajor);
 
 		//Accessors
-		std::string getScaleAsString();
-		std::string isMajorOrMinor();
+		std::string getScaleAsString() const;
+		std::string isMajorOrMinor()const;
 
 		//Operator overloads
 		Music::Scale operator ++();
@@ -39,6 +39,5 @@ namespace Music{
 
 		//Methods
 		void setScale(Music::ChromaticScalePosition);
-
 	};
 }

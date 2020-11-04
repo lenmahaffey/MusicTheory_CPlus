@@ -43,7 +43,7 @@ Music::Scale::Scale( std::string note,  Music::Step(&pattern)[7],  bool isMajor)
 }
 
 //Accessors
-std::string Music::Scale::isMajorOrMinor()
+std::string Music::Scale::isMajorOrMinor() const
 {
 	if (Music::Scale::isMajor == true)
 	{
@@ -54,7 +54,7 @@ std::string Music::Scale::isMajorOrMinor()
 		return "Minor";
 	}
 }
-std::string Music::Scale::getScaleAsString()
+std::string Music::Scale::getScaleAsString() const
 {
 	std::string s;
 	for (Music::Note note : Music::Scale::scale)
