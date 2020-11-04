@@ -96,3 +96,71 @@ void Music::Scale::setScale(Music::ChromaticScalePosition note)
 		}
 	}
 }
+
+//Operator Overloads
+Music::Scale& Music::Scale::operator =(Music::Scale& other)
+{
+	if (*this != other)
+	{
+		this->
+		this->position = other.position;
+		this->isMajor = other.isMajor;
+		this->setScale(this->position);
+		this->textName = this->getNameAsString();
+		return other;
+	}
+	else
+	{
+		return *this;
+	}
+}
+Music::Scale Music::Scale::operator ++()
+{
+	Music::Scale newScale = Music::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return *this;
+}
+Music::Scale Music::Scale::operator ++(int)
+{
+	Music::Scale temp = *this;
+	Music::Scale newScale = Music::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return temp;
+}
+Music::Scale Music::Scale::operator --()
+{
+	Music::Scale newScale = Music::Scale((int)position - 1, Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return newScale;
+}
+Music::Scale Music::Scale::operator --(int)
+{
+	Music::Scale temp = *this;
+	Music::Scale newScale = Music::Scale((int)position - 1, Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return temp;
+}
+bool Music::Scale::operator ==( Music::Scale otherScale)
+{
+	return position == otherScale.position;
+}
+bool Music::Scale::operator !=( Music::Scale otherScale)
+{
+	return position != otherScale.position;
+}
+bool Music::Scale::operator <( Music::Scale otherScale)
+{
+	return (int)position < (int)otherScale.position;
+}
+bool Music::Scale::operator <=( Music::Scale otherScale)
+{
+	return (int)position <= (int)otherScale.position;
+}
+bool Music::Scale::operator >( Music::Scale otherScale)
+{
+	return (int)position > (int)otherScale.position;
+}
+bool Music::Scale::operator >=( Music::Scale otherScale)
+{
+	return (int)position >= (int)otherScale.position;
+}

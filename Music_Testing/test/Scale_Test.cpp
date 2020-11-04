@@ -725,4 +725,215 @@ namespace Scale_Test
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 	};
+	TEST_CLASS(Operator_Test)
+	{
+		TEST_METHOD(preIncrement_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale B("B", pattern, true);
+			Scale during;
+			Scale expectedBefore = Scale("B", pattern, true);
+			Scale expectedDuring = Scale("C", pattern, true);
+			Scale expectedAfter = Scale("C", pattern, true);
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)B.getPosition());
+			during = ++B;
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)B.getPosition());
+		}
+		TEST_METHOD(postIncrement_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale B("B", pattern, true);
+			Scale during;
+			Scale expectedBefore = Scale("B", pattern, true);
+			Scale expectedDuring = Scale("B", pattern, true);
+			Scale expectedAfter = Scale("C", pattern, true);
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)B.getPosition());
+			during = B++;
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)B.getPosition());
+		}
+		TEST_METHOD(preDeincrement_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale C("C", pattern, true);
+			Scale during;
+			Scale expectedBefore = Scale("C", pattern, true);
+			Scale expectedDuring = Scale("C", pattern, true);
+			Scale expectedAfter = Scale("B", pattern, true);
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)C.getPosition());
+			during = --C;
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)C.getPosition());
+		}
+		TEST_METHOD(postDeIncrement_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale C("C", pattern, true);
+			Scale during;
+			Scale expectedBefore = Scale("C", pattern, true);
+			Scale expectedDuring = Scale("B", pattern, true);
+			Scale expectedAfter = Scale("B", pattern, true);
+
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)C.getPosition());
+			during = C--;
+			Assert::AreEqual((int)expectedBefore.getPosition(), (int)during.getPosition());
+			Assert::AreEqual((int)expectedAfter.getPosition(), (int)C.getPosition());
+		}
+		TEST_METHOD(isEqualOperator_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale A("A", pattern, true);
+			Scale B1("B", pattern, true);
+			Scale B2("B", pattern, true);
+			Scale C("C", pattern, true);
+
+			Assert::IsFalse(A == B1);
+			Assert::IsTrue(B1 == B2);
+			Assert::IsTrue(B2 == B1);
+			Assert::IsTrue(A == A);
+			Assert::IsTrue(B1 == B2);
+			Assert::IsFalse(B2 == C);
+		}
+		TEST_METHOD(isNotEqualOperator_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale A("A", pattern, true);
+			Scale B1("B", pattern, true);
+			Scale B2("B", pattern, true);
+			Scale C("C", pattern, true);
+
+			Assert::IsTrue(A != B1);
+			Assert::IsFalse(B1 != B2);
+			Assert::IsFalse(B2 != B1);
+			Assert::IsFalse(A != A);
+			Assert::IsFalse(B1 != B2);
+			Assert::IsTrue(B2 != C);
+		}
+		TEST_METHOD(isGreaterThan_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale A("A", pattern, true);
+			Scale B("B", pattern, true);
+			Scale C("C", pattern, true);
+
+			Assert::IsTrue(C > B);
+			Assert::IsTrue(B > A);
+			Assert::IsFalse(B > C);
+			Assert::IsFalse(A > B);
+		}
+		TEST_METHOD(isGreaterThanOrEqual_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale A("A", pattern, true);
+			Scale B1("B", pattern, true);
+			Scale B2("B", pattern, true);
+			Scale C("C", pattern, true);
+
+			Assert::IsTrue(C >= B2);
+			Assert::IsTrue(B2 >= B1);
+			Assert::IsTrue(B1 >= A);
+			Assert::IsFalse(B2 >= C);
+			Assert::IsTrue(B1 >= B2);
+			Assert::IsFalse(A >= B1);
+		}
+		TEST_METHOD(isLessThan_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale A("A", pattern, true);
+			Scale B("B", pattern, true);
+			Scale C("C", pattern, true);
+
+			Assert::IsTrue(A < B);
+			Assert::IsFalse(C < B);
+		}
+		TEST_METHOD(isLessThanOrEqualTo_Test)
+		{
+			Music::Step pattern[7] =
+			{ Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE,
+				Music::Step::NONE };
+			Scale A("A", pattern, true);
+			Scale B1("B", pattern, true);
+			Scale B2("B", pattern, true);
+			Scale C("C", pattern, true);
+
+			Assert::IsTrue(A <= B1);
+			Assert::IsTrue(B1 <= B2);
+			Assert::IsTrue(B2 <= C);
+			Assert::IsFalse(C <= B2);
+			Assert::IsTrue(B2 <= B1);
+			Assert::IsFalse(B1 <= A);
+		};
+	};
 }

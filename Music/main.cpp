@@ -25,10 +25,15 @@ int main()
 		Music::Step::Whole,
 		Music::Step::Whole,
 	};
-	Scale A("A", pattern, true);
-	MajorScale C("C");
-	cout << A.isMajorOrMinor() << endl;
-	cout << C.isMajorOrMinor() << endl;
+	Scale C("C", pattern, true);
+
+	cout << C.getNameAsString() << endl;
+
+	Scale B = --C;
+
+	cout << B.getNameAsString() << endl;
+	cout << C.getNameAsString() << endl;
+
 	return 0;
 }
 

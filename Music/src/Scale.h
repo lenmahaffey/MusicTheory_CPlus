@@ -18,6 +18,19 @@ namespace Music{
 		std::string getScaleAsString();
 		std::string isMajorOrMinor();
 
+		//Operator overloads
+		Music::Scale& operator =(Music::Scale& other);
+		Music::Scale operator ++();
+		Music::Scale operator ++(int);
+		Music::Scale operator --();
+		Music::Scale operator --(int);
+		bool operator ==(Music::Scale);
+		bool operator !=(Music::Scale);
+		bool operator <(Music::Scale otherScale);
+		bool operator <=(Music::Scale otherScale);
+		bool operator >(Music::Scale otherScale);
+		bool operator >=(Music::Scale otherScale);
+
 	protected:
 		//Properties
 		Music::Step(&pattern)[7];
