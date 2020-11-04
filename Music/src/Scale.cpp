@@ -8,7 +8,7 @@ Music::Scale::Scale() :
 	pattern{ &Music::emptyScalePattern },
 	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(true),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+	scalePatternLength(7)
 {
 }
 
@@ -99,47 +99,32 @@ void Music::Scale::setScale(Music::ChromaticScalePosition note)
 }
 
 //Operator Overloads
-//Music::Scale& Music::Scale::operator =(Music::Scale& other)
-//{
-//	if (*this != other)
-//	{
-//		this->position = other.position;
-//		this->isMajor = other.isMajor;
-//		this->setScale(this->position);
-//		this->textName = this->getNameAsString();
-//		return other;
-//	}
-//	else
-//	{
-//		return *this;
-//	}
-//}
-//Music::Scale Music::Scale::operator ++()
-//{
-//	Music::Scale newScale = Music::Scale::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
-//	*this = newScale;
-//	return *this;
-//}
-//Music::Scale Music::Scale::operator ++(int)
-//{
-//	Music::Scale temp = *this;
-//	Music::Scale newScale = Music::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
-//	*this = newScale;
-//	return temp;
-//}
-//Music::Scale Music::Scale::operator --()
-//{
-//	Music::Scale newScale = Music::Scale((int)position - 1, Music::Scale::pattern, Music::Scale::isMajor);
-//	*this = newScale;
-//	return newScale;
-//}
-//Music::Scale Music::Scale::operator --(int)
-//{
-//	Music::Scale temp = *this;
-//	Music::Scale newScale = Music::Scale((int)position - 1, Music::Scale::pattern, Music::Scale::isMajor);
-//	*this = newScale;
-//	return temp;
-//}
+Music::Scale Music::Scale::operator ++()
+{
+	Music::Scale newScale = Music::Scale((int)position + 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return *this;
+}
+Music::Scale Music::Scale::operator ++(int)
+{
+	Music::Scale temp = *this;
+	Music::Scale newScale = Music::Scale((int)position + 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return temp;
+}
+Music::Scale Music::Scale::operator --()
+{
+	Music::Scale newScale = Music::Scale((int)position - 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return newScale;
+}
+Music::Scale Music::Scale::operator --(int)
+{
+	Music::Scale temp = *this;
+	Music::Scale newScale = Music::Scale((int)position - 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	*this = newScale;
+	return temp;
+}
 bool Music::Scale::operator ==(const Music::Scale otherScale) const
 {
 	return position == otherScale.position;
