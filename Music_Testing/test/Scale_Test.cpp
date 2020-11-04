@@ -725,7 +725,7 @@ namespace Scale_Test
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 	};
-	TEST_CLASS(Operator_Test)
+	/*TEST_CLASS(Operator_Test)
 	{
 		TEST_METHOD(preIncrement_Test)
 		{
@@ -935,5 +935,5 @@ namespace Scale_Test
 			Assert::IsTrue(B2 <= B1);
 			Assert::IsFalse(B1 <= A);
 		};
-	};
+	};*/
 }

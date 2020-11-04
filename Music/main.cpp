@@ -27,11 +27,10 @@ int main()
 	};
 	Scale C("C", pattern, true);
 
-	cout << C.getNameAsString() << endl;
+	//Music::Step step = *C.pattern[0];
+	//cout << step << endl;
+	//cout << C.pattern[1];
 
-	Scale B = --C;
-
-	cout << B.getNameAsString() << endl;
 	cout << C.getNameAsString() << endl;
 
 	return 0;
