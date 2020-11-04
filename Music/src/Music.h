@@ -35,6 +35,17 @@ namespace Music
 		Double
 	};
 
+	static Music::Step emptyScalePattern[7]
+	{
+		Music::Step::NONE,
+		Music::Step::NONE,
+		Music::Step::NONE,
+		Music::Step::NONE,
+		Music::Step::NONE,
+		Music::Step::NONE,
+		Music::Step::NONE,
+	};
+
 	ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
 	ChromaticScalePosition GetPositionFromChromaticScale(int note);
 	Weight GetWeightForPosition(ChromaticScalePosition position);

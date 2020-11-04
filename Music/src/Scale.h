@@ -19,21 +19,20 @@ namespace Music{
 		std::string isMajorOrMinor();
 
 		//Operator overloads
-		Music::Scale& operator =(Music::Scale& other);
 		Music::Scale operator ++();
 		Music::Scale operator ++(int);
 		Music::Scale operator --();
 		Music::Scale operator --(int);
-		bool operator ==(Music::Scale);
-		bool operator !=(Music::Scale);
-		bool operator <(Music::Scale otherScale);
-		bool operator <=(Music::Scale otherScale);
-		bool operator >(Music::Scale otherScale);
-		bool operator >=(Music::Scale otherScale);
+		bool operator ==(const Music::Scale) const;
+		bool operator !=(const Music::Scale) const;
+		bool operator <(const Music::Scale otherScale) const;
+		bool operator <=(const Music::Scale otherScale) const;
+		bool operator >(const Music::Scale otherScale) const;
+		bool operator >=(const Music::Scale otherScale) const;
 
 	protected:
 		//Properties
-		Music::Step(&pattern)[7];
+		Music::Step pattern[7];
 		int scalePatternLength;
 		bool isMajor;
 		Music::Note scale[7];

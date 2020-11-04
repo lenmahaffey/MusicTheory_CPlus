@@ -24,7 +24,7 @@ Music::MelodicMinorScale::MelodicMinorScale(int note) :
 			Music::Step::Whole,
 			Music::Step::Whole}
 {
-	Music::MelodicMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::MelodicMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }
 
 Music::MelodicMinorScale::MelodicMinorScale(char note) :
@@ -37,5 +37,5 @@ Music::MelodicMinorScale::MelodicMinorScale(char note) :
 			Music::Step::Whole,
 			Music::Step::Whole}
 {
-	Music::MelodicMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::MelodicMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }

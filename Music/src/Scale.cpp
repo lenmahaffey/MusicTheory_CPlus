@@ -1,10 +1,11 @@
 #pragma once
 #include "Scale.h"
+#include "Music.h"
 
 //Constructors
 Music::Scale::Scale() :
 	Music::Object(Music::ChromaticScalePosition::NONE),
-	pattern{ pattern },
+	pattern{ *Music::emptyScalePattern },
 	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(true),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
@@ -13,7 +14,7 @@ Music::Scale::Scale() :
 
 Music::Scale::Scale( Music::ChromaticScalePosition note,  Music::Step (&pattern)[7],  bool isMajor) :
 	Music::Object(note),
-	pattern{pattern},
+	pattern{ *pattern},
 	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
@@ -23,7 +24,7 @@ Music::Scale::Scale( Music::ChromaticScalePosition note,  Music::Step (&pattern)
 
 Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool isMajor) :
 	Object(note),
-	pattern{ pattern },
+	pattern{ *pattern },
 	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
@@ -33,7 +34,7 @@ Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool isMajor) :
 
 Music::Scale::Scale( std::string note,  Music::Step(&pattern)[7],  bool isMajor) :
 	Object(note),
-	pattern{ pattern },
+	pattern{ *pattern },
 	scale{ Music::Note(Music::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
@@ -98,22 +99,21 @@ void Music::Scale::setScale(Music::ChromaticScalePosition note)
 }
 
 //Operator Overloads
-Music::Scale& Music::Scale::operator =(Music::Scale& other)
-{
-	if (*this != other)
-	{
-		this->
-		this->position = other.position;
-		this->isMajor = other.isMajor;
-		this->setScale(this->position);
-		this->textName = this->getNameAsString();
-		return other;
-	}
-	else
-	{
-		return *this;
-	}
-}
+//Music::Scale& Music::Scale::operator =(Music::Scale& other)
+//{
+//	if (*this != other)
+//	{
+//		this->position = other.position;
+//		this->isMajor = other.isMajor;
+//		this->setScale(this->position);
+//		this->textName = this->getNameAsString();
+//		return other;
+//	}
+//	else
+//	{
+//		return *this;
+//	}
+//}
 Music::Scale Music::Scale::operator ++()
 {
 	Music::Scale newScale = Music::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
@@ -140,27 +140,27 @@ Music::Scale Music::Scale::operator --(int)
 	*this = newScale;
 	return temp;
 }
-bool Music::Scale::operator ==( Music::Scale otherScale)
+bool Music::Scale::operator ==(const Music::Scale otherScale) const
 {
 	return position == otherScale.position;
 }
-bool Music::Scale::operator !=( Music::Scale otherScale)
+bool Music::Scale::operator !=(const Music::Scale otherScale) const
 {
 	return position != otherScale.position;
 }
-bool Music::Scale::operator <( Music::Scale otherScale)
+bool Music::Scale::operator <(const Music::Scale otherScale) const
 {
 	return (int)position < (int)otherScale.position;
 }
-bool Music::Scale::operator <=( Music::Scale otherScale)
+bool Music::Scale::operator <=(const Music::Scale otherScale) const
 {
 	return (int)position <= (int)otherScale.position;
 }
-bool Music::Scale::operator >( Music::Scale otherScale)
+bool Music::Scale::operator >(const Music::Scale otherScale) const
 {
 	return (int)position > (int)otherScale.position;
 }
-bool Music::Scale::operator >=( Music::Scale otherScale)
+bool Music::Scale::operator >=(const Music::Scale otherScale) const
 {
 	return (int)position >= (int)otherScale.position;
 }

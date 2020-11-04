@@ -20,7 +20,7 @@ Music::PentatonicMajorScale::PentatonicMajorScale(int note) :
 			Music::Step::WholeandAHalf,
 			Music::Step::Whole}
 {
-	Music::PentatonicMajorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::PentatonicMajorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }
 
 Music::PentatonicMajorScale::PentatonicMajorScale(char note) :
@@ -31,5 +31,5 @@ Music::PentatonicMajorScale::PentatonicMajorScale(char note) :
 			Music::Step::WholeandAHalf,
 			Music::Step::Whole}
 {
-	Music::PentatonicMajorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::PentatonicMajorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }

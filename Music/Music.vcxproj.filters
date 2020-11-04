@@ -54,6 +54,9 @@
     <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
       <Filter>Source Files\Scales</Filter>
     </ClCompile>
+    <ClCompile Include="src\Music.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Object.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="src\scales\PentatonicMinorScale.h">
       <Filter>Header Files\Scales</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Music.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

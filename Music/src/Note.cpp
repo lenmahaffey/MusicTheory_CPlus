@@ -4,25 +4,25 @@
 //Constructors
 Music::Note::Note() :
 	Music::Object(),
-	weight(Music::Object::GetWeightForPosition(Music::Object::GetPositionFromChromaticScale("NONE")))
+	weight(Music::GetWeightForPosition(Music::GetPositionFromChromaticScale("NONE")))
 {
 }
 
 Music::Note::Note(Music::ChromaticScalePosition note) :
 	Music::Object(note),
-	weight(Music::Object::GetWeightForPosition(note))
+	weight(Music::GetWeightForPosition(note))
 {
 }
 
 Music::Note::Note(std::string note) :
 	Music::Object(note),
-	weight(Music::Object::GetWeightForPosition(Music::Object::GetPositionFromChromaticScale(note)))
+	weight(Music::GetWeightForPosition(Music::GetPositionFromChromaticScale(note)))
 {
 }
 
 Music::Note::Note(int note) :
 	Music::Object(note),
-	weight(Music::Object::GetWeightForPosition(Music::Object::GetPositionFromChromaticScale(note)))
+	weight(Music::GetWeightForPosition(Music::GetPositionFromChromaticScale(note)))
 {
 }
 
@@ -34,7 +34,7 @@ Music::Weight Music::Note::getWeight()
 
 std::string Music::Note::getWeightAsString()
 {
-	return Music::Object::GetWeightAsString(Music::Note::weight);
+	return Music::GetWeightAsString(Music::Note::weight);
 }
 
 //Operator Overloads
@@ -64,27 +64,27 @@ Music::Note Music::Note::operator --(int)
 	*this = newNote;
 	return temp;
 }
-bool Music::Note::operator ==(Music::Note otherNote)
+bool Music::Note::operator ==(const Music::Note& otherNote) const
 {
 	return position == otherNote.position;
 }
-bool Music::Note::operator !=(Music::Note otherNote)
+bool Music::Note::operator !=(const Music::Note& otherNote) const
 {
 	return position != otherNote.position;
 }
-bool Music::Note::operator <(Music::Note otherNote)
+bool Music::Note::operator <(const Music::Note& otherNote) const
 {
 	return (int)position < (int)otherNote.position;
 }
-bool Music::Note::operator <=(Music::Note otherNote)
+bool Music::Note::operator <=(const Music::Note& otherNote) const
 {
 	return (int)position <= (int)otherNote.position;
 }
-bool Music::Note::operator >(Music::Note otherNote)
+bool Music::Note::operator >(const Music::Note& otherNote) const
 {
 	return (int)position > (int)otherNote.position;
 }
-bool Music::Note::operator >=(Music::Note otherNote)
+bool Music::Note::operator >=(const Music::Note& otherNote) const
 {
 	return (int)position >= (int)otherNote.position;
 }

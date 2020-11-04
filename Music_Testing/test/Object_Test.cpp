@@ -2,6 +2,7 @@
 #include "../pch.h"
 #include "CppUnitTest.h"
 #include "../../Music/src/Object.cpp"
+#include "../../Music/src/Music.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;

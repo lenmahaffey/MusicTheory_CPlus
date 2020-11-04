@@ -21,12 +21,12 @@ namespace Music {
 		Music::Note operator ++(int);
 		Music::Note operator --();
 		Music::Note operator --(int);
-		bool operator ==(Music::Note);
-		bool operator !=(Music::Note);
-		bool operator <(Music::Note otherNote);
-		bool operator <=(Music::Note otherNote);
-		bool operator >(Music::Note otherNote);
-		bool operator >=(Music::Note otherNote);
+		bool operator ==(const Music::Note& otherNote) const;
+		bool operator !=(const Music::Note& otherNote) const;
+		bool operator <(const Music::Note& otherNote) const;
+		bool operator <=(const Music::Note& otherNote) const;
+		bool operator >(const Music::Note& otherNote) const;
+		bool operator >=(const Music::Note& otherNote) const;
 
 	protected:
 		//Properties

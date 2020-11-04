@@ -24,7 +24,7 @@ Music::NaturalMinorScale::NaturalMinorScale(int note) :
 			Music::Step::Half,
 			Music::Step::Whole}
 {
-	Music::NaturalMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(char note) :
@@ -37,5 +37,5 @@ Music::NaturalMinorScale::NaturalMinorScale(char note) :
 			Music::Step::Half,
 			Music::Step::Whole}
 {
-	Music::NaturalMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }

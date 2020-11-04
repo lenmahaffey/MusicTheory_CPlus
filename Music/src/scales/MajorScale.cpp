@@ -24,7 +24,7 @@ Music::MajorScale::MajorScale(int note) :
 			Music::Step::Whole,
 			Music::Step::Whole}
 {
-	Music::MajorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::MajorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }
 
 Music::MajorScale::MajorScale(std::string note) :

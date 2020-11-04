@@ -143,6 +143,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="src\Music.cpp" />
     <ClCompile Include="src\Note.cpp" />
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Scale.cpp" />
@@ -155,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ChromaticScale.h" />
+    <ClInclude Include="src\Music.h" />
     <ClInclude Include="src\Note.h" />
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Scale.h" />

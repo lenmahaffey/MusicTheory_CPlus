@@ -20,7 +20,7 @@ Music::PentatonicMinorScale::PentatonicMinorScale(int note) :
 			Music::Step::Whole,
 			Music::Step::WholeandAHalf}
 {
-	Music::PentatonicMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::PentatonicMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }
 
 Music::PentatonicMinorScale::PentatonicMinorScale(char note) :
@@ -31,5 +31,5 @@ Music::PentatonicMinorScale::PentatonicMinorScale(char note) :
 		Music::Step::Whole,
 		Music::Step::WholeandAHalf}
 {
-	Music::PentatonicMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::PentatonicMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
 }
