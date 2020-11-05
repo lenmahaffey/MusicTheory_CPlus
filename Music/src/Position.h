@@ -6,7 +6,7 @@ namespace Music
 	class Position
 	{
 	public:
-		static enum class ChromaticScalePosition
+		enum class ChromaticScalePosition
 		{
 			NONE = 0,
 			A,
@@ -22,13 +22,13 @@ namespace Music
 			G,
 			GsAf
 		};
-		static enum class Weight
+		enum class Weight
 		{
 			NONE = 0,
 			Half,
 			Whole
 		};
-		static enum class Step
+		enum class Step
 		{
 			NONE = 0,
 			Half,

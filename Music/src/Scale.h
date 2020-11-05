@@ -1,6 +1,6 @@
 #pragma once
 #include "Note.h"
-#include <string>
+#include "ScalePatterns.h"
 
 namespace Music{
 

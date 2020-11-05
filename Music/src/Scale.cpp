@@ -1,6 +1,6 @@
 #pragma once
 #include "Scale.h"
-#include "ScalePatterns.h"
+
 //Constructors
 Music::Scale::Scale() :
 	Music::Object(Music::Position::ChromaticScalePosition::NONE),

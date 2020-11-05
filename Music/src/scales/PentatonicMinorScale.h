@@ -7,12 +7,12 @@ namespace Music {
 	{
 	public:
 		Music::PentatonicMinorScale() = default;
-		Music::PentatonicMinorScale(Music::ChromaticScalePosition note);
+		Music::PentatonicMinorScale(Music::Position::ChromaticScalePosition note);
 		Music::PentatonicMinorScale(int noteIndex);
 		Music::PentatonicMinorScale(char note);
 
 	protected:
-		Music::Step pattern[7];
+		Music::Position::Step(*pattern)[7];
 	};
 }
 

@@ -15,23 +15,23 @@ using namespace Music;
 
 int main()
 {
-	Music::Step pattern[7] =
-	{
-		Music::Step::Whole,
-		Music::Step::Whole,
-		Music::Step::Whole,
-		Music::Step::Half,
-		Music::Step::Whole,
-		Music::Step::Whole,
-		Music::Step::Whole,
-	};
-	Scale C("C", pattern, true);
+	//Music::Step pattern[7] =
+	//{
+	//	Music::Step::Whole,
+	//	Music::Step::Whole,
+	//	Music::Step::Whole,
+	//	Music::Step::Half,
+	//	Music::Step::Whole,
+	//	Music::Step::Whole,
+	//	Music::Step::Whole,
+	//};
+	//Scale C("C", pattern, true);
 
 	//Music::Step step = *C.pattern[0];
 	//cout << step << endl;
 	//cout << C.pattern[1];
 
-	cout << C.getNameAsString() << endl;
+	//cout << C.getNameAsString() << endl;
 
 	return 0;
 }

@@ -36,7 +36,7 @@ namespace Music
 
 	protected:
 		//Properties
-		Music::ChromaticScalePosition position;
+		Music::Position::ChromaticScalePosition position;
 		std::string textName;
 	};
 }

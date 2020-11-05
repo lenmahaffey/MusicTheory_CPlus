@@ -1,41 +1,24 @@
 #pragma once
 #include "NaturalMinorScale.h"
+#include "../ScalePatterns.h"
 
-Music::NaturalMinorScale::NaturalMinorScale(Music::ChromaticScalePosition note) :
-	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole}
+Music::NaturalMinorScale::NaturalMinorScale(Music::Position::ChromaticScalePosition note) :
+	Music::Scale(note, *pattern, false),
+	pattern{ }
 {
 	Music::NaturalMinorScale::setScale(note);
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(int note) :
-	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole}
+	Music::Scale(note, *pattern, false),
+	pattern{ }
 {
-	Music::NaturalMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(char note) :
-	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole}
+	Music::Scale(note, *pattern, false),
+	pattern{ }
 {
-	Music::NaturalMinorScale::setScale(Music::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }
