@@ -1,29 +1,26 @@
 #pragma once
 #include <string>
-#include "Music.h"
-//#include "ChromaticScale.h"
-//#include "Step.h"
-//#include "Weight.h"
+#include "Position.h"
 
-namespace Music {
-
+namespace Music
+{
 	class Object
 	{
 	public:
 		//Constructors
 		Music::Object();
-		Music::Object(Music::ChromaticScalePosition note);
+		Music::Object(Music::Position::ChromaticScalePosition note);
 		Music::Object(std::string note);
 		Music::Object(int note);
 
 		//Accessors
-		Music::ChromaticScalePosition getPosition() const;
+		Music::Position::ChromaticScalePosition getPosition() const;
 		std::string getNameAsString() const;
 
 		//Methods
-		Music::ChromaticScalePosition accendHalfStep();
-		Music::ChromaticScalePosition accendFullStep();
-		Music::ChromaticScalePosition accendStepAndAHalf();
+		Music::Position::ChromaticScalePosition accendHalfStep();
+		Music::Position::ChromaticScalePosition accendFullStep();
+		Music::Position::ChromaticScalePosition accendStepAndAHalf();
 
 		//Operator overloads
 		Music::Object operator ++();

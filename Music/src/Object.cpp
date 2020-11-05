@@ -3,28 +3,28 @@
 
 // Constructors
 Music::Object::Object() :
-	position(Music::ChromaticScalePosition::NONE),
-	textName(Music::GetPositionAsString(Music::ChromaticScalePosition::NONE))
+	position(Music::Position::ChromaticScalePosition::NONE),
+	textName(Music::Position::GetPositionAsString(Music::Position::ChromaticScalePosition::NONE))
 {
 }
-Music::Object::Object(Music::ChromaticScalePosition note) :
+Music::Object::Object(Music::Position::ChromaticScalePosition note) :
 	position(note),
-	textName(Music::GetPositionAsString(note))
+	textName(Music::Position::GetPositionAsString(note))
 {
 }
 Music::Object::Object(std::string note) :
-	position(Music::GetPositionFromChromaticScale(note)),
-	textName(GetPositionAsString(Music::Object::position))
+	position(Music::Position::GetPositionFromChromaticScale(note)),
+	textName(Music::Position::GetPositionAsString(Music::Object::position))
 {
 }
 Music::Object::Object(int note) :
-	position(Music::GetPositionFromChromaticScale(note)),
-	textName(GetPositionAsString(Music::GetPositionFromChromaticScale(note)))
+	position(Music::Position::GetPositionFromChromaticScale(note)),
+	textName(Music::Position::GetPositionAsString(Music::Position::GetPositionFromChromaticScale(note)))
 {
 }
 
 //Accessors
-Music::ChromaticScalePosition Music::Object::getPosition() const
+Music::Position::ChromaticScalePosition Music::Object::getPosition() const
 {
 	return Music::Object::position;
 }
@@ -34,48 +34,48 @@ std::string Music::Object::getNameAsString() const
 }
 
 //Class Methods
-Music::ChromaticScalePosition Music::Object::accendHalfStep()
+Music::Position::ChromaticScalePosition Music::Object::accendHalfStep()
 {
 	int index = (int)Music::Object::position;
 	int haveSteped = 0;
-	Music::ChromaticScalePosition currentNote = Music::Object::position;
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position;
 	do
 	{
 		index++;
 		if (index > 12)
 			index = 1;
-		currentNote = Music::GetPositionFromChromaticScale(index);
+		currentNote = Music::Position::GetPositionFromChromaticScale(index);
 		haveSteped++;
 	} while (haveSteped != 1);
 	return currentNote;
 }
-Music::ChromaticScalePosition Music::Object::accendFullStep()
+Music::Position::ChromaticScalePosition Music::Object::accendFullStep()
 {
 	int index = (int)Music::Object::position;
 	int haveSteped = 0;
-	Music::ChromaticScalePosition currentNote = Music::Object::position;
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position;
 	do
 	{
 		index++;
 		if (index > 12)
 			index = 1;
-		currentNote = Music::GetPositionFromChromaticScale(index);
+		currentNote = Music::Position::GetPositionFromChromaticScale(index);
 		haveSteped++;
 	} while (haveSteped != 2);
 
 	return currentNote;
 }
-Music::ChromaticScalePosition Music::Object::accendStepAndAHalf()
+Music::Position::ChromaticScalePosition Music::Object::accendStepAndAHalf()
 {
 	int index = (int)Music::Object::position;
 	int haveSteped = 0;
-	Music::ChromaticScalePosition currentNote = Music::Object::position;
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position;
 	do
 	{
 		index++;
 		if (index > 12)
 			index = 1;
-		currentNote = Music::GetPositionFromChromaticScale(index);
+		currentNote = Music::Position::GetPositionFromChromaticScale(index);
 		haveSteped++;
 
 	} while (haveSteped != 3);

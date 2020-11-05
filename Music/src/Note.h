@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include "Object.h"
 
 namespace Music {
@@ -9,12 +8,12 @@ namespace Music {
 	public:
 		//Constructors
 		Music::Note();
-		Music::Note(Music::ChromaticScalePosition note);
+		Music::Note(Music::Position::ChromaticScalePosition note);
 		Music::Note(std::string note);
 		Music::Note(int note);
 
 		//Accessors
-		Music::Weight getWeight() const;
+		Music::Position::Weight getWeight() const;
 		std::string getWeightAsString() const;
 
 		Music::Note operator ++();
@@ -30,7 +29,7 @@ namespace Music {
 
 	protected:
 		//Properties
-		 Music::Weight weight;
+		 Music::Position::Weight weight;
 	};
 }
 

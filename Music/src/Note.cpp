@@ -4,37 +4,37 @@
 //Constructors
 Music::Note::Note() :
 	Music::Object(),
-	weight(Music::GetWeightForPosition(Music::GetPositionFromChromaticScale("NONE")))
+	weight(Music::Position::GetWeightForPosition(Music::Position::GetPositionFromChromaticScale("NONE")))
 {
 }
 
-Music::Note::Note(Music::ChromaticScalePosition note) :
+Music::Note::Note(Music::Position::ChromaticScalePosition note) :
 	Music::Object(note),
-	weight(Music::GetWeightForPosition(note))
+	weight(Music::Position::GetWeightForPosition(note))
 {
 }
 
 Music::Note::Note(std::string note) :
 	Music::Object(note),
-	weight(Music::GetWeightForPosition(Music::GetPositionFromChromaticScale(note)))
+	weight(Music::Position::GetWeightForPosition(Music::Position::GetPositionFromChromaticScale(note)))
 {
 }
 
 Music::Note::Note(int note) :
 	Music::Object(note),
-	weight(Music::GetWeightForPosition(Music::GetPositionFromChromaticScale(note)))
+	weight(Music::Position::GetWeightForPosition(Music::Position::GetPositionFromChromaticScale(note)))
 {
 }
 
 //Accessors
-Music::Weight Music::Note::getWeight() const
+Music::Position::Weight Music::Note::getWeight() const
 {
 	return Music::Note::weight;
 }
 
 std::string Music::Note::getWeightAsString() const
 {
-	return Music::GetWeightAsString(Music::Note::weight);
+	return Music::Position::GetWeightAsString(Music::Note::weight);
 }
 
 //Operator Overloads

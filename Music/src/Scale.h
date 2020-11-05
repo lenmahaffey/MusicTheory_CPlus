@@ -1,6 +1,5 @@
 #pragma once
 #include "Note.h"
-#include "Object.h"
 #include <string>
 
 namespace Music{
@@ -10,9 +9,9 @@ namespace Music{
 	public:
 		//Constructors
 		Music::Scale();
-		Music::Scale(Music::ChromaticScalePosition position,  Music::Step (&pattern)[7],  bool isMajor);
-		Music::Scale(int position,  Music::Step(&pattern)[7],  bool isMajor);
-		Music::Scale(std::string note,  Music::Step(&pattern)[7],  bool isMajor);
+		Music::Scale(Music::Position::ChromaticScalePosition position,  Music::Position::Step (&pattern)[7],  bool isMajor);
+		Music::Scale(int position,  Music::Position::Step(&pattern)[7],  bool isMajor);
+		Music::Scale(std::string note,  Music::Position::Step(&pattern)[7],  bool isMajor);
 
 		//Accessors
 		std::string getScaleAsString() const;
@@ -32,12 +31,12 @@ namespace Music{
 
 	protected:
 		//Properties
-		Music::Step (*pattern)[7];
+		Music::Position::Step (*pattern)[7];
 		int scalePatternLength;
 		bool isMajor;
 		Music::Note scale[7];
 
 		//Methods
-		void setScale(Music::ChromaticScalePosition);
+		void setScale(Music::Position::ChromaticScalePosition);
 	};
 }

@@ -1,41 +1,40 @@
 #pragma once
 #include "Scale.h"
-#include "Music.h"
-
+#include "ScalePatterns.h"
 //Constructors
 Music::Scale::Scale() :
-	Music::Object(Music::ChromaticScalePosition::NONE),
-	pattern{ &Music::emptyScalePattern },
-	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
+	Music::Object(Music::Position::ChromaticScalePosition::NONE),
+	pattern{ &Music::ScalePatterns::emptyScale::emptyScalePattern },
+	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(true),
-	scalePatternLength(7)
+	scalePatternLength(Music::ScalePatterns::emptyScale::scaleLength)
 {
 }
 
-Music::Scale::Scale( Music::ChromaticScalePosition note,  Music::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale( Music::Position::ChromaticScalePosition note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
 	Music::Object(note),
 	pattern{ &pattern },
-	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
+	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
 {
 	Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale( int note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
 	Object(note),
 	pattern{ &pattern },
-	scale{ Music::Note::Note(Music::ChromaticScalePosition::NONE) },
+	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
 {
 		Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale( std::string note,  Music::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale( std::string note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
 	Object(note),
 	pattern{ &pattern },
-	scale{ Music::Note(Music::ChromaticScalePosition::NONE) },
+	scale{ Music::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
 	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
 {
@@ -69,28 +68,28 @@ std::string Music::Scale::getScaleAsString() const
 }
 
 //Methods
-void Music::Scale::setScale(Music::ChromaticScalePosition note)
+void Music::Scale::setScale(Music::Position::ChromaticScalePosition note)
 {
 	Music::Scale::scale[0] = Music::Note(note);
 	Music::Note nextNote = note;
 	for (int i = 1; i < scalePatternLength; i++) {
-		Music::Step step = (*Music::Scale::pattern)[i];
-		if ((int)step == (int)Music::Step::NONE)
+		Music::Position::Step step = (*Music::Scale::pattern)[i];
+		if ((int)step == (int)Music::Position::Step::NONE)
 			continue;
 
-		else if ((int)step == (int)Music::Step::Whole)
+		else if ((int)step == (int)Music::Position::Step::Whole)
 		{
 			nextNote = nextNote.accendFullStep();;
 			Music::Scale::scale[i] = nextNote;
 		}
 
-		else if ((int)step == (int)Music::Step::Half)
+		else if ((int)step == (int)Music::Position::Step::Half)
 		{
 			nextNote = nextNote.accendHalfStep();
 			Music::Scale::scale[i] = Note(nextNote);
 		}
 
-		else if ((int)step == (int)Music::Step::WholeandAHalf)
+		else if ((int)step == (int)Music::Position::Step::WholeandAHalf)
 		{
 			nextNote = nextNote.accendStepAndAHalf();
 			Music::Scale::scale[i] = Note(nextNote);
@@ -135,17 +134,17 @@ bool Music::Scale::operator !=(const Music::Scale otherScale) const
 }
 bool Music::Scale::operator <(const Music::Scale otherScale) const
 {
-	return (int)position < (int)otherScale.position;
+	return position < otherScale.position;
 }
 bool Music::Scale::operator <=(const Music::Scale otherScale) const
 {
-	return (int)position <= (int)otherScale.position;
+	return position <= otherScale.position;
 }
 bool Music::Scale::operator >(const Music::Scale otherScale) const
 {
-	return (int)position > (int)otherScale.position;
+	return position > otherScale.position;
 }
 bool Music::Scale::operator >=(const Music::Scale otherScale) const
 {
-	return (int)position >= (int)otherScale.position;
+	return position >= otherScale.position;
 }
