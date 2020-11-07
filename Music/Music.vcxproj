@@ -148,7 +148,7 @@
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Position.cpp" />
     <ClCompile Include="src\Scale.cpp" />
-    <ClCompile Include="src\ScalePatterns.cpp" />
+    <ClCompile Include="src\ScalePattern.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Music.h" />
@@ -156,7 +156,7 @@
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Position.h" />
     <ClInclude Include="src\Scale.h" />
-    <ClInclude Include="src\ScalePatterns.h" />
+    <ClInclude Include="src\ScalePattern.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

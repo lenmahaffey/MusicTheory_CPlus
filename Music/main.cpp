@@ -8,6 +8,7 @@
 */
 #include "src/scales/PentatonicMinorScale.h"
 #include "src/scales/MajorScale.h"
+#include "src//ScalePattern.h"
 #include <iostream>
 
 using namespace std;
@@ -25,14 +26,14 @@ int main()
 	//	Music::Step::Whole,
 	//	Music::Step::Whole,
 	//};
-	//Scale C("C", pattern, true);
-
+	Scale NONE = Scale();
 	//Music::Step step = *C.pattern[0];
 	//cout << step << endl;
 	//cout << C.pattern[1];
 
 	//cout << C.getNameAsString() << endl;
-
+	//ScalePattern newPattern = ScalePattern();
+	//cout << Music::Position::GetStepAsString(newPattern.Empty.emptyScalePattern[5]);
 	return 0;
 }
 

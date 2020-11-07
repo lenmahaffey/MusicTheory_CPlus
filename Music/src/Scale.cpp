@@ -1,42 +1,42 @@
 #pragma once
 #include "Scale.h"
-
+#include "ScalePattern.h"
 //Constructors
 Music::Scale::Scale() :
 	Music::Object(Music::Position::ChromaticScalePosition::NONE),
-	pattern{ &Music::ScalePatterns::emptyScale::emptyScalePattern },
+	pattern{ *ScalePattern().emptyScalePattern },
 	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(true),
-	scalePatternLength(Music::ScalePatterns::emptyScale::scaleLength)
+	scalePatternLength()
 {
 }
 
-Music::Scale::Scale( Music::Position::ChromaticScalePosition note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale( Music::Position::ChromaticScalePosition note,  Music::Position::Step pattern[7],  bool isMajor) :
 	Music::Object(note),
-	pattern{ &pattern },
+	pattern{ *pattern },
 	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+	scalePatternLength(7)
 {
 	Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale( int note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale( int note,  Music::Position::Step pattern[7],  bool isMajor) :
 	Object(note),
-	pattern{ &pattern },
+	pattern{ *pattern },
 	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+	scalePatternLength(7)
 {
 		Music::Scale::setScale(Music::Scale::getPosition());
 }
 
-Music::Scale::Scale( std::string note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale( std::string note,  Music::Position::Step pattern[7],  bool isMajor) :
 	Object(note),
-	pattern{ &pattern },
+	pattern{ *pattern },
 	scale{ Music::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(isMajor),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+	scalePatternLength(7)
 {
 	Music::Scale::setScale(Music::Scale::getPosition());
 }
@@ -73,23 +73,23 @@ void Music::Scale::setScale(Music::Position::ChromaticScalePosition note)
 	Music::Scale::scale[0] = Music::Note(note);
 	Music::Note nextNote = note;
 	for (int i = 1; i < scalePatternLength; i++) {
-		Music::Position::Step step = (*Music::Scale::pattern)[i];
-		if ((int)step == (int)Music::Position::Step::NONE)
+		Music::Position::Step step = Music::Scale::pattern[i];
+		if (step == Music::Position::Step::NONE)
 			continue;
 
-		else if ((int)step == (int)Music::Position::Step::Whole)
+		else if (step == Music::Position::Step::Whole)
 		{
 			nextNote = nextNote.accendFullStep();;
 			Music::Scale::scale[i] = nextNote;
 		}
 
-		else if ((int)step == (int)Music::Position::Step::Half)
+		else if (step == Music::Position::Step::Half)
 		{
 			nextNote = nextNote.accendHalfStep();
 			Music::Scale::scale[i] = Note(nextNote);
 		}
 
-		else if ((int)step == (int)Music::Position::Step::WholeandAHalf)
+		else if (step == Music::Position::Step::WholeandAHalf)
 		{
 			nextNote = nextNote.accendStepAndAHalf();
 			Music::Scale::scale[i] = Note(nextNote);
@@ -100,27 +100,27 @@ void Music::Scale::setScale(Music::Position::ChromaticScalePosition note)
 //Operator Overloads
 Music::Scale Music::Scale::operator ++()
 {
-	Music::Scale newScale = Music::Scale((int)position + 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	Music::Scale newScale = Music::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
 	*this = newScale;
 	return *this;
 }
 Music::Scale Music::Scale::operator ++(int)
 {
 	Music::Scale temp = *this;
-	Music::Scale newScale = Music::Scale((int)position + 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	Music::Scale newScale = Music::Scale((int)position + 1, Music::Scale::pattern, Music::Scale::isMajor);
 	*this = newScale;
 	return temp;
 }
 Music::Scale Music::Scale::operator --()
 {
-	Music::Scale newScale = Music::Scale((int)position - 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	Music::Scale newScale = Music::Scale((int)position - 1, Music::Scale::pattern, Music::Scale::isMajor);
 	*this = newScale;
 	return newScale;
 }
 Music::Scale Music::Scale::operator --(int)
 {
 	Music::Scale temp = *this;
-	Music::Scale newScale = Music::Scale((int)position - 1, *Music::Scale::pattern, Music::Scale::isMajor);
+	Music::Scale newScale = Music::Scale((int)position - 1, Music::Scale::pattern, Music::Scale::isMajor);
 	*this = newScale;
 	return temp;
 }

@@ -33,7 +33,7 @@
     <ClCompile Include="src\Position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ScalePatterns.cpp">
+    <ClCompile Include="src\ScalePattern.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClInclude Include="src\Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ScalePatterns.h">
+    <ClInclude Include="src\ScalePattern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
