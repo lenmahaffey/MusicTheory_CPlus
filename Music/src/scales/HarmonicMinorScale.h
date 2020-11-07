@@ -12,7 +12,7 @@ namespace Music {
 		Music::HarmonicMinorScale(char note);
 
 	protected:
-		Music::Position::Step(*pattern)[7];
+		Music::Position::Step pattern[7];
 	};
 }
 

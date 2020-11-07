@@ -26,11 +26,13 @@ int main()
 	//	Music::Step::Whole,
 	//	Music::Step::Whole,
 	//};
-	Scale NONE = Scale();
+	ScalePattern pattern = ScalePattern();
+	Scale NONE = Scale(0, pattern.emptyScalePattern,true);
+	Scale otherNONE = Scale(0, pattern.emptyScalePattern, true);
 	//Music::Step step = *C.pattern[0];
 	//cout << step << endl;
 	//cout << C.pattern[1];
-
+	Scale A = Scale("A", pattern.emptyScalePattern, true);
 	//cout << C.getNameAsString() << endl;
 	//ScalePattern newPattern = ScalePattern();
 	//cout << Music::Position::GetStepAsString(newPattern.Empty.emptyScalePattern[5]);

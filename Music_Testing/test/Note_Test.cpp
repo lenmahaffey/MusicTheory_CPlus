@@ -2,7 +2,8 @@
 #include "../pch.h"
 #include "CppUnitTest.h"
 #include "../../Music/src/Note.cpp"
-#include <iostream>
+//#include "../../Music/src/Position.cpp"
+//#include "../../Music/src/Position.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -14,74 +15,74 @@ namespace Note_Test
 	{
 		TEST_METHOD(A_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::A;
-			Note A = Note(ChromaticScalePosition::A);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
+			Note A = Note(Music::Position::ChromaticScalePosition::A);
 			Assert::AreEqual((int)expected, (int)A.getPosition());
 		}
 		TEST_METHOD(AsBf_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
-			Note AsBf = Note(ChromaticScalePosition::AsBf);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::AsBf;
+			Note AsBf = Note(Music::Position::ChromaticScalePosition::AsBf);
 			Assert::AreEqual((int)expected, (int)AsBf.getPosition());
 		}
 		TEST_METHOD(B_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::B;
-			Note B = Note(ChromaticScalePosition::B);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::B;
+			Note B = Note(Music::Position::ChromaticScalePosition::B);
 			Assert::AreEqual((int)expected, (int)B.getPosition());
 		}
 		TEST_METHOD(C_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::C;
-			Note C = Note(ChromaticScalePosition::C);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::C;
+			Note C = Note(Music::Position::ChromaticScalePosition::C);
 			Assert::AreEqual((int)expected, (int)C.getPosition());
 		}
 		TEST_METHOD(CsDf_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
-			Note CsDf = Note(ChromaticScalePosition::CsDf);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::CsDf;
+			Note CsDf = Note(Music::Position::ChromaticScalePosition::CsDf);
 			Assert::AreEqual((int)expected, (int)CsDf.getPosition());
 		}
 		TEST_METHOD(D_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::D;
-			Note D = Note(ChromaticScalePosition::D);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::D;
+			Note D = Note(Music::Position::ChromaticScalePosition::D);
 			Assert::AreEqual((int)expected, (int)D.getPosition());
 		}
 		TEST_METHOD(DsEf_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
-			Note DsEf = Note(ChromaticScalePosition::DsEf);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::DsEf;
+			Note DsEf = Note(Music::Position::ChromaticScalePosition::DsEf);
 			Assert::AreEqual((int)expected, (int)DsEf.getPosition());
 		}
 		TEST_METHOD(E_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::E;
-			Note E = Note(ChromaticScalePosition::E);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::E;
+			Note E = Note(Music::Position::ChromaticScalePosition::E);
 			Assert::AreEqual((int)expected, (int)E.getPosition());
 		}
 		TEST_METHOD(F_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::F;
-			Note F = Note(ChromaticScalePosition::F);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::F;
+			Note F = Note(Music::Position::ChromaticScalePosition::F);
 			Assert::AreEqual((int)expected, (int)F.getPosition());
 		}
 		TEST_METHOD(FsGf_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
-			Note FsGf = Note(ChromaticScalePosition::FsGf);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::FsGf;
+			Note FsGf = Note(Music::Position::ChromaticScalePosition::FsGf);
 			Assert::AreEqual((int)expected, (int)FsGf.getPosition());
 		}
 		TEST_METHOD(G_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::G;
-			Note G = Note(ChromaticScalePosition::G);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::G;
+			Note G = Note(Music::Position::ChromaticScalePosition::G);
 			Assert::AreEqual((int)expected, (int)G.getPosition());
 		}
 		TEST_METHOD(GsAf_ConstructorFromEnum_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
-			Note GsAf = Note(ChromaticScalePosition::GsAf);
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::GsAf;
+			Note GsAf = Note(Music::Position::ChromaticScalePosition::GsAf);
 			Assert::AreEqual((int)expected, (int)GsAf.getPosition());
 		}
 	};
@@ -89,73 +90,73 @@ namespace Note_Test
 	{
 		TEST_METHOD(A_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::A;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
 			Note A = Note("A");
 			Assert::AreEqual((int)expected, (int)A.getPosition());
 		}
 		TEST_METHOD(AsBf_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::AsBf;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::AsBf;
 			Note AsBf = Note("AsBf");
 			Assert::AreEqual((int)expected, (int)AsBf.getPosition());
 		}
 		TEST_METHOD(B_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::B;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::B;
 			Note B = Note("B");
 			Assert::AreEqual((int)expected, (int)B.getPosition());
 		}
 		TEST_METHOD(C_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::C;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::C;
 			Note C = Note("C");
 			Assert::AreEqual((int)expected, (int)C.getPosition());
 		}
 		TEST_METHOD(CsDf_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::CsDf;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::CsDf;
 			Note CsDf = Note("CsDf");
 			Assert::AreEqual((int)expected, (int)CsDf.getPosition());
 		}
 		TEST_METHOD(D_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::D;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::D;
 			Note D = Note("D");
 			Assert::AreEqual((int)expected, (int)D.getPosition());
 		}
 		TEST_METHOD(DsEf_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::DsEf;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::DsEf;
 			Note DsEf = Note("DsEf");
 			Assert::AreEqual((int)expected, (int)DsEf.getPosition());
 		}
 		TEST_METHOD(E_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::E;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::E;
 			Note E = Note("E");
 			Assert::AreEqual((int)expected, (int)E.getPosition());
 		}
 		TEST_METHOD(F_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::F;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::F;
 			Note F = Note("F");
 			Assert::AreEqual((int)expected, (int)F.getPosition());
 		}
 		TEST_METHOD(FsGf_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::FsGf;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::FsGf;
 			Note FsGf = Note("FsGf");
 			Assert::AreEqual((int)expected, (int)FsGf.getPosition());
 		}
 		TEST_METHOD(G_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::G;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::G;
 			Note G = Note("G");
 			Assert::AreEqual((int)expected, (int)G.getPosition());
 		}
 		TEST_METHOD(GsAf_ConstructorFromString_Test)
 		{
-			ChromaticScalePosition expected = ChromaticScalePosition::GsAf;
+			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::GsAf;
 			Note GsAf = Note("GsAf");
 			Assert::AreEqual((int)expected, (int)GsAf.getPosition());
 		}
@@ -164,137 +165,137 @@ namespace Note_Test
 	{
 		TEST_METHOD(A_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note A = Note(ChromaticScalePosition::A);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note A = Note(Music::Position::ChromaticScalePosition::A);
 			Assert::AreEqual((int)expected, (int)A.getWeight());
 		}
 		TEST_METHOD(AsBf_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Half;
-			Note AsBf = Note(ChromaticScalePosition::AsBf);
+			Music::Position::Weight expected = Music::Position::Weight::Half;
+			Note AsBf = Note(Music::Position::ChromaticScalePosition::AsBf);
 		}
 		TEST_METHOD(B_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note B = Note(ChromaticScalePosition::B);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note B = Note(Music::Position::ChromaticScalePosition::B);
 		}
 		TEST_METHOD(C_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note C = Note(ChromaticScalePosition::C);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note C = Note(Music::Position::ChromaticScalePosition::C);
 		}
 		TEST_METHOD(CsDf_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Half;
-			Note CsDf = Note(ChromaticScalePosition::CsDf);
+			Music::Position::Weight expected = Music::Position::Weight::Half;
+			Note CsDf = Note(Music::Position::ChromaticScalePosition::CsDf);
 		}
 		TEST_METHOD(D_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note D = Note(ChromaticScalePosition::D);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note D = Note(Music::Position::ChromaticScalePosition::D);
 		}
 		TEST_METHOD(DsEf_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Half;
-			Note DsEf = Note(ChromaticScalePosition::DsEf);
+			Music::Position::Weight expected = Music::Position::Weight::Half;
+			Note DsEf = Note(Music::Position::ChromaticScalePosition::DsEf);
 		}
 		TEST_METHOD(E_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note E = Note(ChromaticScalePosition::E);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note E = Note(Music::Position::ChromaticScalePosition::E);
 		}
 		TEST_METHOD(F_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note F = Note(ChromaticScalePosition::F);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note F = Note(Music::Position::ChromaticScalePosition::F);
 		}
 		TEST_METHOD(FsGf_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Half;
-			Note FsGf = Note(ChromaticScalePosition::FsGf);
+			Music::Position::Weight expected = Music::Position::Weight::Half;
+			Note FsGf = Note(Music::Position::ChromaticScalePosition::FsGf);
 		}
 		TEST_METHOD(G_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Whole;
-			Note G = Note(ChromaticScalePosition::G);
+			Music::Position::Weight expected = Music::Position::Weight::Whole;
+			Note G = Note(Music::Position::ChromaticScalePosition::G);
 		}
 		TEST_METHOD(GsAf_getWeight_Test)
 		{
-			Music::Weight expected = Music::Weight::Half;
-			Note GsAf = Note(ChromaticScalePosition::GsAf);
+			Music::Position::Weight expected = Music::Position::Weight::Half;
+			Note GsAf = Note(Music::Position::ChromaticScalePosition::GsAf);
 		}
 	};
 	TEST_CLASS(getWeightAsString_Test)
 	{
 		TEST_METHOD(A_getWeightAsString_Test)
 		{
-			Note A = Note(ChromaticScalePosition::A);
+			Note A = Note(Music::Position::ChromaticScalePosition::A);
 			string expected = "Whole";
 			Assert::AreEqual(expected, A.getWeightAsString());
 		}
 		TEST_METHOD(AsBf_getWeightAsString_Test)
 		{
-			Note AsBf = Note(ChromaticScalePosition::AsBf);
+			Note AsBf = Note(Music::Position::ChromaticScalePosition::AsBf);
 			string expected = "Half";
 			Assert::AreEqual(expected, AsBf.getWeightAsString());
 		}
 		TEST_METHOD(B_getWeightAsString_Test)
 		{
-			Note B = Note(ChromaticScalePosition::B);
+			Note B = Note(Music::Position::ChromaticScalePosition::B);
 			string expected = "Whole";
 			Assert::AreEqual(expected, B.getWeightAsString());
 		}
 		TEST_METHOD(C_getWeightAsString_Test)
 		{
-			Note C = Note(ChromaticScalePosition::C);
+			Note C = Note(Music::Position::ChromaticScalePosition::C);
 			string expected = "Whole";
 			Assert::AreEqual(expected, C.getWeightAsString());
 		}
 		TEST_METHOD(CsDf_getWeightAsString_Test)
 		{
-			Note CsDf = Note(ChromaticScalePosition::CsDf);
+			Note CsDf = Note(Music::Position::ChromaticScalePosition::CsDf);
 			string expected = "Half";
 			Assert::AreEqual(expected, CsDf.getWeightAsString());
 		}
 		TEST_METHOD(D_getWeightAsString_Test)
 		{
-			Note D = Note(ChromaticScalePosition::D);
+			Note D = Note(Music::Position::ChromaticScalePosition::D);
 			string expected = "Whole";
 			Assert::AreEqual(expected, D.getWeightAsString());
 		}
 		TEST_METHOD(DsEf_getWeightAsString_Test)
 		{
-			Note DsEf = Note(ChromaticScalePosition::DsEf);
+			Note DsEf = Note(Music::Position::ChromaticScalePosition::DsEf);
 			string expected = "Half";
 			Assert::AreEqual(expected, DsEf.getWeightAsString());
 		}
 		TEST_METHOD(E_getWeightAsString_Test)
 		{
-			Note E = Note(ChromaticScalePosition::E);
+			Note E = Note(Music::Position::ChromaticScalePosition::E);
 			string expected = "Whole";
 			Assert::AreEqual(expected, E.getWeightAsString());
 		}
 		TEST_METHOD(F_getWeightAsString_Test)
 		{
-			Note F = Note(ChromaticScalePosition::F);
+			Note F = Note(Music::Position::ChromaticScalePosition::F);
 			string expected = "Whole";
 			Assert::AreEqual(expected, F.getWeightAsString());
 		}
 		TEST_METHOD(FsGf_getWeightAsString_Test)
 		{
-			Note FsGf = Note(ChromaticScalePosition::FsGf);
+			Note FsGf = Note(Music::Position::ChromaticScalePosition::FsGf);
 			string expected = "Half";
 			Assert::AreEqual(expected, FsGf.getWeightAsString());
 		}
 		TEST_METHOD(G_getWeightAsString_Test)
 		{
-			Note G = Note(ChromaticScalePosition::G);
+			Note G = Note(Music::Position::ChromaticScalePosition::G);
 			string expected = "Whole";
 			Assert::AreEqual(expected, G.getWeightAsString());
 		}
 		TEST_METHOD(GsAf_getWeightAsString_Test)
 		{
-			Note GsAf = Note(ChromaticScalePosition::GsAf);
+			Note GsAf = Note(Music::Position::ChromaticScalePosition::GsAf);
 			string expected = "Half";
 			Assert::AreEqual(expected, GsAf.getWeightAsString());
 		}
