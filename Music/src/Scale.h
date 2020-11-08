@@ -19,12 +19,14 @@ namespace Music{
 		std::string isMajorOrMinor();
 
 		//Operator overloads
-		Music::Scale operator =(Music::Scale& otherScale);
-		Music::Scale operator =(Music::Position::ChromaticScalePosition& position);
-		Music::Scale operator ++();
-		Music::Scale operator ++(int);
-		Music::Scale operator --();
-		Music::Scale operator --(int);
+		//Music::Scale operator =(const Music::Scale& otherScale);
+		//Music::Scale operator =(const Music::Position& position);
+		//Music::Scale operator =(const int& positionAsInt);
+		//Music::Scale operator =(const std::string& positionAsString);
+		//Music::Scale operator ++();
+		//Music::Scale operator ++(int);
+		//Music::Scale operator --();
+		//Music::Scale operator --(int);
 		bool operator ==(const Music::Scale& otherObject) const;
 		bool operator !=(const Music::Scale& otherObject) const;
 		bool operator <(const Music::Scale& otherObject) const;
@@ -40,7 +42,7 @@ namespace Music{
 		Music::Note scale[7];
 
 		//Methods
-		void setScale(Music::Position::ChromaticScalePosition);
+		void setScale(Music::Position);
 
 	};
 }

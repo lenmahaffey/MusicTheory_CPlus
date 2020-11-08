@@ -29,6 +29,7 @@ Music::Note Music::Note::operator =(const Music::Note& otherNote)
 	{
 		this->position = otherNote.position;
 	}
+	return *this;
 }
 Music::Note Music::Note::operator =(const Music::Position& position)
 {
@@ -36,6 +37,7 @@ Music::Note Music::Note::operator =(const Music::Position& position)
 	{
 		this->position = position;
 	}
+	return *this;
 }
 Music::Note Music::Note::operator =(const int& positionAsInt)
 {
@@ -44,14 +46,16 @@ Music::Note Music::Note::operator =(const int& positionAsInt)
 	{
 		this->position = newPosition;
 	}
+	return *this;
 }
-Music::Note Music::Note::operator =(const std::string& positionAsInt)
+Music::Note Music::Note::operator =(const std::string& positionAsString)
 {
 	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsString);
 	if (this->position != newPosition)
 	{
 		this->position = newPosition;
 	}
+	return *this;
 }
 Music::Note Music::Note::operator ++()
 {

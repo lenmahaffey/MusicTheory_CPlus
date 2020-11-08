@@ -13,9 +13,9 @@ namespace Note_Test
 	{
 		TEST_METHOD(A_ConstructorFromEnum_Test)
 		{
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
+			Music::Position expected = Music::Position("A");
 			Note A = Note(Music::Position::ChromaticScalePosition::A);
-			Assert::AreEqual((int)expected, (int)A.GetPosition());
+			Assert::AreEqual(expected, A.GetPosition());
 		}
 		TEST_METHOD(AsBf_ConstructorFromEnum_Test)
 		{

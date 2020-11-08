@@ -3,7 +3,7 @@
 
 //Constructors
 Music::Scale::Scale() :
-	Music::Object(Music::Position::ChromaticScalePosition::NONE),
+	Music::Object(),
 	pattern{ pattern },
 	scale{ Music::Note::Note(Music::Position::ChromaticScalePosition::NONE) },
 	isMajor(true),
@@ -68,10 +68,10 @@ std::string Music::Scale::getScaleAsString()
 }
 
 //Methods
-void Music::Scale::setScale(Music::Position::ChromaticScalePosition note)
+void Music::Scale::setScale(Music::Position position)
 {
-	Music::Scale::scale[0] = Music::Note(note);
-	Music::Note nextNote = note;
+	Music::Scale::scale[0] = Music::Note(position);
+	Music::Note nextNote = position;
 	for (int i = 1; i < scalePatternLength; i++) {
 
 		if (Music::Scale::pattern[i] == Music::Position::Step::NONE)
@@ -97,64 +97,78 @@ void Music::Scale::setScale(Music::Position::ChromaticScalePosition note)
 	}
 }
 
-Music::Scale Music::Scale::operator =(Music::Position& position)
-{
-	this->position = position.;
-
-}
-
-Music::Scale Music::Scale::operator =(const Music::Scale& otherScale)
-{
-
-}
-Music::Scale Music::Scale::operator ++()
-{
-	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
-	*this = newScale;
-	return newScale;
-}
-Music::Scale Music::Scale::operator ++(int)
-{
-	Music::Scale temp = *this;
-	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
-	*this = newScale;
-	return temp;
-}
-Music::Scale Music::Scale::operator --()
-{
-	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
-	*this = newScale;
-	return newScale;
-}
-Music::Scale Music::Scale::operator --(int)
-{
-	Music::Scale temp = *this;
-	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
-	*this = newScale;
-	return temp;
-}
+//Music::Scale Music::Scale::operator =(const Music::Scale& otherScale)
+//{
+//	if (this != &otherScale)
+//	{
+//		delete pattern;
+//		this->position = otherScale.position;
+//		*pattern = &
+//	}
+//}
+//Music::Scale Music::Scale::operator =(const Music::Position& position)
+//{
+//
+//
+//}
+//
+//Music::Scale Music::Scale::operator =(const int& positionAsInt)
+//{
+//
+//}
+//Music::Scale Music::Scale::operator =(const std::string& positionAsString)
+//{
+//
+//}
+//
+//Music::Scale Music::Scale::operator ++()
+//{
+//	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
+//	*this = newScale;
+//	return newScale;
+//}
+//Music::Scale Music::Scale::operator ++(int)
+//{
+//	Music::Scale temp = *this;
+//	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
+//	*this = newScale;
+//	return temp;
+//}
+//Music::Scale Music::Scale::operator --()
+//{
+//	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
+//	*this = newScale;
+//	return newScale;
+//}
+//Music::Scale Music::Scale::operator --(int)
+//{
+//	Music::Scale temp = *this;
+//	Music::Scale newScale = Music::Scale((int)position + 1, pattern, isMajor);
+//	*this = newScale;
+//	return temp;
+//}
 
 bool Music::Scale::operator ==(const Music::Scale& otherScale) const
 {
-	return position == otherScale.position;
+	return Music::Scale::position == otherScale.position;
 }
 bool Music::Scale::operator !=(const Music::Scale& otherScale) const
 {
-	return position != otherScale.position;
+	return Music::Scale::position != otherScale.position;
 }
 bool Music::Scale::operator <(const Music::Scale& otherScale) const
 {
-	return (int)position < (int)otherScale.position;
+	return Music::Scale::position < otherScale.position;
 }
 bool Music::Scale::operator <=(const Music::Scale& otherScale) const
 {
-	return (int)position <= (int)otherScale.position;
+	return Music::Scale::position <= otherScale.position;
 }
 bool Music::Scale::operator >(const Music::Scale& otherScale) const
 {
-	return (int)position > (int)otherScale.position;
+	return Music::Scale::position > otherScale.position;
 }
 bool Music::Scale::operator >=(const Music::Scale& otherScale) const
 {
-	return (int)position >= (int)otherScale.position;
+	return Music::Scale::position >= otherScale.position;
 }

@@ -217,6 +217,7 @@ Music::Position Music::Position::operator =(const Music::Position& otherPosition
 		position = otherPosition.position;
 		weight = otherPosition.weight;
 	}
+	return *this;
 }
 Music::Position Music::Position::operator =(const int& positionAsInt)
 {
@@ -225,6 +226,7 @@ Music::Position Music::Position::operator =(const int& positionAsInt)
 		position = GetPositionFromChromaticScale(positionAsInt);
 		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsInt));
 	}
+	return *this;
 }
 Music::Position Music::Position::operator =(const std::string& positionAsString)
 {
@@ -233,6 +235,7 @@ Music::Position Music::Position::operator =(const std::string& positionAsString)
 		position = GetPositionFromChromaticScale(positionAsString);
 		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsString));
 	}
+	return *this;
 }
 Music::Position Music::Position::operator ++()
 {

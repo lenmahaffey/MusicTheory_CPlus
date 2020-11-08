@@ -85,6 +85,7 @@ Music::Object Music::Object::operator =(const Music::Object& otherObject)
 	{
 		this->position = otherObject.position;
 	}
+	return *this;
 }
 Music::Object Music::Object::operator =(const Music::Position& otherPosition)
 {
@@ -92,6 +93,7 @@ Music::Object Music::Object::operator =(const Music::Position& otherPosition)
 	{
 		this->position = otherPosition;
 	}
+	return *this;
 }
 Music::Object Music::Object::operator =(const int& positionAsInt)
 {
@@ -100,6 +102,7 @@ Music::Object Music::Object::operator =(const int& positionAsInt)
 	{
 		this->position = newPosition;
 	}
+	return *this;
 }
 Music::Object Music::Object::operator =(const std::string& positionAsString)
 {
@@ -108,6 +111,7 @@ Music::Object Music::Object::operator =(const std::string& positionAsString)
 	{
 		this->position = newPosition;
 	}
+	return *this;
 }
 Music::Object Music::Object::operator ++()
 {
