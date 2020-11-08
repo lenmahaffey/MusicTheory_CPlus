@@ -9,20 +9,24 @@ namespace Music {
 	public:
 		//Constructors
 		Music::Object();
-		Music::Object(Music::Position::ChromaticScalePosition note);
+		Music::Object(Music::Position note);
 		Music::Object(std::string note);
 		Music::Object(int note);
 
 		//Accessors
-		Music::Position::ChromaticScalePosition GetPosition();
+		Music::Position GetPosition();
 		std::string GetNameAsString();
 
 		//Methods
-		Music::Position::ChromaticScalePosition accendHalfStep();
-		Music::Position::ChromaticScalePosition accendFullStep();
-		Music::Position::ChromaticScalePosition accendStepAndAHalf();
+		Music::Position accendHalfStep();
+		Music::Position accendFullStep();
+		Music::Position accendStepAndAHalf();
 
 		//Operator overloads
+		Music::Object operator =(const Music::Object& otherObject);
+		Music::Object operator =(const Music::Position& Object);
+		Music::Object operator =(const int& Object);
+		Music::Object operator =(const std::string& Object);
 		Music::Object operator ++();
 		Music::Object operator ++(int);
 		Music::Object operator --();
@@ -36,8 +40,7 @@ namespace Music {
 
 	protected:
 		//Properties
-		Music::Position::ChromaticScalePosition position;
-		std::string textName;
+		Music::Position position;
 	};
 }
 

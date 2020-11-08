@@ -3,42 +3,38 @@
 
 // Constructors
 Music::Object::Object() :
-	position(Music::Position::ChromaticScalePosition::NONE),
-	textName(Music::Position::GetPositionAsString(Music::Position::ChromaticScalePosition::NONE))
+	position(Music::Position(0))
 {
 }
-Music::Object::Object(Music::Position::ChromaticScalePosition note) :
-	position(note),
-	textName(Music::Position::GetPositionAsString(note))
+Music::Object::Object(Music::Position note) :
+	position(note)
 {
 }
 Music::Object::Object(std::string note) :
-	position(Music::Position::GetPositionFromChromaticScale(note)),
-	textName(Music::Position::GetPositionAsString(Music::Object::position))
+	position(Music::Position::GetPositionFromChromaticScale(note))
 {
 }
 Music::Object::Object(int note) :
-	position(Music::Position::GetPositionFromChromaticScale(note)),
-	textName(Music::Position::GetPositionAsString(Music::Position::GetPositionFromChromaticScale(note)))
+	position(Music::Position::GetPositionFromChromaticScale(note))
 {
 }
 
 //Accessors
-Music::Position::ChromaticScalePosition Music::Object::GetPosition()
+Music::Position Music::Object::GetPosition()
 {
 	return Music::Object::position;
 }
 std::string Music::Object::GetNameAsString()
 {
-	return Music::Object::textName;
+	return Music::Position::GetPositionAsString(Music::Object::position.GetPosition());
 }
 
 //Class Methods
-Music::Position::ChromaticScalePosition Music::Object::accendHalfStep()
+Music::Position Music::Object::accendHalfStep()
 {
-	int index = (int)Music::Object::position;
+	int index = (int)Music::Object::position.GetPosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position;
+	Music::Position currentNote = Music::Object::position.GetPosition();
 	do
 	{
 		index++;
@@ -49,11 +45,11 @@ Music::Position::ChromaticScalePosition Music::Object::accendHalfStep()
 	} while (haveSteped != 1);
 	return currentNote;
 }
-Music::Position::ChromaticScalePosition Music::Object::accendFullStep()
+Music::Position Music::Object::accendFullStep()
 {
-	int index = (int)Music::Object::position;
+	int index = (int)Music::Object::position.GetPosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position;
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetPosition();
 	do
 	{
 		index++;
@@ -65,11 +61,11 @@ Music::Position::ChromaticScalePosition Music::Object::accendFullStep()
 
 	return currentNote;
 }
-Music::Position::ChromaticScalePosition Music::Object::accendStepAndAHalf()
+Music::Position Music::Object::accendStepAndAHalf()
 {
-	int index = (int)Music::Object::position;
+	int index = (int)Music::Object::position.GetPosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position;
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetPosition();
 	do
 	{
 		index++;
@@ -83,29 +79,59 @@ Music::Position::ChromaticScalePosition Music::Object::accendStepAndAHalf()
 }
 
 //Operator Overloads
+Music::Object Music::Object::operator =(const Music::Object& otherObject)
+{
+	if (this != &otherObject)
+	{
+		this->position = otherObject.position;
+	}
+}
+Music::Object Music::Object::operator =(const Music::Position& otherPosition)
+{
+	if (this->position != otherPosition)
+	{
+		this->position = otherPosition;
+	}
+}
+Music::Object Music::Object::operator =(const int& positionAsInt)
+{
+	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsInt);
+	if (this->position != newPosition)
+	{
+		this->position = newPosition;
+	}
+}
+Music::Object Music::Object::operator =(const std::string& positionAsString)
+{
+	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsString);
+	if (this->position != newPosition)
+	{
+		this->position = newPosition;
+	}
+}
 Music::Object Music::Object::operator ++()
 {
-	Music::Object newObject = Music::Object((int)position + 1);
+	Music::Object newObject = Music::Object((int)position.GetPosition() + 1);
 	*this = newObject;
 	return newObject;
 }
 Music::Object Music::Object::operator ++(int)
 {
 	Music::Object temp = *this;
-	Music::Object newObject = Music::Object((int)position + 1);
+	Music::Object newObject = Music::Object((int)position.GetPosition() + 1);
 	*this = newObject;
 	return temp;
 }
 Music::Object Music::Object::operator --()
 {
-	Music::Object newObject = Music::Object((int)position - 1);
+	Music::Object newObject = Music::Object((int)position.GetPosition() - 1);
 	*this = newObject;
 	return newObject;
 }
 Music::Object Music::Object::operator --(int)
 {
 	Music::Object temp = *this;
-	Music::Object newObject = Music::Object((int)position - 1);
+	Music::Object newObject = Music::Object((int)position.GetPosition() - 1);
 	*this = newObject;
 	return temp;
 }
@@ -120,17 +146,17 @@ bool Music::Object::operator !=(const Music::Object& otherObject) const
 }
 bool Music::Object::operator <(const Music::Object& otherObject) const
 {
-	return (int)position < (int)otherObject.position;
+	return position < otherObject.position;
 }
 bool Music::Object::operator <=(const Music::Object& otherObject) const
 {
-	return (int)position <= (int)otherObject.position;
+	return position <= otherObject.position;
 }
 bool Music::Object::operator >(const Music::Object& otherObject) const
 {
-	return (int)position > (int)otherObject.position;
+	return position > otherObject.position;
 }
 bool Music::Object::operator >=(const Music::Object& otherObject) const
 {
-	return (int)position >= (int)otherObject.position;
+	return position >= otherObject.position;
 }

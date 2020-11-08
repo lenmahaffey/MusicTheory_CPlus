@@ -1,40 +1,44 @@
 #include "Position.h"
 
 Music::Position::Position() :
-	name(Music::Position::ChromaticScalePosition::NONE),
+	position(Music::Position::ChromaticScalePosition::NONE),
 	weight(GetWeightForPosition(Music::Position::ChromaticScalePosition::NONE))
 {
 }
 
 Music::Position::Position(Music::Position::ChromaticScalePosition position) :
-	name(position),
+	position(position),
 	weight(GetWeightForPosition(position))
 {
 
 }
 Music::Position::Position(int noteAsInt) :
-	name(GetPositionFromChromaticScale(noteAsInt)),
+	position(GetPositionFromChromaticScale(noteAsInt)),
 	weight(GetWeightForPosition(GetPositionFromChromaticScale(noteAsInt)))
 {
 }
 
 Music::Position::Position(std::string noteAsString) :
-	name(GetPositionFromChromaticScale(noteAsString)),
+	position(GetPositionFromChromaticScale(noteAsString)),
 	weight(GetWeightForPosition(GetPositionFromChromaticScale(noteAsString)))
 {
 }
-Music::Position::ChromaticScalePosition Music::Position::GetName() const
+
+//Class Methods
+Music::Position::ChromaticScalePosition Music::Position::GetPosition() const
 {
-	return Music::Position::name;
+	return Music::Position::position;
 }
-std::string Music::Position::GetNameAsString() const
+std::string Music::Position::GetPositionAsString() const
 {
-	return GetPositionAsString(name);
+	return GetPositionAsString(position);
 }
 Music::Position::Weight Music::Position::GetWeight() const
 {
 	return (weight);
 }
+
+//Static Methods
 Music::Position::ChromaticScalePosition Music::Position::GetPositionFromChromaticScale(std::string noteAsString)
 {
 	if (noteAsString == "NONE")
@@ -203,4 +207,88 @@ std::string Music::Position::GetStepAsString(Step step)
 		//**TODO** implement exception handler
 		return "NONE";
 	}
+}
+
+//Operator Overloads
+Music::Position Music::Position::operator =(const Music::Position& otherPosition)
+{
+	if (this != &otherPosition)
+	{
+		position = otherPosition.position;
+		weight = otherPosition.weight;
+	}
+}
+//Music::Position Music::Position::operator =(const Music::Position::ChromaticScalePosition& otherPosition)
+//{
+//	if (this->position != otherPosition)
+//	{
+//		position = otherPosition;
+//		weight = GetWeightForPosition(otherPosition);
+//	}
+//}
+Music::Position Music::Position::operator =(const int& positionAsInt)
+{
+	if ((int)this->position != positionAsInt)
+	{
+		position = GetPositionFromChromaticScale(positionAsInt);
+		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsInt));
+	}
+}
+Music::Position Music::Position::operator =(const std::string& positionAsString)
+{
+	if (this->GetPositionAsString() != positionAsString)
+	{
+		position = GetPositionFromChromaticScale(positionAsString);
+		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsString));
+	}
+}
+Music::Position Music::Position::operator ++()
+{
+	Music::Position newPosition = Music::Position((int)position + 1);
+	*this = newPosition;
+	return newPosition;
+}
+Music::Position Music::Position::operator ++(int)
+{
+	Music::Position temp = *this;
+	Music::Position newPosition = Music::Position((int)position + 1);
+	*this = newPosition;
+	return temp;
+}
+Music::Position Music::Position::operator --()
+{
+	Music::Position newPosition = Music::Position((int)position - 1);
+	*this = newPosition;
+	return newPosition;
+}
+Music::Position Music::Position::operator --(int)
+{
+	Music::Position temp = *this;
+	Music::Position newPosition = Music::Position((int)position - 1);
+	*this = newPosition;
+	return temp;
+}
+bool Music::Position::operator ==(const Music::Position& otherObject) const
+{
+	return position == otherObject.position;
+}
+bool Music::Position::operator !=(const Music::Position& otherPosition) const
+{
+	return position != otherPosition.position;
+}
+bool Music::Position::operator <(const Music::Position& otherPosition) const
+{
+	return position < otherPosition.position;
+}
+bool Music::Position::operator <=(const Music::Position& otherPosition) const
+{
+	return position <= otherPosition.position;
+}
+bool Music::Position::operator >(const Music::Position& otherPosition) const
+{
+	return position > otherPosition.position;
+}
+bool Music::Position::operator >=(const Music::Position& otherPosition) const
+{
+	return position >= otherPosition.position;
 }

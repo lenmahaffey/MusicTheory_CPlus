@@ -42,9 +42,24 @@ namespace Music
 		Position(int noteAsInt);
 		Position(std::string noteAsString);
 
-		Music::Position::ChromaticScalePosition GetName() const;
-		std::string GetNameAsString() const;
+		Music::Position::ChromaticScalePosition GetPosition() const;
+		std::string GetPositionAsString() const;
 		Music::Position::Weight GetWeight() const;
+
+		Music::Position operator =(const Music::Position& otherPosition);
+		//Music::Position operator =(const Music::Position::ChromaticScalePosition& position);
+		Music::Position operator =(const int& position);
+		Music::Position operator =(const std::string& position);
+		Music::Position operator ++();
+		Music::Position operator ++(int);
+		Music::Position operator --();
+		Music::Position operator --(int);
+		bool operator ==(const Music::Position& otherPosition) const;
+		bool operator !=(const Music::Position& otherPosition) const;
+		bool operator <(const Music::Position& otherPosition) const;
+		bool operator <=(const Music::Position& otherPosition) const;
+		bool operator >(const Music::Position& otherPosition) const;
+		bool operator >=(const Music::Position& otherPosition) const;
 
 		static ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
 		static ChromaticScalePosition GetPositionFromChromaticScale(int note);
@@ -54,7 +69,7 @@ namespace Music
 		static std::string GetStepAsString(Step step);
 
 	private:
-		Music::Position::ChromaticScalePosition name;
+		Music::Position::ChromaticScalePosition position;
 		Music::Position::Weight weight;
 	};
 }
