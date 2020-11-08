@@ -24,9 +24,9 @@ namespace Music {
 
 		//Operator overloads
 		Music::Object operator =(const Music::Object& otherObject);
-		Music::Object operator =(const Music::Position& Object);
-		Music::Object operator =(const int& Object);
-		Music::Object operator =(const std::string& Object);
+		Music::Object operator =(const Music::Position& otherPosition);
+		Music::Object operator =(const int& positionAsInt);
+		Music::Object operator =(const std::string& positionAsString);
 		Music::Object operator ++();
 		Music::Object operator ++(int);
 		Music::Object operator --();

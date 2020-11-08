@@ -25,19 +25,33 @@ Music::Note::Note(int note) :
 //Operator Overloads
 Music::Note Music::Note::operator =(const Music::Note& otherNote)
 {
-
+	if (this != &otherNote)
+	{
+		this->position = otherNote.position;
+	}
 }
 Music::Note Music::Note::operator =(const Music::Position& position)
 {
-
+	if (this->position != position)
+	{
+		this->position = position;
+	}
 }
-Music::Note Music::Note::operator =(const int& noteAsInt)
+Music::Note Music::Note::operator =(const int& positionAsInt)
 {
-
+	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsInt);
+	if (this->position != newPosition)
+	{
+		this->position = newPosition;
+	}
 }
-Music::Note Music::Note::operator =(const std::string& noteAsInt)
+Music::Note Music::Note::operator =(const std::string& positionAsInt)
 {
-
+	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsString);
+	if (this->position != newPosition)
+	{
+		this->position = newPosition;
+	}
 }
 Music::Note Music::Note::operator ++()
 {

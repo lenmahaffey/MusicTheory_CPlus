@@ -47,7 +47,6 @@ namespace Music
 		Music::Position::Weight GetWeight() const;
 
 		Music::Position operator =(const Music::Position& otherPosition);
-		//Music::Position operator =(const Music::Position::ChromaticScalePosition& position);
 		Music::Position operator =(const int& position);
 		Music::Position operator =(const std::string& position);
 		Music::Position operator ++();

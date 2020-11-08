@@ -218,14 +218,6 @@ Music::Position Music::Position::operator =(const Music::Position& otherPosition
 		weight = otherPosition.weight;
 	}
 }
-//Music::Position Music::Position::operator =(const Music::Position::ChromaticScalePosition& otherPosition)
-//{
-//	if (this->position != otherPosition)
-//	{
-//		position = otherPosition;
-//		weight = GetWeightForPosition(otherPosition);
-//	}
-//}
 Music::Position Music::Position::operator =(const int& positionAsInt)
 {
 	if ((int)this->position != positionAsInt)
