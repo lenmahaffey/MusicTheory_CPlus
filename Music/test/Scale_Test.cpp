@@ -28,7 +28,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::A, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(AsBf_ConstructorFromPosition_Test)
@@ -39,7 +39,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::AsBf, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(B_ConstructorFromPosition_Test)
@@ -50,7 +50,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::B, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(C_ConstructorWithPosition_Test)
@@ -61,7 +61,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::C, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(CsDf_ConstructorWithPosition_Test)
@@ -72,7 +72,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::CsDf, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(D_ConstructorWithPosition_Test)
@@ -83,7 +83,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::D, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DsEf_ConstructorWithPosition_Test)
@@ -94,7 +94,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::DsEf, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(E_ConstructorWithPosition_Test)
@@ -105,7 +105,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::E, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(F_ConstructorWithPosition_Test)
@@ -116,7 +116,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::F, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(FsGf_ConstructorWithPosition_Test)
@@ -127,7 +127,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::FsGf, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(G_ConstructorWithPosition_Test)
@@ -136,7 +136,7 @@ namespace Scale_Test
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::G, pattern, true);
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::G;
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(GsAf_ConstructorWithPosition_Test)
@@ -146,7 +146,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(Music::Position::ChromaticScalePosition::GsAf, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 	};
@@ -159,7 +159,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(1, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(AsBf_ConstructorFromInt_Test)
@@ -169,7 +169,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(2, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(B_ConstructorFromInt_Test)
@@ -179,7 +179,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(3, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(C_ConstructorWithInt_Test)
@@ -189,7 +189,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(4, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(CsDf_ConstructorWithInt_Test)
@@ -199,7 +199,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(5, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(D_ConstructorWithInt_Test)
@@ -209,7 +209,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(6, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DsEf_ConstructorWithInt_Test)
@@ -219,7 +219,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(7, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(E_ConstructorWithInt_Test)
@@ -229,7 +229,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(8, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(F_ConstructorWithInt_Test)
@@ -239,7 +239,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(9, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(FsGf_ConstructorWithInt_Test)
@@ -249,7 +249,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(10, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(G_ConstructorWithInt_Test)
@@ -259,7 +259,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(11, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(GsAf_ConstructorWithInt_Test)
@@ -269,7 +269,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale(12, pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 	};
@@ -282,7 +282,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("A", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(AsBf_ConstructorFromString_Test)
@@ -292,7 +292,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("AsBf", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(B_ConstructorFromString_Test)
@@ -302,7 +302,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("B", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(C_ConstructorWithString_Test)
@@ -312,7 +312,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("C", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(CsDf_ConstructorWithString_Test)
@@ -322,7 +322,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("CsDf", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(D_ConstructorWithString_Test)
@@ -332,7 +332,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("D", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DsEf_ConstructorWithString_Test)
@@ -342,7 +342,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("DsEf", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(E_ConstructorWithString_Test)
@@ -352,7 +352,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("E", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(F_ConstructorWithString_Test)
@@ -362,7 +362,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("F", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(FsGf_ConstructorWithString_Test)
@@ -372,7 +372,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("FsGf", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(G_ConstructorWithString_Test)
@@ -382,7 +382,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("G", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(GsAf_ConstructorWithString_Test)
@@ -392,7 +392,7 @@ namespace Scale_Test
 
 			Scale scaleToTest = Scale("GsAf", pattern, true);
 
-			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition());
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 	};
@@ -421,10 +421,10 @@ namespace Scale_Test
 			Scale expectedDuring = Scale("C", pattern, true);
 			Scale expectedAfter = Scale("C", pattern, true);
 
-			Assert::AreEqual((int)expectedBefore.GetPosition(), (int)B.GetPosition());
+			Assert::AreEqual(expectedBefore.GetPosition(), B.GetPosition());
 			during = ++B;
-			Assert::AreEqual((int)expectedAfter.GetPosition(), (int)during.GetPosition());
-			Assert::AreEqual((int)expectedAfter.GetPosition(), (int)B.GetPosition());
+			Assert::AreEqual(expectedAfter.GetPosition(), during.GetPosition());
+			Assert::AreEqual(expectedAfter.GetPosition(), B.GetPosition());
 		}
 		TEST_METHOD(postIncrement_Test)
 		{
@@ -434,10 +434,10 @@ namespace Scale_Test
 			Scale expectedDuring = Scale("B", pattern, true);
 			Scale expectedAfter = Scale("C", pattern, true);
 
-			Assert::AreEqual((int)expectedBefore.GetPosition(), (int)B.GetPosition());
+			Assert::AreEqual(expectedBefore.GetPosition(), B.GetPosition());
 			during = B++;
-			Assert::AreEqual((int)expectedBefore.GetPosition(), (int)during.GetPosition());
-			Assert::AreEqual((int)expectedAfter.GetPosition(), (int)B.GetPosition());
+			Assert::AreEqual(expectedBefore.GetPosition(), during.GetPosition());
+			Assert::AreEqual(expectedAfter.GetPosition(), B.GetPosition());
 		}
 		TEST_METHOD(preDeincrement_Test)
 		{
@@ -447,10 +447,10 @@ namespace Scale_Test
 			Scale expectedDuring = Scale("C", pattern, true);
 			Scale expectedAfter = Scale("B", pattern, true);
 
-			Assert::AreEqual((int)expectedBefore.GetPosition(), (int)C.GetPosition());
+			Assert::AreEqual(expectedBefore.GetPosition(), C.GetPosition());
 			during = --C;
-			Assert::AreEqual((int)expectedAfter.GetPosition(), (int)during.GetPosition());
-			Assert::AreEqual((int)expectedAfter.GetPosition(), (int)C.GetPosition());
+			Assert::AreEqual(expectedAfter.GetPosition(), during.GetPosition());
+			Assert::AreEqual(expectedAfter.GetPosition(), C.GetPosition());
 		}
 		TEST_METHOD(postDeIncrement_Test)
 		{
@@ -460,10 +460,10 @@ namespace Scale_Test
 			Scale expectedDuring = Scale("B", pattern, true);
 			Scale expectedAfter = Scale("B", pattern, true);
 
-			Assert::AreEqual((int)expectedBefore.GetPosition(), (int)C.GetPosition());
+			Assert::AreEqual(expectedBefore.GetPosition(), C.GetPosition());
 			during = C--;
-			Assert::AreEqual((int)expectedBefore.GetPosition(), (int)during.GetPosition());
-			Assert::AreEqual((int)expectedAfter.GetPosition(), (int)C.GetPosition());
+			Assert::AreEqual(expectedBefore.GetPosition(), during.GetPosition());
+			Assert::AreEqual(expectedAfter.GetPosition(), C.GetPosition());
 		}*/
 		TEST_METHOD(isEqualOperator_Test)
 		{

@@ -42,9 +42,10 @@ namespace Music
 		Position(int noteAsInt);
 		Position(std::string noteAsString);
 
-		Music::Position::ChromaticScalePosition GetPosition() const;
+		Music::Position::ChromaticScalePosition GetChromaticScalePosition() const;
 		std::string GetPositionAsString() const;
 		Music::Position::Weight GetWeight() const;
+		std::string GetWeightAsString() const;
 
 		Music::Position operator =(const Music::Position& otherPosition);
 		Music::Position operator =(const int& position);

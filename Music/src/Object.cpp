@@ -26,15 +26,15 @@ Music::Position Music::Object::GetPosition()
 }
 std::string Music::Object::GetNameAsString()
 {
-	return Music::Position::GetPositionAsString(Music::Object::position.GetPosition());
+	return Music::Position::GetPositionAsString(Music::Object::position.GetChromaticScalePosition());
 }
 
 //Class Methods
 Music::Position Music::Object::accendHalfStep()
 {
-	int index = (int)Music::Object::position.GetPosition();
+	int index = (int)Music::Object::position.GetChromaticScalePosition();
 	int haveSteped = 0;
-	Music::Position currentNote = Music::Object::position.GetPosition();
+	Music::Position currentNote = Music::Object::position.GetChromaticScalePosition();
 	do
 	{
 		index++;
@@ -47,9 +47,9 @@ Music::Position Music::Object::accendHalfStep()
 }
 Music::Position Music::Object::accendFullStep()
 {
-	int index = (int)Music::Object::position.GetPosition();
+	int index = (int)Music::Object::position.GetChromaticScalePosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetPosition();
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetChromaticScalePosition();
 	do
 	{
 		index++;
@@ -63,9 +63,9 @@ Music::Position Music::Object::accendFullStep()
 }
 Music::Position Music::Object::accendStepAndAHalf()
 {
-	int index = (int)Music::Object::position.GetPosition();
+	int index = (int)Music::Object::position.GetChromaticScalePosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetPosition();
+	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetChromaticScalePosition();
 	do
 	{
 		index++;
@@ -115,27 +115,27 @@ Music::Object Music::Object::operator =(const std::string& positionAsString)
 }
 Music::Object Music::Object::operator ++()
 {
-	Music::Object newObject = Music::Object((int)position.GetPosition() + 1);
+	Music::Object newObject = Music::Object((int)position.GetChromaticScalePosition() + 1);
 	*this = newObject;
 	return newObject;
 }
 Music::Object Music::Object::operator ++(int)
 {
 	Music::Object temp = *this;
-	Music::Object newObject = Music::Object((int)position.GetPosition() + 1);
+	Music::Object newObject = Music::Object((int)position.GetChromaticScalePosition() + 1);
 	*this = newObject;
 	return temp;
 }
 Music::Object Music::Object::operator --()
 {
-	Music::Object newObject = Music::Object((int)position.GetPosition() - 1);
+	Music::Object newObject = Music::Object((int)position.GetChromaticScalePosition() - 1);
 	*this = newObject;
 	return newObject;
 }
 Music::Object Music::Object::operator --(int)
 {
 	Music::Object temp = *this;
-	Music::Object newObject = Music::Object((int)position.GetPosition() - 1);
+	Music::Object newObject = Music::Object((int)position.GetChromaticScalePosition() - 1);
 	*this = newObject;
 	return temp;
 }

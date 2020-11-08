@@ -25,7 +25,7 @@ Music::Position::Position(std::string noteAsString) :
 }
 
 //Class Methods
-Music::Position::ChromaticScalePosition Music::Position::GetPosition() const
+Music::Position::ChromaticScalePosition Music::Position::GetChromaticScalePosition() const
 {
 	return Music::Position::position;
 }
@@ -37,7 +37,10 @@ Music::Position::Weight Music::Position::GetWeight() const
 {
 	return (weight);
 }
-
+std::string Music::Position::GetWeightAsString() const
+{
+	return GetWeightAsString(weight);
+}
 //Static Methods
 Music::Position::ChromaticScalePosition Music::Position::GetPositionFromChromaticScale(std::string noteAsString)
 {

@@ -59,27 +59,27 @@ Music::Note Music::Note::operator =(const std::string& positionAsString)
 }
 Music::Note Music::Note::operator ++()
 {
-	Music::Note newNote = Music::Note((int)position.GetPosition() + 1);
+	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() + 1);
 	*this = newNote;
 	return newNote;
 }
 Music::Note Music::Note::operator ++(int)
 {
 	Music::Note temp = *this;
-	Music::Note newNote = Music::Note((int)position.GetPosition() + 1);
+	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() + 1);
 	*this = newNote;
 	return temp;
 }
 Music::Note Music::Note::operator --()
 {
-	Music::Note newNote = Music::Note((int)position.GetPosition() - 1);
+	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() - 1);
 	*this = newNote;
 	return newNote;
 }
 Music::Note Music::Note::operator --(int)
 {
 	Music::Note temp = *this;
-	Music::Note newNote = Music::Note((int)position.GetPosition() - 1);
+	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() - 1);
 	*this = newNote;
 	return temp;
 }
