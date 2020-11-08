@@ -9,28 +9,29 @@ namespace Music {
 	public:
 		//Constructors
 		Music::Note();
-		Music::Note(Music::ChromaticScalePosition note);
+		Music::Note(Music::Position::ChromaticScalePosition note);
 		Music::Note(std::string note);
 		Music::Note(int note);
 
 		//Accessors
-		Music::Weight getWeight();
-		std::string getWeightAsString();
+		Music::Position::Weight GetWeight();
+		std::string GetWeightAsString();
 
+		//Operator Overloads
 		Music::Note operator ++();
 		Music::Note operator ++(int);
 		Music::Note operator --();
 		Music::Note operator --(int);
-		bool operator ==(Music::Note);
-		bool operator !=(Music::Note);
-		bool operator <(Music::Note otherNote);
-		bool operator <=(Music::Note otherNote);
-		bool operator >(Music::Note otherNote);
-		bool operator >=(Music::Note otherNote);
+		bool operator ==(const Music::Note& otherNote) const;
+		bool operator !=(const Music::Note& otherNote) const;
+		bool operator <(const Music::Note& otherNote) const;
+		bool operator <=(const Music::Note& otherNote) const;
+		bool operator >(const Music::Note& otherNote) const;
+		bool operator >=(const Music::Note& otherNote) const;
 
 	protected:
 		//Properties
-		 Music::Weight weight;
+		 Music::Position::Weight weight;
 	};
 }
 

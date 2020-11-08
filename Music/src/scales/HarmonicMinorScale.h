@@ -7,12 +7,12 @@ namespace Music {
 	{
 	public:
 		Music::HarmonicMinorScale();
-		Music::HarmonicMinorScale(Music::ChromaticScalePosition note);
+		Music::HarmonicMinorScale(Music::Position::ChromaticScalePosition note);
 		Music::HarmonicMinorScale(int note);
 		Music::HarmonicMinorScale(char note);
 
 	protected:
-		Music::Step pattern[7];
+		Music::Position::Step pattern[7];
 	};
 }
 

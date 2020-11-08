@@ -9,4 +9,15 @@
 
 // add headers that you want to pre-compile here
 
+#include "../Music/src/Position.h"
+#include "../Music/src/Object.h"
+#include "../Music/src/Note.h"
+#include "../Music/src/Scale.h"
+#include "../Music/src/scales/HarmonicMinorScale.h"
+#include "../Music/src/scales/MajorScale.h"
+#include "../Music/src/scales/MelodicMinorScale.h"
+#include "../Music/src/scales/NaturalMinorScale.h"
+#include "../Music/src/scales/PentatonicMajorScale.h"
+#include "../Music/src/scales/PentatonicMinorScale.h"
+
 #endif //PCH_H

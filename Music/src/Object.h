@@ -1,8 +1,6 @@
 #pragma once
 #include <string>
-#include "ChromaticScale.h"
-#include "Step.h"
-#include "Weight.h"
+#include "Position.h"
 
 namespace Music {
 
@@ -11,43 +9,35 @@ namespace Music {
 	public:
 		//Constructors
 		Music::Object();
-		Music::Object(Music::ChromaticScalePosition note);
+		Music::Object(Music::Position::ChromaticScalePosition note);
 		Music::Object(std::string note);
 		Music::Object(int note);
 
 		//Accessors
-		Music::ChromaticScalePosition getPosition();
-		std::string getNameAsString();
+		Music::Position::ChromaticScalePosition GetPosition();
+		std::string GetNameAsString();
 
 		//Methods
-		Music::ChromaticScalePosition accendHalfStep();
-		Music::ChromaticScalePosition accendFullStep();
-		Music::ChromaticScalePosition accendStepAndAHalf();
+		Music::Position::ChromaticScalePosition accendHalfStep();
+		Music::Position::ChromaticScalePosition accendFullStep();
+		Music::Position::ChromaticScalePosition accendStepAndAHalf();
 
 		//Operator overloads
 		Music::Object operator ++();
 		Music::Object operator ++(int);
 		Music::Object operator --();
 		Music::Object operator --(int);
-		bool operator ==(Music::Object);
-		bool operator !=(Music::Object);
-		bool operator <(Music::Object otherObject);
-		bool operator <=(Music::Object otherObject);
-		bool operator >(Music::Object otherObject);
-		bool operator >=(Music::Object otherObject);
+		bool operator ==(const Music::Object& otherObject) const;
+		bool operator !=(const Music::Object& otherObject) const;
+		bool operator <(const Music::Object& otherObject) const;
+		bool operator <=(const Music::Object& otherObject) const;
+		bool operator >(const Music::Object& otherObject) const;
+		bool operator >=(const Music::Object& otherObject) const;
 
 	protected:
 		//Properties
-		Music::ChromaticScalePosition position;
+		Music::Position::ChromaticScalePosition position;
 		std::string textName;
-
-		//Static class methods
-		static Music::ChromaticScalePosition GetPositionFromChromaticScale(std::string note);
-		static Music::ChromaticScalePosition GetPositionFromChromaticScale(int note);
-		static Music::Weight GetWeightForPosition(Music::ChromaticScalePosition position);
-		static std::string GetPositionAsString(Music::ChromaticScalePosition position);
-		static std::string GetWeightAsString(Music::Weight weight);
-		static std::string GetStepAsString(Music::Step step);
 	};
 }
 

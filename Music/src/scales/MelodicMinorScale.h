@@ -6,13 +6,13 @@ namespace Music {
 	class MelodicMinorScale : public Music::Scale
 	{
 	public:
-		Music::MelodicMinorScale() = default;
-		Music::MelodicMinorScale(Music::ChromaticScalePosition note);
+		Music::MelodicMinorScale();
+		Music::MelodicMinorScale(Music::Position::ChromaticScalePosition note);
 		Music::MelodicMinorScale(int noteIndex);
 		Music::MelodicMinorScale(char note);
 
 	protected:
-		Music::Step pattern[7];
+		Music::Position::Step pattern[7];
 	};
 }
 

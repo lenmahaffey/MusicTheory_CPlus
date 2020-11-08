@@ -1,41 +1,41 @@
 #pragma once
 #include "HarmonicMinorScale.h"
 
-Music::HarmonicMinorScale::HarmonicMinorScale(Music::ChromaticScalePosition note) :
+Music::HarmonicMinorScale::HarmonicMinorScale(Music::Position::ChromaticScalePosition note) :
 	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::WholeandAHalf}
+	pattern{Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::WholeandAHalf}
 {
 	Music::HarmonicMinorScale::setScale(note);
 }
 
 Music::HarmonicMinorScale::HarmonicMinorScale(int note) :
 	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::WholeandAHalf}
+	pattern{Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::WholeandAHalf}
 {
-	Music::HarmonicMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note) );
+	Music::HarmonicMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note) );
 }
 
 Music::HarmonicMinorScale::HarmonicMinorScale(char note) :
 	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::WholeandAHalf}
+	pattern{Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::WholeandAHalf}
 {
-	Music::HarmonicMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::HarmonicMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }

@@ -1,41 +1,41 @@
 #pragma once
 #include "NaturalMinorScale.h"
 
-Music::NaturalMinorScale::NaturalMinorScale(Music::ChromaticScalePosition note) :
+Music::NaturalMinorScale::NaturalMinorScale(Music::Position::ChromaticScalePosition note) :
 	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole}
+	pattern{Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole}
 {
 	Music::NaturalMinorScale::setScale(note);
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(int note) :
 	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole}
+	pattern{Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole}
 {
-	Music::NaturalMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(char note) :
 	Music::Scale(note, pattern, false),
-	pattern{Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole,
-			Music::Step::Whole,
-			Music::Step::Half,
-			Music::Step::Whole}
+	pattern{Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Whole,
+			Music::Position::Step::Half,
+			Music::Position::Step::Whole}
 {
-	Music::NaturalMinorScale::setScale(Music::Object::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }

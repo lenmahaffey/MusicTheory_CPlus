@@ -7,12 +7,12 @@ namespace Music {
     {
 	public:
 		Music::MajorScale();
-		Music::MajorScale(Music::ChromaticScalePosition note);
+		Music::MajorScale(Music::Position::ChromaticScalePosition note);
 		Music::MajorScale(int note);
 		Music::MajorScale(std::string note);
 
 	protected:
-		Music::Step pattern[7];
+		Music::Position::Step pattern[7];
 	};
 }
 

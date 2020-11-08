@@ -15,15 +15,15 @@ using namespace Music;
 
 int main()
 {
-	Music::Step pattern[7] =
+	Music::Position::Step pattern[7] =
 	{
-		Music::Step::Whole,
-		Music::Step::Whole,
-		Music::Step::Whole,
-		Music::Step::Half,
-		Music::Step::Whole,
-		Music::Step::Whole,
-		Music::Step::Whole,
+		Music::Position::Step::Whole,
+		Music::Position::Step::Whole,
+		Music::Position::Step::Whole,
+		Music::Position::Step::Half,
+		Music::Position::Step::Whole,
+		Music::Position::Step::Whole,
+		Music::Position::Step::Whole,
 	};
 	Scale A("A", pattern, true);
 	MajorScale C("C");
