@@ -39,7 +39,7 @@
     <ClCompile Include="..\Music\test\PentatonicMinorScale_Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Music\test\Scale_Test.cpp">
+    <ClCompile Include="..\Music\test\Position_Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
