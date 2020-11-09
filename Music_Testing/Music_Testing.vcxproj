@@ -156,6 +156,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Music\Music.vcxproj">
+      <Project>{8a68c8f5-c87b-4993-974b-66d48709e399}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\Music\test\HarmonicMinorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\MajorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\MedloicMinorScale_Test.cpp" />
@@ -165,11 +170,7 @@
     <ClCompile Include="..\Music\test\PentatonicMajorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\PentatonicMinorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\Position_Test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Music\Music.vcxproj">
-      <Project>{8a68c8f5-c87b-4993-974b-66d48709e399}</Project>
-    </ProjectReference>
+    <ClCompile Include="..\Music\test\Scale_Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

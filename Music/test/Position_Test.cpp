@@ -9,7 +9,7 @@ using namespace Music;
 
 namespace Position_Test
 {
-	TEST_CLASS(Constructor_Position_Test)
+	TEST_CLASS(ConstructorWithPosition_Test)
 	{
 		TEST_METHOD(NONE_ConstructorWithPosition_Test)
 		{
@@ -90,7 +90,7 @@ namespace Position_Test
 			Assert::AreEqual((int)expected, (int)GsAf.GetChromaticScalePosition());
 		}
 	};
-	TEST_CLASS(Constructor_Int_Test)
+	TEST_CLASS(ConstructorWithInt_Test)
 	{
 		TEST_METHOD(NONE_ConstructorWithInt_Test)
 		{
@@ -176,7 +176,7 @@ namespace Position_Test
 			Assert::AreEqual((int)expected, (int)GsAf.GetChromaticScalePosition());
 		}
 	};
-	TEST_CLASS(Constructor_String_Test)
+	TEST_CLASS(ConstructorWithString_Test)
 	{
 		TEST_METHOD(NONE_ConstructorWithString_Test)
 		{
@@ -257,444 +257,6 @@ namespace Position_Test
 			Assert::AreEqual((int)expected, (int)GsAf.GetChromaticScalePosition());
 		}
 	};
-	TEST_CLASS(getNameAsString_Test)
-	{
-		TEST_METHOD(NONE_getNameAsString_Test)
-		{
-			Position NONE = Position(Music::Position::ChromaticScalePosition::NONE);
-			string expected = "NONE";
-			Assert::AreEqual(expected, NONE.GetPositionAsString());
-
-		}
-		TEST_METHOD(A_getNameAsString_Test)
-		{
-			Position A = Position(Music::Position::ChromaticScalePosition::A);
-			string expected = "A";
-			Assert::AreEqual(expected, A.GetPositionAsString());
-
-		}
-		TEST_METHOD(AsBf_getNameAsString_Test)
-		{
-			Position AsBf = Position(Music::Position::ChromaticScalePosition::AsBf);
-			string expected = "AsBf";
-			Assert::AreEqual(expected, AsBf.GetPositionAsString());
-
-		}
-		TEST_METHOD(B_getNameAsString_Test)
-		{
-			Position B = Position(Music::Position::ChromaticScalePosition::B);
-			string expected = "B";
-			Assert::AreEqual(expected, B.GetPositionAsString());
-		}
-		TEST_METHOD(C_getNameAsString_Test)
-		{
-			Position C = Position(Music::Position::ChromaticScalePosition::C);
-			string expected = "C";
-			Assert::AreEqual(expected, C.GetPositionAsString());
-		}
-		TEST_METHOD(CsDf_getNameAsString_Test)
-		{
-			Position CsDf = Position(Music::Position::ChromaticScalePosition::CsDf);
-			string expected = "CsDf";
-			Assert::AreEqual(expected, CsDf.GetPositionAsString());
-
-		}
-		TEST_METHOD(D_getNameAsString_Test)
-		{
-			Position D = Position(Music::Position::ChromaticScalePosition::D);
-			string expected = "D";
-			Assert::AreEqual(expected, D.GetPositionAsString());
-
-		}
-		TEST_METHOD(DsEf_getNameAsString_Test)
-		{
-			Position DsEf = Position(Music::Position::ChromaticScalePosition::DsEf);
-			string expected = "DsEf";
-			Assert::AreEqual(expected, DsEf.GetPositionAsString());
-		}
-		TEST_METHOD(E_getNameAsString_Test)
-		{
-			Position E = Position(Music::Position::ChromaticScalePosition::E);
-			string expected = "E";
-			Assert::AreEqual(expected, E.GetPositionAsString());
-
-		}
-		TEST_METHOD(F_getNameAsString_Test)
-		{
-			Position F = Position(Music::Position::ChromaticScalePosition::F);
-			string expected = "F";
-			Assert::AreEqual(expected, F.GetPositionAsString());
-
-		}
-		TEST_METHOD(FsGf_getNameAsString_Test)
-		{
-			Position FsGf = Position(Music::Position::ChromaticScalePosition::FsGf);
-			string expectedsGf = "FsGf";
-			Assert::AreEqual(expectedsGf, FsGf.GetPositionAsString());
-		}
-		TEST_METHOD(G_getNameAsString_Test)
-		{
-			Position G = Position(Music::Position::ChromaticScalePosition::G);
-			string expected = "G";
-			Assert::AreEqual(expected, G.GetPositionAsString());
-
-		}
-		TEST_METHOD(GsAf_getNameAsString_Test)
-		{
-			Position GsAf = Position(Music::Position::ChromaticScalePosition::GsAf);
-			string expected = "GsAf";
-			Assert::AreEqual(expected, GsAf.GetPositionAsString());
-		}
-	};
-	TEST_CLASS(accendHalfStep_Test)
-	{
-		TEST_METHOD(A_goHalfStep_Test)
-		{
-			Position A = Position(Music::Position::ChromaticScalePosition::A);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::AsBf;
-
-			Position halfStepUpFromA = A.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromA.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(AsBf_goHalfStep_Test)
-		{
-			Position AsBf = Position(Music::Position::ChromaticScalePosition::AsBf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::B;
-
-			Position halfStepUpFromAsBf = AsBf.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromAsBf.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(B_goHalfStep_Test)
-		{
-			Position B = Position(Music::Position::ChromaticScalePosition::B);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::C;
-
-			Position halfStepUpFromB = B.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromB.GetChromaticScalePosition());
-		}
-		TEST_METHOD(C_goHalfStep_Test)
-		{
-			Position C = Position(Music::Position::ChromaticScalePosition::C);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::CsDf;
-
-			Position halfStepUpFromC = C.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromC.GetChromaticScalePosition());
-		}
-		TEST_METHOD(CsDf_goHalfStep_Test)
-		{
-			Position CsDf = Position(Music::Position::ChromaticScalePosition::CsDf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::D;
-
-			Position halfStepUpFromCsDf = CsDf.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromCsDf.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(D_goHalfStep_Test)
-		{
-			Position D = Position(Music::Position::ChromaticScalePosition::D);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::DsEf;
-
-			Position halfStepUpFromD = D.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromD.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(DsEf_goHalfStep_Test)
-		{
-			Position DsEf = Position(Music::Position::ChromaticScalePosition::DsEf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::E;
-
-			Position halfStepUpFromDsEf = DsEf.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromDsEf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(E_goHalfStep_Test)
-		{
-			Position E = Position(Music::Position::ChromaticScalePosition::E);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::F;
-
-			Position halfStepUpFromE = E.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromE.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(F_goHalfStep_Test)
-		{
-			Position F = Position(Music::Position::ChromaticScalePosition::F);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::FsGf;
-
-			Position halfStepUpFromF = F.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromF.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(FsGf_ConstructorWithPosition_Test)
-		{
-			Position FsGf = Position(Music::Position::ChromaticScalePosition::FsGf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::G;
-
-			Position halfStepUpFromFsGf = FsGf.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromFsGf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(G_goHalfStep_Test)
-		{
-			Position G = Position(Music::Position::ChromaticScalePosition::G);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::GsAf;
-
-			Position halfStepUpFromG = G.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromG.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(GsAf_goHalfStep_Test)
-		{
-			Position GsAf = Position(Music::Position::ChromaticScalePosition::GsAf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
-
-			Position halfStepUpFromGsAf = GsAf.accendHalfStep();
-
-			Assert::AreEqual((int)expected, (int)halfStepUpFromGsAf.GetChromaticScalePosition());
-		}
-	};
-	TEST_CLASS(accendFullStep_Test)
-	{
-		TEST_METHOD(A_goFullStep_Test)
-		{
-			Position A = Position(Music::Position::ChromaticScalePosition::A);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::B;
-
-			Position fullStepUpFromA = A.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromA.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(AsBf_goFullStep_Test)
-		{
-			Position AsBf = Position(Music::Position::ChromaticScalePosition::AsBf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::C;
-
-			Position fullStepUpFromAsBf = AsBf.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromAsBf.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(B_goFullStep_Test)
-		{
-			Position B = Position(Music::Position::ChromaticScalePosition::B);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::CsDf;
-
-			Position fullStepUpFromB = B.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromB.GetChromaticScalePosition());
-		}
-		TEST_METHOD(C_goFullStep_Test)
-		{
-			Position C = Position(Music::Position::ChromaticScalePosition::C);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::D;
-
-			Position fullStepUpFromC = C.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromC.GetChromaticScalePosition());
-		}
-		TEST_METHOD(CsDf_goFullStep_Test)
-		{
-			Position CsDf = Position(Music::Position::ChromaticScalePosition::CsDf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::DsEf;
-
-			Position fullStepUpFromCsDf = CsDf.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromCsDf.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(D_goFullStep_Test)
-		{
-			Position D = Position(Music::Position::ChromaticScalePosition::D);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::E;
-
-			Position fullStepUpFromD = D.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromD.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(DsEf_goFullStep_Test)
-		{
-			Position DsEf = Position(Music::Position::ChromaticScalePosition::DsEf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::F;
-
-			Position fullStepUpFromDsEf = DsEf.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromDsEf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(E_goFullStep_Test)
-		{
-			Position E = Position(Music::Position::ChromaticScalePosition::E);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::FsGf;
-
-			Position fullStepUpFromE = E.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromE.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(F_goFullStep_Test)
-		{
-			Position F = Position(Music::Position::ChromaticScalePosition::F);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::G;
-
-			Position fullStepUpFromF = F.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromF.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(FsGf_goFullStep_Test)
-		{
-			Position FsGf = Position(Music::Position::ChromaticScalePosition::FsGf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::GsAf;
-
-			Position fullStepUpFromFsGf = FsGf.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromFsGf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(G_goFullStep_Test)
-		{
-			Position G = Position(Music::Position::ChromaticScalePosition::G);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
-
-			Position fullStepUpFromG = G.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromG.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(GsAf_goFullStep_Test)
-		{
-			Position GsAf = Position(Music::Position::ChromaticScalePosition::GsAf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::AsBf;
-
-			Position fullStepUpFromGsAf = GsAf.accendFullStep();
-
-			Assert::AreEqual((int)expected, (int)fullStepUpFromGsAf.GetChromaticScalePosition());
-		}
-	};
-	TEST_CLASS(accendStepAndAHalf_Test)
-	{
-		TEST_METHOD(A_goStepAndAHalf_Test)
-		{
-			Position A = Position(Music::Position::ChromaticScalePosition::A);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::C;
-
-			Position stepAndAHalfUpFromA = A.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromA.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(AsBf_goStepAndAHalf_Test)
-		{
-			Position AsBf = Position(Music::Position::ChromaticScalePosition::AsBf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::CsDf;
-
-			Position stepAndAHalfUpFromAsBf = AsBf.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromAsBf.GetChromaticScalePosition());
-
-		}
-		TEST_METHOD(B_goStepAndAHalf_Test)
-		{
-			Position B = Position(Music::Position::ChromaticScalePosition::B);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::D;
-
-			Position stepAndAHalfUpFromB = B.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromB.GetChromaticScalePosition());
-		}
-		TEST_METHOD(C_goStepAndAHalf_Test)
-		{
-			Position C = Position(Music::Position::ChromaticScalePosition::C);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::DsEf;
-
-			Position stepAndAHalfUpFromC = C.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromC.GetChromaticScalePosition());
-		}
-		TEST_METHOD(CsDf_goStepAndAHalf_Test)
-		{
-			Position CsDf = Position(Music::Position::ChromaticScalePosition::CsDf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::E;
-
-			Position stepAndAHalfUpFromCsDf = CsDf.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromCsDf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(D_goStepAndAHalf_Test)
-		{
-			Position D = Position(Music::Position::ChromaticScalePosition::D);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::F;
-
-			Position stepAndAHalfUpFromD = D.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromD.GetChromaticScalePosition());
-		}
-		TEST_METHOD(DsEf_goStepAndAHalf_Test)
-		{
-			Position DsEf = Position(Music::Position::ChromaticScalePosition::DsEf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::FsGf;
-
-			Position stepAndAHalfUpFromDsEf = DsEf.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromDsEf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(E_goStepAndAHalf_Test)
-		{
-			Position E = Position(Music::Position::ChromaticScalePosition::E);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::G;
-
-			Position stepAndAHalfUpFromE = E.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromE.GetChromaticScalePosition());
-		}
-		TEST_METHOD(F_goStepAndAHalf_Test)
-		{
-			Position F = Position(Music::Position::ChromaticScalePosition::F);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::GsAf;
-
-			Position stepAndAHalfUpFromF = F.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromF.GetChromaticScalePosition());
-		}
-		TEST_METHOD(FsGf_goStepAndAHalf_Test)
-		{
-			Position FsGf = Position(Music::Position::ChromaticScalePosition::FsGf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
-
-			Position stepAndAHalfUpFromFsGf = FsGf.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromFsGf.GetChromaticScalePosition());
-		}
-		TEST_METHOD(G_goStepAndAHalf_Test)
-		{
-			Position G = Position(Music::Position::ChromaticScalePosition::G);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::AsBf;
-
-			Position stepAndAHalfUpFromG = G.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromG.GetChromaticScalePosition());
-		}
-		TEST_METHOD(GsAf_goStepAndAHalf_Test)
-		{
-			Position GsAf = Position(Music::Position::ChromaticScalePosition::GsAf);
-			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::B;
-
-			Position stepAndAHalfUpFromGsAf = GsAf.accendStepAndAHalf();
-
-			Assert::AreEqual((int)expected, (int)stepAndAHalfUpFromGsAf.GetChromaticScalePosition());
-		}
-	};
 	TEST_CLASS(getPositionAsString_Test)
 	{
 		TEST_METHOD(NONE_getPositionAsString_Test)
@@ -702,18 +264,21 @@ namespace Position_Test
 			Position NONE = Position(Music::Position::ChromaticScalePosition::NONE);
 			string expected = "NONE";
 			Assert::AreEqual(expected, NONE.GetPositionAsString());
+
 		}
 		TEST_METHOD(A_getPositionAsString_Test)
 		{
 			Position A = Position(Music::Position::ChromaticScalePosition::A);
 			string expected = "A";
 			Assert::AreEqual(expected, A.GetPositionAsString());
+
 		}
 		TEST_METHOD(AsBf_getPositionAsString_Test)
 		{
 			Position AsBf = Position(Music::Position::ChromaticScalePosition::AsBf);
 			string expected = "AsBf";
 			Assert::AreEqual(expected, AsBf.GetPositionAsString());
+
 		}
 		TEST_METHOD(B_getPositionAsString_Test)
 		{
@@ -732,12 +297,14 @@ namespace Position_Test
 			Position CsDf = Position(Music::Position::ChromaticScalePosition::CsDf);
 			string expected = "CsDf";
 			Assert::AreEqual(expected, CsDf.GetPositionAsString());
+
 		}
 		TEST_METHOD(D_getPositionAsString_Test)
 		{
 			Position D = Position(Music::Position::ChromaticScalePosition::D);
 			string expected = "D";
 			Assert::AreEqual(expected, D.GetPositionAsString());
+
 		}
 		TEST_METHOD(DsEf_getPositionAsString_Test)
 		{
@@ -750,24 +317,27 @@ namespace Position_Test
 			Position E = Position(Music::Position::ChromaticScalePosition::E);
 			string expected = "E";
 			Assert::AreEqual(expected, E.GetPositionAsString());
+
 		}
 		TEST_METHOD(F_getPositionAsString_Test)
 		{
 			Position F = Position(Music::Position::ChromaticScalePosition::F);
 			string expected = "F";
 			Assert::AreEqual(expected, F.GetPositionAsString());
+
 		}
 		TEST_METHOD(FsGf_getPositionAsString_Test)
 		{
 			Position FsGf = Position(Music::Position::ChromaticScalePosition::FsGf);
-			string expected = "FsGf";
-			Assert::AreEqual(expected, FsGf.GetPositionAsString());
+			string expectedsGf = "FsGf";
+			Assert::AreEqual(expectedsGf, FsGf.GetPositionAsString());
 		}
 		TEST_METHOD(G_getPositionAsString_Test)
 		{
 			Position G = Position(Music::Position::ChromaticScalePosition::G);
 			string expected = "G";
 			Assert::AreEqual(expected, G.GetPositionAsString());
+
 		}
 		TEST_METHOD(GsAf_getPositionAsString_Test)
 		{
@@ -786,10 +356,6 @@ namespace Position_Test
 
 			Music::Position testPosition = Music::Position();
 			Assert::AreEqual((int)testPosition.GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
-		}
-		TEST_METHOD(assignemntWithPosition_test)
-		{
-
 		}
 		TEST_METHOD(assignemntWithInt_test)
 		{

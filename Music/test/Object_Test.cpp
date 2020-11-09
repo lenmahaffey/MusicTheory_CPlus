@@ -1,7 +1,6 @@
 #pragma once
 #include "CppUnitTest.h"
 #include "../src/Object.cpp"
-#include "../src/Position.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
