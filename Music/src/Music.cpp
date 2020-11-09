@@ -1,4 +1,5 @@
 #include "Music.h"
+
  Music::ChromaticScalePosition Music::GetPositionFromChromaticScale(std::string noteAsString)
 {
 	if (noteAsString == "NONE")
@@ -134,12 +135,11 @@
 		 return "NONE";
 	 }
  }
-
  std::string Music::GetWeightAsString(Weight weight)
  {
 	 switch (weight)
 	 {
-	 case Music::Weight::NONE:
+	 case Weight::NONE:
 		 return std::string("None");
 	 case Music::Weight::Half:
 		 return std::string("Half");
@@ -150,7 +150,6 @@
 		 return std::string("None");
 	 }
  }
-
  std::string Music::GetStepAsString(Step step)
  {
 	 switch (step)
