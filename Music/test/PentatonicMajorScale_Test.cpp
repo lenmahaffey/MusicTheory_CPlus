@@ -1,7 +1,6 @@
 #pragma once
-#include "../../Music_Testing/pch.h"
 #include "CppUnitTest.h"
-#include "../../Music/src/scales/PentatonicMajorScale.cpp"
+#include "../src/scales/PentatonicMajorScale.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;

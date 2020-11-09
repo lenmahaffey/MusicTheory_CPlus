@@ -165,62 +165,73 @@ namespace Note_Test
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note A = Note(Music::Position::ChromaticScalePosition::A);
-			//Assert::AreEqual(expected, A.GetWeight());
+			Assert::AreEqual((int)expected, (int)A.GetPosition().GetWeight());
 		}
 		TEST_METHOD(AsBf_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Half;
 			Note AsBf = Note(Music::Position::ChromaticScalePosition::AsBf);
+			Assert::AreEqual((int)expected, (int)AsBf.GetPosition().GetWeight());
 		}
 		TEST_METHOD(B_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note B = Note(Music::Position::ChromaticScalePosition::B);
+			Assert::AreEqual((int)expected, (int)B.GetPosition().GetWeight());
 		}
 		TEST_METHOD(C_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note C = Note(Music::Position::ChromaticScalePosition::C);
+			Assert::AreEqual((int)expected, (int)C.GetPosition().GetWeight());
 		}
 		TEST_METHOD(CsDf_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Half;
 			Note CsDf = Note(Music::Position::ChromaticScalePosition::CsDf);
+			Assert::AreEqual((int)expected, (int)CsDf.GetPosition().GetWeight());
 		}
 		TEST_METHOD(D_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note D = Note(Music::Position::ChromaticScalePosition::D);
+			Assert::AreEqual((int)expected, (int)D.GetPosition().GetWeight());
 		}
 		TEST_METHOD(DsEf_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Half;
 			Note DsEf = Note(Music::Position::ChromaticScalePosition::DsEf);
+			Assert::AreEqual((int)expected, (int)DsEf.GetPosition().GetWeight());
 		}
 		TEST_METHOD(E_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note E = Note(Music::Position::ChromaticScalePosition::E);
+			Assert::AreEqual((int)expected, (int)E.GetPosition().GetWeight());
 		}
 		TEST_METHOD(F_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note F = Note(Music::Position::ChromaticScalePosition::F);
+			Assert::AreEqual((int)expected, (int)F.GetPosition().GetWeight());
 		}
 		TEST_METHOD(FsGf_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Half;
 			Note FsGf = Note(Music::Position::ChromaticScalePosition::FsGf);
+			Assert::AreEqual((int)expected, (int)FsGf.GetPosition().GetWeight());
 		}
 		TEST_METHOD(G_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Whole;
 			Note G = Note(Music::Position::ChromaticScalePosition::G);
+			Assert::AreEqual((int)expected, (int)G.GetPosition().GetWeight());
 		}
 		TEST_METHOD(GsAf_getWeight_Test)
 		{
 			Music::Position::Weight expected = Music::Position::Weight::Half;
 			Note GsAf = Note(Music::Position::ChromaticScalePosition::GsAf);
+			Assert::AreEqual((int)expected, (int)GsAf.GetPosition().GetWeight());
 		}
 	};
 	TEST_CLASS(getWeightAsString_Test)
@@ -300,6 +311,22 @@ namespace Note_Test
 	};
 	TEST_CLASS(Operator_Test)
 	{
+		TEST_METHOD(assignemntWithObject_test)
+		{
+
+		}
+		TEST_METHOD(assignemntWithPosition_test)
+		{
+
+		}
+		TEST_METHOD(assignemntWithInt_test)
+		{
+
+		}
+		TEST_METHOD(assignemntWithString_test)
+		{
+
+		}
 		TEST_METHOD(preIncrement_Test)
 		{
 			Note B("B");

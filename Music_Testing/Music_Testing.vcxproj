@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{754F2164-FF38-4AA2-A6EA-17200AD4E3A7}</ProjectGuid>
+    <ProjectGuid>{8540D3F7-768D-4179-828C-2A210D2761F6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MusicTesting</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -119,7 +119,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -156,17 +156,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
+    <ClCompile Include="..\Music\test\HarmonicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\MajorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\MedloicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\NaturalMinor_Test.cpp" />
+    <ClCompile Include="..\Music\test\Note_Test.cpp" />
+    <ClCompile Include="..\Music\test\Object_Test.cpp" />
+    <ClCompile Include="..\Music\test\PentatonicMajorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\PentatonicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\Scale_Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Music\Music.vcxproj">
       <Project>{8a68c8f5-c87b-4993-974b-66d48709e399}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Music\test\Note_Test.cpp" />
-    <ClCompile Include="..\Music\test\Object_Test.cpp" />
-    <ClCompile Include="..\Music\test\Scale_Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,7 +17,7 @@ namespace Music {
 		Music::Note operator =(const Music::Note& otherNote);
 		Music::Note operator =(const Music::Position& position);
 		Music::Note operator =(const int& positionAsInt);
-		Music::Note operator =(const std::string& positionAsInt);
+		Music::Note operator =(const std::string& positionAsString);
 		Music::Note operator ++();
 		Music::Note operator ++(int);
 		Music::Note operator --();
