@@ -148,7 +148,6 @@
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Position.cpp" />
     <ClCompile Include="src\Scale.cpp" />
-    <ClCompile Include="src\ScalePattern.cpp" />
     <ClCompile Include="src\scales\HarmonicMinorScale.cpp" />
     <ClCompile Include="src\scales\MajorScale.cpp" />
     <ClCompile Include="src\scales\MelodicMinorScale.cpp" />
@@ -162,7 +161,6 @@
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Position.h" />
     <ClInclude Include="src\Scale.h" />
-    <ClInclude Include="src\ScalePattern.h" />
     <ClInclude Include="src\scales\HarmonicMinorScale.h" />
     <ClInclude Include="src\scales\MajorScale.h" />
     <ClInclude Include="src\scales\MelodicMinorScale.h" />
