@@ -20,11 +20,11 @@ Music::Object::Object(int note) :
 }
 
 //Accessors
-Music::Position Music::Object::GetPosition()
+Music::Position Music::Object::GetPosition() const
 {
 	return Music::Object::position;
 }
-std::string Music::Object::GetNameAsString()
+std::string Music::Object::GetNameAsString() const
 {
 	return Music::Position::GetPositionAsString(Music::Object::position.GetChromaticScalePosition());
 }

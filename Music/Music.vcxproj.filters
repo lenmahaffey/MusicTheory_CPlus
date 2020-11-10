@@ -5,9 +5,6 @@
     <ClCompile Include="src\Scale.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Music.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Note.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -37,9 +34,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Music.h">
-      <Filter>headers</Filter>
-    </ClInclude>
     <ClInclude Include="src\Note.h">
       <Filter>headers</Filter>
     </ClInclude>

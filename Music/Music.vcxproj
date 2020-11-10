@@ -143,7 +143,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="src\Music.cpp" />
     <ClCompile Include="src\Note.cpp" />
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Position.cpp" />
@@ -156,7 +155,6 @@
     <ClCompile Include="src\scales\PentatonicMinorScale.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Music.h" />
     <ClInclude Include="src\Note.h" />
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Position.h" />
