@@ -354,16 +354,41 @@ namespace Position_Test
 			Music::Position expectedB = Music::Position(Music::Position::ChromaticScalePosition::B);
 			Music::Position expectedC = Music::Position(Music::Position::ChromaticScalePosition::C);
 
-			Music::Position testPosition = Music::Position();
-			Assert::AreEqual((int)testPosition.GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
+			Music::Position testPositionNONE = Music::Position();
+			Music::Position testPositionB = Music::Position(Music::Position::ChromaticScalePosition::B);
+			Music::Position testPositionC = Music::Position(Music::Position::ChromaticScalePosition::C);
+
+			Assert::AreEqual((int)testPositionNONE.GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testPositionB.GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
+			Assert::AreEqual((int)testPositionC.GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
 		}
 		TEST_METHOD(assignemntWithInt_test)
 		{
+			Music::Position expectedNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
+			Music::Position expectedB = Music::Position::ChromaticScalePosition::B;
+			Music::Position expectedC = Music::Position::ChromaticScalePosition::C;
 
+			Music::Position testPositionNONE = 0;
+			Music::Position testPositionB = 3;
+			Music::Position testPositionC = 4;
+
+			Assert::AreEqual((int)testPositionNONE.GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testPositionB.GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
+			Assert::AreEqual((int)testPositionC.GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
 		}
 		TEST_METHOD(assignemntWithString_test)
 		{
+			Music::Position expectedNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
+			Music::Position expectedB = Music::Position::ChromaticScalePosition::B;
+			Music::Position expectedC = Music::Position::ChromaticScalePosition::C;
 
+			Music::Position testPositionNONE = "NONE";
+			Music::Position testPositionB = "B";
+			Music::Position testPositionC = "C";
+
+			Assert::AreEqual((int)testPositionNONE.GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testPositionB.GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
+			Assert::AreEqual((int)testPositionC.GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
 		}
 		TEST_METHOD(preIncrement_Test)
 		{
