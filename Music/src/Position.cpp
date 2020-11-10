@@ -1,27 +1,26 @@
 #include "Position.h"
 
-Music::Position::Position() :
-	position(Music::Position::ChromaticScalePosition::NONE),
-	weight(GetWeightForPosition(Music::Position::ChromaticScalePosition::NONE))
+Music::Position::Position()
 {
+	Music::Position::position = Music::Position::ChromaticScalePosition::NONE;
+	Music::Position::weight = GetWeightForPosition(Music::Position::ChromaticScalePosition::NONE);
 }
 
-Music::Position::Position(Music::Position::ChromaticScalePosition position) :
-	position(position),
-	weight(GetWeightForPosition(position))
+Music::Position::Position(Music::Position::ChromaticScalePosition position)
 {
-
+	Music::Position::position = position;
+	Music::Position::weight = GetWeightForPosition(position);
 }
-Music::Position::Position(int noteAsInt) :
-	position(GetPositionFromChromaticScale(noteAsInt)),
-	weight(GetWeightForPosition(GetPositionFromChromaticScale(noteAsInt)))
+Music::Position::Position(int noteAsInt)
 {
+	Music::Position::position = GetPositionFromChromaticScale(noteAsInt);
+	Music::Position::weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsInt));
 }
 
-Music::Position::Position(std::string noteAsString) :
-	position(GetPositionFromChromaticScale(noteAsString)),
-	weight(GetWeightForPosition(GetPositionFromChromaticScale(noteAsString)))
+Music::Position::Position(std::string noteAsString)
 {
+	Music::Position::position = GetPositionFromChromaticScale(noteAsString);
+	Music::Position::weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsString));
 }
 
 //Class Methods
