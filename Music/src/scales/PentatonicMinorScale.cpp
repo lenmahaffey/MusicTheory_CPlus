@@ -9,6 +9,7 @@ Music::PentatonicMinorScale::PentatonicMinorScale(Music::Position::ChromaticScal
 			Music::Position::Step::Whole,
 			Music::Position::Step::WholeandAHalf}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::PentatonicMinorScale::setScale(note);
 }
 
@@ -20,6 +21,7 @@ Music::PentatonicMinorScale::PentatonicMinorScale(int note) :
 			Music::Position::Step::Whole,
 			Music::Position::Step::WholeandAHalf}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::PentatonicMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }
 
@@ -31,5 +33,6 @@ Music::PentatonicMinorScale::PentatonicMinorScale(char note) :
 			Music::Position::Step::Whole,
 			Music::Position::Step::WholeandAHalf}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::PentatonicMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }

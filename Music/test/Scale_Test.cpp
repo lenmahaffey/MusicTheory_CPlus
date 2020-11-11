@@ -412,18 +412,83 @@ namespace Scale_Test
 	};
 	TEST_CLASS(Operator_Test)
 	{
-		/*TEST_METHOD(preIncrement_Test)
+		TEST_METHOD(assignmentWithScale_Test)
+		{
+			Music::Scale testBScale = Music::Scale(Music::Position::ChromaticScalePosition::B, pattern, true);
+			Music::Scale testCScale = Music::Scale(Music::Position::ChromaticScalePosition::C, pattern, true);
+			//string expectedBScaleString = "B CsDf DsEf E FsGf GsAf AsBf";
+			string expectedBScaleString = "C D E F G A B";
+			string expectedCScaleString = "C D E F G A B";
+			Music::Position expectedBScalePosition = Music::Position::ChromaticScalePosition::C;
+			Music::Position expectedCScalePosition = Music::Position::ChromaticScalePosition::C;
+
+			testBScale = testCScale;
+
+			Assert::AreEqual((int)expectedBScalePosition.GetChromaticScalePosition(), (int)testBScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedBScaleString, testBScale.getScaleAsString());
+			Assert::AreEqual((int)expectedCScalePosition.GetChromaticScalePosition(), (int)testCScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedCScaleString, testCScale.getScaleAsString());
+		}
+		TEST_METHOD(assignemntWithPosition_test)
+		{
+			Music::Scale testBScale = Music::Scale(Music::Position::ChromaticScalePosition::B, pattern, true);
+			Music::Scale testCScale = Music::Scale(Music::Position::ChromaticScalePosition::C, pattern, true);
+			string expectedBScaleString = "C D E F G A B";
+			string expectedCScaleString = "B CsDf DsEf E FsGf GsAf AsBf";
+			Music::Position expectedBScalePosition = Music::Position::ChromaticScalePosition::C;
+			Music::Position expectedCScalePosition = Music::Position::ChromaticScalePosition::B;
+
+			testBScale = Music::Position("C");
+			testCScale = Music::Position("B");
+			Assert::AreEqual((int)expectedBScalePosition.GetChromaticScalePosition(), (int)testBScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedBScaleString, testBScale.getScaleAsString());
+			Assert::AreEqual((int)expectedCScalePosition.GetChromaticScalePosition(), (int)testCScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedCScaleString, testCScale.getScaleAsString());
+		}
+		TEST_METHOD(assignemntWithInt_test)
+		{
+			Music::Scale testBScale = Music::Scale(Music::Position::ChromaticScalePosition::B, pattern, true);
+			Music::Scale testCScale = Music::Scale(Music::Position::ChromaticScalePosition::C, pattern, true);
+			string expectedBScaleString = "C D E F G A B";
+			string expectedCScaleString = "B CsDf DsEf E FsGf GsAf AsBf";
+			Music::Position expectedBScalePosition = Music::Position::ChromaticScalePosition::C;
+			Music::Position expectedCScalePosition = Music::Position::ChromaticScalePosition::B;
+
+			testBScale = 4;
+			testCScale = 3;
+			Assert::AreEqual((int)expectedBScalePosition.GetChromaticScalePosition(), (int)testBScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedBScaleString, testBScale.getScaleAsString());
+			Assert::AreEqual((int)expectedCScalePosition.GetChromaticScalePosition(), (int)testCScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedCScaleString, testCScale.getScaleAsString());
+		}
+		TEST_METHOD(assignemntWithString_test)
+		{
+			Music::Scale testBScale = Music::Scale(Music::Position::ChromaticScalePosition::B, pattern, true);
+			Music::Scale testCScale = Music::Scale(Music::Position::ChromaticScalePosition::C, pattern, true);
+			string expectedBScaleString = "C D E F G A B";
+			string expectedCScaleString = "B CsDf DsEf E FsGf GsAf AsBf";
+			Music::Position expectedBScalePosition = Music::Position::ChromaticScalePosition::C;
+			Music::Position expectedCScalePosition = Music::Position::ChromaticScalePosition::B;
+
+			testBScale = "C";
+			testCScale = "B";
+			Assert::AreEqual((int)expectedBScalePosition.GetChromaticScalePosition(), (int)testBScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedBScaleString, testBScale.getScaleAsString());
+			Assert::AreEqual((int)expectedCScalePosition.GetChromaticScalePosition(), (int)testCScale.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedCScaleString, testCScale.getScaleAsString());
+		}
+		TEST_METHOD(preIncrement_Test)
 		{
 			Scale B = Scale("B", pattern, true);
 			Scale during;
-			Scale expectedBefore = Scale("A", pattern, true);
+			Scale expectedBefore = Scale("B", pattern, true);
 			Scale expectedDuring = Scale("C", pattern, true);
 			Scale expectedAfter = Scale("C", pattern, true);
 
-			Assert::AreEqual(expectedBefore.GetPosition(), B.GetPosition());
+			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 			during = ++B;
-			Assert::AreEqual(expectedAfter.GetPosition(), during.GetPosition());
-			Assert::AreEqual(expectedAfter.GetPosition(), B.GetPosition());
+			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 		}
 		TEST_METHOD(postIncrement_Test)
 		{
@@ -433,25 +498,12 @@ namespace Scale_Test
 			Scale expectedDuring = Scale("B", pattern, true);
 			Scale expectedAfter = Scale("C", pattern, true);
 
-			Assert::AreEqual(expectedBefore.GetPosition(), B.GetPosition());
+			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 			during = B++;
-			Assert::AreEqual(expectedBefore.GetPosition(), during.GetPosition());
-			Assert::AreEqual(expectedAfter.GetPosition(), B.GetPosition());
+			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 		}
 		TEST_METHOD(preDeincrement_Test)
-		{
-			Scale C("C", pattern, true);
-			Scale during;
-			Scale expectedBefore = Scale("C", pattern, true);
-			Scale expectedDuring = Scale("C", pattern, true);
-			Scale expectedAfter = Scale("B", pattern, true);
-
-			Assert::AreEqual(expectedBefore.GetPosition(), C.GetPosition());
-			during = --C;
-			Assert::AreEqual(expectedAfter.GetPosition(), during.GetPosition());
-			Assert::AreEqual(expectedAfter.GetPosition(), C.GetPosition());
-		}
-		TEST_METHOD(postDeIncrement_Test)
 		{
 			Scale C("C", pattern, true);
 			Scale during;
@@ -459,11 +511,24 @@ namespace Scale_Test
 			Scale expectedDuring = Scale("B", pattern, true);
 			Scale expectedAfter = Scale("B", pattern, true);
 
-			Assert::AreEqual(expectedBefore.GetPosition(), C.GetPosition());
+			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
+			during = --C;
+			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
+		}
+		TEST_METHOD(postDeIncrement_Test)
+		{
+			Scale C("C", pattern, true);
+			Scale during;
+			Scale expectedBefore = Scale("C", pattern, true);
+			Scale expectedDuring = Scale("C", pattern, true);
+			Scale expectedAfter = Scale("B", pattern, true);
+
+			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
 			during = C--;
-			Assert::AreEqual(expectedBefore.GetPosition(), during.GetPosition());
-			Assert::AreEqual(expectedAfter.GetPosition(), C.GetPosition());
-		}*/
+			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
+		}
 		TEST_METHOD(isEqualOperator_Test)
 		{
 			Scale A("A", pattern, true);

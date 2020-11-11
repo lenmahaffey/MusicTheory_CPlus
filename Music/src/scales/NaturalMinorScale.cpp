@@ -11,6 +11,7 @@ Music::NaturalMinorScale::NaturalMinorScale(Music::Position::ChromaticScalePosit
 			Music::Position::Step::Half,
 			Music::Position::Step::Whole}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::NaturalMinorScale::setScale(note);
 }
 
@@ -24,6 +25,7 @@ Music::NaturalMinorScale::NaturalMinorScale(int note) :
 			Music::Position::Step::Half,
 			Music::Position::Step::Whole}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }
 
@@ -37,5 +39,6 @@ Music::NaturalMinorScale::NaturalMinorScale(char note) :
 			Music::Position::Step::Half,
 			Music::Position::Step::Whole}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }

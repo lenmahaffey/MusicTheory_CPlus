@@ -6,7 +6,7 @@
 	Last Edited:
 	Description:
 */
-#include "src/scales/PentatonicMinorScale.h"
+#include "src/scales/HarmonicMinorScale.h"
 #include "src/scales/MajorScale.h"
 #include <iostream>
 
@@ -25,10 +25,13 @@ int main()
 		Music::Position::Step::Whole,
 		Music::Position::Step::Whole,
 	};
-	Scale A("A", pattern, true);
-	MajorScale C("C");
-	cout << A.isMajorOrMinor() << endl;
-	cout << C.isMajorOrMinor() << endl;
+	Scale();
+	Scale B("B", pattern, true);
+	Scale C("C", pattern, true);
+	//HarmonicMinorScale C(4);
+	//cout << A.isMajorOrMinor() << endl;
+	//cout << C.isMajorOrMinor() << endl;
+	B = C;
 	return 0;
 }
 

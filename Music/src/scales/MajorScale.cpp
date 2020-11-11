@@ -11,6 +11,7 @@ Music::MajorScale::MajorScale(Music::Position::ChromaticScalePosition note) :
 			Music::Position::Step::Whole,
 			Music::Position::Step::Whole}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MajorScale::setScale(note);
 }
 
@@ -24,6 +25,7 @@ Music::MajorScale::MajorScale(int note) :
 			Music::Position::Step::Whole,
 			Music::Position::Step::Whole}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }
 
@@ -37,4 +39,6 @@ Music::MajorScale::MajorScale(std::string note) :
 			Music::Position::Step::Whole,
 			Music::Position::Step::Whole}
 {
+	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
+	Music::MajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
 }

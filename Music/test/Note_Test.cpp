@@ -312,69 +312,69 @@ namespace Note_Test
 	{
 		TEST_METHOD(assignmentWithObject_Test)
 		{
-			Music::Position expectedNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
-			Music::Position expectedB = Music::Position(Music::Position::ChromaticScalePosition::B);
-			Music::Position expectedC = Music::Position(Music::Position::ChromaticScalePosition::C);
+			Music::Position expectedNoteNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
+			Music::Position expectedBNone = Music::Position(Music::Position::ChromaticScalePosition::B);
+			Music::Position expectedCNone = Music::Position(Music::Position::ChromaticScalePosition::C);
 
-			Music::Note testPositionNONE = Music::Note();
-			Music::Note testPositionB = Music::Note(Music::Position::ChromaticScalePosition::B);
-			Music::Note testPositionC = Music::Note(Music::Position::ChromaticScalePosition::C);
+			Music::Note testNoteNONE = Music::Note();
+			Music::Note testNoteB = Music::Note(Music::Position::ChromaticScalePosition::B);
+			Music::Note testNoteC = Music::Note(Music::Position::ChromaticScalePosition::C);
 
-			Assert::AreEqual((int)testPositionNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionB.GetPosition().GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionC.GetPosition().GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNoteNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteB.GetPosition().GetChromaticScalePosition(), (int)expectedBNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteC.GetPosition().GetChromaticScalePosition(), (int)expectedCNone.GetChromaticScalePosition());
 		}
 		TEST_METHOD(assignemntWithPosition_test)
 		{
-			Music::Position expectedNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
-			Music::Position expectedB = Music::Position(Music::Position::ChromaticScalePosition::B);
-			Music::Position expectedC = Music::Position(Music::Position::ChromaticScalePosition::C);
+			Music::Position expectedNoteNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
+			Music::Position expectedBNone = Music::Position(Music::Position::ChromaticScalePosition::B);
+			Music::Position expectedCNone = Music::Position(Music::Position::ChromaticScalePosition::C);
 
-			Music::Note testPositionNONE = Music::Note();
-			Music::Note testPositionB = Music::Note(Music::Position::ChromaticScalePosition::B);
-			Music::Note testPositionC = Music::Note(Music::Position::ChromaticScalePosition::C);
+			Music::Note testNoteNONE = Music::Note();
+			Music::Note testNoteB = Music::Note(Music::Position::ChromaticScalePosition::B);
+			Music::Note testNoteC = Music::Note(Music::Position::ChromaticScalePosition::C);
 
-			Assert::AreEqual((int)testPositionNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionB.GetPosition().GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionC.GetPosition().GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNoteNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteB.GetPosition().GetChromaticScalePosition(), (int)expectedBNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteC.GetPosition().GetChromaticScalePosition(), (int)expectedCNone.GetChromaticScalePosition());
 		}
 		TEST_METHOD(assignemntWithInt_test)
 		{
-			Music::Position expectedNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
-			Music::Position expectedB = Music::Position::ChromaticScalePosition::B;
-			Music::Position expectedC = Music::Position::ChromaticScalePosition::C;
+			Music::Position expectedNoteNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
+			Music::Position expectedBNone = Music::Position::ChromaticScalePosition::B;
+			Music::Position expectedCNone = Music::Position::ChromaticScalePosition::C;
 
-			Music::Note testPositionNONE = 0;
-			Music::Note testPositionB = 3;
-			Music::Note testPositionC = 4;
+			Music::Note testNoteNONE = 0;
+			Music::Note testNoteB = 3;
+			Music::Note testNoteC = 4;
 
-			Assert::AreEqual((int)testPositionNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionB.GetPosition().GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionC.GetPosition().GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNoteNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteB.GetPosition().GetChromaticScalePosition(), (int)expectedBNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteC.GetPosition().GetChromaticScalePosition(), (int)expectedCNone.GetChromaticScalePosition());
 		}
 		TEST_METHOD(assignemntWithString_test)
 		{
-			Music::Position expectedNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
-			Music::Position expectedB = Music::Position::ChromaticScalePosition::B;
-			Music::Position expectedC = Music::Position::ChromaticScalePosition::C;
+			Music::Position expectedNoteNone = Music::Position(Music::Position::ChromaticScalePosition::NONE);
+			Music::Position expectedBNone = Music::Position::ChromaticScalePosition::B;
+			Music::Position expectedCNone = Music::Position::ChromaticScalePosition::C;
 
-			Music::Note testPositionNONE = "NONE";
-			Music::Note testPositionB = "B";
-			Music::Note testPositionC = "C";
+			Music::Note testNoteNONE = "NONE";
+			Music::Note testNoteB = "B";
+			Music::Note testNoteC = "C";
 
-			Assert::AreEqual((int)testPositionNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNone.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionB.GetPosition().GetChromaticScalePosition(), (int)expectedB.GetChromaticScalePosition());
-			Assert::AreEqual((int)testPositionC.GetPosition().GetChromaticScalePosition(), (int)expectedC.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteNONE.GetPosition().GetChromaticScalePosition(), (int)expectedNoteNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteB.GetPosition().GetChromaticScalePosition(), (int)expectedBNone.GetChromaticScalePosition());
+			Assert::AreEqual((int)testNoteC.GetPosition().GetChromaticScalePosition(), (int)expectedCNone.GetChromaticScalePosition());
 		}
 		TEST_METHOD(preIncrement_Test)
 		{
 			Note B("B");
 			Note during;
-			Note expectedBefore = Note("B");
+			Note expectedBNoneefore = Note("B");
 			Note expectedDuring = Note("C");
 			Note expectedAfter = Note("C");
 
-			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedBNoneefore.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 			during = ++B;
 			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
@@ -383,24 +383,24 @@ namespace Note_Test
 		{
 			Note B("B");
 			Note during;
-			Note expectedBefore = Note("B");
+			Note expectedBNoneefore = Note("B");
 			Note expectedDuring = Note("B");
 			Note expectedAfter = Note("C");
 
-			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedBNoneefore.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 			during = B++;
-			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedBNoneefore.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)B.GetPosition().GetChromaticScalePosition());
 		}
 		TEST_METHOD(preDeincrement_Test)
 		{
 			Note C("C");
 			Note during;
-			Note expectedBefore = Note("C");
+			Note expectedBNoneefore = Note("C");
 			Note expectedDuring = Note("C");
 			Note expectedAfter = Note("B");
 
-			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedBNoneefore.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
 			during = --C;
 			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
@@ -409,13 +409,13 @@ namespace Note_Test
 		{
 			Note C("C");
 			Note during;
-			Note expectedBefore = Note("C");
+			Note expectedBNoneefore = Note("C");
 			Note expectedDuring = Note("B");
 			Note expectedAfter = Note("B");
 
-			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedBNoneefore.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
 			during = C--;
-			Assert::AreEqual((int)expectedBefore.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual((int)expectedBNoneefore.GetPosition().GetChromaticScalePosition(), (int)during.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual((int)expectedAfter.GetPosition().GetChromaticScalePosition(), (int)C.GetPosition().GetChromaticScalePosition());
 		}
 		TEST_METHOD(isEqualOperator_Test)
