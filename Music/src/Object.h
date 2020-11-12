@@ -14,8 +14,7 @@ namespace Music {
 		Music::Object(int note);
 
 		//Accessors
-		Music::Position GetPosition() const;
-		std::string GetNameAsString() const;
+		Music::Position& GetPosition();
 
 		//Methods
 		Music::Position accendHalfStep();

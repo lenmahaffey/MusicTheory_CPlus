@@ -2,31 +2,35 @@
 
 Music::Position::Position()
 {
-	Music::Position::position = Music::Position::ChromaticScalePosition::NONE;
-	Music::Position::weight = GetWeightForPosition(Music::Position::ChromaticScalePosition::NONE);
+	position = Music::Position::ChromaticScalePosition::NONE;
+	weight = GetWeightForPosition(Music::Position::ChromaticScalePosition::NONE);
+	name = Music::Position::GetPositionAsString(Music::Position::ChromaticScalePosition::NONE);
 }
 
-Music::Position::Position(Music::Position::ChromaticScalePosition position)
+Music::Position::Position(Music::Position::ChromaticScalePosition pos)
 {
-	Music::Position::position = position;
-	Music::Position::weight = GetWeightForPosition(position);
+	position = pos;
+	weight = GetWeightForPosition(pos);
+	name = Music::Position::GetPositionAsString(pos);
 }
 Music::Position::Position(int noteAsInt)
 {
-	Music::Position::position = GetPositionFromChromaticScale(noteAsInt);
-	Music::Position::weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsInt));
+	position = GetPositionFromChromaticScale(noteAsInt);
+	weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsInt));
+	name = GetPositionAsString(GetPositionFromChromaticScale(noteAsInt));
 }
 
 Music::Position::Position(std::string noteAsString)
 {
 	Music::Position::position = GetPositionFromChromaticScale(noteAsString);
 	Music::Position::weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsString));
+	Music::Position::name = GetPositionAsString(GetPositionFromChromaticScale(noteAsString));
 }
 
 //Class Methods
 Music::Position::ChromaticScalePosition Music::Position::GetChromaticScalePosition() const
 {
-	return Music::Position::position;
+	return position;
 }
 std::string Music::Position::GetPositionAsString() const
 {
@@ -39,6 +43,15 @@ Music::Position::Weight Music::Position::GetWeight() const
 std::string Music::Position::GetWeightAsString() const
 {
 	return GetWeightAsString(weight);
+}
+std::string Music::Position::GetName() const
+{
+	return name;
+}
+
+void Music::Position::SetName(std::string newName)
+{
+	name = newName;
 }
 //Static Methods
 Music::Position::ChromaticScalePosition Music::Position::GetPositionFromChromaticScale(std::string noteAsString)
@@ -216,8 +229,9 @@ Music::Position Music::Position::operator =(const Music::Position& otherPosition
 {
 	if (this != &otherPosition)
 	{
-		position = otherPosition.position;
-		weight = otherPosition.weight;
+		position = otherPosition.GetChromaticScalePosition();
+		weight = otherPosition.GetWeight();
+		name = otherPosition.GetName();
 	}
 	return *this;
 }
@@ -227,6 +241,7 @@ Music::Position Music::Position::operator =(const int& positionAsInt)
 	{
 		position = GetPositionFromChromaticScale(positionAsInt);
 		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsInt));
+		name = GetPositionAsString(GetPositionFromChromaticScale(positionAsInt));
 	}
 	return *this;
 }
@@ -236,6 +251,7 @@ Music::Position Music::Position::operator =(const std::string& positionAsString)
 	{
 		position = GetPositionFromChromaticScale(positionAsString);
 		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsString));
+		name = GetPositionAsString(GetPositionFromChromaticScale(positionAsString));
 	}
 	return *this;
 }

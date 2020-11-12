@@ -308,6 +308,25 @@ namespace Note_Test
 			Assert::AreEqual(expected, GsAf.GetPosition().GetWeightAsString());
 		}
 	};
+	TEST_CLASS(SetName_Test)
+	{
+		TEST_METHOD(setName_Test)
+		{
+			string expectedCs = "Cs";
+			string expectedGf = "Gf";
+
+			Music::Note noteCsDf = Music::Position::Position(Music::Position::ChromaticScalePosition::CsDf);
+			Music::Note noteFsGf = Music::Position::Position(Music::Position::ChromaticScalePosition::FsGf);
+
+			noteCsDf.GetPosition().SetName("Cs");
+			noteFsGf.GetPosition().SetName("Gf");
+
+			Assert::AreEqual(expectedCs, noteCsDf.GetPosition().GetName());
+			Assert::AreEqual(expectedGf, noteFsGf.GetPosition().GetName());
+		}
+
+
+	};
 	TEST_CLASS(Operator_Test)
 	{
 		TEST_METHOD(assignmentWithObject_Test)

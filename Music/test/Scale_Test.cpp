@@ -606,4 +606,167 @@ namespace Scale_Test
 			Assert::IsFalse(B1 <= A);
 		};
 	};
+	TEST_CLASS(ResolveScale_Test)
+	{
+		TEST_METHOD(Af_ResolveString_Test)
+		{
+			string expectedString = "Af Bf C Df Ef F G";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
+
+			Scale scaleToTest = Scale("GsAf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(A_ResolveString_Test)
+		{
+			string expectedString = "A B Cs D E Fs Gs";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::A;
+
+			Scale scaleToTest = Scale("A", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(AsBf_ResolveScale_Test)
+		{
+			string expectedString = "As C D Ef F G A";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::AsBf;
+
+			Scale scaleToTest = Scale("AsBf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(B_ResolveScale_Test)
+		{
+			string expectedString = "B Cs Ds E Fs Gs As";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::B;
+
+			Scale scaleToTest = Scale("B", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(C_ResolveString_Test)
+		{
+			string expectedString = "C D E F G A B";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::C;
+
+			Scale scaleToTest = Scale("C", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Cs_ResolveString_Test)
+		{
+			string expectedString = "Cs Ds F Gf Af Bf C";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::CsDf;
+
+			Scale scaleToTest = Scale("CsDf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Df_ResolveString_Test)
+		{
+			string expectedString = "Df Ef F Gf Af Bf C";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::CsDf;
+
+			Scale scaleToTest = Scale("CsDf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(D_ResolveString_Test)
+		{
+			string expectedString = "D E Fs G A B Cs";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::D;
+
+			Scale scaleToTest = Scale("D", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Ds_ResolveString_Test)
+		{
+			string expectedString = "Ds F G Af Bf C D";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::DsEf;
+
+			Scale scaleToTest = Scale("DsEf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Ef_ResolveString_Test)
+		{
+			string expectedString = "Ef F G Af Bf C D";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::DsEf;
+
+			Scale scaleToTest = Scale("DsEf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(E_ResolveString_Test)
+		{
+			string expectedString = "E Fs Gs A B Cs Ds";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::E;
+
+			Scale scaleToTest = Scale("E", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(F_ResolveString_Test)
+		{
+			string expectedString = "F G A Bf C D E";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::F;
+
+			Scale scaleToTest = Scale("F", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Fs_ResolveString_Test)
+		{
+			string expectedString = "Fs Gs As B Cs Ds F";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::FsGf;
+
+			Scale scaleToTest = Scale("FsGf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Gf_ResolveString_Test)
+		{
+			string expectedString = "Gf Af Bf B Df Ef F";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::FsGf;
+
+			Scale scaleToTest = Scale("FsGf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(G_ResolveString_Test)
+		{
+			string expectedString = "G A B C D E Fs";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::G;
+
+			Scale scaleToTest = Scale("G", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Gs_ResolveString_Test)
+		{
+			string expectedString = "Gs As C Df Ef F G";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
+
+			Scale scaleToTest = Scale("GsAf", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+	};
 }

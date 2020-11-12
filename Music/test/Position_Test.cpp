@@ -13,14 +13,14 @@ namespace Position_Test
 	{
 		TEST_METHOD(NONE_ConstructorWithPosition_Test)
 		{
-			Position NONE = Position();
 			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::NONE;
+			Position NONE = Position();
 			Assert::AreEqual((int)expected, (int)NONE.GetChromaticScalePosition());
 		}
 		TEST_METHOD(A_ConstructorWithPosition_Test)
 		{
-			Position A = Position(Music::Position::ChromaticScalePosition::A);
 			Music::Position::ChromaticScalePosition expected = Music::Position::ChromaticScalePosition::A;
+			Position A = Position(Music::Position::ChromaticScalePosition::A);
 			Assert::AreEqual((int)expected, (int)A.GetChromaticScalePosition());
 		}
 		TEST_METHOD(AsBf_ConstructorWithPosition_Test)
@@ -257,6 +257,87 @@ namespace Position_Test
 			Assert::AreEqual((int)expected, (int)GsAf.GetChromaticScalePosition());
 		}
 	};
+	TEST_CLASS(GetName_Test)
+	{
+		TEST_METHOD(NONE_getName_Test)
+		{
+			string expectedString = "NONE";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::NONE);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(A_getName_Test)
+		{
+			string expectedString = "A";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::A);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(AsBf_getName_Test)
+		{
+			string expectedString = "AsBf";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::AsBf);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(B_getName_Test)
+		{
+			string expectedString = "B";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::B);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(C_getName_Test)
+		{
+			string expectedString = "C";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::C);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(CsDf_getName_Test)
+		{
+			string expectedString = "CsDf";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::CsDf);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(D_getName_Test)
+		{
+			string expectedString = "D";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::D);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(DsEf_getName_Test)
+		{
+			string expectedString = "DsEf";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::DsEf);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(E_getName_Test)
+		{
+			string expectedString = "E";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::E);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(F_getName_Test)
+		{
+			string expectedString = "F";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::F);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(FsGs_getName_Test)
+		{
+			string expectedString = "FsGf";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::FsGf);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(G_getName_Test)
+		{
+			string expectedString = "G";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::G);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+		TEST_METHOD(GsAf_getName_Test)
+		{
+			string expectedString = "GsAf";
+			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::GsAf);
+			Assert::AreEqual(expectedString, PositionNONE.GetName());
+		}
+	};
 	TEST_CLASS(getPositionAsString_Test)
 	{
 		TEST_METHOD(NONE_getPositionAsString_Test)
@@ -345,6 +426,29 @@ namespace Position_Test
 			string expected = "GsAf";
 			Assert::AreEqual(expected, GsAf.GetPositionAsString());
 		}
+	};
+	TEST_CLASS(SetName_Test)
+	{
+		TEST_METHOD(setName_Test)
+		{
+			string expectedCs = "Cs";
+			string expectedGf = "Gf";
+			string expectedCsDf = "CsDf";
+			string expectedFsGf = "FsGf";
+
+			Music::Position positionCsDf = Music::Position::Position(Music::Position::ChromaticScalePosition::CsDf);
+			Music::Position positionFsGf = Music::Position::Position(Music::Position::ChromaticScalePosition::FsGf);
+
+			Assert::AreEqual(expectedCsDf, positionCsDf.GetName());
+			Assert::AreEqual(expectedFsGf, positionFsGf.GetName());
+			positionCsDf.SetName("Cs");
+			positionFsGf.SetName("Gf");
+
+			Assert::AreEqual(expectedCs, positionCsDf.GetName());
+			Assert::AreEqual(expectedGf, positionFsGf.GetName());
+		}
+
+
 	};
 	TEST_CLASS(Operator_Test)
 	{

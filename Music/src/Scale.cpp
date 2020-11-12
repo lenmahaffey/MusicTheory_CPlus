@@ -5,7 +5,9 @@
 Music::Scale::Scale() :
 	Music::Object(),
 	pattern { Music::Position::Step::NONE },
-	scale { 0 }
+	scale { 0 },
+	resolvedScale{ 0 },
+	unresolvedScale{ 0 }
 {
 	Music::Scale::isMajor = true;
 	Music::Scale::scalePatternLength = sizeof(pattern) / sizeof(pattern[0]);
@@ -14,7 +16,9 @@ Music::Scale::Scale() :
 Music::Scale::Scale( Music::Position::ChromaticScalePosition note,  Music::Position::Step (&pattern)[7],  bool isMajor) :
 	Music::Object(note),
 	pattern{ Music::Position::Step::NONE },
-	scale{ Music::Note::Note(0) }
+	scale{ 0 },
+	resolvedScale{ 0 },
+	unresolvedScale{ 0 }
 {
 	Music::Scale::isMajor = isMajor;
 	Music::Scale::scalePatternLength = sizeof(pattern) / sizeof(pattern[0]);
@@ -25,21 +29,25 @@ Music::Scale::Scale( Music::Position::ChromaticScalePosition note,  Music::Posit
 Music::Scale::Scale( int note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
 	Music::Object(note),
 	pattern{ Music::Position::Step::NONE },
-	scale{ Music::Note::Note(0) },
-	isMajor(isMajor),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+	scale{ 0 },
+	resolvedScale{ 0 },
+	unresolvedScale{ 0 }
 {
+	isMajor = isMajor;
+	scalePatternLength = sizeof(pattern) / sizeof(pattern[0]);
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::Scale::setScale(Music::Scale::GetPosition());
 }
 
-Music::Scale::Scale( std::string note,  Music::Position::Step(&pattern)[7],  bool isMajor) :
+Music::Scale::Scale(std::string note, Music::Position::Step(&pattern)[7], bool isMajor) :
 	Music::Object(note),
 	pattern{ Music::Position::Step::NONE },
-	scale{ Music::Note(Music::Position::ChromaticScalePosition::NONE) },
-	isMajor(isMajor),
-	scalePatternLength(sizeof(pattern) / sizeof(pattern[0]))
+	scale{ 0 },
+	resolvedScale{ 0 },
+	unresolvedScale{ 0 }
 {
+	isMajor = isMajor;
+	scalePatternLength = sizeof(pattern) / sizeof(pattern[0]);
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::Scale::setScale(Music::Scale::GetPosition());
 }
@@ -61,8 +69,8 @@ std::string Music::Scale::getScaleAsString() const
 	std::string s;
 	for (Music::Note note : Music::Scale::scale)
 	{
-		if (note.GetNameAsString() != "NONE") {
-			s += note.GetNameAsString();
+		if (note.GetPosition().GetName() != "NONE") {
+			s += note.GetPosition().GetName();
 			s += " ";
 		}
 	}
@@ -70,10 +78,23 @@ std::string Music::Scale::getScaleAsString() const
 	return s;
 }
 
+std::string Music::Scale::getResolvedScaleAsString() const
+{
+	std::string s;
+	for (Music::Note note : resolvedScale)
+	{
+		if (note.GetPosition().GetName() != "NONE") {
+			s += note.GetPosition().GetName();
+			s += " ";
+		}
+	}
+	s.pop_back();
+	return s;
+}
 //Methods
 void Music::Scale::setScale(Music::Position position)
 {
-	Music::Scale::scale[0] = Music::Note(position);
+	Music::Scale::unresolvedScale[0] = Music::Note(position);
 	Music::Note nextNote = position;
 	for (int i = 1; i < scalePatternLength; i++) {
 
@@ -83,23 +104,66 @@ void Music::Scale::setScale(Music::Position position)
 		else if (Music::Scale::pattern[i] == Music::Position::Step::Whole)
 		{
 			nextNote = nextNote.accendFullStep();;
-			Music::Scale::scale[i] = nextNote;
+			Music::Scale::unresolvedScale[i] = nextNote;
 		}
 
 		else if (Music::Scale::pattern[i] == Music::Position::Step::Half)
 		{
 			nextNote = nextNote.accendHalfStep();
-			Music::Scale::scale[i] = Note(nextNote);
+			Music::Scale::unresolvedScale[i] = Note(nextNote);
 		}
 
 		else if (Music::Scale::pattern[i] == Music::Position::Step::WholeandAHalf)
 		{
 			nextNote = nextNote.accendStepAndAHalf();
-			Music::Scale::scale[i] = Note(nextNote);
+			Music::Scale::unresolvedScale[i] = Note(nextNote);
+		}
+	}
+	Music::Scale::copyScale(unresolvedScale, scale);
+	Music::Scale::resolveScale();
+}
+
+void Music::Scale::resolveScale()
+{
+	for (int i = 0; i < Music::Scale::scalePatternLength; i++)
+	{
+		int distance;
+		std::string front;
+		std::string back;
+		Music::Note currentNote = unresolvedScale[i];
+		if (currentNote.GetPosition().GetPositionAsString().length() == 1)
+		{
+			resolvedScale[i] = currentNote;
+			continue;
+		}
+		else
+		{
+			front = currentNote.GetPosition().GetPositionAsString();
+			front.pop_back();
+			front.pop_back();
+			back = currentNote.GetPosition().GetPositionAsString();
+			back.erase(0, 2);
+		}
+
+		if (i > 0)
+		{
+			distance = (int)currentNote.GetPosition().GetChromaticScalePosition() - (int)(unresolvedScale[i - 1]).GetPosition().GetChromaticScalePosition();
+			if (distance > 1)
+			{
+				currentNote.GetPosition().SetName(back);
+			}
+			else
+			{
+				currentNote.GetPosition().SetName(front);
+			}
+			resolvedScale[i] = currentNote;
 		}
 	}
 }
-
+void Music::Scale::copyScale(Music::Note (&s1)[7], Music::Note (&s2)[7])
+{
+	std::copy(std::begin(s1), std::end(s1), std::begin(s2));
+}
 Music::Scale Music::Scale::operator =(const Music::Scale& otherScale)
 {
 	if (this != &otherScale)

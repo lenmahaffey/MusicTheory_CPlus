@@ -2,39 +2,35 @@
 #include "Object.h"
 
 // Constructors
-Music::Object::Object() :
-	position(Music::Position(0))
+Music::Object::Object()
 {
+	position = 0;
 }
-Music::Object::Object(Music::Position note) :
-	position(note)
+Music::Object::Object(Music::Position note)
 {
+	position = note;
 }
-Music::Object::Object(std::string note) :
-	position(Music::Position::GetPositionFromChromaticScale(note))
+Music::Object::Object(std::string note)
 {
+	position = Music::Position::GetPositionFromChromaticScale(note);
 }
-Music::Object::Object(int note) :
-	position(Music::Position::GetPositionFromChromaticScale(note))
+Music::Object::Object(int note)
 {
+	position = Music::Position::GetPositionFromChromaticScale(note);
 }
 
 //Accessors
-Music::Position Music::Object::GetPosition() const
+Music::Position& Music::Object::GetPosition()
 {
-	return Music::Object::position;
-}
-std::string Music::Object::GetNameAsString() const
-{
-	return Music::Position::GetPositionAsString(Music::Object::position.GetChromaticScalePosition());
+	return position;
 }
 
 //Class Methods
 Music::Position Music::Object::accendHalfStep()
 {
-	int index = (int)Music::Object::position.GetChromaticScalePosition();
+	int index = (int)position.GetChromaticScalePosition();
 	int haveSteped = 0;
-	Music::Position currentNote = Music::Object::position.GetChromaticScalePosition();
+	Music::Position currentNote = position.GetChromaticScalePosition();
 	do
 	{
 		index++;
@@ -47,9 +43,9 @@ Music::Position Music::Object::accendHalfStep()
 }
 Music::Position Music::Object::accendFullStep()
 {
-	int index = (int)Music::Object::position.GetChromaticScalePosition();
+	int index = (int)position.GetChromaticScalePosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetChromaticScalePosition();
+	Music::Position::ChromaticScalePosition currentNote = position.GetChromaticScalePosition();
 	do
 	{
 		index++;
@@ -63,9 +59,9 @@ Music::Position Music::Object::accendFullStep()
 }
 Music::Position Music::Object::accendStepAndAHalf()
 {
-	int index = (int)Music::Object::position.GetChromaticScalePosition();
+	int index = (int)position.GetChromaticScalePosition();
 	int haveSteped = 0;
-	Music::Position::ChromaticScalePosition currentNote = Music::Object::position.GetChromaticScalePosition();
+	Music::Position::ChromaticScalePosition currentNote = position.GetChromaticScalePosition();
 	do
 	{
 		index++;
