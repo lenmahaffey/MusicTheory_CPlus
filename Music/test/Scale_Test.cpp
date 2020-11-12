@@ -613,7 +613,7 @@ namespace Scale_Test
 			string expectedString = "Af Bf C Df Ef F G";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
 
-			Scale scaleToTest = Scale("GsAf", pattern, true);
+			Scale scaleToTest = Scale("Af", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -628,12 +628,22 @@ namespace Scale_Test
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
 		}
-		TEST_METHOD(AsBf_ResolveScale_Test)
+		TEST_METHOD(As_ResolveScale_Test)
 		{
 			string expectedString = "As C D Ef F G A";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::AsBf;
 
-			Scale scaleToTest = Scale("AsBf", pattern, true);
+			Scale scaleToTest = Scale("As", pattern, true);
+
+			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
+			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
+		}
+		TEST_METHOD(Bf_ResolveScale_Test)
+		{
+			string expectedString = "Bf C D Ef F G A";
+			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::B;
+
+			Scale scaleToTest = Scale("B", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -663,7 +673,7 @@ namespace Scale_Test
 			string expectedString = "Cs Ds F Gf Af Bf C";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::CsDf;
 
-			Scale scaleToTest = Scale("CsDf", pattern, true);
+			Scale scaleToTest = Scale("Cs", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -673,7 +683,7 @@ namespace Scale_Test
 			string expectedString = "Df Ef F Gf Af Bf C";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::CsDf;
 
-			Scale scaleToTest = Scale("CsDf", pattern, true);
+			Scale scaleToTest = Scale("Df", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -693,7 +703,7 @@ namespace Scale_Test
 			string expectedString = "Ds F G Af Bf C D";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::DsEf;
 
-			Scale scaleToTest = Scale("DsEf", pattern, true);
+			Scale scaleToTest = Scale("Ds", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -703,7 +713,7 @@ namespace Scale_Test
 			string expectedString = "Ef F G Af Bf C D";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::DsEf;
 
-			Scale scaleToTest = Scale("DsEf", pattern, true);
+			Scale scaleToTest = Scale("Ef", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -733,7 +743,7 @@ namespace Scale_Test
 			string expectedString = "Fs Gs As B Cs Ds F";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::FsGf;
 
-			Scale scaleToTest = Scale("FsGf", pattern, true);
+			Scale scaleToTest = Scale("Fs", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -743,7 +753,7 @@ namespace Scale_Test
 			string expectedString = "Gf Af Bf B Df Ef F";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::FsGf;
 
-			Scale scaleToTest = Scale("FsGf", pattern, true);
+			Scale scaleToTest = Scale("Gf", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());
@@ -763,7 +773,7 @@ namespace Scale_Test
 			string expectedString = "Gs As C Df Ef F G";
 			Music::Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
 
-			Scale scaleToTest = Scale("GsAf", pattern, true);
+			Scale scaleToTest = Scale("Gs", pattern, true);
 
 			Assert::AreEqual((int)expectedPosition, (int)scaleToTest.GetPosition().GetChromaticScalePosition());
 			Assert::AreEqual(expectedString, scaleToTest.getResolvedScaleAsString());

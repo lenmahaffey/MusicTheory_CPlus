@@ -67,7 +67,7 @@ std::string Music::Scale::isMajorOrMinor() const
 std::string Music::Scale::getScaleAsString() const
 {
 	std::string s;
-	for (Music::Note note : Music::Scale::scale)
+	for (Music::Note note : scale)
 	{
 		if (note.GetPosition().GetName() != "NONE") {
 			s += note.GetPosition().GetName();
@@ -96,7 +96,7 @@ void Music::Scale::setScale(Music::Position position)
 {
 	Music::Scale::unresolvedScale[0] = Music::Note(position);
 	Music::Note nextNote = position;
-	for (int i = 1; i < scalePatternLength; i++) {
+	for (int i = 1; i < 7; i++) {
 
 		if (Music::Scale::pattern[i] == Music::Position::Step::NONE)
 			continue;
@@ -145,16 +145,24 @@ void Music::Scale::resolveScale()
 			back.erase(0, 2);
 		}
 
-		if (i > 0)
+		if (i == 0)
+		{
+			resolvedScale[i] = currentNote;
+		}
+		else if (i >= 1)
 		{
 			distance = (int)currentNote.GetPosition().GetChromaticScalePosition() - (int)(unresolvedScale[i - 1]).GetPosition().GetChromaticScalePosition();
-			if (distance > 1)
+			if (distance == 1)
 			{
 				currentNote.GetPosition().SetName(back);
 			}
-			else
+			else if (distance == 2)
 			{
 				currentNote.GetPosition().SetName(front);
+			}
+			else if (distance == 3)
+			{
+				currentNote.GetPosition().SetName(back);
 			}
 			resolvedScale[i] = currentNote;
 		}

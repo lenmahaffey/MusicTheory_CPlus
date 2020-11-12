@@ -13,18 +13,18 @@ Music::Position::Position(Music::Position::ChromaticScalePosition pos)
 	weight = GetWeightForPosition(pos);
 	name = Music::Position::GetPositionAsString(pos);
 }
-Music::Position::Position(int noteAsInt)
+Music::Position::Position(int positionAsInt)
 {
-	position = GetPositionFromChromaticScale(noteAsInt);
-	weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsInt));
-	name = GetPositionAsString(GetPositionFromChromaticScale(noteAsInt));
+	position = GetPositionFromChromaticScale(positionAsInt);
+	weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsInt));
+	name = GetPositionAsString(GetPositionFromChromaticScale(positionAsInt));
 }
 
-Music::Position::Position(std::string noteAsString)
+Music::Position::Position(std::string positionAsString)
 {
-	Music::Position::position = GetPositionFromChromaticScale(noteAsString);
-	Music::Position::weight = GetWeightForPosition(GetPositionFromChromaticScale(noteAsString));
-	Music::Position::name = GetPositionAsString(GetPositionFromChromaticScale(noteAsString));
+	Music::Position::position = GetPositionFromChromaticScale(positionAsString);
+	Music::Position::weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsString));
+	Music::Position::name = positionAsString;
 }
 
 //Class Methods
@@ -60,27 +60,27 @@ Music::Position::ChromaticScalePosition Music::Position::GetPositionFromChromati
 		return Music::Position::ChromaticScalePosition::NONE;
 	else if (noteAsString == "A")
 		return Music::Position::ChromaticScalePosition::A;
-	else if (noteAsString == "AsBf")
+	else if (noteAsString == "AsBf" || noteAsString == "As" || noteAsString == "Bf")
 		return Music::Position::ChromaticScalePosition::AsBf;
 	else if (noteAsString == "B")
 		return Music::Position::ChromaticScalePosition::B;
 	else if (noteAsString == "C")
 		return Music::Position::ChromaticScalePosition::C;
-	else if (noteAsString == "CsDf")
+	else if (noteAsString == "CsDf" || noteAsString == "Cs" || noteAsString == "Df")
 		return Music::Position::ChromaticScalePosition::CsDf;
 	else if (noteAsString == "D")
 		return Music::Position::ChromaticScalePosition::D;
-	else if (noteAsString == "DsEf")
+	else if (noteAsString == "DsEf" || noteAsString == "Ds" || noteAsString == "Ef")
 		return Music::Position::ChromaticScalePosition::DsEf;
 	else if (noteAsString == "E")
 		return Music::Position::ChromaticScalePosition::E;
 	else if (noteAsString == "F")
 		return Music::Position::ChromaticScalePosition::F;
-	else if (noteAsString == "FsGf")
+	else if (noteAsString == "FsGf" || noteAsString == "Fs" || noteAsString == "Gf")
 		return Music::Position::ChromaticScalePosition::FsGf;
 	else if (noteAsString == "G")
 		return Music::Position::ChromaticScalePosition::G;
-	else if (noteAsString == "GsAf")
+	else if (noteAsString == "GsAf" || noteAsString == "Gs" || noteAsString == "Af")
 		return Music::Position::ChromaticScalePosition::GsAf;
 	else
 		//**TODO** implement exception handler
@@ -251,7 +251,7 @@ Music::Position Music::Position::operator =(const std::string& positionAsString)
 	{
 		position = GetPositionFromChromaticScale(positionAsString);
 		weight = GetWeightForPosition(GetPositionFromChromaticScale(positionAsString));
-		name = GetPositionAsString(GetPositionFromChromaticScale(positionAsString));
+		name = positionAsString;
 	}
 	return *this;
 }

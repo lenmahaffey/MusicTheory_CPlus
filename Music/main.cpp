@@ -34,25 +34,35 @@ int main()
 	//B = C;
 	//Object C(4);
 
-	Position AsBf(Position::ChromaticScalePosition::AsBf);
-	cout << AsBf.GetName() << endl;
-	AsBf.SetName("As");
-	cout << AsBf.GetName() << endl;
-	AsBf.SetName("BF");
-	cout << AsBf.GetName() << endl;
+	//Position AsBf(Position::ChromaticScalePosition::AsBf);
+	//cout << AsBf.GetName() << endl;
+	//AsBf.SetName("As");
+	//cout << AsBf.GetName() << endl;
+	//AsBf.SetName("BF");
+	//cout << AsBf.GetName() << endl;
 
-	Object FsGf(Position::ChromaticScalePosition::FsGf);
-	cout << FsGf.GetPosition().GetName() << endl;
-	FsGf.GetPosition().SetName("Fs");
-	cout << FsGf.GetPosition().GetName() << endl;
-
-
-	Note CsDf(Position::ChromaticScalePosition::CsDf);
-	cout << CsDf.GetPosition().GetName() << endl;
-	CsDf.GetPosition().SetName("Df");
-	cout << CsDf.GetPosition().GetName() << endl;
+	//Object FsGf(Position::ChromaticScalePosition::FsGf);
+	//cout << FsGf.GetPosition().GetName() << endl;
+	//FsGf.GetPosition().SetName("Fs");
+	//cout << FsGf.GetPosition().GetName() << endl;
 
 
+	//Note CsDf(Position::ChromaticScalePosition::CsDf);
+	//cout << CsDf.GetPosition().GetName() << endl;
+	//CsDf.GetPosition().SetName("Df");
+	//cout << CsDf.GetPosition().GetName() << endl;
+
+	//Scale F("F", pattern, true);
+	//cout << F.getResolvedScaleAsString() << endl;
+
+	//Position Af("Af");
+	//cout << Af.GetPositionAsString()<< endl;
+	//cout << Af.GetName();
+	Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
+	
+	Scale Af("Af", pattern, true);
+	cout << Af.getScaleAsString() << endl;
+	cout << Af.getResolvedScaleAsString() << endl;
 
 	return 0;
 }

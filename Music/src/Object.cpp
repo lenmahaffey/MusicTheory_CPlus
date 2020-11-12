@@ -12,7 +12,7 @@ Music::Object::Object(Music::Position note)
 }
 Music::Object::Object(std::string note)
 {
-	position = Music::Position::GetPositionFromChromaticScale(note);
+	position = Music::Position(note);
 }
 Music::Object::Object(int note)
 {
