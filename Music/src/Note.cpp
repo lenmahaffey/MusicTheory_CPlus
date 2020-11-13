@@ -28,6 +28,7 @@ Music::Note Music::Note::operator =(const Music::Note& otherNote)
 	if (this != &otherNote)
 	{
 		this->position = otherNote.position;
+		this->name = otherNote.name;
 	}
 	return *this;
 }
@@ -36,6 +37,7 @@ Music::Note Music::Note::operator =(const Music::Position& position)
 	if (this->position != position)
 	{
 		this->position = position;
+		this->name = position.GetPositionAsString();
 	}
 	return *this;
 }
@@ -45,6 +47,7 @@ Music::Note Music::Note::operator =(const int& positionAsInt)
 	if (this->position != newPosition)
 	{
 		this->position = newPosition;
+		this->name = Music::Position(positionAsInt).GetPositionAsString();
 	}
 	return *this;
 }
@@ -54,6 +57,7 @@ Music::Note Music::Note::operator =(const std::string& positionAsString)
 	if (this->position != newPosition)
 	{
 		this->position = newPosition;
+		this->name = positionAsString;
 	}
 	return *this;
 }

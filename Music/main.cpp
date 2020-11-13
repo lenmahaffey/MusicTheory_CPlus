@@ -59,8 +59,7 @@ int main()
 	//cout << Af.GetPositionAsString()<< endl;
 	//cout << Af.GetName();
 	Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
-	
-	Scale Af("Af", pattern, true);
+	MajorScale Af("Gs");
 	cout << Af.getScaleAsString() << endl;
 	cout << Af.getResolvedScaleAsString() << endl;
 

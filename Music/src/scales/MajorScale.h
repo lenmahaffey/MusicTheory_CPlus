@@ -6,13 +6,16 @@ namespace Music {
     class MajorScale : public Music::Scale
     {
 	public:
-		Music::MajorScale();
-		Music::MajorScale(Music::Position::ChromaticScalePosition note);
-		Music::MajorScale(int note);
-		Music::MajorScale(std::string note);
+		MajorScale();
+		MajorScale(Music::Position::ChromaticScalePosition note);
+		MajorScale(int note);
+		MajorScale(std::string note);
 
 	protected:
 		Music::Position::Step pattern[7];
+
+	private:
+		void resolveScale();
 	};
 }
 

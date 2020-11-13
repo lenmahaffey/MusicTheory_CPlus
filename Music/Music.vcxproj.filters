@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Scale.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Note.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -32,6 +29,7 @@
     <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
       <Filter>src\Scales</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scale.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Note.h">
@@ -41,9 +39,6 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="src\Position.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scale.h">
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="src\scales\HarmonicMinorScale.h">
@@ -63,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="src\scales\PentatonicMinorScale.h">
       <Filter>headers\scales</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scale.h">
+      <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,8 +13,12 @@ namespace Music {
 		Music::Object(std::string note);
 		Music::Object(int note);
 
-		//Accessors
+		//Getters
 		Music::Position& GetPosition();
+		std::string GetName() const;
+
+		//Setters
+		void SetName(std::string newName);
 
 		//Methods
 		Music::Position accendHalfStep();
@@ -40,6 +44,7 @@ namespace Music {
 	protected:
 		//Properties
 		Music::Position position;
+		std::string name;
 	};
 }
 

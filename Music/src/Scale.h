@@ -41,13 +41,13 @@ namespace Music{
 		Music::Position::Step pattern[7];
 		int scalePatternLength;
 		Music::Note scale[7];
+		Music::Note unresolvedScale[7];
+		Music::Note resolvedScale[7];
+		void copyScale(Music::Note(&s1)[7], Music::Note(&s2)[7]);
 
 		//Methods
 		void setScale(Music::Position);
 	private:
-		Music::Note unresolvedScale[7];
-		Music::Note resolvedScale[7];
 		void resolveScale();
-		void copyScale(Music::Note (&s1)[7], Music::Note (&s2)[7]);
 	};
 }

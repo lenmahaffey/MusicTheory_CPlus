@@ -257,7 +257,7 @@ namespace Position_Test
 			Assert::AreEqual((int)expected, (int)GsAf.GetChromaticScalePosition());
 		}
 	};
-	TEST_CLASS(GetName_Test)
+	/*TEST_CLASS(GetName_Test)
 	{
 		TEST_METHOD(NONE_getName_Test)
 		{
@@ -337,7 +337,7 @@ namespace Position_Test
 			Music::Position PositionNONE(Music::Position::ChromaticScalePosition::GsAf);
 			Assert::AreEqual(expectedString, PositionNONE.GetName());
 		}
-	};
+	};*/
 	TEST_CLASS(getPositionAsString_Test)
 	{
 		TEST_METHOD(NONE_getPositionAsString_Test)
@@ -427,7 +427,7 @@ namespace Position_Test
 			Assert::AreEqual(expected, GsAf.GetPositionAsString());
 		}
 	};
-	TEST_CLASS(SetName_Test)
+	/*TEST_CLASS(SetName_Test)
 	{
 		TEST_METHOD(setName_Test)
 		{
@@ -449,7 +449,7 @@ namespace Position_Test
 		}
 
 
-	};
+	};*/
 	TEST_CLASS(Operator_Test)
 	{
 		TEST_METHOD(assignemntWithPosition_test)

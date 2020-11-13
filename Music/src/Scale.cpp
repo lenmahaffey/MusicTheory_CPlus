@@ -69,8 +69,21 @@ std::string Music::Scale::getScaleAsString() const
 	std::string s;
 	for (Music::Note note : scale)
 	{
-		if (note.GetPosition().GetName() != "NONE") {
-			s += note.GetPosition().GetName();
+		if (note.GetName() != "NONE") {
+			s += note.GetName();
+			s += " ";
+		}
+	}
+	s.pop_back();
+	return s;
+}
+std::string Music::Scale::getResolvedScaleAsString() const
+{
+	std::string s;
+	for (Music::Note note : resolvedScale)
+	{
+		if (note.GetName() != "NONE") {
+			s += note.GetName();
 			s += " ";
 		}
 	}
@@ -78,19 +91,6 @@ std::string Music::Scale::getScaleAsString() const
 	return s;
 }
 
-std::string Music::Scale::getResolvedScaleAsString() const
-{
-	std::string s;
-	for (Music::Note note : resolvedScale)
-	{
-		if (note.GetPosition().GetName() != "NONE") {
-			s += note.GetPosition().GetName();
-			s += " ";
-		}
-	}
-	s.pop_back();
-	return s;
-}
 //Methods
 void Music::Scale::setScale(Music::Position position)
 {
@@ -128,41 +128,74 @@ void Music::Scale::resolveScale()
 	for (int i = 0; i < Music::Scale::scalePatternLength; i++)
 	{
 		int distance;
-		std::string front;
-		std::string back;
-		Music::Note currentNote = unresolvedScale[i];
-		if (currentNote.GetPosition().GetPositionAsString().length() == 1)
+		Music::Note previousNote;
+		Music::Note currentNote;
+		std::string currentNoteNameFrontPosition;
+		std::string currentNoteNameBackPosition;
+		std::string previousNoteName;
+		std::string currentNoteNewName;
+		currentNote = unresolvedScale[i];
+
+		if (currentNote.GetName().length() == 1)
 		{
 			resolvedScale[i] = currentNote;
 			continue;
 		}
-		else
-		{
-			front = currentNote.GetPosition().GetPositionAsString();
-			front.pop_back();
-			front.pop_back();
-			back = currentNote.GetPosition().GetPositionAsString();
-			back.erase(0, 2);
-		}
-
-		if (i == 0)
+		if (currentNote.GetName().length() == 2)
 		{
 			resolvedScale[i] = currentNote;
+			continue;
+		}
+
+		if(currentNote.GetName().length() > 2){
+			currentNoteNameFrontPosition = currentNote.GetPosition().GetPositionAsString();
+			currentNoteNameFrontPosition.pop_back();
+			currentNoteNameFrontPosition.pop_back();
+			//frontPosition.pop_back();
+			currentNoteNameBackPosition = currentNote.GetPosition().GetPositionAsString();
+			currentNoteNameBackPosition.erase(0, 2);
+		}
+		// If this is the first iteration then there is no previous note to compare to.
+		if (i == 0)
+		{
+			currentNote.SetName(name);
+			if (currentNote.GetName() == "As") {
+				currentNote.SetName("Bf");
+			}
+			else if (currentNote.GetName() == "Cs") {
+				currentNote.SetName("Df");
+			}
+			else if (currentNote.GetName() == "Cs") {
+				currentNote.SetName("Df");
+			}
+			else if (currentNote.GetName() == "Ds") {
+				currentNote.SetName("Ef");
+			}
+			else if (currentNote.GetName() == "Fs") {
+				currentNote.SetName("Fs");
+			}
+			else if (currentNote.GetName() == "Gs") {
+				currentNote.SetName("Af");
+			}
+			resolvedScale[i] = currentNote;
+			continue;
 		}
 		else if (i >= 1)
 		{
-			distance = (int)currentNote.GetPosition().GetChromaticScalePosition() - (int)(unresolvedScale[i - 1]).GetPosition().GetChromaticScalePosition();
-			if (distance == 1)
-			{
-				currentNote.GetPosition().SetName(back);
+			previousNote = resolvedScale[i - 1];
+			previousNoteName = previousNote.GetName();
+			if (previousNoteName.length() > 1) { previousNoteName.pop_back(); }
+
+			currentNoteNewName = ++previousNoteName[0];
+			if (currentNoteNewName == "H") {
+				currentNoteNewName = "A";
 			}
-			else if (distance == 2)
-			{
-				currentNote.GetPosition().SetName(front);
+			if (currentNoteNameFrontPosition[0] == currentNoteNewName[0]) {
+				currentNote.SetName(currentNoteNameFrontPosition);
 			}
-			else if (distance == 3)
+			else
 			{
-				currentNote.GetPosition().SetName(back);
+				currentNote.SetName(currentNoteNameBackPosition);
 			}
 			resolvedScale[i] = currentNote;
 		}
