@@ -120,154 +120,154 @@ void Music::Scale::setScale(Music::Position position)
 		}
 	}
 	Music::Scale::copyScale(unresolvedScale, scale);
-	Music::Scale::resolveScale();
+	//Music::Scale::resolveScale();
 }
-
-void Music::Scale::resolveScale()
-{
-	for (int i = 0; i < Music::Scale::scalePatternLength; i++)
-	{
-		int distance;
-		Music::Note previousNote;
-		Music::Note currentNote;
-		std::string currentNoteNameFrontPosition;
-		std::string currentNoteNameBackPosition;
-		std::string previousNoteName;
-		std::string currentNoteNewName;
-		currentNote = unresolvedScale[i];
-
-		if (currentNote.GetName().length() == 1)
-		{
-			resolvedScale[i] = currentNote;
-			continue;
-		}
-		if (currentNote.GetName().length() == 2)
-		{
-			resolvedScale[i] = currentNote;
-			continue;
-		}
-
-		if(currentNote.GetName().length() > 2){
-			currentNoteNameFrontPosition = currentNote.GetPosition().GetPositionAsString();
-			currentNoteNameFrontPosition.pop_back();
-			currentNoteNameFrontPosition.pop_back();
-			//frontPosition.pop_back();
-			currentNoteNameBackPosition = currentNote.GetPosition().GetPositionAsString();
-			currentNoteNameBackPosition.erase(0, 2);
-		}
-		// If this is the first iteration then there is no previous note to compare to.
-		if (i == 0)
-		{
-			currentNote.SetName(name);
-			if (currentNote.GetName() == "As") {
-				currentNote.SetName("Bf");
-			}
-			else if (currentNote.GetName() == "Cs") {
-				currentNote.SetName("Df");
-			}
-			else if (currentNote.GetName() == "Cs") {
-				currentNote.SetName("Df");
-			}
-			else if (currentNote.GetName() == "Ds") {
-				currentNote.SetName("Ef");
-			}
-			else if (currentNote.GetName() == "Fs") {
-				currentNote.SetName("Fs");
-			}
-			else if (currentNote.GetName() == "Gs") {
-				currentNote.SetName("Af");
-			}
-			resolvedScale[i] = currentNote;
-			continue;
-		}
-		else if (i >= 1)
-		{
-			previousNote = resolvedScale[i - 1];
-			previousNoteName = previousNote.GetName();
-			if (previousNoteName.length() > 1) { previousNoteName.pop_back(); }
-
-			currentNoteNewName = ++previousNoteName[0];
-			if (currentNoteNewName == "H") {
-				currentNoteNewName = "A";
-			}
-			if (currentNoteNameFrontPosition[0] == currentNoteNewName[0]) {
-				currentNote.SetName(currentNoteNameFrontPosition);
-			}
-			else
-			{
-				currentNote.SetName(currentNoteNameBackPosition);
-			}
-			resolvedScale[i] = currentNote;
-		}
-	}
-}
+//
+//void Music::Scale::resolveScale()
+//{
+//	for (int i = 0; i < Music::Scale::scalePatternLength; i++)
+//	{
+//		int distance;
+//		Music::Note previousNote;
+//		Music::Note currentNote;
+//		std::string currentNoteNameFrontPosition;
+//		std::string currentNoteNameBackPosition;
+//		std::string previousNoteName;
+//		std::string currentNoteNewName;
+//		currentNote = unresolvedScale[i];
+//
+//		if (currentNote.GetName().length() == 1)
+//		{
+//			resolvedScale[i] = currentNote;
+//			continue;
+//		}
+//		if (currentNote.GetName().length() == 2)
+//		{
+//			resolvedScale[i] = currentNote;
+//			continue;
+//		}
+//
+//		if(currentNote.GetName().length() > 2){
+//			currentNoteNameFrontPosition = currentNote.GetPosition().GetPositionAsString();
+//			currentNoteNameFrontPosition.pop_back();
+//			currentNoteNameFrontPosition.pop_back();
+//			//frontPosition.pop_back();
+//			currentNoteNameBackPosition = currentNote.GetPosition().GetPositionAsString();
+//			currentNoteNameBackPosition.erase(0, 2);
+//		}
+//		// If this is the first iteration then there is no previous note to compare to.
+//		if (i == 0)
+//		{
+//			currentNote.SetName(name);
+//			if (currentNote.GetName() == "As") {
+//				currentNote.SetName("Bf");
+//			}
+//			else if (currentNote.GetName() == "Cs") {
+//				currentNote.SetName("Df");
+//			}
+//			else if (currentNote.GetName() == "Cs") {
+//				currentNote.SetName("Df");
+//			}
+//			else if (currentNote.GetName() == "Ds") {
+//				currentNote.SetName("Ef");
+//			}
+//			else if (currentNote.GetName() == "Fs") {
+//				currentNote.SetName("Fs");
+//			}
+//			else if (currentNote.GetName() == "Gs") {
+//				currentNote.SetName("Af");
+//			}
+//			resolvedScale[i] = currentNote;
+//			continue;
+//		}
+//		else if (i >= 1)
+//		{
+//			previousNote = resolvedScale[i - 1];
+//			previousNoteName = previousNote.GetName();
+//			if (previousNoteName.length() > 1) { previousNoteName.pop_back(); }
+//
+//			currentNoteNewName = ++previousNoteName[0];
+//			if (currentNoteNewName == "H") {
+//				currentNoteNewName = "A";
+//			}
+//			if (currentNoteNameFrontPosition[0] == currentNoteNewName[0]) {
+//				currentNote.SetName(currentNoteNameFrontPosition);
+//			}
+//			else
+//			{
+//				currentNote.SetName(currentNoteNameBackPosition);
+//			}
+//			resolvedScale[i] = currentNote;
+//		}
+//	}
+//}
 void Music::Scale::copyScale(Music::Note (&s1)[7], Music::Note (&s2)[7])
 {
 	std::copy(std::begin(s1), std::end(s1), std::begin(s2));
 }
-Music::Scale Music::Scale::operator =(const Music::Scale& otherScale)
-{
-	if (this != &otherScale)
-	{
-		this->position = otherScale.position;
-		std::copy(std::begin(otherScale.pattern), std::end(otherScale.pattern), std::begin(Music::Scale::pattern));
-		this->setScale(Music::Scale::GetPosition());
-	}
-	return *this;
-}
-Music::Scale Music::Scale::operator =(const Music::Position& otherPosition)
-{
-	if (this->position != otherPosition)
-	{
-		this->position = otherPosition;
-		this->setScale(Music::Scale::GetPosition());
-	}
-	return *this;
-}
-Music::Scale Music::Scale::operator =(const int& scaleAsInt)
-{
-	if ((int)this->GetPosition().GetChromaticScalePosition() != scaleAsInt)
-	{
-		this->position = scaleAsInt;
-		this->setScale(Music::Scale::GetPosition());
-	}
-	return *this;
-}
-Music::Scale Music::Scale::operator =(const std::string& scaleAsString)
-{
-	if (this->GetPosition().GetPositionAsString() != scaleAsString)
-	{
-		this->position = scaleAsString;
-		this->setScale(Music::Scale::GetPosition());
-	}
-	return *this;
-}
-Music::Scale Music::Scale::operator ++()
-{
-	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() + 1, pattern, isMajor);
-	*this = newScale;
-	return newScale;
-}
-Music::Scale Music::Scale::operator ++(int)
-{
-	Music::Scale temp = *this;
-	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() + 1, pattern, isMajor);
-	*this = newScale;
-	return temp;
-}
-Music::Scale Music::Scale::operator --()
-{
-	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() - 1, pattern, isMajor);
-	*this = newScale;
-	return newScale;
-}
-Music::Scale Music::Scale::operator --(int)
-{
-	Music::Scale temp = *this;
-	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() - 1, pattern, isMajor);
-	*this = newScale;
-	return temp;
-}
+//Music::Scale Music::Scale::operator =(const Music::Scale& otherScale)
+//{
+//	if (this != &otherScale)
+//	{
+//		this->position = otherScale.position;
+//		std::copy(std::begin(otherScale.pattern), std::end(otherScale.pattern), std::begin(Music::Scale::pattern));
+//		this->setScale(Music::Scale::GetPosition());
+//	}
+//	return *this;
+//}
+//Music::Scale Music::Scale::operator =(const Music::Position& otherPosition)
+//{
+//	if (this->position != otherPosition)
+//	{
+//		this->position = otherPosition;
+//		this->setScale(Music::Scale::GetPosition());
+//	}
+//	return *this;
+//}
+//Music::Scale Music::Scale::operator =(const int& scaleAsInt)
+//{
+//	if ((int)this->GetPosition().GetChromaticScalePosition() != scaleAsInt)
+//	{
+//		this->position = scaleAsInt;
+//		this->setScale(Music::Scale::GetPosition());
+//	}
+//	return *this;
+//}
+//Music::Scale Music::Scale::operator =(const std::string& scaleAsString)
+//{
+//	if (this->GetPosition().GetPositionAsString() != scaleAsString)
+//	{
+//		this->position = scaleAsString;
+//		this->setScale(Music::Scale::GetPosition());
+//	}
+//	return *this;
+//}
+//Music::Scale Music::Scale::operator ++()
+//{
+//	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() + 1, pattern, isMajor);
+//	*this = newScale;
+//	return newScale;
+//}
+//Music::Scale Music::Scale::operator ++(int)
+//{
+//	Music::Scale temp = *this;
+//	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() + 1, pattern, isMajor);
+//	*this = newScale;
+//	return temp;
+//}
+//Music::Scale Music::Scale::operator --()
+//{
+//	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() - 1, pattern, isMajor);
+//	*this = newScale;
+//	return newScale;
+//}
+//Music::Scale Music::Scale::operator --(int)
+//{
+//	Music::Scale temp = *this;
+//	Music::Scale newScale = Music::Scale((int)position.GetChromaticScalePosition() - 1, pattern, isMajor);
+//	*this = newScale;
+//	return temp;
+//}
 bool Music::Scale::operator ==(const Music::Scale& otherScale) const
 {
 	return Music::Scale::position == otherScale.position;

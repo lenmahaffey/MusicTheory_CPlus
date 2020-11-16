@@ -71,6 +71,7 @@ void Music::MajorScale::resolveScale()
 		std::string currentNoteNewName;
 		currentNote = Music::MajorScale::unresolvedScale[i];
 
+		//If the note length is one or 2 then there is nothing to resolve
 		if (currentNote.GetName().length() == 1)
 		{
 			resolvedScale[i] = currentNote;
@@ -82,6 +83,7 @@ void Music::MajorScale::resolveScale()
 			continue;
 		}
 
+		//Get the two possible names of the note
 		if (currentNote.GetName().length() > 2) {
 			currentNoteNameFrontPosition = currentNote.GetPosition().GetPositionAsString();
 			currentNoteNameFrontPosition.pop_back();
@@ -91,6 +93,7 @@ void Music::MajorScale::resolveScale()
 			currentNoteNameBackPosition.erase(0, 2);
 		}
 		// If this is the first iteration then there is no previous note to compare to.
+		// The first note will have to be set manually.
 		if (i == 0)
 		{
 			currentNote.SetName(name);
@@ -115,6 +118,8 @@ void Music::MajorScale::resolveScale()
 			resolvedScale[i] = currentNote;
 			continue;
 		}
+		//Get the last resolved note and increment the letter to get the next note
+		//Then find the matching letter of the two possible names.
 		else if (i >= 1)
 		{
 			previousNote = resolvedScale[i - 1];
