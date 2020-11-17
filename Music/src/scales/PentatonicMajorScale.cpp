@@ -6,6 +6,7 @@ Music::PentatonicMajorScale::PentatonicMajorScale(Music::Position::ChromaticScal
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::PentatonicMajorScale::setScale(note);
+	Music::PentatonicMajorScale::resolveScale();
 }
 
 Music::PentatonicMajorScale::PentatonicMajorScale(int note) :
@@ -13,6 +14,7 @@ Music::PentatonicMajorScale::PentatonicMajorScale(int note) :
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::PentatonicMajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::PentatonicMajorScale::resolveScale();
 }
 
 Music::PentatonicMajorScale::PentatonicMajorScale(char note) :
@@ -20,6 +22,7 @@ Music::PentatonicMajorScale::PentatonicMajorScale(char note) :
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::PentatonicMajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::PentatonicMajorScale::resolveScale();
 }
 
 void Music::PentatonicMajorScale::resolveScale()

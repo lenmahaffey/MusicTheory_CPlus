@@ -64,11 +64,11 @@ void Music::HarmonicMinorScale::resolveScale()
 		if (i == 0)
 		{
 			currentNote.SetName(name);
-			if (currentNote.GetName() == "As") {
-				currentNote.SetName("Bf");
+			if (currentNote.GetName() == "Bf") {
+				currentNote.SetName("As");
 			}
-			else if (currentNote.GetName() == "Cs") {
-				currentNote.SetName("Df");
+			else if (currentNote.GetName() == "Df") {
+				currentNote.SetName("Cs");
 			}
 			else if (currentNote.GetName() == "Cs") {
 				currentNote.SetName("Df");

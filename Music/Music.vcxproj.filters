@@ -11,22 +11,7 @@
     <ClCompile Include="src\Position.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\scales\HarmonicMinorScale.cpp">
-      <Filter>src\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\MelodicMinorScale.cpp">
-      <Filter>src\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\NaturalMinorScale.cpp">
-      <Filter>src\Scales</Filter>
-    </ClCompile>
     <ClCompile Include="src\scales\MajorScale.cpp">
-      <Filter>src\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\PentatonicMajorScale.cpp">
-      <Filter>src\Scales</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
       <Filter>src\Scales</Filter>
     </ClCompile>
     <ClCompile Include="src\Scale.cpp">

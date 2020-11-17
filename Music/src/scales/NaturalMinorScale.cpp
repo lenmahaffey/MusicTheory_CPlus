@@ -6,6 +6,7 @@ Music::NaturalMinorScale::NaturalMinorScale(Music::Position::ChromaticScalePosit
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::NaturalMinorScale::setScale(note);
+	Music::NaturalMinorScale::resolveScale();
 }
 
 Music::NaturalMinorScale::NaturalMinorScale(int note) :
@@ -13,13 +14,15 @@ Music::NaturalMinorScale::NaturalMinorScale(int note) :
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::resolveScale();
 }
 
-Music::NaturalMinorScale::NaturalMinorScale(char note) :
+Music::NaturalMinorScale::NaturalMinorScale(std::string note) :
 	Music::Scale(note, pattern, false)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::NaturalMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::NaturalMinorScale::resolveScale();
 }
 
 void Music::NaturalMinorScale::resolveScale()
@@ -61,23 +64,23 @@ void Music::NaturalMinorScale::resolveScale()
 		if (i == 0)
 		{
 			currentNote.SetName(name);
-			if (currentNote.GetName() == "As") {
-				currentNote.SetName("Bf");
+			if (currentNote.GetName() == "Bf") {
+				currentNote.SetName("As");
 			}
-			else if (currentNote.GetName() == "Cs") {
-				currentNote.SetName("Df");
+			else if (currentNote.GetName() == "Df") {
+				currentNote.SetName("Cs");
 			}
-			else if (currentNote.GetName() == "Cs") {
-				currentNote.SetName("Df");
+			else if (currentNote.GetName() == "Df") {
+				currentNote.SetName("Cs");
 			}
-			else if (currentNote.GetName() == "Ds") {
-				currentNote.SetName("Ef");
+			else if (currentNote.GetName() == "Ef") {
+				currentNote.SetName("Ds");
 			}
 			else if (currentNote.GetName() == "Fs") {
 				currentNote.SetName("Fs");
 			}
-			else if (currentNote.GetName() == "Gs") {
-				currentNote.SetName("Af");
+			else if (currentNote.GetName() == "Af") {
+				currentNote.SetName("Gs");
 			}
 			scale[i] = currentNote;
 			continue;

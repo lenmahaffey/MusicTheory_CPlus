@@ -9,7 +9,7 @@ namespace Music {
 		Music::NaturalMinorScale();
 		Music::NaturalMinorScale(Music::Position::ChromaticScalePosition note);
 		Music::NaturalMinorScale(int noteIndex);
-		Music::NaturalMinorScale(char note);
+		Music::NaturalMinorScale(std::string note);
 
 	protected:
 		Music::Position::Step pattern[7] = {Music::Position::Step::Whole,

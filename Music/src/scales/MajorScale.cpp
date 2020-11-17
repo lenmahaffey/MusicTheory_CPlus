@@ -68,6 +68,7 @@ void Music::MajorScale::resolveScale()
 		// The first note will have to be set manually.
 		if (i == 0)
 		{
+			//The first note of the scale is the name of the scale
 			currentNote.SetName(name);
 			if (currentNote.GetName() == "As") {
 				currentNote.SetName("Bf");

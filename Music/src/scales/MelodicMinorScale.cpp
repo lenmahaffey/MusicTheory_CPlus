@@ -6,6 +6,7 @@ Music::MelodicMinorScale::MelodicMinorScale(Music::Position::ChromaticScalePosit
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MelodicMinorScale::setScale(note);
+	Music::MelodicMinorScale::resolveScale();
 }
 
 Music::MelodicMinorScale::MelodicMinorScale(int note) :
@@ -13,6 +14,7 @@ Music::MelodicMinorScale::MelodicMinorScale(int note) :
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MelodicMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::MelodicMinorScale::resolveScale();
 }
 
 Music::MelodicMinorScale::MelodicMinorScale(char note) :
@@ -20,6 +22,7 @@ Music::MelodicMinorScale::MelodicMinorScale(char note) :
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MelodicMinorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::MelodicMinorScale::resolveScale();
 }
 
 void Music::MelodicMinorScale::resolveScale()

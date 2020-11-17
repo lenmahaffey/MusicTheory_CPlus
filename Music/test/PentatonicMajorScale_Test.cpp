@@ -87,19 +87,19 @@ namespace PentatonicMajorScale_Test
 	{
 		TEST_METHOD(APentatonicMajor_getScaleAsString_Test)
 		{
-			string expectedString = "A B CsDf E FsGf";
+			string expectedString = "A B Cs E Fs";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::A);
 			Assert::AreEqual(expectedString, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(AsBfPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "AsBf C D F G";
+			string expected = "Bf C D F G";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::AsBf);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(BPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "B CsDf DsEf FsGf GsAf";
+			string expected = "B Cs Ds Fs Gs";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::B);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
@@ -111,25 +111,25 @@ namespace PentatonicMajorScale_Test
 		}
 		TEST_METHOD(CsDfPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "CsDf DsEf F GsAf AsBf";
+			string expected = "Cs Ds F Gs As";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::CsDf);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "D E FsGf A B";
+			string expected = "D E Fs A B";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::D);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(DsEfPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "DsEf F G AsBf C";
+			string expected = "Ef F G Bf C";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::DsEf);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
 		TEST_METHOD(EPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "E FsGf GsAf B CsDf";
+			string expected = "E Fs Gs B Cs";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::E);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
@@ -141,7 +141,7 @@ namespace PentatonicMajorScale_Test
 		}
 		TEST_METHOD(FsGfPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "FsGf GsAf AsBf CsDf DsEf";
+			string expected = "Fs Gs As Cs Ds";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::FsGf);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
@@ -153,7 +153,7 @@ namespace PentatonicMajorScale_Test
 		}
 		TEST_METHOD(GsAfPentatonicMajor_getScaleAsString_Test)
 		{
-			string expected = "GsAf AsBf C DsEf F";
+			string expected = "Af Bf C Df F";
 			PentatonicMajorScale scaleToTest = PentatonicMajorScale(Music::Position::ChromaticScalePosition::GsAf);
 			Assert::AreEqual(expected, scaleToTest.getScaleAsString());
 		}
