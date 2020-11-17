@@ -12,7 +12,12 @@ namespace Music {
 		Music::PentatonicMinorScale(char note);
 
 	protected:
-		Music::Position::Step pattern[7];
+		Music::Position::Step pattern[7] = {Music::Position::Step::Whole,
+											Music::Position::Step::WholeandAHalf,
+											Music::Position::Step::Whole,
+											Music::Position::Step::Whole,
+											Music::Position::Step::WholeandAHalf };
+		void resolveScale();
 	};
 }
 

@@ -29,7 +29,9 @@
     <ClCompile Include="src\scales\PentatonicMinorScale.cpp">
       <Filter>src\Scales</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scale.cpp" />
+    <ClCompile Include="src\Scale.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Note.h">

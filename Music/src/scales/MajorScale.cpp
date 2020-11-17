@@ -2,60 +2,32 @@
 #include "MajorScale.h"
 
 Music::MajorScale::MajorScale() :
-	Music::Scale(),
-	pattern {
-	Music::Position::Step::Whole,
-		Music::Position::Step::Whole,
-		Music::Position::Step::Whole,
-		Music::Position::Step::Half,
-		Music::Position::Step::Whole,
-		Music::Position::Step::Whole,
-		Music::Position::Step::Whole
-	}
+	Music::Scale()
 {
 }
 
 Music::MajorScale::MajorScale(Music::Position::ChromaticScalePosition note) :
-	Music::Scale(note, pattern, true),
-	pattern{Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Half,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole}
+	Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MajorScale::setScale(note);
-
+	Music::MajorScale::resolveScale();
 }
 
 Music::MajorScale::MajorScale(int note) :
-	Music::Scale(note, pattern, true),
-	pattern{Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Half,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole}
+	Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::MajorScale::resolveScale();
 }
 
 Music::MajorScale::MajorScale(std::string note) :
-	Music::Scale(note, pattern, true),
-	pattern{Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Half,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole,
-			Music::Position::Step::Whole}
+	Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	Music::MajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
+	Music::MajorScale::resolveScale();
 }
 
 void Music::MajorScale::resolveScale()
@@ -74,12 +46,12 @@ void Music::MajorScale::resolveScale()
 		//If the note length is one or 2 then there is nothing to resolve
 		if (currentNote.GetName().length() == 1)
 		{
-			resolvedScale[i] = currentNote;
+			scale[i] = currentNote;
 			continue;
 		}
 		if (currentNote.GetName().length() == 2)
 		{
-			resolvedScale[i] = currentNote;
+			scale[i] = currentNote;
 			continue;
 		}
 
@@ -115,14 +87,14 @@ void Music::MajorScale::resolveScale()
 			else if (currentNote.GetName() == "Gs") {
 				currentNote.SetName("Af");
 			}
-			resolvedScale[i] = currentNote;
+			scale[i] = currentNote;
 			continue;
 		}
 		//Get the last resolved note and increment the letter to get the next note
 		//Then find the matching letter of the two possible names.
 		else if (i >= 1)
 		{
-			previousNote = resolvedScale[i - 1];
+			previousNote = scale[i - 1];
 			previousNoteName = previousNote.GetName();
 			if (previousNoteName.length() > 1) { previousNoteName.pop_back(); }
 
@@ -137,8 +109,7 @@ void Music::MajorScale::resolveScale()
 			{
 				currentNote.SetName(currentNoteNameBackPosition);
 			}
-			resolvedScale[i] = currentNote;
+			scale[i] = currentNote;
 		}
 	}
-	copyScale(resolvedScale, scale);
 }

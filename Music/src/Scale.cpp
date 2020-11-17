@@ -6,7 +6,6 @@ Music::Scale::Scale() :
 	Music::Object(),
 	pattern { Music::Position::Step::NONE },
 	scale { 0 },
-	resolvedScale{ 0 },
 	unresolvedScale{ 0 }
 {
 	Music::Scale::isMajor = true;
@@ -17,7 +16,6 @@ Music::Scale::Scale( Music::Position::ChromaticScalePosition note,  Music::Posit
 	Music::Object(note),
 	pattern{ Music::Position::Step::NONE },
 	scale{ 0 },
-	resolvedScale{ 0 },
 	unresolvedScale{ 0 }
 {
 	Music::Scale::isMajor = isMajor;
@@ -30,7 +28,6 @@ Music::Scale::Scale( int note,  Music::Position::Step(&pattern)[7],  bool isMajo
 	Music::Object(note),
 	pattern{ Music::Position::Step::NONE },
 	scale{ 0 },
-	resolvedScale{ 0 },
 	unresolvedScale{ 0 }
 {
 	isMajor = isMajor;
@@ -43,7 +40,6 @@ Music::Scale::Scale(std::string note, Music::Position::Step(&pattern)[7], bool i
 	Music::Object(note),
 	pattern{ Music::Position::Step::NONE },
 	scale{ 0 },
-	resolvedScale{ 0 },
 	unresolvedScale{ 0 }
 {
 	isMajor = isMajor;
@@ -77,10 +73,10 @@ std::string Music::Scale::getScaleAsString() const
 	s.pop_back();
 	return s;
 }
-std::string Music::Scale::getResolvedScaleAsString() const
+std::string Music::Scale::getUnresolvedScaleAsString() const
 {
 	std::string s;
-	for (Music::Note note : resolvedScale)
+	for (Music::Note note : unresolvedScale)
 	{
 		if (note.GetName() != "NONE") {
 			s += note.GetName();
@@ -120,7 +116,6 @@ void Music::Scale::setScale(Music::Position position)
 		}
 	}
 	Music::Scale::copyScale(unresolvedScale, scale);
-	//Music::Scale::resolveScale();
 }
 //
 //void Music::Scale::resolveScale()

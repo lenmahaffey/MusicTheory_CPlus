@@ -12,7 +12,14 @@ namespace Music {
 		Music::NaturalMinorScale(char note);
 
 	protected:
-		Music::Position::Step pattern[7];
+		Music::Position::Step pattern[7] = {Music::Position::Step::Whole,
+											Music::Position::Step::Whole,
+											Music::Position::Step::Half,
+											Music::Position::Step::Whole,
+											Music::Position::Step::Whole,
+											Music::Position::Step::Half,
+											Music::Position::Step::Whole };
+		void resolveScale();
     };
 }
 

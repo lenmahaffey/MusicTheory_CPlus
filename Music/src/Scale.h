@@ -16,18 +16,10 @@ namespace Music{
 
 		//Accessors
 		std::string getScaleAsString() const;
-		std::string getResolvedScaleAsString() const;
+		std::string getUnresolvedScaleAsString() const;
 		std::string isMajorOrMinor() const;
 
 		//Operator overloads
-		Music::Scale operator =(const Music::Scale& otherScale);
-		//Music::Scale operator =(const Music::Position& position);
-		//Music::Scale operator =(const int& positionAsInt);
-		//Music::Scale operator =(const std::string& positionAsString);
-		//Music::Scale operator ++();
-		//Music::Scale operator ++(int);
-		//Music::Scale operator --();
-		//Music::Scale operator --(int);
 		bool operator ==(const Music::Scale& otherObject) const;
 		bool operator !=(const Music::Scale& otherObject) const;
 		bool operator <(const Music::Scale& otherObject) const;
@@ -42,11 +34,11 @@ namespace Music{
 		int scalePatternLength;
 		Music::Note scale[7];
 		Music::Note unresolvedScale[7];
-		Music::Note resolvedScale[7];
 		void copyScale(Music::Note(&s1)[7], Music::Note(&s2)[7]);
 
 		//Methods
 		void setScale(Music::Position);
+
 	private:
 		virtual void resolveScale() = 0;
 	};

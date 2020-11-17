@@ -61,8 +61,7 @@ int main()
 	Position::ChromaticScalePosition expectedPosition = Music::Position::ChromaticScalePosition::GsAf;
 	MajorScale Af("Gs");
 	cout << Af.getScaleAsString() << endl;
-	cout << Af.getResolvedScaleAsString() << endl;
-
+	//cout << Af.getUnresolvedScaleAsString() << endl;
 	return 0;
 }
 

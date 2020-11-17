@@ -161,11 +161,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Music\test\HarmonicMinorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\MajorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\MedloicMinorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\NaturalMinor_Test.cpp" />
     <ClCompile Include="..\Music\test\Note_Test.cpp" />
     <ClCompile Include="..\Music\test\Object_Test.cpp" />
+    <ClCompile Include="..\Music\test\PentatonicMajorScale_Test.cpp" />
+    <ClCompile Include="..\Music\test\PentatonicMinorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\Position_Test.cpp" />
-    <ClCompile Include="..\Music\test\Scale_Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
