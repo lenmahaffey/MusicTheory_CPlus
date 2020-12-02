@@ -14,7 +14,9 @@ using namespace Music;
 
 int main()
 {
-
+	MajorScale C("C");
+	cout << C.isMajorOrMinor() << endl;
+	cout << C.getIAsString() << endl;
 	return 0;
 }
 

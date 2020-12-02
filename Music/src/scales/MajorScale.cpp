@@ -6,42 +6,44 @@ Music::MajorScale::MajorScale() :
 {
 }
 
-Music::MajorScale::MajorScale(Music::Position::ChromaticScalePosition note) :
+Music::MajorScale::MajorScale(Music::Pitch note) :
 	Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
-	Music::MajorScale::setScale(note);
-	Music::MajorScale::resolveScale();
+	setScale(note);
+	resolveScale();
+	setAllChords();
 }
 
 Music::MajorScale::MajorScale(int note) :
 	Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
-	Music::MajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
-	Music::MajorScale::resolveScale();
+	setScale(Music::Pitch::GetPositionFromChromaticScale(note));
+	resolveScale();
+	setAllChords();
 }
 
 Music::MajorScale::MajorScale(std::string note) :
 	Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
-	Music::MajorScale::setScale(Music::Position::GetPositionFromChromaticScale(note));
-	Music::MajorScale::resolveScale();
+	setScale(Music::Pitch::GetPositionFromChromaticScale(note));
+	resolveScale();
+	setAllChords();
 }
 
 void Music::MajorScale::resolveScale()
 {
 	for (int i = 0; i < Music::Scale::scalePatternLength; i++)
 	{
-		int distance;
 		Music::Note previousNote;
 		Music::Note currentNote;
 		std::string currentNoteNameFrontPosition;
 		std::string currentNoteNameBackPosition;
 		std::string previousNoteName;
 		std::string currentNoteNewName;
-		currentNote = Music::MajorScale::unresolvedScale[i];
+		currentNote = unresolvedScale[i];
 
 		//If the note length is one or 2 then there is nothing to resolve
 		if (currentNote.GetName().length() == 1)

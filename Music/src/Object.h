@@ -1,6 +1,5 @@
 #pragma once
-#include <string>
-#include "Position.h"
+#include "Pitch.h"
 
 namespace Music {
 
@@ -9,27 +8,27 @@ namespace Music {
 	public:
 		//Constructors
 		Music::Object();
-		Music::Object(Music::Position note);
-		Music::Object(std::string note);
-		Music::Object(int note);
+		Music::Object(Music::Pitch pitch);
+		Music::Object(std::string pitchAsString);
+		Music::Object(int pitchAsInt);
 
 		//Getters
-		Music::Position& GetPosition();
+		Music::Pitch& GetPosition();
 		std::string GetName() const;
 
 		//Setters
 		void SetName(std::string newName);
 
 		//Methods
-		Music::Position accendHalfStep();
-		Music::Position accendFullStep();
-		Music::Position accendStepAndAHalf();
+		Music::Pitch accendHalfStep();
+		Music::Pitch accendFullStep();
+		Music::Pitch accendStepAndAHalf();
 
 		//Operator overloads
 		Music::Object operator =(const Music::Object& otherObject);
-		Music::Object operator =(const Music::Position& otherPosition);
+		Music::Object operator =(const Music::Pitch& otherPitch);
 		Music::Object operator =(const int& positionAsInt);
-		Music::Object operator =(const std::string& positionAsString);
+		Music::Object operator =(const std::string& pitchAsString);
 		Music::Object operator ++();
 		Music::Object operator ++(int);
 		Music::Object operator --();
@@ -43,7 +42,7 @@ namespace Music {
 
 	protected:
 		//Properties
-		Music::Position position;
+		Music::Pitch pitch;
 		std::string name;
 	};
 }

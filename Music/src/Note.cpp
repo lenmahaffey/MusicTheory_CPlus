@@ -7,7 +7,7 @@ Music::Note::Note() :
 {
 }
 
-Music::Note::Note(Music::Position note) :
+Music::Note::Note(Music::Pitch note) :
 	Music::Object(note)
 {
 }
@@ -27,87 +27,87 @@ Music::Note Music::Note::operator =(const Music::Note& otherNote)
 {
 	if (this != &otherNote)
 	{
-		this->position = otherNote.position;
+		this->pitch = otherNote.pitch;
 		this->name = otherNote.name;
 	}
 	return *this;
 }
-Music::Note Music::Note::operator =(const Music::Position& position)
+Music::Note Music::Note::operator =(const Music::Pitch& position)
 {
-	if (this->position != position)
+	if (this->pitch != position)
 	{
-		this->position = position;
+		this->pitch = position;
 		this->name = position.GetPositionAsString();
 	}
 	return *this;
 }
 Music::Note Music::Note::operator =(const int& positionAsInt)
 {
-	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsInt);
-	if (this->position != newPosition)
+	Music::Pitch newPosition = Music::Pitch::GetPositionFromChromaticScale(positionAsInt);
+	if (this->pitch != newPosition)
 	{
-		this->position = newPosition;
-		this->name = Music::Position(positionAsInt).GetPositionAsString();
+		this->pitch = newPosition;
+		this->name = Music::Pitch(positionAsInt).GetPositionAsString();
 	}
 	return *this;
 }
 Music::Note Music::Note::operator =(const std::string& positionAsString)
 {
-	Music::Position newPosition = Music::Position::GetPositionFromChromaticScale(positionAsString);
-	if (this->position != newPosition)
+	Music::Pitch newPosition = Music::Pitch::GetPositionFromChromaticScale(positionAsString);
+	if (this->pitch != newPosition)
 	{
-		this->position = newPosition;
+		this->pitch = newPosition;
 		this->name = positionAsString;
 	}
 	return *this;
 }
 Music::Note Music::Note::operator ++()
 {
-	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() + 1);
+	Music::Note newNote = Music::Note((int)pitch.GetPosition() + 1);
 	*this = newNote;
 	return newNote;
 }
 Music::Note Music::Note::operator ++(int)
 {
 	Music::Note temp = *this;
-	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() + 1);
+	Music::Note newNote = Music::Note((int)pitch.GetPosition() + 1);
 	*this = newNote;
 	return temp;
 }
 Music::Note Music::Note::operator --()
 {
-	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() - 1);
+	Music::Note newNote = Music::Note((int)pitch.GetPosition() - 1);
 	*this = newNote;
 	return newNote;
 }
 Music::Note Music::Note::operator --(int)
 {
 	Music::Note temp = *this;
-	Music::Note newNote = Music::Note((int)position.GetChromaticScalePosition() - 1);
+	Music::Note newNote = Music::Note((int)pitch.GetPosition() - 1);
 	*this = newNote;
 	return temp;
 }
 bool Music::Note::operator ==(const Music::Note& otherNote)const
 {
-	return position == otherNote.position;
+	return pitch == otherNote.pitch;
 }
 bool Music::Note::operator !=(const Music::Note& otherNote)const
 {
-	return position != otherNote.position;
+	return pitch != otherNote.pitch;
 }
 bool Music::Note::operator <(const Music::Note& otherNote)const
 {
-	return position < otherNote.position;
+	return pitch < otherNote.pitch;
 }
 bool Music::Note::operator <=(const Music::Note& otherNote)const
 {
-	return position <= otherNote.position;
+	return pitch <= otherNote.pitch;
 }
 bool Music::Note::operator >(const Music::Note& otherNote)const
 {
-	return position > otherNote.position;
+	return pitch > otherNote.pitch;
 }
 bool Music::Note::operator >=(const Music::Note& otherNote)const
 {
-	return position >= otherNote.position;
+	return pitch >= otherNote.pitch;
 }

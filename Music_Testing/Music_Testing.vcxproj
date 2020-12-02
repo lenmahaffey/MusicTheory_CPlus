@@ -161,6 +161,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Music\test\MajorScaleChord_Test.cpp" />
     <ClCompile Include="..\Music\test\MajorScale_Test.cpp" />
     <ClCompile Include="..\Music\test\Note_Test.cpp" />
     <ClCompile Include="..\Music\test\Object_Test.cpp" />

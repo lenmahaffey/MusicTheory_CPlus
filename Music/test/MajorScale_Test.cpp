@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 #include "../src/scale.cpp"
 #include "../src/scales/MajorScale.cpp"
+#include "../src/ChordPatterns.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
@@ -14,82 +15,76 @@ namespace MajorScale_Test
 		TEST_METHOD(AMajor_getUnresolvedScale_Test)
 		{
 			string expected = "A B CsDf D E FsGf GsAf";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::A);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("A"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 
 		}
 		TEST_METHOD(AsBfMajor_getUnresolvedScale_Test)
 		{
 			string expected = "AsBf C D DsEf F G A";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::AsBf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("AsBf"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(BMajor_getUnresolvedScale_Test)
 		{
 			string expected = "B CsDf DsEf E FsGf GsAf AsBf";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::B);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("B"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 
 		}
 		TEST_METHOD(CMajor_getUnresolvedScale_Test)
 		{
 			string expected = "C D E F G A B";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::C);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("C"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(CsDfMajor_getUnresolvedScale_Test)
 		{
 			string expected = "CsDf DsEf F FsGf GsAf AsBf C";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::CsDf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("CsDf"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(DMajor_getUnresolvedScale_Test)
 		{
 			string expected = "D E FsGf G A B CsDf";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::D);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("D"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(DsEfMajor_getUnresolvedScale_Test)
 		{
 			string expected = "DsEf F G GsAf AsBf C D";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::DsEf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("DsEf"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(EMajor_getUnresolvedScale_Test)
 		{
 			string expected = "E FsGf GsAf A B CsDf DsEf";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::E);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("E"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(FMajor_getUnresolvedScale_Test)
 		{
 			string expected = "F G A AsBf C D E";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::F);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("F"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(FsGfMajor_getUnresolvedScale_Test)
 		{
 			string expected = "FsGf GsAf AsBf B CsDf DsEf F";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::FsGf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("FsGf"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(GMajor_getUnresolvedScale_Test)
 		{
 			string expected = "G A B C D E FsGf";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::G);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("G"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
 		}
 		TEST_METHOD(GsAfMajor_getUnresolvedScale_Test)
 		{
 			string expected = "GsAf AsBf C CsDf DsEf F G";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::GsAf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("GsAf"));
 			Assert::AreEqual(expected, scaleToTest.getUnresolvedScaleAsString());
-		}
-		TEST_METHOD(isMajorOrMinor_Test)
-		{
-			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::A);
-			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 	};
 	TEST_CLASS(getScaleAsString_Test)
@@ -174,73 +169,73 @@ namespace MajorScale_Test
 		TEST_METHOD(AMajor_isMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::A);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("A"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(BMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::B);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("B"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(CMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::C);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("C"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(DMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::D);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("D"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(EMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::E);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("E"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(FMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::F);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("F"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(GMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::G);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("G"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(AsBfMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::AsBf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("AsBf"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(CsDfMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::CsDf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("CsDf"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(DsEfMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::DsEf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("DsEf"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(FsGfMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::FsGf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("FsGf"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 		TEST_METHOD(GsAfMajor_IsMajorOrMinor_Test)
 		{
 			string expected = "Major";
-			MajorScale scaleToTest = MajorScale(Music::Position::ChromaticScalePosition::GsAf);
+			MajorScale scaleToTest = MajorScale(Music::Pitch("GsAf"));
 			Assert::AreEqual(expected, scaleToTest.isMajorOrMinor());
 		}
 	};

@@ -8,13 +8,19 @@
     <ClCompile Include="src\Object.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Position.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\scales\MajorScale.cpp">
       <Filter>src\Scales</Filter>
     </ClCompile>
     <ClCompile Include="src\Scale.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pitch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChordPatterns.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chord.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -25,28 +31,28 @@
     <ClInclude Include="src\Object.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Position.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\HarmonicMinorScale.h">
-      <Filter>headers\scales</Filter>
-    </ClInclude>
     <ClInclude Include="src\scales\MajorScale.h">
       <Filter>headers\scales</Filter>
     </ClInclude>
-    <ClInclude Include="src\scales\MelodicMinorScale.h">
-      <Filter>headers\scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\NaturalMinorScale.h">
-      <Filter>headers\scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\PentatonicMajorScale.h">
-      <Filter>headers\scales</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scales\PentatonicMinorScale.h">
-      <Filter>headers\scales</Filter>
-    </ClInclude>
     <ClInclude Include="src\Scale.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Step.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pitch.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChromaticScale.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Weight.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChordPatterns.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chord.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

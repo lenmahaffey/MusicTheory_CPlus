@@ -1,5 +1,6 @@
 #pragma once
 #include "../Scale.h"
+#include "../Step.h"
 
 namespace Music {
 
@@ -7,18 +8,18 @@ namespace Music {
     {
 	public:
 		MajorScale();
-		MajorScale(Music::Position::ChromaticScalePosition note);
+		MajorScale(Music::Pitch note);
 		MajorScale(int note);
 		MajorScale(std::string note);
 
 	protected:
-		Music::Position::Step pattern[7] = {Music::Position::Step::Whole,
-											Music::Position::Step::Whole,
-											Music::Position::Step::Whole,
-											Music::Position::Step::Half,
-											Music::Position::Step::Whole,
-											Music::Position::Step::Whole,
-											Music::Position::Step::Whole};
+		Music::Step pattern[7] = {	Music::Step::Whole,
+									Music::Step::Whole,
+									Music::Step::Whole,
+									Music::Step::Half,
+									Music::Step::Whole,
+									Music::Step::Whole,
+									Music::Step::Whole};
 
 	private:
 		void resolveScale();

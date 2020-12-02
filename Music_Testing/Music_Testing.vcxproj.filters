@@ -27,5 +27,8 @@
     <ClCompile Include="..\Music\test\MajorScale_Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Music\test\MajorScaleChord_Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
