@@ -5,9 +5,6 @@
     <ClCompile Include="src\Note.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Object.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\scales\MajorScale.cpp">
       <Filter>src\Scales</Filter>
     </ClCompile>
@@ -23,12 +20,12 @@
     <ClCompile Include="src\Chord.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\MusicObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Note.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Object.h">
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="src\scales\MajorScale.h">
@@ -53,6 +50,12 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="src\Chord.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MusicObject.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MusicException.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

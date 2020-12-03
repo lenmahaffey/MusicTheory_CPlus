@@ -5,14 +5,14 @@
 
 namespace Music{
 
-	class Scale : public Music::Object
+	class Scale : public MusicObject
 	{
 	public:
 		//Constructors
-		Music::Scale();
-		Music::Scale(Music::Pitch pitch,  Music::Step (&pattern)[7],  bool isMajor);
-		Music::Scale(int pitchAsInt,  Music::Step(&pattern)[7],  bool isMajor);
-		Music::Scale(std::string note,  Music::Step(&pattern)[7],  bool isMajor);
+		Scale();
+		Scale(Music::Pitch pitch,  Music::Step (&pattern)[7],  bool isMajor);
+		Scale(int pitchAsInt,  Music::Step(&pattern)[7],  bool isMajor);
+		Scale(std::string note,  Music::Step(&pattern)[7],  bool isMajor);
 
 		//Accessors
 		std::string isMajorOrMinor() const;
@@ -28,27 +28,27 @@ namespace Music{
 		std::string getVIIAsString() const;
 
 		//Operator Overloads
-		bool operator ==(const Music::Scale& otherScale) const;
-		bool operator !=(const Music::Scale& otherScale) const;
-		bool operator <(const Music::Scale& otherScale) const;
-		bool operator <=(const Music::Scale& otherScale) const;
-		bool operator >(const Music::Scale& otherScale) const;
-		bool operator >=(const Music::Scale& otherScale) const;
+		bool operator ==(const Scale& otherScale) const;
+		bool operator !=(const Scale& otherScale) const;
+		bool operator <(const Scale& otherScale) const;
+		bool operator <=(const Scale& otherScale) const;
+		bool operator >(const Scale& otherScale) const;
+		bool operator >=(const Scale& otherScale) const;
 
 	protected:
 		//Properties
 		bool isMajor;
 		int scalePatternLength;
-		Music::Step pattern[7];
-		Music::Note scale[7];
-		Music::Note unresolvedScale[7];
-		Music::Chord I;
-		Music::Chord II;
-		Music::Chord III;
-		Music::Chord IV;
-		Music::Chord V;
-		Music::Chord VI;
-		Music::Chord VII;
+		Step pattern[7];
+		Note scale[7];
+		Note unresolvedScale[7];
+		Chord I;
+		Chord II;
+		Chord III;
+		Chord IV;
+		Chord V;
+		Chord VI;
+		Chord VII;
 
 		void SetI();
 		void SetII();

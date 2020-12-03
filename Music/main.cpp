@@ -8,15 +8,20 @@
 */
 #include "src/scales/MajorScale.h"
 #include <iostream>
+#include "src/MusicException.h"
 
 using namespace std;
 using namespace Music;
 
 int main()
 {
-	MajorScale C("C");
-	cout << C.isMajorOrMinor() << endl;
-	cout << C.getIAsString() << endl;
+	try {
+		MajorScale C(20);
+	}
+	catch (MusicException e)
+	{
+		cout << (int)e << endl;
+	}
 	return 0;
 }
 

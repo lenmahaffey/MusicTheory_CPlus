@@ -2,7 +2,7 @@
 #include "Scale.h"
 
 //Constructors
-Music::Scale::Scale() : Music::Object(),
+Music::Scale::Scale() : Music::MusicObject(),
 	pattern { Music::Step::NONE },
 	scale { 0 },
 	unresolvedScale{ 0 }
@@ -12,8 +12,7 @@ Music::Scale::Scale() : Music::Object(),
 	scalePatternLength = sizeof(pattern) / sizeof(pattern[0]);
 }
 
-Music::Scale::Scale( Music::Pitch note,  Music::Step (&pattern)[7],  bool major) :
-	Music::Object(note),
+Music::Scale::Scale( Music::Pitch note,  Music::Step (&pattern)[7],  bool major) :	Music::MusicObject(note),
 	pattern{ Music::Step::NONE },
 	scale{ 0 },
 	unresolvedScale{ 0 }
@@ -25,8 +24,7 @@ Music::Scale::Scale( Music::Pitch note,  Music::Step (&pattern)[7],  bool major)
 	setScale(Music::Scale::GetPosition());
 }
 
-Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool major) :
-	Music::Object(note),
+Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool major) : Music::MusicObject(note),
 	pattern{ Music::Step::NONE },
 	scale{ 0 },
 	unresolvedScale{ 0 }
@@ -38,8 +36,7 @@ Music::Scale::Scale( int note,  Music::Step(&pattern)[7],  bool major) :
 	setScale(GetPosition());
 }
 
-Music::Scale::Scale(std::string note, Music::Step(&pattern)[7], bool isMajor) :
-	Music::Object(note),
+Music::Scale::Scale(std::string note, Music::Step(&pattern)[7], bool isMajor) : Music::MusicObject(note),
 	pattern{ Music::Step::NONE },
 	scale{ 0 },
 	unresolvedScale{ 0 }
@@ -93,10 +90,10 @@ std::string Music::Scale::getUnresolvedScaleAsString() const
 std::string Music::Scale::getChordAsString(Chord c) const
 {
 	std::string s;
-	for (Music::Note note : c.chord)
+	for (int i = 0; i < 3; i++)
 	{
-		if (note.GetName() != "NONE") {
-			s += note.GetName();
+		if (c.chord[i]->GetName() != "NONE") {
+			s += c.chord[i]->GetName();
 			s += " ";
 		}
 	}

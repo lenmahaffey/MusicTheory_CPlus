@@ -2,27 +2,35 @@
 Music::Chord::Chord() :
 	chord { 0 }
 {
+	*chord = new Note[3];
 }
 Music::Chord::Chord(std::string n, Music::Pitch pitch) :
 	chord { 0 }
 {
-	name = n;
+	*chord = new Note[3];
 }
 Music::Chord::Chord(std::string n, int pitchAsInt) :
 	chord{ 0 }
 {
-	name = n;
+	*chord = new Note[3];
 }
 Music::Chord::Chord(std::string n, std::string pitchAsString) :
 	chord { 0 }
 {
-	name = n;
+	*chord = new Note[3];
 }
+Music::Chord::~Chord()
+{
 
+}
+std::string Music::Chord::GetName() const
+{
+	return name;
+}
 void Music::Chord::setChord(Note scale[], int pattern[], int patternLength)
 {
 	for (int i = 0; i < patternLength; i++)
 	{
-		chord[i] = scale[pattern[i]];
+		chord[i] = &scale[pattern[i]];
 	}
 }

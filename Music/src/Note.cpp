@@ -2,23 +2,19 @@
 #include "Note.h"
 
 //Constructors
-Music::Note::Note() :
-	Music::Object()
+Music::Note::Note() : Music::MusicObject()
 {
 }
 
-Music::Note::Note(Music::Pitch note) :
-	Music::Object(note)
+Music::Note::Note(Music::Pitch pitch) : Music::MusicObject(pitch)
 {
 }
 
-Music::Note::Note(std::string note) :
-	Music::Object(note)
+Music::Note::Note(std::string pitchAsString) : Music::MusicObject(pitchAsString)
 {
 }
 
-Music::Note::Note(int note) :
-	Music::Object(note)
+Music::Note::Note(int pitchAsInt) : Music::MusicObject(pitchAsInt)
 {
 }
 

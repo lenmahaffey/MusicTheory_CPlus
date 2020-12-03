@@ -33,7 +33,7 @@ std::string Music::Pitch::GetPositionAsString() const
 }
 Music::Weight Music::Pitch::GetWeight() const
 {
-	return (weight);
+	return weight;
 }
 std::string Music::Pitch::GetWeightAsString() const
 {
@@ -70,8 +70,7 @@ Music::ChromaticScalePosition Music::Pitch::GetPositionFromChromaticScale(std::s
 	else if (pitchAsString == "GsAf" || pitchAsString == "Gs" || pitchAsString == "Af")
 		return Music::ChromaticScalePosition::GsAf;
 	else
-		//**TODO** implement exception handler
-		return Music::ChromaticScalePosition::NONE;
+		throw MusicException::InvalidString;
 }
 Music::ChromaticScalePosition Music::Pitch::GetPositionFromChromaticScale(int pitchAsInt)
 {
@@ -103,8 +102,7 @@ Music::ChromaticScalePosition Music::Pitch::GetPositionFromChromaticScale(int pi
 	case 12:
 		return Music::ChromaticScalePosition::GsAf;
 	default:
-		//**TODO** implement exception handler
-		return Music::ChromaticScalePosition::NONE;
+		throw MusicException::InvalidInteger;
 	}
 }
 Music::Weight Music::Pitch::GetWeightForPosition(Music::ChromaticScalePosition position)
@@ -138,8 +136,7 @@ Music::Weight Music::Pitch::GetWeightForPosition(Music::ChromaticScalePosition p
 	case Music::ChromaticScalePosition::GsAf:
 		return Weight::Half;
 	default:
-		//**TODO** implement exception handler?
-		return Weight::NONE;
+		throw MusicException::InvalidPosition;
 	}
 }
 std::string Music::Pitch::GetPositionAsString(ChromaticScalePosition position)
@@ -172,8 +169,7 @@ std::string Music::Pitch::GetPositionAsString(ChromaticScalePosition position)
 	case Music::ChromaticScalePosition::GsAf:
 		return "GsAf";
 	default:
-		//**TODO** implement exception handler
-		return "NONE";
+		throw MusicException::InvalidPosition;
 	}
 }
 std::string Music::Pitch::GetWeightAsString(Weight weight)
@@ -187,8 +183,7 @@ std::string Music::Pitch::GetWeightAsString(Weight weight)
 	case Music::Weight::Whole:
 		return std::string("Whole");
 	default:
-		//**TODO** implement exception handler?
-		return std::string("None");
+		throw MusicException::InvalidWeight;
 	}
 }
 std::string Music::Pitch::GetStepAsString(Music::Step step)
@@ -206,8 +201,7 @@ std::string Music::Pitch::GetStepAsString(Music::Step step)
 	case Music::Step::Double:
 		return "Double";
 	default:
-		//**TODO** implement exception handler
-		return "NONE";
+		throw MusicException::InvalidStep;
 	}
 }
 
@@ -284,7 +278,6 @@ bool Music::Pitch::operator <=(const Music::Pitch& otherPitch) const
 bool Music::Pitch::operator >(const Music::Pitch& otherPitch) const
 {
 	return position > otherPitch.position;
-	
 }
 bool Music::Pitch::operator >=(const Music::Pitch& otherPitch) const
 {

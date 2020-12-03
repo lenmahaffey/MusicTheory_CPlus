@@ -235,7 +235,7 @@ namespace Note_Test
 	};
 	TEST_CLASS(Operator_Test)
 	{
-		TEST_METHOD(assignmentWithObject_Test)
+		TEST_METHOD(assignmentWithMusicObject_Test)
 		{
 			Music::Pitch expectedNoteNone = Music::Pitch();
 			Music::Pitch expectedBNone = Music::Pitch("B");
