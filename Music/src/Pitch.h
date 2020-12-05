@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Pitch.h
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Pitch class deceleration. Class manages enumerations of chromatic scale positions.
+*/
 #pragma once
 #include<string>
 #include "MusicException.h"

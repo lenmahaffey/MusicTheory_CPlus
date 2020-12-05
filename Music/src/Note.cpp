@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Note.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Note class implementation. Not used currently but it was projected to be easier to implement now rather than later.
+*/
 #pragma once
 #include "Note.h"
 

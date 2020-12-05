@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: MusicObject.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: MusicObject class implementation. Base class for most all musical objects
+*/
 #pragma once
 #include "MusicObject.h"
 

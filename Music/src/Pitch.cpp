@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Pitch.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Pitch class implementation. Class stores a ChromaticScale position and weight. Also houses static methods for enumerations
+*/
 #include "Pitch.h"
 
 Music::Pitch::Pitch()
@@ -70,7 +78,7 @@ Music::ChromaticScalePosition Music::Pitch::GetPositionFromChromaticScale(std::s
 	else if (pitchAsString == "GsAf" || pitchAsString == "Gs" || pitchAsString == "Af")
 		return Music::ChromaticScalePosition::GsAf;
 	else
-		throw MusicException::InvalidString;
+		throw MusicException("Invalid String! " + pitchAsString + " is not a valid entry");
 }
 Music::ChromaticScalePosition Music::Pitch::GetPositionFromChromaticScale(int pitchAsInt)
 {
@@ -102,7 +110,7 @@ Music::ChromaticScalePosition Music::Pitch::GetPositionFromChromaticScale(int pi
 	case 12:
 		return Music::ChromaticScalePosition::GsAf;
 	default:
-		throw MusicException::InvalidInteger;
+		throw MusicException("Invalid Integer! " + std::to_string(pitchAsInt) + " is not a valid entry");
 	}
 }
 Music::Weight Music::Pitch::GetWeightForPosition(Music::ChromaticScalePosition position)
@@ -136,7 +144,7 @@ Music::Weight Music::Pitch::GetWeightForPosition(Music::ChromaticScalePosition p
 	case Music::ChromaticScalePosition::GsAf:
 		return Weight::Half;
 	default:
-		throw MusicException::InvalidPosition;
+		throw MusicException("Invalid Position! This should never happen!");
 	}
 }
 std::string Music::Pitch::GetPositionAsString(ChromaticScalePosition position)
@@ -169,7 +177,7 @@ std::string Music::Pitch::GetPositionAsString(ChromaticScalePosition position)
 	case Music::ChromaticScalePosition::GsAf:
 		return "GsAf";
 	default:
-		throw MusicException::InvalidPosition;
+		throw MusicException("Invalid Position! This should never happen!");
 	}
 }
 std::string Music::Pitch::GetWeightAsString(Weight weight)
@@ -183,7 +191,7 @@ std::string Music::Pitch::GetWeightAsString(Weight weight)
 	case Music::Weight::Whole:
 		return std::string("Whole");
 	default:
-		throw MusicException::InvalidWeight;
+		throw MusicException("Invalid Weight! This should never happen!");
 	}
 }
 std::string Music::Pitch::GetStepAsString(Music::Step step)
@@ -201,7 +209,7 @@ std::string Music::Pitch::GetStepAsString(Music::Step step)
 	case Music::Step::Double:
 		return "Double";
 	default:
-		throw MusicException::InvalidStep;
+		throw MusicException("Invalid Step! This should never happen!");
 	}
 }
 

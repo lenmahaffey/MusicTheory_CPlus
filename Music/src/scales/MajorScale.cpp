@@ -1,13 +1,19 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: MajorScale.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: MajorScale class implementation. Implements virtual Scale class
+*/
 #pragma once
 #include "MajorScale.h"
 
-Music::MajorScale::MajorScale() :
-	Music::Scale()
+Music::MajorScale::MajorScale() : Music::Scale()
 {
 }
 
-Music::MajorScale::MajorScale(Music::Pitch note) :
-	Music::Scale(note, pattern, true)
+Music::MajorScale::MajorScale(Music::Pitch note) : Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	setScale(note);
@@ -15,8 +21,7 @@ Music::MajorScale::MajorScale(Music::Pitch note) :
 	setAllChords();
 }
 
-Music::MajorScale::MajorScale(int note) :
-	Music::Scale(note, pattern, true)
+Music::MajorScale::MajorScale(int note) : Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	setScale(Music::Pitch::GetPositionFromChromaticScale(note));
@@ -24,8 +29,7 @@ Music::MajorScale::MajorScale(int note) :
 	setAllChords();
 }
 
-Music::MajorScale::MajorScale(std::string note) :
-	Music::Scale(note, pattern, true)
+Music::MajorScale::MajorScale(std::string note) : Music::Scale(note, pattern, true)
 {
 	std::copy(std::begin(pattern), std::end(pattern), std::begin(Music::Scale::pattern));
 	setScale(Music::Pitch::GetPositionFromChromaticScale(note));
@@ -33,6 +37,8 @@ Music::MajorScale::MajorScale(std::string note) :
 	setAllChords();
 }
 
+//Function to resolve the names of the notes of a scale.
+//Two rules: Each note should appear once and there should only be sharps OR flats but NOT both
 void Music::MajorScale::resolveScale()
 {
 	for (int i = 0; i < Music::Scale::scalePatternLength; i++)

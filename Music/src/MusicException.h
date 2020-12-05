@@ -1,11 +1,22 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: MusicException.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: MusicException class declaration
+*/
 #pragma once
+#include <string>
 namespace Music{
-	enum class MusicException
+	class MusicException
 	{
-		InvalidPosition,
-		InvalidWeight,
-		InvalidStep,
-		InvalidString,
-		InvalidInteger
+	public:
+		MusicException();
+		MusicException(std::string message);
+		std::string GetMessage() const;
+
+	private:
+		std::string message;
 	};
 }

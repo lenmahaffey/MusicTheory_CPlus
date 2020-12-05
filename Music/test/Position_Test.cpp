@@ -1,5 +1,6 @@
 #pragma once
 #include "CppUnitTest.h"
+#include "../src/MusicException.cpp"
 #include "../src/Pitch.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

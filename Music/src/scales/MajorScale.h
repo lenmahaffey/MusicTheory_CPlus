@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: MajorScale.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: MajorScale class declaration. Implements virtual Scale class
+*/
 #pragma once
 #include "../Scale.h"
 #include "../Step.h"

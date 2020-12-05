@@ -1,5 +1,14 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Scale.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Main function demos scale output
+*/
 #pragma once
 #include "Scale.h"
+using namespace std;
 
 //Constructors
 Music::Scale::Scale() : Music::MusicObject(),
@@ -70,7 +79,9 @@ std::string Music::Scale::getScaleAsString() const
 			s += " ";
 		}
 	}
-	s.pop_back();
+	if (s.length() > 0) {
+		s.pop_back();
+	}
 	return s;
 }
 
@@ -89,16 +100,22 @@ std::string Music::Scale::getUnresolvedScaleAsString() const
 }
 std::string Music::Scale::getChordAsString(Chord c) const
 {
+	std::stringstream stream;
 	std::string s;
 	for (int i = 0; i < 3; i++)
 	{
+		stream << std::left << setw(3);
 		if (c.chord[i]->GetName() != "NONE") {
-			s += c.chord[i]->GetName();
-			s += " ";
+			stream << c.chord[i]->GetName();
+		}
+		else
+		{
+			c.chord[i]->SetName("NE");
+			stream << c.chord[i]->GetName();
 		}
 	}
-	s.pop_back();
-	return s;
+	return stream.str();
+
 }
 std::string Music::Scale::getIAsString() const
 {
@@ -132,6 +149,10 @@ std::string Music::Scale::getVIIAsString() const
 //Methods
 void Music::Scale::setScale(Music::Pitch position)
 {
+	if (name == "NONE")
+	{
+		return;
+	}
 	Music::Scale::unresolvedScale[0] = Music::Note(position);
 	Music::Note nextNote = position;
 	for (int i = 1; i < 7; i++) {
@@ -159,10 +180,13 @@ void Music::Scale::setScale(Music::Pitch position)
 	}
 	Music::Scale::copyScale(unresolvedScale, scale);
 }
+//Function to copy scales from one array to another
+//An array of unresolved names is kept for testing and verification of the resolved names
 void Music::Scale::copyScale(Music::Note (&s1)[7], Music::Note (&s2)[7])
 {
 	std::copy(std::begin(s1), std::end(s1), std::begin(s2));
 }
+
 void Music::Scale::setAllChords()
 {
 	SetI();
@@ -173,31 +197,6 @@ void Music::Scale::setAllChords()
 	SetVI();
 	SetVII();
 }
-bool Music::Scale::operator ==(const Music::Scale& otherScale) const
-{
-	return pitch == otherScale.pitch;
-}
-bool Music::Scale::operator !=(const Music::Scale& otherScale) const
-{
-	return pitch != otherScale.pitch;
-}
-bool Music::Scale::operator <(const Music::Scale& otherScale) const
-{
-	return pitch < otherScale.pitch;
-}
-bool Music::Scale::operator <=(const Music::Scale& otherScale) const
-{
-	return pitch <= otherScale.pitch;
-}
-bool Music::Scale::operator >(const Music::Scale& otherScale) const
-{
-	return pitch > otherScale.pitch;
-}
-bool Music::Scale::operator >=(const Music::Scale& otherScale) const
-{
-	return pitch >= otherScale.pitch;
-}
-
 void Music::Scale::SetI()
 {
 	I.setChord(scale, chordPatterns.I_Chord.pattern, chordPatterns.I_Chord.length);
@@ -225,4 +224,30 @@ void Music::Scale::SetVI()
 void Music::Scale::SetVII()
 {
 	VII.setChord(scale, chordPatterns.VII_Chord.pattern, chordPatterns.VII_Chord.length);
+}
+
+//Operator Overloads
+bool Music::Scale::operator ==(const Music::Scale& otherScale) const
+{
+	return pitch == otherScale.pitch;
+}
+bool Music::Scale::operator !=(const Music::Scale& otherScale) const
+{
+	return pitch != otherScale.pitch;
+}
+bool Music::Scale::operator <(const Music::Scale& otherScale) const
+{
+	return pitch < otherScale.pitch;
+}
+bool Music::Scale::operator <=(const Music::Scale& otherScale) const
+{
+	return pitch <= otherScale.pitch;
+}
+bool Music::Scale::operator >(const Music::Scale& otherScale) const
+{
+	return pitch > otherScale.pitch;
+}
+bool Music::Scale::operator >=(const Music::Scale& otherScale) const
+{
+	return pitch >= otherScale.pitch;
 }

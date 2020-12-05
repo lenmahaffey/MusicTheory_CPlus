@@ -145,6 +145,7 @@
     </ClCompile>
     <ClCompile Include="src\Chord.cpp" />
     <ClCompile Include="src\ChordPatterns.cpp" />
+    <ClCompile Include="src\MusicException.cpp" />
     <ClCompile Include="src\Note.cpp" />
     <ClCompile Include="src\MusicObject.cpp" />
     <ClCompile Include="src\Pitch.cpp" />
@@ -163,6 +164,10 @@
     <ClInclude Include="src\scales\MajorScale.h" />
     <ClInclude Include="src\Step.h" />
     <ClInclude Include="src\Weight.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="inputScale.txt" />
+    <Text Include="scaleData.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

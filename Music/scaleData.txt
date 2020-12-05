@@ -1,0 +1,140 @@
+Key of A Major
+--------------
+    Scale:
+A B Cs D E Fs Gs
+
+   Chords:
+I:   A  Cs E  
+II:  B  D  Fs 
+III: Cs E  Gs 
+VI:  D  Fs A  
+V:   E  Gs B  
+VI:  Fs A  Cs 
+VII: Gs B  D  
+
+Key of Bf Major
+--------------
+    Scale:
+Bf C D Ef F G A
+
+   Chords:
+I:   Bf D  F  
+II:  C  Ef G  
+III: D  F  A  
+VI:  Ef G  Bf 
+V:   F  A  C  
+VI:  G  Bf D  
+VII: A  C  Ef 
+
+Key of B Major
+--------------
+    Scale:
+B Cs Ds E Fs Gs As
+
+   Chords:
+I:   B  Ds Fs 
+II:  Cs E  Gs 
+III: Ds Fs As 
+VI:  E  Gs B  
+V:   Fs As Cs 
+VI:  Gs B  Ds 
+VII: As Cs E  
+
+Key of C Major
+--------------
+    Scale:
+C D E F G A B
+
+   Chords:
+I:   C  E  G  
+II:  D  F  A  
+III: E  G  B  
+VI:  F  A  C  
+V:   G  B  D  
+VI:  A  C  E  
+VII: B  D  F  
+
+Key of Df Major
+--------------
+    Scale:
+Df Ef F Gf Af Bf C
+
+   Chords:
+I:   Df F  Af 
+II:  Ef Gf Bf 
+III: F  Af C  
+VI:  Gf Bf Df 
+V:   Af C  Ef 
+VI:  Bf Df F  
+VII: C  Ef Gf 
+
+Key of Ef Major
+--------------
+    Scale:
+Ef F G Af Bf C D
+
+   Chords:
+I:   Ef G  Bf 
+II:  F  Af C  
+III: G  Bf D  
+VI:  Af C  Ef 
+V:   Bf D  F  
+VI:  C  Ef G  
+VII: D  F  Af 
+
+Key of E Major
+--------------
+    Scale:
+E Fs Gs A B Cs Ds
+
+   Chords:
+I:   E  Gs B  
+II:  Fs A  Cs 
+III: Gs B  Ds 
+VI:  A  Cs E  
+V:   B  Ds Fs 
+VI:  Cs E  Gs 
+VII: Ds Fs A  
+
+Key of F Major
+--------------
+    Scale:
+F G A Bf C D E
+
+   Chords:
+I:   F  A  C  
+II:  G  Bf D  
+III: A  C  E  
+VI:  Bf D  F  
+V:   C  E  G  
+VI:  D  F  A  
+VII: E  G  Bf 
+
+Key of G Major
+--------------
+    Scale:
+G A B C D E Fs
+
+   Chords:
+I:   G  B  D  
+II:  A  C  E  
+III: B  D  Fs 
+VI:  C  E  G  
+V:   D  Fs A  
+VI:  E  G  B  
+VII: Fs A  C  
+
+Key of As Major
+--------------
+    Scale:
+Bf C D Ef F G A
+
+   Chords:
+I:   Bf D  F  
+II:  C  Ef G  
+III: D  F  A  
+VI:  Ef G  Bf 
+V:   F  A  C  
+VI:  G  Bf D  
+VII: A  C  Ef 
+

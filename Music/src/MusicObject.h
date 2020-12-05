@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: MusicObject.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: MusicObject class declaration. Base class for almost all musical objects
+*/
 #pragma once
 #include "Pitch.h"
 

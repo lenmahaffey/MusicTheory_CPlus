@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: ChordPatterns.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: ChordPatterns class implementation
+*/
 #pragma once
 #include "ChordPatterns.h"
 Music::ChordPatterns::ChordPatterns()

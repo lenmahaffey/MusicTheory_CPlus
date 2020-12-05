@@ -1,4 +1,15 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Scale.h
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Scale virtual class deceleration. This class must be implemented by a derived class and that derived class must
+				 provide the pattern for the scale as well as implement a method to resolve the names of the notes.
+*/
 #pragma once
+#include <sstream>
+#include <iomanip>
 #include "Chord.h"
 #include "ChordPatterns.h"
 #include "Note.h"

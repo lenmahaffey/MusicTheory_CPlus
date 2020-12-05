@@ -23,6 +23,9 @@
     <ClCompile Include="src\MusicObject.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\MusicException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Note.h">
@@ -72,5 +75,9 @@
     <Filter Include="headers\scales">
       <UniqueIdentifier>{009d59e4-449a-4ff8-bbbf-d4398211ad37}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="scaleData.txt" />
+    <Text Include="inputScale.txt" />
   </ItemGroup>
 </Project>

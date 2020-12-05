@@ -1,3 +1,12 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: ChordPatterns.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Quick and dirty data structure to store chord patterns. A chord is comprised of a specific pattern of notes derived from a scale.
+				 This is my least favorite part of the program and needs refactoring
+*/
 #pragma once
 namespace Music{
 	class ChordPatterns
@@ -33,7 +42,7 @@ namespace Music{
 		};
 		struct VI
 		{
-			int pattern[3] = { 5, 7, (9-7) };
+			int pattern[3] = { 5, 7-7, (9-7) };
 			int length = 3;
 		};
 		struct VII

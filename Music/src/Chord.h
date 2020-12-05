@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Chord.cpp
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Chord class declaration.
+*/
 #pragma once
 #include "Note.h"
 namespace Music {

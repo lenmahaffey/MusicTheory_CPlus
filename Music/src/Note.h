@@ -1,3 +1,11 @@
+/*
+	CSC160 8N0 Computer Science 1
+	File: Note.h
+	By: Len Mahaffey
+	Project: Final Project
+	Last Edited: 12/5/20
+	Description: Note class declaration. More useful later than it is now.
+*/
 #pragma once
 #include "MusicObject.h"
 
