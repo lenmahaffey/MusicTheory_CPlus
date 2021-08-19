@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Music", "Music\Music.vcxproj", "{8A68C8F5-C87B-4993-974B-66D48709E399}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MusicTheory_C++", "MusicTheory_C++\MusicTheory_C++.vcxproj", "{8A68C8F5-C87B-4993-974B-66D48709E399}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Music_Testing", "Music_Testing\Music_Testing.vcxproj", "{8540D3F7-768D-4179-828C-2A210D2761F6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MusicTheory_C++_Testing", "MusicTheory_C++_Testing\MusicTheory_C++_Testing.vcxproj", "{8540D3F7-768D-4179-828C-2A210D2761F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
